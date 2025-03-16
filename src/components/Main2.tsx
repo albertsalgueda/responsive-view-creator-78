@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 interface Main2Props {
@@ -60,7 +59,7 @@ const Main2 = ({
                 </h1>
               </div>
               <div className="col-span-1 flex flex-col justify-center gap-20">
-                <p className="text-[#FFB889] text-xl slide-in-right font-barlow">
+                <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                   {subtitle}
                 </p>
                 <p className="text-[#FFB889] text-xl slide-in-right font-barlow">

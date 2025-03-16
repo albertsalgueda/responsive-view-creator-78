@@ -1,7 +1,6 @@
 
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect, useRef } from "react";
 
@@ -19,17 +18,23 @@ const Index = () => {
       const container = containerRef.current;
       
       const handleWheel = (e: WheelEvent) => {
+        // Prevent default scrolling behavior
         e.preventDefault();
-        // Use deltaY (vertical scroll) to scroll horizontally
-        // Adjust sensitivity - higher value means faster scrolling
-        container.scrollLeft += e.deltaY * 2;
+        
+        // Handle both trackpad and mouse wheel
+        // For trackpads (which often use deltaX naturally)
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          container.scrollLeft += e.deltaX;
+        } else {
+          // For mouse wheels (which primarily use deltaY)
+          container.scrollLeft += e.deltaY;
+        }
       };
       
-      // Attach event listener
+      // Attach event listener with passive: false to allow preventDefault
       container.addEventListener('wheel', handleWheel, { passive: false });
       
       return () => {
-        // Clean up event listener
         container.removeEventListener('wheel', handleWheel);
       };
     }

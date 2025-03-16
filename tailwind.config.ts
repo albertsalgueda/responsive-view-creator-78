@@ -25,7 +25,7 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				'brand-pink': '#FFB6C1',
+				'brand-pink': '#FDB0C2',
 				'brand-blue': '#132ABC',
 				'brand-purple': '#2A0C41',
 				'brand-peach': '#FFB889',

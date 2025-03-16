@@ -38,11 +38,10 @@ const Index = () => {
         align: "start",
         dragFree: true,
         skipSnaps: false,
-        dragThreshold: 1, // Very low threshold to detect subtle trackpad movements
+        dragThreshold: 0.1, // Lower threshold to detect subtle trackpad movements
         containScroll: false, // Allow overshooting at the edges for more natural feel
         direction: "ltr",
         slidesToScroll: 1,
-        speed: 10, // Faster speed for more responsive scrolling
         watchDrag: true, // Ensure drag events are monitored
         watchResize: true,
         watchSlides: true,

@@ -35,48 +35,49 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current) {
-        // Look specifically for ScrollArea element which has the overflow-x-auto class
-        const scrollAreaElement = document.querySelector('.overflow-x-auto');
-        
-        if (scrollAreaElement) {
-          const rect = containerRef.current.getBoundingClientRect();
-          const scrollElementRect = scrollAreaElement.getBoundingClientRect();
-          
-          // Calculate relative position (distance from left edge of scroll container)
-          const relativePosition = rect.left - scrollElementRect.left;
-          
-          // Adjust parallax intensity - smaller number = gentler effect
-          const parallaxIntensity = 0.1;
-          setScrollPosition(relativePosition * parallaxIntensity);
-          
-          // Debug info
-          console.log('Scroll detected, new position:', relativePosition * parallaxIntensity);
-        }
+      // Get the scrollable container
+      const scrollContainer = document.querySelector('.overflow-x-auto');
+      
+      if (!containerRef.current || !scrollContainer) {
+        return;
       }
+      
+      // Get the necessary measurements
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const scrollContainerRect = scrollContainer.getBoundingClientRect();
+      
+      // Calculate the container's position relative to the scroll container
+      const relativePosition = containerRect.left - scrollContainerRect.left;
+      
+      // Calculate the viewport width to normalize the parallax effect
+      const viewportWidth = window.innerWidth;
+      
+      // Create a parallax effect based on position
+      // We multiply by a small factor to make the effect subtle
+      // Normalize by viewport width to make it consistent across screen sizes
+      const parallaxOffset = relativePosition * -0.08 * (viewportWidth / 1920);
+      
+      setScrollPosition(parallaxOffset);
     };
 
-    // Get reference to the scroll container
-    const scrollableParent = document.querySelector('.overflow-x-auto');
+    // Find the scrollable container
+    const scrollContainer = document.querySelector('.overflow-x-auto');
     
-    if (scrollableParent) {
-      // Add the scroll event listener to the correct element
-      scrollableParent.addEventListener("scroll", handleScroll, { passive: true });
+    if (scrollContainer) {
+      // Add scroll event listener
+      scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
       
-      // Initial position calculation
+      // Calculate initial position
       handleScroll();
       
-      // Debug info
-      console.log('Scroll listener attached to:', scrollableParent);
-    } else {
-      console.log('Could not find scroll container with .overflow-x-auto class');
+      // Also listen to window resize as it might affect positioning
+      window.addEventListener('resize', handleScroll, { passive: true });
+      
+      return () => {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleScroll);
+      };
     }
-    
-    return () => {
-      if (scrollableParent) {
-        scrollableParent.removeEventListener("scroll", handleScroll);
-      }
-    };
   }, []);
 
   const handleImageLoad = () => {
@@ -99,7 +100,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           width: "150%", // Increase width to prevent cropping during parallax
           height: "100%",
           left: "-25%", // Center the wider image
-          transition: "transform 0.1s ease-out" // Add smooth transition for parallax
+          transition: "transform 0.05s ease-out" // Smooth transition but not too slow
         }}
       >
         <img

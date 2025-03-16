@@ -2,6 +2,9 @@
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Image1 from "@/components/Image1";
+import Image2 from "@/components/Image2";
+import Image3 from "@/components/Image3";
+import Image4 from "@/components/Image4";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -27,7 +30,12 @@ const Index = () => {
           description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
           ctaText=""
         />
-        <Image1 />
+        <div className="flex flex-col">
+          <Image1 />
+          <Image2 />
+          <Image3 />
+          <Image4 />
+        </div>
       </main>
     );
   }
@@ -47,7 +55,12 @@ const Index = () => {
             ctaText=""
           />
         </div>
-        <Image1 />
+        <div className="flex">
+          <Image1 />
+          <Image2 />
+          <Image3 />
+          <Image4 />
+        </div>
       </div>
     </ScrollArea>
   );

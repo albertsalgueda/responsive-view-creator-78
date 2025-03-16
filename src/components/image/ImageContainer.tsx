@@ -9,7 +9,7 @@ interface ImageContainerProps {
 }
 
 const ImageContainer: React.FC<ImageContainerProps> = ({ 
-  imageSrc = "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+  imageSrc = "/images/default-image.jpg",
   altText = "Parallax showcase image"
 }) => {
   const isMobile = useIsMobile();

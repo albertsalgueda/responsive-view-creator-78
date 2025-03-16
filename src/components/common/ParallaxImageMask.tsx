@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 
 interface ParallaxImageMaskProps {
@@ -18,38 +17,30 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   const [isMobile, setIsMobile] = useState(false);
   const [lastScroll, setLastScroll] = useState({ x: 0, y: 0 });
 
-  // Check if mobile on mount and when window resizes
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
     
-    // Initial check
     checkMobile();
     
-    // Add resize listener
     window.addEventListener('resize', checkMobile);
     
-    // Cleanup
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
-    // Function to update parallax effect
     const updateParallax = () => {
       if (!containerRef.current || !imageRef.current) {
         return;
       }
 
-      // Get scroll position - use different values based on device type
       let scrollX = 0;
       let scrollY = 0;
       
       if (isMobile) {
-        // For mobile, only track vertical scroll
         scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
       } else {
-        // For desktop, primarily track horizontal scroll
         const horizontalContainer = document.querySelector('.overflow-x-auto');
         if (horizontalContainer) {
           scrollX = horizontalContainer.scrollLeft;
@@ -58,7 +49,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
         }
       }
       
-      // Only update if scroll position changed
       if (scrollX !== lastScroll.x || scrollY !== lastScroll.y) {
         setLastScroll({ x: scrollX, y: scrollY });
         
@@ -66,34 +56,27 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         
-        // Calculate relative position in the viewport
         let parallaxOffset;
         
         if (isMobile) {
-          // Vertical parallax for mobile
           const relativePositionY = containerRect.top / viewportHeight;
-          const parallaxAmountY = 50; // pixels to move vertically on mobile
+          const parallaxAmountY = 50;
           parallaxOffset = `translateY(${relativePositionY * parallaxAmountY}px)`;
         } else {
-          // Horizontal parallax for desktop
           const relativePositionX = containerRect.left / viewportWidth;
-          const parallaxAmountX = 100; // pixels to move horizontally on desktop
+          const parallaxAmountX = 100;
           parallaxOffset = `translateX(${relativePositionX * parallaxAmountX}px)`;
         }
         
-        // Apply the transform directly to the image element
         imageRef.current.style.transform = parallaxOffset;
       }
     };
     
-    // Set up IntersectionObserver to only apply parallax when visible
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          // Start listening for scroll events when visible
           window.addEventListener('scroll', updateParallax, { passive: true });
           
-          // Special handling for horizontal scroll on desktop
           if (!isMobile) {
             const horizontalContainer = document.querySelector('.overflow-x-auto');
             if (horizontalContainer) {
@@ -101,13 +84,10 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
             }
           }
           
-          // Listen for resize events
           window.addEventListener('resize', updateParallax, { passive: true });
           
-          // Initial update
           updateParallax();
         } else {
-          // Remove listeners when not visible
           window.removeEventListener('scroll', updateParallax);
           
           if (!isMobile) {
@@ -120,14 +100,13 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           window.removeEventListener('resize', updateParallax);
         }
       },
-      { threshold: 0.1 } // Trigger when at least 10% is visible
+      { threshold: 0.1 }
     );
     
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
     
-    // Run updateParallax initially after a short delay to ensure DOM is ready
     setTimeout(updateParallax, 100);
     
     return () => {

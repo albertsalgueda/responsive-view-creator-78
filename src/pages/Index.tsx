@@ -30,28 +30,29 @@ const Index = () => {
     );
   }
 
-  // On desktop, use Carousel with optimized settings for trackpad scrolling
+  // On desktop, use Carousel with proper horizontal scrolling settings
   return (
     <Carousel 
-      className="h-screen w-screen overflow-hidden" 
+      className="h-screen w-screen overflow-visible" 
       opts={{
         align: "start",
+        loop: false,
         dragFree: true,
-        skipSnaps: false,
-        dragThreshold: 0.1, // Lower threshold to detect subtle trackpad movements
-        containScroll: false, // Allow overshooting at the edges for more natural feel
-        direction: "ltr",
+        containScroll: "trimSnaps",
+        axis: "x",
         slidesToScroll: 1,
-        watchDrag: true, // Ensure drag events are monitored
-        watchResize: true,
-        watchSlides: true,
+        breakpoints: {
+          "(min-width: 768px)": {
+            active: true,
+          }
+        },
       }}
     >
       <CarouselContent className="h-screen -ml-0">
-        <CarouselItem className="h-screen pl-0">
+        <CarouselItem className="h-screen pl-0 w-screen flex-shrink-0">
           <Main1 />
         </CarouselItem>
-        <CarouselItem className="h-screen pl-0">
+        <CarouselItem className="h-screen pl-0 w-screen flex-shrink-0">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"

@@ -30,12 +30,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   }, []);
 
   useEffect(() => {
-    // Ensure image is visible immediately on mobile to prevent black background flash
-    if (isMobile && imageRef.current) {
-      imageRef.current.style.opacity = '1';
-      imageRef.current.style.transform = 'none';
-    }
-    
     const updateParallax = () => {
       if (!containerRef.current || !imageRef.current) {
         return;
@@ -113,7 +107,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       observer.observe(containerRef.current);
     }
     
-    // Apply immediate positioning on mount to prevent flash
     setTimeout(updateParallax, 100);
     
     return () => {
@@ -140,8 +133,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       className="relative overflow-hidden"
       style={{ 
         width: isMobile ? '100vw' : `${maskWidth}px`, 
-        height: "100vh",
-        backgroundColor: "white" // Add white background to prevent black flash
+        height: "100vh" 
       }}
     >
       <div
@@ -160,7 +152,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
             transitionProperty: "transform",
             transitionDuration: "200ms",
             transitionTimingFunction: "ease-out",
-            opacity: 1 // Ensure image is immediately visible
           }}
         />
       </div>

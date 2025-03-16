@@ -15,7 +15,7 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
   const isMobile = useIsMobile();
   
   return (
-    <div className="h-screen flex-shrink-0 flex justify-center items-center bg-white">
+    <div className="h-screen flex-shrink-0 bg-black flex justify-center items-center">
       <div className="h-screen">
         <ParallaxImageMask 
           imageSrc={imageSrc} 

@@ -50,7 +50,7 @@ const Main1 = ({
         ) : (
           // Desktop layout - full screen with no scrolling
           <div className="flex flex-col h-full justify-between py-12 px-6">
-            <div className="flex items-center flex-1">
+            <div className="flex items-start pt-16 flex-1">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
                   {/* Left side content (empty on desktop based on reference) */}

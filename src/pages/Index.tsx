@@ -55,7 +55,7 @@ const Index = () => {
         <Image1 />
         <Image2 />
         <Image3 />
-        <div className="h-screen w-screen flex-shrink-0">
+        <div className="h-screen w-1/2 flex-shrink-0">
           <Main3 />
         </div>
       </div>

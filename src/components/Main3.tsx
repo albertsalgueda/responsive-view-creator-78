@@ -33,8 +33,7 @@ const Main3 = ({
           // Desktop layout - full screen with no scrolling
           <div className="flex flex-col h-full justify-between px-6 py-[32px]">
             <div className="flex items-center justify-center flex-1 py-0">
-              {/* Removed the grid layout with two columns */}
-              <div>
+              <div className="w-1/2">
                 <p className="text-[#97ECCF] text-2xl slide-in-right max-w-xl font-barlow font-medium">
                   {subtitle}
                 </p>

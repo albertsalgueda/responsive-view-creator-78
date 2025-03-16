@@ -9,8 +9,8 @@ interface ImageContainerProps {
 }
 
 const ImageContainer: React.FC<ImageContainerProps> = ({ 
-  imageSrc = "/images/default-image.jpg",
-  altText = "Parallax showcase image"
+  imageSrc = "/lovable-uploads/cf66afd3-7f04-4d0b-849b-e13cafc76054.png",
+  altText = "Beach lifeguard tower"
 }) => {
   const isMobile = useIsMobile();
   

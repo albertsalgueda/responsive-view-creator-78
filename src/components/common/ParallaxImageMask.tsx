@@ -10,7 +10,7 @@ interface ParallaxImageMaskProps {
 const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   imageSrc,
   altText = "Parallax image",
-  maskWidth = 320,
+  maskWidth = 320, // Changed default from 480 to 320
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -36,31 +36,26 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
-        // First try to find the ScrollArea container
-        const scrollArea = document.querySelector('.overflow-x-auto');
-        if (scrollArea) {
+        const parent = containerRef.current.closest('.overflow-x-auto');
+        if (parent) {
           const rect = containerRef.current.getBoundingClientRect();
-          const scrollAreaRect = scrollArea.getBoundingClientRect();
-          const viewportOffset = rect.left - scrollAreaRect.left;
-          
-          // Apply a gentler parallax effect
-          setScrollPosition(viewportOffset * 0.1);
+          const parentRect = parent.getBoundingClientRect();
+          const relativePosition = rect.left - parentRect.left;
+          // Even gentler parallax effect to minimize cropping issues
+          setScrollPosition(relativePosition * 0.05);
         }
       }
     };
 
-    // Get the scrollable container
-    const scrollableContainer = document.querySelector('.overflow-x-auto');
-    
-    if (scrollableContainer) {
-      scrollableContainer.addEventListener("scroll", handleScroll, { passive: true });
-      // Initial calculation
-      handleScroll();
+    const scrollableParent = containerRef.current?.closest('.overflow-x-auto');
+    if (scrollableParent) {
+      scrollableParent.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll(); // Initial position calculation
     }
     
     return () => {
-      if (scrollableContainer) {
-        scrollableContainer.removeEventListener("scroll", handleScroll);
+      if (scrollableParent) {
+        scrollableParent.removeEventListener("scroll", handleScroll);
       }
     };
   }, []);
@@ -72,7 +67,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   return (
     <div 
       ref={containerRef}
-      className="relative overflow-hidden w-full h-full"
+      className="relative overflow-hidden"
       style={{ 
         width: isMobile ? '100vw' : `${maskWidth}px`, 
         height: "100vh" 

@@ -1,7 +1,5 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 interface Main2Props {
   title?: string;
   subtitle?: string;
@@ -9,7 +7,6 @@ interface Main2Props {
   ctaText?: string;
   ctaAction?: () => void;
 }
-
 const Main2 = ({
   title = "Prompting human potential.",
   subtitle = "What if AI wasn't designed to be prompted? What if it was designed to prompt us?",
@@ -19,13 +16,10 @@ const Main2 = ({
 }: Main2Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
-  
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
-  
   if (!mounted) return null;
-  
   return <section className={`w-full bg-[#2A0C41] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
@@ -42,7 +36,7 @@ const Main2 = ({
               <p className="text-[#FFB889] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl">
                 {subtitle}
               </p>
-              <p className="text-[#FFB889] mt-8 text-lg fade-in-delay-2 max-w-[90%] font-barlow font-medium ml-auto text-right">
+              <p className="text-[#FFB889] mt-8 text-lg fade-in-delay-2 max-w-[90%] font-barlow font-medium ml-auto text-left">
                 {description}
               </p>
             </div>
@@ -58,10 +52,10 @@ const Main2 = ({
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow mt-10" style={{
-                    lineHeight: 1,
-                    fontWeight: 800,
-                    fontStyle: 'italic'
-                  }}>
+                lineHeight: 1,
+                fontWeight: 800,
+                fontStyle: 'italic'
+              }}>
                     {title}
                   </h1>
                 </div>
@@ -88,5 +82,4 @@ const Main2 = ({
       </div>
     </section>;
 };
-
 export default Main2;

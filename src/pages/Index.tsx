@@ -6,7 +6,6 @@ import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Index = () => {
   const isMobile = useIsMobile();

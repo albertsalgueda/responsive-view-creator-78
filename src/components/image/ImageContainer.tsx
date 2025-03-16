@@ -12,12 +12,12 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
   altText = "Parallax showcase image"
 }) => {
   return (
-    <div className="h-screen flex-shrink-0 bg-black flex justify-center">
+    <div className="h-screen flex-shrink-0 bg-black flex justify-center items-center">
       <div className="h-screen">
         <ParallaxImageMask 
           imageSrc={imageSrc} 
           altText={altText}
-          // We'll let the ParallaxImageMask handle the width based on screen size
+          maskWidth={350} // Slightly increased width
         />
       </div>
     </div>

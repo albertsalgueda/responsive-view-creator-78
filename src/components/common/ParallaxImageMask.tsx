@@ -127,16 +127,17 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       }}
     >
       <div
-        className="absolute inset-0 w-[150%] h-full"
+        className="absolute inset-0 w-[200%] h-[120%]" // Increased width and height
         style={{
-          left: "-25%",
+          left: "-50%", // Positioned further left
+          top: "-10%", // Moved up slightly to ensure no edges show
         }}
       >
         <img
           ref={imageRef}
           src={imageSrc}
           alt={altText}
-          className={`w-full h-full object-cover transition-opacity duration-300 transition-transform ${
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           style={{

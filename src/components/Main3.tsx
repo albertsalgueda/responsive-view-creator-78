@@ -22,10 +22,10 @@ const Main3 = ({
     <section className={`w-full bg-[#105A43] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
-          // Mobile layout
-          <div className="flex flex-col min-h-screen justify-center py-12 px-6 w-full">
-            <div className="w-full">
-              <p className="text-[#97ECCF] mt-6 text-xl fade-in-delay-1 w-full font-barlow font-medium">
+          // Mobile layout - anchored to top
+          <div className="flex flex-col min-h-screen py-12 px-6 w-full items-start">
+            <div className="w-full pt-6">
+              <p className="text-[#97ECCF] text-xl fade-in-delay-1 w-full font-barlow font-medium">
                 {subtitle}
               </p>
             </div>

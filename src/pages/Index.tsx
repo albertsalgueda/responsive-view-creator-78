@@ -19,17 +19,17 @@ const Index = () => {
       const container = containerRef.current;
       
       const handleWheel = (e: WheelEvent) => {
-        if (container) {
-          e.preventDefault();
-          // Use deltaY (vertical scroll) to scroll horizontally
-          // Multiply by 2 for smoother/faster scrolling
-          container.scrollLeft += e.deltaY * 2;
-        }
+        e.preventDefault();
+        // Use deltaY (vertical scroll) to scroll horizontally
+        // Adjust sensitivity - higher value means faster scrolling
+        container.scrollLeft += e.deltaY * 2;
       };
       
+      // Attach event listener
       container.addEventListener('wheel', handleWheel, { passive: false });
       
       return () => {
+        // Clean up event listener
         container.removeEventListener('wheel', handleWheel);
       };
     }

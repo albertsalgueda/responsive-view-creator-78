@@ -1,7 +1,6 @@
 
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
-import Image1 from "@/components/Image1";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -21,7 +20,6 @@ const Index = () => {
     return (
       <main className="min-h-screen">
         <Main1 />
-        <Image1 />
         <Main2 
           title="Prompting human potential." 
           subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
@@ -38,9 +36,6 @@ const Index = () => {
       <div className="flex h-screen">
         <div className="h-screen w-screen flex-shrink-0">
           <Main1 />
-        </div>
-        <div className="h-screen w-screen flex-shrink-0">
-          <Image1 />
         </div>
         <div className="h-screen w-screen flex-shrink-0">
           <Main2 

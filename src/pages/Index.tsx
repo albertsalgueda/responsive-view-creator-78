@@ -2,6 +2,7 @@
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Main3 from "@/components/Main3";
+import Services1 from "@/components/Services1";
 import Image1 from "@/components/Image1";
 import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
@@ -33,6 +34,7 @@ const Index = () => {
         <Image2 />
         <Image3 />
         <Main3 />
+        <Services1 />
       </main>
     );
   }
@@ -57,6 +59,9 @@ const Index = () => {
         <Image3 />
         <div className="h-screen w-1/2 flex-shrink-0">
           <Main3 />
+        </div>
+        <div className="h-screen w-screen flex-shrink-0">
+          <Services1 />
         </div>
       </div>
     </div>

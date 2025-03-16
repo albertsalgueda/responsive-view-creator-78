@@ -11,9 +11,9 @@ interface Services1Props {
 }
 
 const Services1 = ({
-  title = "Our Services",
-  subtitle = "Comprehensive digital solutions for modern businesses",
-  description = "From brand identity to product development, we provide end-to-end services that bring your vision to life and connect with your audience.",
+  title = "Brand",
+  subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
+  description = "Brand whatsits<br>Brand somethings<br>Brand wibble wobbles<br>Brand brand & more brand",
   ctaText = "LEARN MORE",
   ctaAction = () => console.log("Services CTA clicked")
 }: Services1Props) => {
@@ -39,11 +39,9 @@ const Services1 = ({
               }}>
                 {title}
               </h1>
-              <p className="text-[#97ECCF] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl">
-                {subtitle}
+              <p className="text-[#97ECCF] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl" dangerouslySetInnerHTML={{ __html: subtitle }}>
               </p>
-              <p className="text-[#97ECCF] mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base">
-                {description}
+              <p className="text-[#97ECCF] mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" dangerouslySetInnerHTML={{ __html: description }}>
               </p>
             </div>
             {ctaText && 
@@ -74,13 +72,11 @@ const Services1 = ({
                 </div>
                 <div className="grid grid-cols-3 gap-12">
                   <div className="col-span-1 col-start-2 flex flex-col justify-end">
-                    <p className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0">
-                      {subtitle}
+                    <p className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0" dangerouslySetInnerHTML={{ __html: subtitle }}>
                     </p>
                   </div>
                   <div className="col-span-1 col-start-3 flex flex-col justify-end">
-                    <p className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0">
-                      {description}
+                    <p className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0" dangerouslySetInnerHTML={{ __html: description }}>
                     </p>
                   </div>
                 </div>

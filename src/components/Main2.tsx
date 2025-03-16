@@ -47,11 +47,11 @@ const Main2 = ({
             <div className="flex-1">
               <div className="h-full flex flex-col justify-between">
                 <div>
-                  <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow mt-10" style={{
+                  <h1 style={{
                 lineHeight: 1,
                 fontWeight: 800,
                 fontStyle: 'italic'
-              }}>
+              }} className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow mt-10 my-0">
                     {title}
                   </h1>
                 </div>

@@ -35,43 +35,50 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      if (containerRef.current) {
-        // For ScrollArea and horizontal scroll containers
-        const scrollArea = containerRef.current.closest('.overflow-x-auto');
-        
-        if (scrollArea) {
-          const rect = containerRef.current.getBoundingClientRect();
-          const scrollAreaRect = scrollArea.getBoundingClientRect();
-          
-          // Calculate relative position within scroll area
-          const relativePosition = rect.left - scrollAreaRect.left;
-          
-          // Apply stronger parallax effect (0.2 multiplier)
-          const parallaxOffset = relativePosition * 0.2;
-          
-          setScrollPosition(parallaxOffset);
-          
-          // Debug
-          console.log("Scroll position:", parallaxOffset);
-        }
-      }
+      if (!containerRef.current) return;
+      
+      // Get the scrollable parent (ScrollArea)
+      const scrollArea = containerRef.current.closest('.overflow-x-auto');
+      if (!scrollArea) return;
+      
+      // Get current position information
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const scrollAreaRect = scrollArea.getBoundingClientRect();
+      
+      // Calculate the container's position within the scroll area
+      const containerRelativePos = containerRect.left - scrollAreaRect.left;
+      
+      // Calculate viewport center
+      const viewportCenter = window.innerWidth / 2;
+      
+      // Calculate how far the container is from the center of the viewport
+      // This will be positive when the container is to the right of center,
+      // negative when it's to the left
+      const distanceFromCenter = containerRect.left + (containerRect.width / 2) - viewportCenter;
+      
+      // Apply parallax effect based on distance from center
+      // Adjust the divisor to control intensity (higher = less intense)
+      const parallaxOffset = distanceFromCenter / -3;
+      
+      setScrollPosition(parallaxOffset);
+      
+      // Debug
+      console.log("Container left:", containerRect.left, "Parallax offset:", parallaxOffset);
     };
 
-    // Only attach to ScrollArea for horizontal scrolling
-    const scrollableParent = containerRef.current?.closest('.overflow-x-auto');
-    if (scrollableParent) {
-      scrollableParent.addEventListener("scroll", handleScroll, { passive: true });
+    // Attach scroll handler to ScrollArea
+    const scrollArea = containerRef.current?.closest('.overflow-x-auto');
+    if (scrollArea) {
+      scrollArea.addEventListener("scroll", handleScroll, { passive: true });
       
-      // Initial calculation
+      // Calculate immediately and on resize
       handleScroll();
-      
-      // Calculate on resize too
       window.addEventListener("resize", handleScroll, { passive: true });
     }
     
     return () => {
-      if (scrollableParent) {
-        scrollableParent.removeEventListener("scroll", handleScroll);
+      if (scrollArea) {
+        scrollArea.removeEventListener("scroll", handleScroll);
       }
       window.removeEventListener("resize", handleScroll);
     };
@@ -94,10 +101,9 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
         className="absolute inset-0"
         style={{
           transform: `translateX(${scrollPosition}px)`,
-          width: "150%", // Increase width to prevent cropping during parallax
+          width: "150%", // Wider image for parallax movement
           height: "100%",
           left: "-25%", // Center the wider image
-          transition: "none", // Remove transition for more responsive parallax
         }}
       >
         <img

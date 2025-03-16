@@ -54,16 +54,6 @@ const Hero = ({
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
                   {/* Left side content (empty on desktop based on reference) */}
-                  <div className="h-full flex flex-col justify-end">
-                    <div className="mb-16">
-                      <button
-                        onClick={ctaAction}
-                        className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all fade-in font-barlow"
-                      >
-                        LET'S TALK
-                      </button>
-                    </div>
-                  </div>
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
@@ -74,6 +64,14 @@ const Hero = ({
               </div>
             </div>
             <div className="pb-12">
+              <div className="mb-4 fade-in">
+                <button
+                  onClick={ctaAction}
+                  className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
+                >
+                  LET'S TALK
+                </button>
+              </div>
               <h1 className="text-9xl font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
                 Headline
               </h1>

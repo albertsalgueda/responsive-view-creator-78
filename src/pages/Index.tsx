@@ -1,9 +1,9 @@
 
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -30,38 +30,23 @@ const Index = () => {
     );
   }
 
-  // On desktop, use Carousel with proper horizontal scrolling settings
+  // On desktop, use a horizontal scrolling container
   return (
-    <Carousel 
-      className="h-screen w-screen overflow-visible" 
-      opts={{
-        align: "start",
-        loop: false,
-        dragFree: true,
-        containScroll: "trimSnaps",
-        axis: "x",
-        slidesToScroll: 1,
-        breakpoints: {
-          "(min-width: 768px)": {
-            active: true,
-          }
-        },
-      }}
-    >
-      <CarouselContent className="h-screen -ml-0">
-        <CarouselItem className="h-screen pl-0 w-screen flex-shrink-0">
+    <ScrollArea orientation="horizontal" className="h-screen w-screen overflow-x-auto scrollbar-hide">
+      <div className="flex h-screen">
+        <div className="h-screen w-screen flex-shrink-0">
           <Main1 />
-        </CarouselItem>
-        <CarouselItem className="h-screen pl-0 w-screen flex-shrink-0">
+        </div>
+        <div className="h-screen w-screen flex-shrink-0">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
             description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
             ctaText=""
           />
-        </CarouselItem>
-      </CarouselContent>
-    </Carousel>
+        </div>
+      </div>
+    </ScrollArea>
   );
 };
 

@@ -34,7 +34,7 @@ const Hero = ({
               <h1 className="text-6xl font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
-              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow">
+              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium">
                 {subtitle}
               </p>
             </div>
@@ -57,7 +57,7 @@ const Hero = ({
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
-                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl font-barlow">
+                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl font-barlow font-medium">
                     {subtitle}
                   </p>
                 </div>

@@ -36,24 +36,34 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
-        const parent = containerRef.current.closest('.overflow-x-auto');
-        if (parent) {
-          const rect = containerRef.current.getBoundingClientRect();
-          const parentRect = parent.getBoundingClientRect();
-          const relativePosition = rect.left - parentRect.left;
-          // Even gentler parallax effect to minimize cropping issues
-          setScrollPosition(relativePosition * 0.05);
-        }
+        // Get the horizontal scroll position of the window
+        const scrollX = window.scrollX || window.pageXOffset;
+        
+        // Calculate the position of the container relative to the viewport
+        const rect = containerRef.current.getBoundingClientRect();
+        
+        // Calculate the parallax offset based on the container's position
+        // Adjust the multiplier to control the parallax intensity
+        const parallaxOffset = (rect.left - scrollX) * 0.1;
+        
+        setScrollPosition(parallaxOffset);
       }
     };
 
+    // Add scroll event listener to window
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    // For horizontal scrolling within ScrollArea
     const scrollableParent = containerRef.current?.closest('.overflow-x-auto');
     if (scrollableParent) {
       scrollableParent.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll(); // Initial position calculation
     }
     
+    // Initial calculation
+    handleScroll();
+    
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       if (scrollableParent) {
         scrollableParent.removeEventListener("scroll", handleScroll);
       }
@@ -80,6 +90,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           width: "150%", // Increase width to prevent cropping during parallax
           height: "100%",
           left: "-25%", // Center the wider image
+          transition: "transform 0.1s ease-out", // Smoother parallax movement
         }}
       >
         <img

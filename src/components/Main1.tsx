@@ -20,18 +20,7 @@ const Main1 = ({
 
   useEffect(() => {
     setMounted(true);
-    
-    // Disable scrolling on desktop
-    if (!isMobile) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    
-    return () => {
-      // Re-enable scrolling when component unmounts
-      document.body.style.overflow = 'auto';
-    };
+    // No longer disable scrolling in the component
   }, [isMobile]);
 
   if (!mounted) return null;

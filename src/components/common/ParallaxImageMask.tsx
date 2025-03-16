@@ -42,8 +42,8 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       }
 
       // Get scroll position
-      const scrollX = isMobile ? 0 : window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
-      const scrollY = isMobile ? window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0 : 0;
+      const scrollX = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+      const scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
       
       // Only update if scroll position changed
       if (scrollX !== lastScroll.x || scrollY !== lastScroll.y) {
@@ -80,13 +80,15 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           // Start listening for scroll events when visible
           window.addEventListener('scroll', updateParallax, { passive: true });
           
+          // Special handling for horizontal scroll on desktop
           if (!isMobile) {
-            const scrollContainer = document.querySelector('.overflow-x-auto');
-            if (scrollContainer) {
-              scrollContainer.addEventListener('scroll', updateParallax, { passive: true });
+            const horizontalContainer = document.querySelector('.overflow-x-auto');
+            if (horizontalContainer) {
+              horizontalContainer.addEventListener('scroll', updateParallax, { passive: true });
             }
           }
           
+          // Listen for resize events
           window.addEventListener('resize', updateParallax, { passive: true });
           
           // Initial update
@@ -96,9 +98,9 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           window.removeEventListener('scroll', updateParallax);
           
           if (!isMobile) {
-            const scrollContainer = document.querySelector('.overflow-x-auto');
-            if (scrollContainer) {
-              scrollContainer.removeEventListener('scroll', updateParallax);
+            const horizontalContainer = document.querySelector('.overflow-x-auto');
+            if (horizontalContainer) {
+              horizontalContainer.removeEventListener('scroll', updateParallax);
             }
           }
           
@@ -113,7 +115,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
     }
     
     // Run updateParallax initially
-    updateParallax();
+    setTimeout(updateParallax, 100);
     
     return () => {
       if (containerRef.current) {
@@ -123,9 +125,9 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       window.removeEventListener('scroll', updateParallax);
       
       if (!isMobile) {
-        const scrollContainer = document.querySelector('.overflow-x-auto');
-        if (scrollContainer) {
-          scrollContainer.removeEventListener('scroll', updateParallax);
+        const horizontalContainer = document.querySelector('.overflow-x-auto');
+        if (horizontalContainer) {
+          horizontalContainer.removeEventListener('scroll', updateParallax);
         }
       }
       

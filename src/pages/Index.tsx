@@ -32,7 +32,7 @@ const Index = () => {
 
   // On desktop, place them side by side with horizontal scrolling
   return (
-    <ScrollArea className="h-screen w-screen">
+    <ScrollArea className="h-screen w-screen" orientation="horizontal">
       <div className="flex flex-row h-screen" style={{ width: "200vw" }}>
         <div className="w-screen h-full flex-shrink-0">
           <Main1 />

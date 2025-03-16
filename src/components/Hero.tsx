@@ -31,17 +31,17 @@ const Hero = ({
           // Mobile layout
           <div className="flex flex-col h-screen justify-between py-12">
             <div className="mt-16">
-              <h1 className="text-6xl font-bold text-brand-blue italic slide-in-left" style={{ lineHeight: 1 }}>
+              <h1 className="text-6xl font-bold text-brand-blue italic slide-in-left font-barlow" style={{ lineHeight: 1 }}>
                 {title}
               </h1>
-              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%]">
+              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow">
                 {subtitle}
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2">
               <button
                 onClick={ctaAction}
-                className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all"
+                className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
               >
                 {ctaText}
               </button>
@@ -58,7 +58,7 @@ const Hero = ({
                     <div className="mb-16">
                       <button
                         onClick={ctaAction}
-                        className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all fade-in"
+                        className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all fade-in font-barlow"
                       >
                         LET'S TALK
                       </button>
@@ -67,14 +67,14 @@ const Hero = ({
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
-                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl">
+                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl font-barlow">
                     {subtitle}
                   </p>
                 </div>
               </div>
             </div>
             <div className="pb-12">
-              <h1 className="text-9xl font-bold text-brand-blue italic slide-in-left" style={{ lineHeight: 1 }}>
+              <h1 className="text-9xl font-bold text-brand-blue italic slide-in-left font-barlow" style={{ lineHeight: 1 }}>
                 Headline
               </h1>
             </div>

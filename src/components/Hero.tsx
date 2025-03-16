@@ -69,11 +69,11 @@ const Hero = ({
                   onClick={ctaAction}
                   className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
                 >
-                  LET'S TALK
+                  {ctaText}
                 </button>
               </div>
               <h1 className="text-9xl font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
-                Headline
+                {title}
               </h1>
             </div>
           </div>

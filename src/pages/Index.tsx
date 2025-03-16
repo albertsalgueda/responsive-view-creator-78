@@ -47,11 +47,11 @@ const Index = () => {
         watchSlides: true,
       }}
     >
-      <CarouselContent className="h-screen">
-        <CarouselItem className="h-screen">
+      <CarouselContent className="h-screen -ml-0">
+        <CarouselItem className="h-screen pl-0">
           <Main1 />
         </CarouselItem>
-        <CarouselItem className="h-screen">
+        <CarouselItem className="h-screen pl-0">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"

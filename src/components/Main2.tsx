@@ -62,7 +62,7 @@ const Main2 = ({
                 <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                   {subtitle}
                 </p>
-                <p className="text-[#FFB889] text-xl slide-in-right font-barlow">
+                <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                   {description}
                 </p>
               </div>

@@ -1,44 +1,17 @@
 
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (!isMobile && containerRef.current) {
-      const container = containerRef.current;
-      
-      const handleWheel = (e: WheelEvent) => {
-        // Prevent default scrolling behavior
-        e.preventDefault();
-        
-        // Handle both trackpad and mouse wheel
-        // For trackpads (which often use deltaX naturally)
-        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-          container.scrollLeft += e.deltaX;
-        } else {
-          // For mouse wheels (which primarily use deltaY)
-          container.scrollLeft += e.deltaY;
-        }
-      };
-      
-      // Attach event listener with passive: false to allow preventDefault
-      container.addEventListener('wheel', handleWheel, { passive: false });
-      
-      return () => {
-        container.removeEventListener('wheel', handleWheel);
-      };
-    }
-  }, [isMobile, mounted]);
 
   if (!mounted) return null;
 
@@ -57,18 +30,18 @@ const Index = () => {
     );
   }
 
-  // On desktop, place them side by side with horizontal scrolling
+  // On desktop, place them side by side with horizontal scrolling using ScrollArea
   return (
-    <div 
-      ref={containerRef}
-      className="h-screen w-screen overflow-x-auto overflow-y-hidden scrollbar-hide"
-      style={{ scrollBehavior: 'smooth', scrollSnapType: 'x mandatory' }}
+    <ScrollArea 
+      orientation="horizontal" 
+      className="h-screen w-screen overflow-hidden"
+      style={{ scrollBehavior: 'smooth' }}
     >
       <div className="flex flex-row h-screen" style={{ width: "200vw" }}>
-        <div className="w-screen h-full flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
+        <div className="w-screen h-full flex-shrink-0">
           <Main1 />
         </div>
-        <div className="w-screen h-full flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
+        <div className="w-screen h-full flex-shrink-0">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
@@ -77,7 +50,7 @@ const Index = () => {
           />
         </div>
       </div>
-    </div>
+    </ScrollArea>
   );
 };
 

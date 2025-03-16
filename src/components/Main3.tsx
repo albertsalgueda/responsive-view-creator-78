@@ -7,7 +7,7 @@ interface Main3Props {
 }
 
 const Main3 = ({
-  subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all."
+  subtitle = "We create value for businesses by creating valuable experiences for their customers. We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
 }: Main3Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);

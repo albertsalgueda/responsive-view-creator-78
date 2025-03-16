@@ -10,12 +10,13 @@ interface ParallaxImageMaskProps {
 const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   imageSrc,
   altText = "Parallax image",
-  maskWidth = 320, // Changed default from 480 to 320
+  maskWidth = 320,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const imageRef = useRef<HTMLImageElement>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [lastScrollX, setLastScrollX] = useState(0);
 
   // Check if mobile on mount and when window resizes
   useEffect(() => {
@@ -34,51 +35,83 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Get the scrollable container
+    if (isMobile) return; // Don't apply parallax on mobile
+    
+    // Function to update parallax effect
+    const updateParallax = () => {
       const scrollContainer = document.querySelector('.overflow-x-auto');
       
-      if (!containerRef.current || !scrollContainer) {
+      if (!containerRef.current || !imageRef.current || !scrollContainer) {
         return;
       }
       
-      // Get the necessary measurements
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const scrollContainerRect = scrollContainer.getBoundingClientRect();
+      // Get scroll position from the container
+      const scrollX = scrollContainer.scrollLeft;
       
-      // Calculate the container's position relative to the scroll container
-      const relativePosition = containerRect.left - scrollContainerRect.left;
-      
-      // Calculate the viewport width to normalize the parallax effect
-      const viewportWidth = window.innerWidth;
-      
-      // Create a parallax effect based on position
-      // We multiply by a small factor to make the effect subtle
-      // Normalize by viewport width to make it consistent across screen sizes
-      const parallaxOffset = relativePosition * -0.08 * (viewportWidth / 1920);
-      
-      setScrollPosition(parallaxOffset);
+      // Only update if scroll position changed
+      if (scrollX !== lastScrollX) {
+        setLastScrollX(scrollX);
+        
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        
+        // Calculate relative position in the viewport (0 to 1)
+        const relativePositionInViewport = containerRect.left / viewportWidth;
+        
+        // Apply parallax offset based on position 
+        // Adjust the multiplier to control the effect intensity
+        const parallaxAmount = 100; // pixels to move
+        const parallaxOffset = relativePositionInViewport * parallaxAmount;
+        
+        // Apply the transform directly to the image element
+        imageRef.current.style.transform = `translateX(${parallaxOffset}px)`;
+      }
     };
-
-    // Find the scrollable container
-    const scrollContainer = document.querySelector('.overflow-x-auto');
     
-    if (scrollContainer) {
-      // Add scroll event listener
-      scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
-      
-      // Calculate initial position
-      handleScroll();
-      
-      // Also listen to window resize as it might affect positioning
-      window.addEventListener('resize', handleScroll, { passive: true });
-      
-      return () => {
-        scrollContainer.removeEventListener('scroll', handleScroll);
-        window.removeEventListener('resize', handleScroll);
-      };
+    // Set up IntersectionObserver to only apply parallax when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          // Start listening for scroll events when visible
+          const scrollContainer = document.querySelector('.overflow-x-auto');
+          if (scrollContainer) {
+            scrollContainer.addEventListener('scroll', updateParallax, { passive: true });
+            window.addEventListener('resize', updateParallax, { passive: true });
+            
+            // Initial update
+            updateParallax();
+          }
+        } else {
+          // Remove listeners when not visible
+          const scrollContainer = document.querySelector('.overflow-x-auto');
+          if (scrollContainer) {
+            scrollContainer.removeEventListener('scroll', updateParallax);
+            window.removeEventListener('resize', updateParallax);
+          }
+        }
+      },
+      { threshold: 0.1 } // Trigger when at least 10% is visible
+    );
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
-  }, []);
+    
+    // Run updateParallax initially
+    updateParallax();
+    
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+      
+      const scrollContainer = document.querySelector('.overflow-x-auto');
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', updateParallax);
+        window.removeEventListener('resize', updateParallax);
+      }
+    };
+  }, [isMobile, lastScrollX]);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -94,21 +127,23 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       }}
     >
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 w-[150%] h-full"
         style={{
-          transform: `translateX(${scrollPosition}px)`,
-          width: "150%", // Increase width to prevent cropping during parallax
-          height: "100%",
-          left: "-25%", // Center the wider image
-          transition: "transform 0.05s ease-out" // Smooth transition but not too slow
+          left: "-25%",
         }}
       >
         <img
+          ref={imageRef}
           src={imageSrc}
           alt={altText}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
+          className={`w-full h-full object-cover transition-opacity duration-300 transition-transform ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           }`}
+          style={{
+            transitionProperty: "opacity, transform",
+            transitionDuration: "300ms, 200ms",
+            transitionTimingFunction: "ease-out",
+          }}
           onLoad={handleImageLoad}
         />
       </div>

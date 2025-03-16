@@ -60,7 +60,7 @@ const Index = () => {
         <div className="h-screen w-1/2 flex-shrink-0">
           <Main3 />
         </div>
-        <div className="h-screen w-screen flex-shrink-0">
+        <div className="h-screen w-1/2 flex-shrink-0">
           <Services1 />
         </div>
       </div>

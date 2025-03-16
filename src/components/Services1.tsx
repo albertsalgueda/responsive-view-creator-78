@@ -6,16 +6,12 @@ interface Services1Props {
   title?: string;
   subtitle?: string;
   description?: string;
-  ctaText?: string;
-  ctaAction?: () => void;
 }
 
 const Services1 = ({
   title = "Brand",
   subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
   description = "Brand whatsits<br>Brand somethings<br>Brand wibble wobbles<br>Brand brand & more brand",
-  ctaText = "LEARN MORE",
-  ctaAction = () => console.log("Services CTA clicked")
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
@@ -44,16 +40,6 @@ const Services1 = ({
               <p className="text-[#97ECCF] mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" dangerouslySetInnerHTML={{ __html: description }}>
               </p>
             </div>
-            {ctaText && 
-              <div className="mb-16 fade-in-delay-2 flex justify-end">
-                <button 
-                  onClick={ctaAction} 
-                  className="bg-[#97ECCF] text-[#105A43] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
-                >
-                  {ctaText}
-                </button>
-              </div>
-            }
           </div> : 
           <div className="flex flex-col justify-between h-full px-6 py-[40px]">
             <div className="flex-1">
@@ -82,16 +68,6 @@ const Services1 = ({
                 </div>
               </div>
             </div>
-            {ctaText && 
-              <div className="fade-in mt-4 flex justify-end mb-6">
-                <button 
-                  onClick={ctaAction} 
-                  className="bg-[#97ECCF] text-[#105A43] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
-                >
-                  {ctaText}
-                </button>
-              </div>
-            }
           </div>
         }
       </div>

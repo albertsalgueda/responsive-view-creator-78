@@ -66,12 +66,12 @@ const Main2 = ({
                   </h1>
                 </div>
                 <div className="grid grid-cols-3 gap-12 mb-20 justify-end">
-                  <div className="col-span-1 col-start-2">
+                  <div className="col-span-1 col-start-2 flex flex-col justify-end">
                     <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                       {subtitle}
                     </p>
                   </div>
-                  <div className="col-span-1 col-start-3">
+                  <div className="col-span-1 col-start-3 flex flex-col justify-end">
                     <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                       {description}
                     </p>

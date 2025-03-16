@@ -65,19 +65,16 @@ const Main2 = ({
                     {title}
                   </h1>
                 </div>
-                <div className="grid grid-cols-3 gap-12 mb-20">
-                  <div className="col-span-1">
+                <div className="grid grid-cols-3 gap-12 mb-20 justify-end">
+                  <div className="col-span-1 col-start-2">
                     <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                       {subtitle}
                     </p>
                   </div>
-                  <div className="col-span-1">
+                  <div className="col-span-1 col-start-3">
                     <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
                       {description}
                     </p>
-                  </div>
-                  <div className="col-span-1">
-                    {/* Empty third column */}
                   </div>
                 </div>
               </div>

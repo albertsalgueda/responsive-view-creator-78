@@ -25,7 +25,7 @@ const Main3 = ({
           // Mobile layout - anchored to top
           <div className="flex flex-col min-h-screen py-12 px-6 w-full items-start">
             <div className="w-full pt-6">
-              <p className="text-[#97ECCF] text-xl fade-in-delay-1 w-full font-barlow font-medium">
+              <p className="text-[#97ECCF] text-[2rem] fade-in-delay-1 w-full font-barlow font-medium">
                 {subtitle}
               </p>
             </div>

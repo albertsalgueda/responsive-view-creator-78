@@ -33,7 +33,7 @@ const Main2 = ({
           }}>
                 {title}
               </h1>
-              <p className="text-[#FFB889] mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium">
+              <p className="text-[#FFB889] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
                 {subtitle}
               </p>
               <p className="text-[#FFB889] mt-8 text-lg fade-in-delay-2 max-w-[90%] font-barlow">

@@ -2,6 +2,8 @@
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Image1 from "@/components/Image1";
+import Image2 from "@/components/Image2";
+import Image3 from "@/components/Image3";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -28,6 +30,8 @@ const Index = () => {
           ctaText=""
         />
         <Image1 />
+        <Image2 />
+        <Image3 />
       </main>
     );
   }
@@ -48,6 +52,8 @@ const Index = () => {
           />
         </div>
         <Image1 />
+        <Image2 />
+        <Image3 />
       </div>
     </ScrollArea>
   );

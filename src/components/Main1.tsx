@@ -42,7 +42,7 @@ const Main1 = ({
             </div>
           </div> :
       // Desktop layout - full screen with no scrolling
-      <div className="flex flex-col h-full justify-between py-12 px-6">
+      <div className="flex flex-col h-full justify-between px-6 py-[32px]">
             <div className="flex items-start pt-16 flex-1 py-0">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">

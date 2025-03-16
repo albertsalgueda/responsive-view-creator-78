@@ -43,7 +43,7 @@ const Main2 = ({
                   {ctaText}
                 </button>
               </div>}
-          </div> : <div className="flex flex-col justify-between h-full py-12 px-6">
+          </div> : <div className="flex flex-col justify-between h-full px-6 py-[40px]">
             <div className="flex-1">
               <div className="h-full flex flex-col justify-between">
                 <div>

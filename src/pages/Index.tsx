@@ -13,12 +13,13 @@ const Index = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  // Show a simple loading state before mounting
+  if (!mounted) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
 
   // On mobile, stack the components vertically
   if (isMobile) {
     return (
-      <main className="min-h-screen">
+      <main className="min-h-screen w-full">
         <Main1 />
         <Main2 
           title="Prompting human potential." 

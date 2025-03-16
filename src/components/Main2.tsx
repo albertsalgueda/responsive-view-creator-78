@@ -63,7 +63,7 @@ const Main2 = ({
                     {title}
                   </h1>
                 </div>
-                <div className="grid grid-cols-3 gap-12 absolute bottom-6 right-0 left-0 max-w-7xl mx-auto px-6">
+                <div className="grid grid-cols-3 gap-12 absolute bottom-28 right-0 left-0 max-w-7xl mx-auto px-6">
                   <div className="col-span-1 col-start-2 flex flex-col justify-end">
                     <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium mb-0">
                       {subtitle}

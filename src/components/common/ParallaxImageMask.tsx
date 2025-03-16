@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 
 interface ParallaxImageMaskProps {
@@ -13,7 +14,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [lastScroll, setLastScroll] = useState({ x: 0, y: 0 });
 
@@ -127,10 +127,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
     };
   }, [isMobile, lastScroll]);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
-
   return (
     <div 
       ref={containerRef}
@@ -151,15 +147,12 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           ref={imageRef}
           src={imageSrc}
           alt={altText}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            imageLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          className="w-full h-full object-cover"
           style={{
-            transitionProperty: "opacity, transform",
-            transitionDuration: "300ms, 200ms",
+            transitionProperty: "transform",
+            transitionDuration: "200ms",
             transitionTimingFunction: "ease-out",
           }}
-          onLoad={handleImageLoad}
         />
       </div>
     </div>

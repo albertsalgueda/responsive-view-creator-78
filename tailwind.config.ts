@@ -27,6 +27,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				'brand-pink': '#FFB6C1',
 				'brand-blue': '#132ABC',
+				'brand-purple': '#2A0C41',
+				'brand-peach': '#FFB889',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

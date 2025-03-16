@@ -31,7 +31,7 @@ const Hero = ({
           // Mobile layout
           <div className="flex flex-col h-screen justify-between py-12">
             <div className="mt-16">
-              <h1 className="text-6xl font-extrabold text-brand-blue italic slide-in-left font-barlow" style={{ lineHeight: 1 }}>
+              <h1 className="text-6xl font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontStyle: 'italic', fontWeight: 800 }}>
                 {title}
               </h1>
               <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow">
@@ -74,7 +74,7 @@ const Hero = ({
               </div>
             </div>
             <div className="pb-12">
-              <h1 className="text-9xl font-extrabold text-brand-blue italic slide-in-left font-barlow" style={{ lineHeight: 1 }}>
+              <h1 className="text-9xl font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontStyle: 'italic', fontWeight: 800 }}>
                 Headline
               </h1>
             </div>

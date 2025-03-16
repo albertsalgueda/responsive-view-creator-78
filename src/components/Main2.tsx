@@ -27,14 +27,14 @@ const Main2 = ({
       // Mobile layout
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[4rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
+              <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
             lineHeight: 1,
             fontWeight: 800,
             fontStyle: 'italic'
           }}>
                 {title}
               </h1>
-              <p className="text-[#FFB889] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
+              <p className="text-[#FFB889] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl">
                 {subtitle}
               </p>
               <p className="text-[#FFB889] mt-8 text-lg fade-in-delay-2 max-w-[90%] font-barlow">
@@ -51,7 +51,7 @@ const Main2 = ({
       <div className="flex flex-col justify-between h-full py-12 px-6">
             <div className="flex-1 grid grid-cols-2 gap-20">
               <div className="col-span-1 flex flex-col justify-center">
-                <h1 className="text-[4rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
+                <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
               lineHeight: 1,
               fontWeight: 800,
               fontStyle: 'italic'

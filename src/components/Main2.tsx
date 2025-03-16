@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 interface Main2Props {
@@ -26,7 +27,7 @@ const Main2 = ({
       // Mobile layout
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
+              <h1 className="text-[4rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
             lineHeight: 1,
             fontWeight: 800,
             fontStyle: 'italic'
@@ -50,7 +51,7 @@ const Main2 = ({
       <div className="flex flex-col justify-between h-full py-12 px-6">
             <div className="flex-1 grid grid-cols-2 gap-20">
               <div className="col-span-1 flex flex-col justify-center">
-                <h1 className="text-[6rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
+                <h1 className="text-[4rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
               lineHeight: 1,
               fontWeight: 800,
               fontStyle: 'italic'

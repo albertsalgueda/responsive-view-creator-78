@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -36,7 +37,7 @@ const Services2 = ({
               </h1>
               <p className="text-[#97ECCF] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl" dangerouslySetInnerHTML={{ __html: subtitle }}>
               </p>
-              <p className="text-[#97ECCF] mt-8 fade-in-delay-2 max-w-[90%] font-barlow font-medium text-xl" dangerouslySetInnerHTML={{ __html: description }}>
+              <p className="text-[#97ECCF] mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" dangerouslySetInnerHTML={{ __html: description }}>
               </p>
             </div>
           </div> : 

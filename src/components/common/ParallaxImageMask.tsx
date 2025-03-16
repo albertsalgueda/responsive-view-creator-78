@@ -10,7 +10,7 @@ interface ParallaxImageMaskProps {
 const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   imageSrc,
   altText = "Parallax image",
-  maskWidth = 320, // Changed default from 480 to 320
+  maskWidth = 320,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -36,37 +36,44 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
-        // Get the horizontal scroll position of the window
-        const scrollX = window.scrollX || window.pageXOffset;
+        // For ScrollArea and horizontal scroll containers
+        const scrollArea = containerRef.current.closest('.overflow-x-auto');
         
-        // Calculate the position of the container relative to the viewport
-        const rect = containerRef.current.getBoundingClientRect();
-        
-        // Calculate the parallax offset based on the container's position
-        // Adjust the multiplier to control the parallax intensity
-        const parallaxOffset = (rect.left - scrollX) * 0.1;
-        
-        setScrollPosition(parallaxOffset);
+        if (scrollArea) {
+          const rect = containerRef.current.getBoundingClientRect();
+          const scrollAreaRect = scrollArea.getBoundingClientRect();
+          
+          // Calculate relative position within scroll area
+          const relativePosition = rect.left - scrollAreaRect.left;
+          
+          // Apply stronger parallax effect (0.2 multiplier)
+          const parallaxOffset = relativePosition * 0.2;
+          
+          setScrollPosition(parallaxOffset);
+          
+          // Debug
+          console.log("Scroll position:", parallaxOffset);
+        }
       }
     };
 
-    // Add scroll event listener to window
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    
-    // For horizontal scrolling within ScrollArea
+    // Only attach to ScrollArea for horizontal scrolling
     const scrollableParent = containerRef.current?.closest('.overflow-x-auto');
     if (scrollableParent) {
       scrollableParent.addEventListener("scroll", handleScroll, { passive: true });
+      
+      // Initial calculation
+      handleScroll();
+      
+      // Calculate on resize too
+      window.addEventListener("resize", handleScroll, { passive: true });
     }
     
-    // Initial calculation
-    handleScroll();
-    
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       if (scrollableParent) {
         scrollableParent.removeEventListener("scroll", handleScroll);
       }
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -90,7 +97,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           width: "150%", // Increase width to prevent cropping during parallax
           height: "100%",
           left: "-25%", // Center the wider image
-          transition: "transform 0.1s ease-out", // Smoother parallax movement
+          transition: "none", // Remove transition for more responsive parallax
         }}
       >
         <img

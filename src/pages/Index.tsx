@@ -1,7 +1,7 @@
 
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 
@@ -30,27 +30,23 @@ const Index = () => {
     );
   }
 
-  // On desktop, place them side by side with horizontal scrolling using ScrollArea
+  // On desktop, use Carousel for horizontal scrolling with better trackpad support
   return (
-    <ScrollArea 
-      orientation="horizontal" 
-      className="h-screen w-screen overflow-hidden"
-      style={{ scrollBehavior: 'smooth' }}
-    >
-      <div className="flex flex-row h-screen" style={{ width: "200vw" }}>
-        <div className="w-screen h-full flex-shrink-0">
+    <Carousel className="h-screen w-screen overflow-hidden">
+      <CarouselContent className="h-screen">
+        <CarouselItem className="h-screen">
           <Main1 />
-        </div>
-        <div className="w-screen h-full flex-shrink-0">
+        </CarouselItem>
+        <CarouselItem className="h-screen">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
             description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
             ctaText=""
           />
-        </div>
-      </div>
-    </ScrollArea>
+        </CarouselItem>
+      </CarouselContent>
+    </Carousel>
   );
 };
 

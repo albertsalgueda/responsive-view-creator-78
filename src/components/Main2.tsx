@@ -36,7 +36,7 @@ const Main2 = ({
               <p className="text-[#FFB889] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl">
                 {subtitle}
               </p>
-              <p className="text-[#FFB889] mt-8 text-lg fade-in-delay-2 max-w-[90%] font-barlow">
+              <p className="text-[#FFB889] mt-8 text-lg fade-in-delay-2 max-w-[90%] font-barlow font-medium">
                 {description}
               </p>
             </div>

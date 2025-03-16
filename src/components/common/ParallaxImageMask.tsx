@@ -41,9 +41,22 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
         return;
       }
 
-      // Get scroll position
-      const scrollX = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
-      const scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      // Get scroll position - use different values based on device type
+      let scrollX = 0;
+      let scrollY = 0;
+      
+      if (isMobile) {
+        // For mobile, only track vertical scroll
+        scrollY = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      } else {
+        // For desktop, primarily track horizontal scroll
+        const horizontalContainer = document.querySelector('.overflow-x-auto');
+        if (horizontalContainer) {
+          scrollX = horizontalContainer.scrollLeft;
+        } else {
+          scrollX = window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+        }
+      }
       
       // Only update if scroll position changed
       if (scrollX !== lastScroll.x || scrollY !== lastScroll.y) {
@@ -114,7 +127,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       observer.observe(containerRef.current);
     }
     
-    // Run updateParallax initially
+    // Run updateParallax initially after a short delay to ensure DOM is ready
     setTimeout(updateParallax, 100);
     
     return () => {

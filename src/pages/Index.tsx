@@ -36,9 +36,12 @@ const Index = () => {
     );
   }
 
-  // On desktop, use a horizontal scrolling container
+  // On desktop, use a horizontal scrolling container with explicit overflow-x-auto class
   return (
-    <ScrollArea orientation="horizontal" className="h-screen w-screen overflow-x-auto scrollbar-hide">
+    <ScrollArea 
+      orientation="horizontal" 
+      className="h-screen w-screen overflow-x-auto scrollbar-hide"
+    >
       <div className="flex h-screen">
         <div className="h-screen w-screen flex-shrink-0">
           <Main1 />

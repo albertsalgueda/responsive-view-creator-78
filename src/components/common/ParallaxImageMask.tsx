@@ -36,21 +36,40 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
-        const parent = containerRef.current.closest('.overflow-x-auto');
-        if (parent) {
+        // Look specifically for ScrollArea element which has the overflow-x-auto class
+        const scrollAreaElement = document.querySelector('.overflow-x-auto');
+        
+        if (scrollAreaElement) {
           const rect = containerRef.current.getBoundingClientRect();
-          const parentRect = parent.getBoundingClientRect();
-          const relativePosition = rect.left - parentRect.left;
-          // Even gentler parallax effect to minimize cropping issues
-          setScrollPosition(relativePosition * 0.05);
+          const scrollElementRect = scrollAreaElement.getBoundingClientRect();
+          
+          // Calculate relative position (distance from left edge of scroll container)
+          const relativePosition = rect.left - scrollElementRect.left;
+          
+          // Adjust parallax intensity - smaller number = gentler effect
+          const parallaxIntensity = 0.1;
+          setScrollPosition(relativePosition * parallaxIntensity);
+          
+          // Debug info
+          console.log('Scroll detected, new position:', relativePosition * parallaxIntensity);
         }
       }
     };
 
-    const scrollableParent = containerRef.current?.closest('.overflow-x-auto');
+    // Get reference to the scroll container
+    const scrollableParent = document.querySelector('.overflow-x-auto');
+    
     if (scrollableParent) {
+      // Add the scroll event listener to the correct element
       scrollableParent.addEventListener("scroll", handleScroll, { passive: true });
-      handleScroll(); // Initial position calculation
+      
+      // Initial position calculation
+      handleScroll();
+      
+      // Debug info
+      console.log('Scroll listener attached to:', scrollableParent);
+    } else {
+      console.log('Could not find scroll container with .overflow-x-auto class');
     }
     
     return () => {
@@ -80,6 +99,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           width: "150%", // Increase width to prevent cropping during parallax
           height: "100%",
           left: "-25%", // Center the wider image
+          transition: "transform 0.1s ease-out" // Add smooth transition for parallax
         }}
       >
         <img

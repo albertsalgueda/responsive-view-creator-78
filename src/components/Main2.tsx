@@ -22,17 +22,16 @@ const Main2 = ({
 
   useEffect(() => {
     setMounted(true);
-    // No longer disable scrolling in the component
   }, [isMobile]);
 
   if (!mounted) return null;
 
   return (
-    <section className={`w-full bg-[#2A0C41] relative px-6 py-8 overflow-hidden font-barlow mb-10 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+    <section className={`w-full bg-[#2A0C41] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? (
           // Mobile layout
-          <div className="flex flex-col min-h-screen justify-between py-12">
+          <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
               <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
@@ -57,7 +56,7 @@ const Main2 = ({
           </div>
         ) : (
           // Desktop layout - full screen with no scrolling
-          <div className="flex flex-col justify-between h-full py-12">
+          <div className="flex flex-col justify-between h-full py-12 px-6">
             <div className="flex-1 grid grid-cols-2 gap-20">
               <div className="col-span-1 flex flex-col justify-center">
                 <h1 className="text-[6rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>

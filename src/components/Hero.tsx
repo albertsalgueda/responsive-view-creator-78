@@ -50,7 +50,7 @@ const Hero = ({
                 {subtitle}
               </p>
             </div>
-            <div className="mb-16 fade-in-delay-2">
+            <div className="mb-16 fade-in-delay-2 flex justify-end">
               <button
                 onClick={ctaAction}
                 className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"

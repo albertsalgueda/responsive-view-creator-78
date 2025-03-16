@@ -68,6 +68,7 @@ export default {
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
+				barlow: ['Barlow', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

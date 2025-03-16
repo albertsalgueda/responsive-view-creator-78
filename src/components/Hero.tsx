@@ -25,7 +25,7 @@ const Hero = ({
   if (!mounted) return null;
 
   return (
-    <section className="min-h-screen w-full bg-brand-pink flex items-center justify-center relative px-6 py-8 overflow-hidden">
+    <section className="min-h-screen w-full bg-brand-pink flex items-center justify-center relative px-6 py-8 overflow-hidden font-barlow">
       <div className="max-w-7xl w-full mx-auto">
         {isMobile ? (
           // Mobile layout

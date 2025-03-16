@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 interface Main2Props {
   title?: string;
   subtitle?: string;
@@ -7,6 +9,7 @@ interface Main2Props {
   ctaText?: string;
   ctaAction?: () => void;
 }
+
 const Main2 = ({
   title = "Prompting human potential.",
   subtitle = "What if AI wasn't designed to be prompted? What if it was designed to prompt us?",
@@ -16,10 +19,13 @@ const Main2 = ({
 }: Main2Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
+  
   if (!mounted) return null;
+  
   return <section className={`w-full bg-[#2A0C41] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
@@ -48,26 +54,32 @@ const Main2 = ({
           </div> :
       // Desktop layout - full screen with no scrolling
       <div className="flex flex-col justify-between h-full py-12 px-6">
-            <div className="flex-1 grid grid-cols-2 gap-20">
-              <div className="col-span-1 flex flex-col justify-center">
-                <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow" style={{
-              lineHeight: 1,
-              fontWeight: 800,
-              fontStyle: 'italic'
-            }}>
-                  {title}
-                </h1>
-              </div>
-              <div className="col-span-1 flex flex-col justify-center gap-20">
-                <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
-                  {subtitle}
-                </p>
-                <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
-                  {description}
-                </p>
+            <div className="flex-1">
+              <div className="h-full flex flex-col justify-between">
+                <div>
+                  <h1 className="text-[4.5rem] font-extrabold text-[#FFB889] slide-in-left font-barlow mt-10" style={{
+                    lineHeight: 1,
+                    fontWeight: 800,
+                    fontStyle: 'italic'
+                  }}>
+                    {title}
+                  </h1>
+                </div>
+                <div className="grid grid-cols-2 gap-12 mb-20">
+                  <div className="col-span-1">
+                    <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
+                      {subtitle}
+                    </p>
+                  </div>
+                  <div className="col-span-1">
+                    <p className="text-[#FFB889] text-xl slide-in-right font-barlow font-medium">
+                      {description}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            {ctaText && <div className="fade-in mt-4 flex justify-end">
+            {ctaText && <div className="fade-in mt-4 flex justify-end mb-6">
                 <button onClick={ctaAction} className="bg-[#FFB889] text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
                   {ctaText}
                 </button>
@@ -76,4 +88,5 @@ const Main2 = ({
       </div>
     </section>;
 };
+
 export default Main2;

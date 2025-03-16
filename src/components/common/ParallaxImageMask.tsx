@@ -16,7 +16,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   const imageRef = useRef<HTMLImageElement>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [lastScrollX, setLastScrollX] = useState(0);
+  const [lastScroll, setLastScroll] = useState({ x: 0, y: 0 });
 
   // Check if mobile on mount and when window resizes
   useEffect(() => {
@@ -35,36 +35,41 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   }, []);
 
   useEffect(() => {
-    if (isMobile) return; // Don't apply parallax on mobile
-    
     // Function to update parallax effect
     const updateParallax = () => {
-      const scrollContainer = document.querySelector('.overflow-x-auto');
-      
-      if (!containerRef.current || !imageRef.current || !scrollContainer) {
+      if (!containerRef.current || !imageRef.current) {
         return;
       }
-      
-      // Get scroll position from the container
-      const scrollX = scrollContainer.scrollLeft;
+
+      // Get scroll position
+      const scrollX = isMobile ? 0 : window.scrollX || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+      const scrollY = isMobile ? window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0 : 0;
       
       // Only update if scroll position changed
-      if (scrollX !== lastScrollX) {
-        setLastScrollX(scrollX);
+      if (scrollX !== lastScroll.x || scrollY !== lastScroll.y) {
+        setLastScroll({ x: scrollX, y: scrollY });
         
         const containerRect = containerRef.current.getBoundingClientRect();
         const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
         
-        // Calculate relative position in the viewport (0 to 1)
-        const relativePositionInViewport = containerRect.left / viewportWidth;
+        // Calculate relative position in the viewport
+        let parallaxOffset;
         
-        // Apply parallax offset based on position 
-        // Adjust the multiplier to control the effect intensity
-        const parallaxAmount = 100; // pixels to move
-        const parallaxOffset = relativePositionInViewport * parallaxAmount;
+        if (isMobile) {
+          // Vertical parallax for mobile
+          const relativePositionY = containerRect.top / viewportHeight;
+          const parallaxAmountY = 50; // pixels to move vertically on mobile
+          parallaxOffset = `translateY(${relativePositionY * parallaxAmountY}px)`;
+        } else {
+          // Horizontal parallax for desktop
+          const relativePositionX = containerRect.left / viewportWidth;
+          const parallaxAmountX = 100; // pixels to move horizontally on desktop
+          parallaxOffset = `translateX(${relativePositionX * parallaxAmountX}px)`;
+        }
         
         // Apply the transform directly to the image element
-        imageRef.current.style.transform = `translateX(${parallaxOffset}px)`;
+        imageRef.current.style.transform = parallaxOffset;
       }
     };
     
@@ -73,21 +78,31 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       (entries) => {
         if (entries[0].isIntersecting) {
           // Start listening for scroll events when visible
-          const scrollContainer = document.querySelector('.overflow-x-auto');
-          if (scrollContainer) {
-            scrollContainer.addEventListener('scroll', updateParallax, { passive: true });
-            window.addEventListener('resize', updateParallax, { passive: true });
-            
-            // Initial update
-            updateParallax();
+          window.addEventListener('scroll', updateParallax, { passive: true });
+          
+          if (!isMobile) {
+            const scrollContainer = document.querySelector('.overflow-x-auto');
+            if (scrollContainer) {
+              scrollContainer.addEventListener('scroll', updateParallax, { passive: true });
+            }
           }
+          
+          window.addEventListener('resize', updateParallax, { passive: true });
+          
+          // Initial update
+          updateParallax();
         } else {
           // Remove listeners when not visible
-          const scrollContainer = document.querySelector('.overflow-x-auto');
-          if (scrollContainer) {
-            scrollContainer.removeEventListener('scroll', updateParallax);
-            window.removeEventListener('resize', updateParallax);
+          window.removeEventListener('scroll', updateParallax);
+          
+          if (!isMobile) {
+            const scrollContainer = document.querySelector('.overflow-x-auto');
+            if (scrollContainer) {
+              scrollContainer.removeEventListener('scroll', updateParallax);
+            }
           }
+          
+          window.removeEventListener('resize', updateParallax);
         }
       },
       { threshold: 0.1 } // Trigger when at least 10% is visible
@@ -105,13 +120,18 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
         observer.unobserve(containerRef.current);
       }
       
-      const scrollContainer = document.querySelector('.overflow-x-auto');
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', updateParallax);
-        window.removeEventListener('resize', updateParallax);
+      window.removeEventListener('scroll', updateParallax);
+      
+      if (!isMobile) {
+        const scrollContainer = document.querySelector('.overflow-x-auto');
+        if (scrollContainer) {
+          scrollContainer.removeEventListener('scroll', updateParallax);
+        }
       }
+      
+      window.removeEventListener('resize', updateParallax);
     };
-  }, [isMobile, lastScrollX]);
+  }, [isMobile, lastScroll]);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -127,10 +147,10 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       }}
     >
       <div
-        className="absolute inset-0 w-[200%] h-[120%]" // Increased width and height
+        className="absolute inset-0 w-[200%] h-[120%]"
         style={{
-          left: "-50%", // Positioned further left
-          top: "-10%", // Moved up slightly to ensure no edges show
+          left: "-50%",
+          top: "-10%",
         }}
       >
         <img

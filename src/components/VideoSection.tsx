@@ -29,7 +29,7 @@ const VideoSection = () => {
   } = useVideoControl(videos);
 
   return (
-    <div id="video" className={isMobile ? "w-full min-h-screen relative bg-brand-blue" : "w-screen h-screen shrink-0 relative bg-brand-blue"}>
+    <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
       <VideoMaskGrid
         videoUrl={currentVideoUrl}
         isMuted={isMuted}

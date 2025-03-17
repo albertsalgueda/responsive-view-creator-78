@@ -15,6 +15,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
+import { useBackgroundTransition } from "@/hooks/useBackgroundTransition";
 
 const SectionObserver = () => {
   useSectionObserver();
@@ -24,6 +25,7 @@ const SectionObserver = () => {
 const Index = () => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
+  const { backgroundColor } = useBackgroundTransition();
 
   useEffect(() => {
     setMounted(true);
@@ -36,7 +38,7 @@ const Index = () => {
     return (
       <ViewProvider>
         <SectionObserver />
-        <main className="min-h-screen">
+        <main className="min-h-screen transition-colors duration-500" style={{ backgroundColor }}>
           <Navigation />
           <div id="video"><VideoSection /></div>
           <div id="main1"><Main1 /></div>
@@ -65,7 +67,10 @@ const Index = () => {
   return (
     <ViewProvider>
       <SectionObserver />
-      <div className="h-screen w-screen overflow-x-auto scrollbar-hide">
+      <div 
+        className="h-screen w-screen overflow-x-auto scrollbar-hide transition-colors duration-500" 
+        style={{ backgroundColor }}
+      >
         <Navigation />
         <div className="flex h-screen">
           <div id="video" className="h-screen w-screen flex-shrink-0">

@@ -9,7 +9,7 @@ export const useSectionObserver = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.6, // Element is considered in view when 60% visible
+      threshold: 0.5, // Element is considered in view when 50% visible
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -29,6 +29,8 @@ export const useSectionObserver = () => {
           } else if (id === 'contact') {
             setCurrentSection('contact');
           }
+          
+          console.log('Current section changed to:', id);
         }
       });
     };

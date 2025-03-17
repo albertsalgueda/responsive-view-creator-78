@@ -35,7 +35,7 @@ const Contact = ({
   );
   
   return (
-    <section className={`w-full bg-[#0A2DD1] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+    <section id="contact" className={`w-full bg-[#0A2DD1] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ? (
           // Mobile layout

@@ -1,10 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from './use-mobile';
+import { useView } from '@/context/ViewContext';
 
 export const useBackgroundTransition = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const isMobile = useIsMobile();
+  const { currentSection } = useView();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -53,6 +55,23 @@ export const useBackgroundTransition = () => {
       setScrollProgress(progress);
     };
     
+    // Set scroll progress based on current section for immediate feedback
+    // This helps especially when page loads directly to a section
+    switch (currentSection) {
+      case 'video':
+        setScrollProgress(0);
+        break;
+      case 'main1':
+      case 'main2':
+      case 'main3':
+      case 'services':
+      case 'contact':
+        setScrollProgress(1);
+        break;
+      default:
+        break;
+    }
+    
     // For desktop horizontal scrolling, we need to listen to the right container
     const scrollContainer = isMobile 
       ? window 
@@ -67,7 +86,7 @@ export const useBackgroundTransition = () => {
     return () => {
       scrollContainer.removeEventListener(scrollEvent, handleScroll);
     };
-  }, [isMobile]); // Add isMobile as dependency
+  }, [isMobile, currentSection]); // Add currentSection as dependency
   
   return scrollProgress;
 };

@@ -1,8 +1,10 @@
 
 import { useState, useEffect } from 'react';
+import { useIsMobile } from './use-mobile';
 
 export const useBackgroundTransition = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -15,21 +17,15 @@ export const useBackgroundTransition = () => {
       const videoRect = videoSection.getBoundingClientRect();
       const main1Rect = main1Section.getBoundingClientRect();
       
-      // Calculate how far we've scrolled between the two sections
-      // When video is fully visible, progress is 0
-      // When main1 is fully visible, progress is 1
-      
       // If we're before video section or after main1 section, return early
       if (main1Rect.right < 0 || videoRect.left > window.innerWidth) {
         return;
       }
       
       // Calculate progress based on video section's position
-      // When video is centered, progress is 0
-      // When main1 is centered, progress is 1
       let progress = 0;
       
-      if (window.innerWidth > 768) { // Desktop (horizontal scroll)
+      if (!isMobile) { // Desktop (horizontal scroll)
         const totalWidth = videoRect.width;
         const scrolled = -videoRect.left;
         progress = Math.max(0, Math.min(1, scrolled / totalWidth));
@@ -42,18 +38,21 @@ export const useBackgroundTransition = () => {
       setScrollProgress(progress);
     };
     
-    window.addEventListener('scroll', handleScroll);
-    // Also listen for horizontal scroll on desktop
-    document.querySelector('.overflow-x-auto')?.addEventListener('scroll', handleScroll);
+    // For desktop horizontal scrolling, we need to listen to the right container
+    const scrollContainer = isMobile 
+      ? window 
+      : document.querySelector('.overflow-x-auto') || window;
+    
+    const scrollEvent = 'scroll';
+    scrollContainer.addEventListener(scrollEvent, handleScroll);
     
     // Initial calculation
     handleScroll();
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.querySelector('.overflow-x-auto')?.removeEventListener('scroll', handleScroll);
+      scrollContainer.removeEventListener(scrollEvent, handleScroll);
     };
-  }, []);
+  }, [isMobile]); // Add isMobile as dependency
   
   return scrollProgress;
 };

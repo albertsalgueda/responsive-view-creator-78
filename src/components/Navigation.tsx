@@ -47,7 +47,7 @@ const Navigation = ({
         <Button 
           variant="ghost" 
           size="icon" 
-          className="p-2 mix-blend-difference"
+          className="p-2"
         >
           <Menu size={32} className="text-[#FDB0C2]" />
         </Button>
@@ -82,7 +82,7 @@ const Navigation = ({
   
   return (
     <nav className="fixed top-0 left-0 w-full h-[80px] bg-transparent backdrop-blur-sm z-50 flex items-center justify-between px-6">
-      <a href="/" className="h-full flex items-center mix-blend-difference">
+      <a href="/" className="h-full flex items-center">
         <div className="h-[40px] w-[90px]">
           <Logo />
         </div>
@@ -91,7 +91,7 @@ const Navigation = ({
       {isMobile ? (
         <MobileMenu />
       ) : (
-        <div className="flex items-center gap-8 mix-blend-difference">
+        <div className="flex items-center gap-8">
           {links.map((link, index) => (
             <a 
               key={index} 

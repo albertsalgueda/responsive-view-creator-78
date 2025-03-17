@@ -35,10 +35,10 @@ const Services1 = ({
               }}>
                 {title}
               </h1>
-              <p className="text-[#97ECCF] mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl" dangerouslySetInnerHTML={{ __html: subtitle }}>
-              </p>
-              <p className="text-[#97ECCF] mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" dangerouslySetInnerHTML={{ __html: description }}>
-              </p>
+              <div className="text-[#97ECCF] mt-6 fade-in-delay-1 font-barlow font-medium text-xl">
+                <p className="mb-4" dangerouslySetInnerHTML={{ __html: subtitle }}></p>
+                <p dangerouslySetInnerHTML={{ __html: description }}></p>
+              </div>
             </div>
           </div> : 
           <div className="flex flex-col justify-between h-full px-6 py-[40px]">
@@ -56,14 +56,10 @@ const Services1 = ({
                     {title}
                   </h1>
                 </div>
-                <div className="grid grid-cols-3 gap-12">
-                  <div className="col-span-1 col-start-2 flex flex-col justify-end">
-                    <p className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0" dangerouslySetInnerHTML={{ __html: subtitle }}>
-                    </p>
-                  </div>
-                  <div className="col-span-1 col-start-3 flex flex-col justify-end">
-                    <p className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0" dangerouslySetInnerHTML={{ __html: description }}>
-                    </p>
+                <div className="flex flex-col justify-end">
+                  <div className="text-[#97ECCF] text-xl slide-in-right font-barlow font-medium mb-0">
+                    <p className="mb-4" dangerouslySetInnerHTML={{ __html: subtitle }}></p>
+                    <p dangerouslySetInnerHTML={{ __html: description }}></p>
                   </div>
                 </div>
               </div>

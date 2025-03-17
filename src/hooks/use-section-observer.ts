@@ -11,7 +11,7 @@ export const useSectionObserver = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: isMobile ? 0.3 : 0.5, // Lower threshold for mobile
+      threshold: isMobile ? 0.2 : 0.5, // Lower threshold for mobile for smoother transitions
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -60,5 +60,5 @@ export const useSectionObserver = () => {
         if (section) observer.unobserve(section);
       });
     };
-  }, [setCurrentSection, isMobile]);
+  }, [setCurrentSection, isMobile]); // Add isMobile as dependency
 };

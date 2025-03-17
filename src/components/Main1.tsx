@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 interface Main1Props {
@@ -19,7 +18,7 @@ const Main1 = ({
     setMounted(true);
   }, [isMobile]);
   if (!mounted) return null;
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section className={`w-full bg-brand-pink relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
       // Mobile layout

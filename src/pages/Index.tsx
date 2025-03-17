@@ -15,7 +15,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
-import { useBackgroundTransition } from "@/hooks/useBackgroundTransition";
+import { useBackgroundTransition } from "@/hooks/use-background-transition";
 
 const SectionObserver = () => {
   useSectionObserver();
@@ -25,7 +25,21 @@ const SectionObserver = () => {
 const Index = () => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
-  const { backgroundColor } = useBackgroundTransition();
+  const scrollProgress = useBackgroundTransition();
+  
+  // Calculate the background color based on scroll progress
+  const getBgColor = () => {
+    // Interpolate between brand-blue (#132ABC) and brand-pink (#FDB0C2)
+    const r = Math.round(19 + (253 - 19) * scrollProgress);
+    const g = Math.round(42 + (176 - 42) * scrollProgress);
+    const b = Math.round(188 + (194 - 188) * scrollProgress);
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+  
+  const bgStyle = {
+    background: getBgColor(),
+    transition: 'background 0.1s ease-out',
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -38,7 +52,7 @@ const Index = () => {
     return (
       <ViewProvider>
         <SectionObserver />
-        <main className="min-h-screen transition-colors duration-500" style={{ backgroundColor }}>
+        <main className="min-h-screen" style={bgStyle}>
           <Navigation />
           <div id="video"><VideoSection /></div>
           <div id="main1"><Main1 /></div>
@@ -67,10 +81,7 @@ const Index = () => {
   return (
     <ViewProvider>
       <SectionObserver />
-      <div 
-        className="h-screen w-screen overflow-x-auto scrollbar-hide transition-colors duration-500" 
-        style={{ backgroundColor }}
-      >
+      <div className="h-screen w-screen overflow-x-auto scrollbar-hide" style={bgStyle}>
         <Navigation />
         <div className="flex h-screen">
           <div id="video" className="h-screen w-screen flex-shrink-0">

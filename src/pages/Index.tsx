@@ -12,6 +12,13 @@ import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
+import { ViewProvider } from "@/context/ViewContext";
+import { useSectionObserver } from "@/hooks/use-section-observer";
+
+const SectionObserver = () => {
+  useSectionObserver();
+  return null;
+};
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -26,63 +33,71 @@ const Index = () => {
   // On mobile, stack the components vertically
   if (isMobile) {
     return (
-      <main className="min-h-screen">
-        <Navigation />
-        <Main1 />
-        <Main2 
-          title="Prompting human potential." 
-          subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-          description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
-          ctaText=""
-        />
-        <Image1 />
-        <Image2 />
-        <Image3 />
-        <Main3 />
-        <Services1 />
-        <Services2 />
-        <Services3 />
-        <Contact />
-      </main>
+      <ViewProvider>
+        <SectionObserver />
+        <main className="min-h-screen">
+          <Navigation />
+          <div id="main1"><Main1 /></div>
+          <div id="main2">
+            <Main2 
+              title="Prompting human potential." 
+              subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+              description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+              ctaText=""
+            />
+          </div>
+          <Image1 />
+          <Image2 />
+          <Image3 />
+          <div id="main3"><Main3 /></div>
+          <div id="services1"><Services1 /></div>
+          <div id="services2"><Services2 /></div>
+          <div id="services3"><Services3 /></div>
+          <div id="contact"><Contact /></div>
+        </main>
+      </ViewProvider>
     );
   }
 
   // On desktop, use a horizontal scrolling container with explicit overflow-x-auto class
   return (
-    <div className="h-screen w-screen overflow-x-auto scrollbar-hide">
-      <Navigation />
-      <div className="flex h-screen">
-        <div className="h-screen w-screen flex-shrink-0">
-          <Main1 />
-        </div>
-        <div className="h-screen w-screen flex-shrink-0">
-          <Main2 
-            title="Prompting human potential." 
-            subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-            description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
-            ctaText=""
-          />
-        </div>
-        <Image1 />
-        <Image2 />
-        <Image3 />
-        <div className="h-screen w-1/2 flex-shrink-0">
-          <Main3 />
-        </div>
-        <div className="h-screen w-2/3 flex-shrink-0">
-          <Services1 />
-        </div>
-        <div className="h-screen w-2/3 flex-shrink-0">
-          <Services2 />
-        </div>
-        <div className="h-screen w-2/3 flex-shrink-0">
-          <Services3 />
-        </div>
-        <div className="h-screen w-screen flex-shrink-0">
-          <Contact />
+    <ViewProvider>
+      <SectionObserver />
+      <div className="h-screen w-screen overflow-x-auto scrollbar-hide">
+        <Navigation />
+        <div className="flex h-screen">
+          <div id="main1" className="h-screen w-screen flex-shrink-0">
+            <Main1 />
+          </div>
+          <div id="main2" className="h-screen w-screen flex-shrink-0">
+            <Main2 
+              title="Prompting human potential." 
+              subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+              description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+              ctaText=""
+            />
+          </div>
+          <Image1 />
+          <Image2 />
+          <Image3 />
+          <div id="main3" className="h-screen w-1/2 flex-shrink-0">
+            <Main3 />
+          </div>
+          <div id="services1" className="h-screen w-2/3 flex-shrink-0">
+            <Services1 />
+          </div>
+          <div id="services2" className="h-screen w-2/3 flex-shrink-0">
+            <Services2 />
+          </div>
+          <div id="services3" className="h-screen w-2/3 flex-shrink-0">
+            <Services3 />
+          </div>
+          <div id="contact" className="h-screen w-screen flex-shrink-0">
+            <Contact />
+          </div>
         </div>
       </div>
-    </div>
+    </ViewProvider>
   );
 };
 

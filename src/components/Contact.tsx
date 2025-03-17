@@ -64,17 +64,18 @@ const Contact = ({
                 </div>
               </div>
               
-              <div className="mt-8 overflow-hidden">
+              <div className="mt-6 overflow-hidden w-full">
                 <div className="text-[#FFB0C9] text-[9rem] font-bold leading-none" style={{ 
                   marginBottom: "-1.5rem",
-                  maxWidth: "100%"
+                  width: "100%"
                 }}>
                   <span style={{ 
                     display: "inline-block", 
                     fontWeight: 800, 
                     transform: "scale(0.9, 1)",
                     transformOrigin: "left bottom",
-                    maxWidth: "100%"
+                    maxWidth: "100%",
+                    paddingRight: "1rem"
                   }}>10KR</span>
                 </div>
               </div>
@@ -121,12 +122,13 @@ const Contact = ({
                 <a href="https://instagram.com" className="text-[#FFB0C9] font-barlow text-sm hover:underline">INSTAGRAM</a>
               </div>
               
-              <div className="text-[#FFB0C9] text-[16rem] font-bold leading-none" style={{ marginBottom: "-3rem" }}>
+              <div className="text-[#FFB0C9] text-[16rem] font-bold leading-none overflow-hidden" style={{ marginBottom: "-3rem" }}>
                 <span style={{ 
                   display: "inline-block", 
                   fontWeight: 800, 
                   transform: "scale(0.9, 1)",
-                  transformOrigin: "right bottom"
+                  transformOrigin: "right bottom",
+                  paddingLeft: "1rem"
                 }}>10KR</span>
               </div>
             </div>

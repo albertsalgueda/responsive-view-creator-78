@@ -10,6 +10,7 @@ import Contact from "@/components/Contact";
 import Image1 from "@/components/Image1";
 import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
+import VideoSection from "@/components/VideoSection";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
 import { ViewProvider } from "@/context/ViewContext";
@@ -37,6 +38,7 @@ const Index = () => {
         <SectionObserver />
         <main className="min-h-screen">
           <Navigation />
+          <div id="video"><VideoSection /></div>
           <div id="main1"><Main1 /></div>
           <div id="main2">
             <Main2 
@@ -66,6 +68,9 @@ const Index = () => {
       <div className="h-screen w-screen overflow-x-auto scrollbar-hide">
         <Navigation />
         <div className="flex h-screen">
+          <div id="video" className="h-screen w-screen flex-shrink-0">
+            <VideoSection />
+          </div>
           <div id="main1" className="h-screen w-screen flex-shrink-0">
             <Main1 />
           </div>

@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Section = 'main1' | 'main2' | 'main3' | 'services' | 'contact';
+type Section = 'video' | 'main1' | 'main2' | 'main3' | 'services' | 'contact';
 
 interface ViewContextType {
   currentSection: Section;
@@ -11,7 +11,7 @@ interface ViewContextType {
 const ViewContext = createContext<ViewContextType | undefined>(undefined);
 
 export const ViewProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentSection, setCurrentSection] = useState<Section>('main1');
+  const [currentSection, setCurrentSection] = useState<Section>('video');
 
   return (
     <ViewContext.Provider value={{ currentSection, setCurrentSection }}>

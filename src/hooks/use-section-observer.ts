@@ -16,7 +16,9 @@ export const useSectionObserver = () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
-          if (id === 'main1') {
+          if (id === 'video') {
+            setCurrentSection('video');
+          } else if (id === 'main1') {
             setCurrentSection('main1');
           } else if (id === 'main2') {
             setCurrentSection('main2');
@@ -35,6 +37,7 @@ export const useSectionObserver = () => {
 
     // Observe all sections
     const sections = [
+      document.getElementById('video'),
       document.getElementById('main1'),
       document.getElementById('main2'),
       document.getElementById('main3'),

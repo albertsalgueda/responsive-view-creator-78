@@ -30,6 +30,8 @@ const Navigation = ({
   // Define colors based on currentSection
   const getNavColor = () => {
     switch (currentSection) {
+      case 'video':
+        return '#FFFFFF'; // White
       case 'main1':
         return '#132ABC'; // Blue
       case 'main2':

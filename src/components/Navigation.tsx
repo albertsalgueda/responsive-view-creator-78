@@ -31,7 +31,7 @@ const Navigation = ({
   const getNavColor = () => {
     switch (currentSection) {
       case 'video':
-        return '#FFFFFF'; // White
+        return '#FDB0C2'; // Pink for video section
       case 'main1':
         return '#132ABC'; // Blue
       case 'main2':

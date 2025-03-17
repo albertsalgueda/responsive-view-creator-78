@@ -57,13 +57,14 @@ const Services2 = ({
                   </h1>
                 </div>
                 <div className="flex flex-col justify-end">
-                  <div className="grid grid-cols-2 gap-8 text-[#97ECCF] text-xl font-barlow font-medium mb-0">
+                  <div className="grid grid-cols-3 gap-8 text-[#97ECCF] text-xl font-barlow font-medium mb-0">
                     <div className="slide-in-right">
                       <p dangerouslySetInnerHTML={{ __html: subtitle }}></p>
                     </div>
                     <div className="slide-in-right" style={{ animationDelay: '0.1s' }}>
                       <p dangerouslySetInnerHTML={{ __html: description }}></p>
                     </div>
+                    <div></div>
                   </div>
                 </div>
               </div>

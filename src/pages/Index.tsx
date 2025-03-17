@@ -40,6 +40,7 @@ const Index = () => {
           <Navigation />
           <div id="video"><VideoSection /></div>
           <div id="main1"><Main1 /></div>
+          <Image1 />
           <div id="main2">
             <Main2 
               title="Prompting human potential." 
@@ -48,13 +49,12 @@ const Index = () => {
               ctaText=""
             />
           </div>
-          <Image1 />
           <Image2 />
-          <Image3 />
           <div id="main3"><Main3 /></div>
           <div id="services1"><Services1 /></div>
           <div id="services2"><Services2 /></div>
           <div id="services3"><Services3 /></div>
+          <Image3 />
           <div id="contact"><Contact /></div>
         </main>
       </ViewProvider>
@@ -74,6 +74,7 @@ const Index = () => {
           <div id="main1" className="h-screen w-screen flex-shrink-0">
             <Main1 />
           </div>
+          <Image1 />
           <div id="main2" className="h-screen w-screen flex-shrink-0">
             <Main2 
               title="Prompting human potential." 
@@ -82,9 +83,7 @@ const Index = () => {
               ctaText=""
             />
           </div>
-          <Image1 />
           <Image2 />
-          <Image3 />
           <div id="main3" className="h-screen w-1/2 flex-shrink-0">
             <Main3 />
           </div>
@@ -97,6 +96,7 @@ const Index = () => {
           <div id="services3" className="h-screen w-2/3 flex-shrink-0">
             <Services3 />
           </div>
+          <Image3 />
           <div id="contact" className="h-screen w-screen flex-shrink-0">
             <Contact />
           </div>

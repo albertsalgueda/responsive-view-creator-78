@@ -54,10 +54,10 @@ const Index = () => {
         <SectionObserver />
         <main className="min-h-screen" style={bgStyle}>
           <Navigation />
-          <div id="video" className="min-h-screen"><VideoSection /></div>
-          <div id="main1" className="min-h-screen"><Main1 /></div>
+          <div id="video"><VideoSection /></div>
+          <div id="main1"><Main1 /></div>
           <Image1 />
-          <div id="main2" className="min-h-screen">
+          <div id="main2">
             <Main2 
               title="Prompting human potential." 
               subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
@@ -66,12 +66,12 @@ const Index = () => {
             />
           </div>
           <Image2 />
-          <div id="main3" className="min-h-screen"><Main3 /></div>
-          <div id="services1" className="min-h-screen"><Services1 /></div>
-          <div id="services2" className="min-h-screen"><Services2 /></div>
-          <div id="services3" className="min-h-screen"><Services3 /></div>
+          <div id="main3"><Main3 /></div>
+          <div id="services1"><Services1 /></div>
+          <div id="services2"><Services2 /></div>
+          <div id="services3"><Services3 /></div>
           <Image3 />
-          <div id="contact" className="min-h-screen"><Contact /></div>
+          <div id="contact"><Contact /></div>
         </main>
       </ViewProvider>
     );

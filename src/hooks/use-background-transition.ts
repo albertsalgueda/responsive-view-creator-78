@@ -26,9 +26,11 @@ export const useBackgroundTransition = () => {
       let progress = 0;
       
       if (!isMobile) { // Desktop (horizontal scroll)
-        const totalWidth = videoRect.width;
-        const scrolled = -videoRect.left;
-        progress = Math.max(0, Math.min(1, scrolled / totalWidth));
+        // For horizontal scroll, we use the position relative to viewport width
+        const viewportWidth = window.innerWidth;
+        const videoCenter = videoRect.left + (videoRect.width / 2);
+        const normalizedPosition = 1 - (videoCenter / viewportWidth);
+        progress = Math.max(0, Math.min(1, normalizedPosition));
       } else { // Mobile (vertical scroll)
         const totalHeight = videoRect.height;
         const scrolled = -videoRect.top;

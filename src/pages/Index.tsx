@@ -23,8 +23,8 @@ const SectionObserver = () => {
 };
 
 const Index = () => {
-  const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
   const scrollProgress = useBackgroundTransition();
   
   // Calculate the background color based on scroll progress

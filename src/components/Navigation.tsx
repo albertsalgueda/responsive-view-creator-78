@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -25,31 +26,32 @@ const Navigation = ({
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const { currentSection } = useView();
-
+  
+  // Define colors based on currentSection
   const getNavColor = () => {
     switch (currentSection) {
       case 'video':
-        return '#132ABC';
+        return '#FFFFFF'; // White
       case 'main1':
-        return '#132ABC';
+        return '#132ABC'; // Blue
       case 'main2':
-        return '#FFBD89';
+        return '#FFBD89'; // Coral
       case 'main3':
       case 'services':
-        return '#97ECCF';
+        return '#97ECCF'; // Green Light
       case 'contact':
-        return '#FDB0C2';
+        return '#FDB0C2'; // Pink
       default:
-        return '#132ABC';
+        return '#132ABC'; // Default to Blue
     }
   };
 
   const navColor = getNavColor();
-
+  
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
-
+  
   if (!mounted) return null;
 
   const Logo = () => (
@@ -60,7 +62,8 @@ const Navigation = ({
       <path d="M135.639 152.612H163.806V89.5126H2.18315V124.491L30.9852 152.612H63.759V143.907L43.2868 121.927H135.639V152.612Z" fill={navColor}/>
     </svg>
   );
-
+  
+  // Mobile Drawer View
   const MobileMenu = () => (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
@@ -100,7 +103,7 @@ const Navigation = ({
       </DrawerContent>
     </Drawer>
   );
-
+  
   return (
     <nav className="fixed top-0 left-0 w-full h-[80px] bg-transparent z-50 flex items-center justify-between px-6 transition-colors duration-500">
       <a href="/" className="h-full flex items-center">
@@ -108,7 +111,7 @@ const Navigation = ({
           <Logo />
         </div>
       </a>
-
+      
       {isMobile ? (
         <MobileMenu />
       ) : (

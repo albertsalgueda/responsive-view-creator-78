@@ -1,4 +1,5 @@
 
+import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Main3 from "@/components/Main3";
@@ -26,6 +27,7 @@ const Index = () => {
   if (isMobile) {
     return (
       <main className="min-h-screen">
+        <Navigation />
         <Main1 />
         <Main2 
           title="Prompting human potential." 
@@ -48,6 +50,7 @@ const Index = () => {
   // On desktop, use a horizontal scrolling container with explicit overflow-x-auto class
   return (
     <div className="h-screen w-screen overflow-x-auto scrollbar-hide">
+      <Navigation />
       <div className="flex h-screen">
         <div className="h-screen w-screen flex-shrink-0">
           <Main1 />

@@ -54,7 +54,7 @@ const Contact = ({
               <div className="mt-6 fade-in-delay-2">
                 <a href={callToAction}>
                   <Button 
-                    className="bg-[#FFB0C9] text-[#0A2DD1] hover:bg-opacity-90 transition-all font-barlow px-6 py-3 rounded-sm font-medium text-base"
+                    className="bg-[#FFB0C9] text-[#0A2DD1] hover:bg-[#FFB0C9]/80 transition-all font-barlow px-6 py-3 rounded-sm font-medium text-base"
                   >
                     {callToActionText}
                   </Button>
@@ -99,7 +99,7 @@ const Contact = ({
                   <div className="fade-in-delay-1">
                     <a href={callToAction}>
                       <Button 
-                        className="bg-[#FFB0C9] text-[#0A2DD1] hover:bg-opacity-90 transition-all font-barlow px-6 py-3 rounded-sm font-medium text-base"
+                        className="bg-[#FFB0C9] text-[#0A2DD1] hover:bg-[#FFB0C9]/80 transition-all font-barlow px-6 py-3 rounded-sm font-medium text-base"
                       >
                         {callToActionText}
                       </Button>

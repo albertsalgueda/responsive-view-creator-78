@@ -1,12 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from './use-mobile';
-import { useView } from '@/context/ViewContext';
 
 export const useBackgroundTransition = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const isMobile = useIsMobile();
-  const { currentSection } = useView();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -48,8 +46,8 @@ export const useBackgroundTransition = () => {
         }
       } else { // Mobile (vertical scroll)
         const totalHeight = videoRect.height;
-        const scrolled = Math.max(0, -videoRect.top);
-        progress = Math.min(1, scrolled / totalHeight);
+        const scrolled = -videoRect.top;
+        progress = Math.max(0, Math.min(1, scrolled / totalHeight));
       }
       
       setScrollProgress(progress);

@@ -1,17 +1,15 @@
 
 import { useEffect } from 'react';
 import { useView } from '@/context/ViewContext';
-import { useIsMobile } from './use-mobile';
 
 export const useSectionObserver = () => {
   const { setCurrentSection } = useView();
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: isMobile ? 0.2 : 0.5, // Lower threshold for mobile for smoother transitions
+      threshold: 0.5, // Element is considered in view when 50% visible
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -60,5 +58,5 @@ export const useSectionObserver = () => {
         if (section) observer.unobserve(section);
       });
     };
-  }, [setCurrentSection, isMobile]); // Add isMobile as dependency
+  }, [setCurrentSection]);
 };

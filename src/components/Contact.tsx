@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -31,7 +32,7 @@ const Contact = ({
           // Mobile layout
           <div className="flex flex-col min-h-screen justify-between p-6">
             <div className="mt-16">
-              <h2 className="text-[2.5rem] font-medium text-[#FFB0C9] slide-in-left font-barlow" style={{
+              <h2 className="text-xl font-medium text-[#FFB0C9] slide-in-left font-barlow" style={{
                 lineHeight: 1.1,
               }}>
                 {title}
@@ -81,7 +82,7 @@ const Contact = ({
             <div className="flex items-start pt-12 flex-1 py-0 w-full">
               <div className="w-full grid grid-cols-2 gap-12">
                 <div className="col-span-1">
-                  <h2 className="text-[4rem] font-medium text-[#FFB0C9] slide-in-left font-barlow" style={{
+                  <h2 className="text-2xl font-medium text-[#FFB0C9] slide-in-left font-barlow" style={{
                     lineHeight: 1.1,
                   }}>
                     {title}

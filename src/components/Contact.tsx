@@ -64,13 +64,17 @@ const Contact = ({
                 </div>
               </div>
               
-              <div className="mt-8">
-                <div className="text-[#FFB0C9] text-[12rem] font-bold leading-none" style={{ marginBottom: "-3rem" }}>
+              <div className="mt-8 overflow-hidden">
+                <div className="text-[#FFB0C9] text-[9rem] font-bold leading-none" style={{ 
+                  marginBottom: "-1.5rem",
+                  maxWidth: "100%"
+                }}>
                   <span style={{ 
                     display: "inline-block", 
                     fontWeight: 800, 
                     transform: "scale(0.9, 1)",
-                    transformOrigin: "left bottom"
+                    transformOrigin: "left bottom",
+                    maxWidth: "100%"
                   }}>10KR</span>
                 </div>
               </div>

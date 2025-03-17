@@ -9,7 +9,7 @@ export const useSectionObserver = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.3, // Lower threshold for better detection in mobile vertical scroll
+      threshold: 0.5, // Element is considered in view when 50% visible
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {

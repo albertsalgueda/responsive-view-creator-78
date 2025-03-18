@@ -26,31 +26,25 @@ export const useBackgroundTransition = () => {
       let progress = 0;
       
       if (!isMobile) { // Desktop (horizontal scroll)
-        // Calculate where the video section is relative to the viewport
-        // When it's fully visible (left edge at 0), progress should be 0
-        // When it's moving out (right edge at 0), progress should be 1
-        const videoWidth = videoRect.width;
-        
-        // If video is fully on screen (left edge at 0), progress is 0
-        if (videoRect.left >= 0) {
-          progress = 0;
-        } 
-        // If video is partially off screen to the left
-        else if (videoRect.right > 0) {
-          // Calculate how much of the video has scrolled off screen
-          progress = Math.min(1, Math.abs(videoRect.left) / videoWidth);
-        } 
-        // If video is completely off screen
-        else {
+        // When video section starts to move off screen, immediately set progress to 1
+        if (videoRect.left < 0) {
           progress = 1;
+        } else {
+          progress = 0;
         }
       } else { // Mobile (vertical scroll)
-        const totalHeight = videoRect.height;
-        const scrolled = -videoRect.top;
-        progress = Math.max(0, Math.min(1, scrolled / totalHeight));
+        // When video section starts to move off screen (top), immediately set progress to 1
+        if (videoRect.top < 0) {
+          progress = 1;
+        } else {
+          progress = 0;
+        }
       }
       
       setScrollProgress(progress);
+      
+      // Debug logging
+      console.info(`Background transition scrollProgress: ${progress}`);
     };
     
     // For desktop horizontal scrolling, we need to listen to the right container

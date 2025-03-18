@@ -10,7 +10,6 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer";
 import { useView } from '@/context/ViewContext';
-import { useBackgroundTransition } from '@/hooks/use-background-transition';
 
 interface NavigationProps {
   links?: Array<{ text: string; href: string; }>;
@@ -27,22 +26,9 @@ const Navigation = ({
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const { currentSection } = useView();
-  const scrollProgress = useBackgroundTransition();
   
-  // Get the inverse color of the background
+  // Define colors based on currentSection
   const getNavColor = () => {
-    // If we're transitioning, use the inverse of the background color (blue to pink or pink to blue)
-    if (scrollProgress > 0) {
-      // Background is transitioning to pink, so nav elements should transition to blue
-      // Interpolate from pink (#FDB0C2) to blue (#132ABC) as scrollProgress increases
-      const r = Math.round(253 - (253 - 19) * scrollProgress);
-      const g = Math.round(176 - (176 - 42) * scrollProgress);
-      const b = Math.round(194 - (194 - 188) * scrollProgress);
-      
-      return `rgb(${r}, ${g}, ${b})`;
-    }
-    
-    // If not transitioning, use section-based color
     switch (currentSection) {
       case 'video':
         return '#FDB0C2'; // Pink for video section
@@ -64,11 +50,7 @@ const Navigation = ({
   
   useEffect(() => {
     setMounted(true);
-    
-    // Debug logging to check color values
-    console.info(`Navigation color updated to: ${navColor} for section: ${currentSection}`);
-    console.info(`Current scrollProgress: ${scrollProgress}`);
-  }, [navColor, currentSection, scrollProgress]);
+  }, [isMobile]);
   
   if (!mounted) return null;
 
@@ -139,7 +121,7 @@ const Navigation = ({
               key={index} 
               href={link.href} 
               className="font-barlow hover:opacity-80 transition-all"
-              style={{ color: navColor, transition: 'color 0.2s ease-out' }}
+              style={{ color: navColor }}
             >
               {link.text}
             </a>

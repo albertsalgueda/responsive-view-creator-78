@@ -13,11 +13,6 @@ const ViewContext = createContext<ViewContextType | undefined>(undefined);
 export const ViewProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentSection, setCurrentSection] = useState<Section>('video');
 
-  // Log section changes for debugging
-  useEffect(() => {
-    console.log('Current section in context:', currentSection);
-  }, [currentSection]);
-
   return (
     <ViewContext.Provider value={{ currentSection, setCurrentSection }}>
       {children}

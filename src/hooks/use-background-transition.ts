@@ -1,12 +1,10 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from './use-mobile';
-import { useView } from '@/context/ViewContext';
 
 export const useBackgroundTransition = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const isMobile = useIsMobile();
-  const { currentSection } = useView();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -69,7 +67,7 @@ export const useBackgroundTransition = () => {
     return () => {
       scrollContainer.removeEventListener(scrollEvent, handleScroll);
     };
-  }, [isMobile, currentSection]); // Add currentSection as dependency to trigger recalculation
+  }, [isMobile]); // Add isMobile as dependency
   
   return scrollProgress;
 };

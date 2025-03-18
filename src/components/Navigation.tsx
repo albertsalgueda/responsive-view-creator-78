@@ -37,7 +37,6 @@ const Navigation = ({
       case 'main2':
         return '#FFBD89'; // Coral
       case 'main3':
-        return '#97ECCF'; // Green Light
       case 'services':
         return '#97ECCF'; // Green Light
       case 'contact':
@@ -51,8 +50,7 @@ const Navigation = ({
   
   useEffect(() => {
     setMounted(true);
-    console.log('Navigation color updated to:', navColor, 'for section:', currentSection);
-  }, [currentSection, navColor]);
+  }, [isMobile]);
   
   if (!mounted) return null;
 

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -28,11 +29,19 @@ const Navigation = ({
   const { currentSection } = useView();
   const scrollProgress = useBackgroundTransition();
   
+  // Get the contrasting color for navigation elements
+  // When background is blue (progress = 0), nav elements should be pink
+  // When background is pink (progress = 1), nav elements should be blue
   const getNavColor = () => {
-    const r = Math.round(19 + (253 - 19) * scrollProgress);
-    const g = Math.round(42 + (176 - 42) * scrollProgress);
-    const b = Math.round(188 + (194 - 188) * scrollProgress);
-    return `rgb(${r}, ${g}, ${b})`;
+    // If scrollProgress is closer to 0 (blue background), use pink for nav
+    // If scrollProgress is closer to 1 (pink background), use blue for nav
+    if (scrollProgress < 0.5) {
+      // Background is closer to blue, so nav should be pink
+      return '#FDB0C2'; // Pink
+    } else {
+      // Background is closer to pink, so nav should be blue
+      return '#132ABC'; // Blue
+    }
   };
 
   const navColor = getNavColor();

@@ -10,7 +10,7 @@ export const useBackgroundTransition = () => {
   const isMobile = useIsMobile();
   const { currentSection } = useView();
   
-  // Smoothly animate to target value
+  // Smoothly animate to target value with improved easing
   const animateProgress = (targetValue: number) => {
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
@@ -21,15 +21,18 @@ export const useBackgroundTransition = () => {
       const diff = targetValue - currentProgress;
       
       // If we're very close to the target or have reached it, set the final value
-      if (Math.abs(diff) < 0.01) {
+      if (Math.abs(diff) < 0.001) {
         progressRef.current = targetValue;
         setScrollProgress(targetValue);
         animationRef.current = null;
         return;
       }
       
-      // Smooth easing - move 10% of remaining distance each frame
-      const newProgress = currentProgress + diff * 0.1;
+      // Improved smooth easing - with variable speed based on distance
+      // Smaller movements are slower for finer control
+      const easeAmount = Math.max(0.06, Math.min(0.2, Math.abs(diff) * 0.8));
+      const newProgress = currentProgress + diff * easeAmount;
+      
       progressRef.current = newProgress;
       setScrollProgress(newProgress);
       

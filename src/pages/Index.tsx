@@ -37,7 +37,7 @@ const Index = () => {
   
   const bgStyle = {
     background: getBgColor(),
-    transition: 'background 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)', // Smoother transition with ease curve
+    transition: 'background 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0)', // Smoother curve with longer duration
   };
 
   useEffect(() => {

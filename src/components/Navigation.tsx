@@ -52,7 +52,7 @@ const Navigation = ({
   useEffect(() => {
     setMounted(true);
     console.log('Navigation color updated to:', navColor, 'for section:', currentSection);
-  }, [isMobile, currentSection, navColor]);
+  }, [currentSection, navColor]);
   
   if (!mounted) return null;
 

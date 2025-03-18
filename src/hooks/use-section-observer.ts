@@ -1,15 +1,17 @@
 
 import { useEffect } from 'react';
 import { useView } from '@/context/ViewContext';
+import { useIsMobile } from './use-mobile';
 
 export const useSectionObserver = () => {
   const { setCurrentSection } = useView();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, // Element is considered in view when 50% visible
+      threshold: isMobile ? 0.2 : 0.5, // Lower threshold for mobile for earlier detection
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -37,26 +39,28 @@ export const useSectionObserver = () => {
 
     const observer = new IntersectionObserver(observerCallback, options);
 
-    // Observe all sections
-    const sections = [
-      document.getElementById('video'),
-      document.getElementById('main1'),
-      document.getElementById('main2'),
-      document.getElementById('main3'),
-      document.getElementById('services1'),
-      document.getElementById('services2'),
-      document.getElementById('services3'),
-      document.getElementById('contact')
-    ];
+    // Wait for DOM to be ready
+    setTimeout(() => {
+      // Observe all sections
+      const sections = [
+        document.getElementById('video'),
+        document.getElementById('main1'),
+        document.getElementById('main2'),
+        document.getElementById('main3'),
+        document.getElementById('services1'),
+        document.getElementById('services2'),
+        document.getElementById('services3'),
+        document.getElementById('contact')
+      ];
 
-    sections.forEach(section => {
-      if (section) observer.observe(section);
-    });
+      sections.forEach(section => {
+        if (section) observer.observe(section);
+      });
+    }, 100);
 
     return () => {
-      sections.forEach(section => {
-        if (section) observer.unobserve(section);
-      });
+      // Clean up observer
+      observer.disconnect();
     };
-  }, [setCurrentSection]);
+  }, [setCurrentSection, isMobile]);
 };

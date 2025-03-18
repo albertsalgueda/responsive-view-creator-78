@@ -10,8 +10,13 @@ export const useBackgroundTransition = () => {
   const isMobile = useIsMobile();
   const { currentSection } = useView();
   
-  // Smoothly animate to target value with improved easing
+  // Smoothly animate to target value with immediate transition to pink
   const animateProgress = (targetValue: number) => {
+    // If any scrolling happens, immediately go to pink (progress = 1)
+    if (targetValue > 0) {
+      targetValue = 1;
+    }
+    
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
     }
@@ -28,9 +33,8 @@ export const useBackgroundTransition = () => {
         return;
       }
       
-      // Improved smooth easing - with variable speed based on distance
-      // Smaller movements are slower for finer control
-      const easeAmount = Math.max(0.06, Math.min(0.2, Math.abs(diff) * 0.8));
+      // Very fast transition - move directly to target
+      const easeAmount = 0.5; // Higher value for faster transition
       const newProgress = currentProgress + diff * easeAmount;
       
       progressRef.current = newProgress;
@@ -63,31 +67,22 @@ export const useBackgroundTransition = () => {
       let targetProgress = 0;
       
       if (!isMobile) { // Desktop (horizontal scroll)
-        // Calculate where the video section is relative to the viewport
-        // When it's fully visible (left edge at 0), progress should be 0
-        // When it's moving out (right edge at 0), progress should be 1
-        const videoWidth = videoRect.width;
-        
-        // If video is fully on screen (left edge at 0), progress is 0
-        if (videoRect.left >= 0) {
-          targetProgress = 0;
-        } 
-        // If video is partially off screen to the left
-        else if (videoRect.right > 0) {
-          // Calculate how much of the video has scrolled off screen
-          targetProgress = Math.min(1, Math.abs(videoRect.left) / videoWidth);
-        } 
-        // If video is completely off screen
-        else {
+        // When any scroll happens, immediately set to 1 (pink)
+        if (videoRect.left < 0) {
           targetProgress = 1;
+        } else {
+          targetProgress = 0;
         }
       } else { // Mobile (vertical scroll)
-        const totalHeight = videoRect.height;
-        const scrolled = -videoRect.top;
-        targetProgress = Math.max(0, Math.min(1, scrolled / totalHeight));
+        // When any scroll happens, immediately set to 1 (pink)
+        if (videoRect.top < 0) {
+          targetProgress = 1;
+        } else {
+          targetProgress = 0;
+        }
       }
       
-      // Smoothly animate to the target progress instead of setting directly
+      // Smoothly animate to the target progress
       animateProgress(targetProgress);
     };
     
@@ -109,7 +104,7 @@ export const useBackgroundTransition = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isMobile, currentSection]); // Add currentSection as dependency to trigger recalculation
+  }, [isMobile, currentSection]);
   
   return scrollProgress;
 };

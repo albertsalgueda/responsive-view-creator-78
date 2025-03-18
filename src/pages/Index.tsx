@@ -37,7 +37,7 @@ const Index = () => {
   
   const bgStyle = {
     background: getBgColor(),
-    transition: 'background 0.2s ease-out', // Faster transition with simple easing
+    transition: 'background 0.05s ease-out', // Changed from 0.1s to 0.05s for faster transition
   };
 
   useEffect(() => {

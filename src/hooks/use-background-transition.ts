@@ -1,51 +1,12 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useIsMobile } from './use-mobile';
 import { useView } from '@/context/ViewContext';
 
 export const useBackgroundTransition = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const progressRef = useRef(scrollProgress);
-  const animationRef = useRef<number | null>(null);
   const isMobile = useIsMobile();
   const { currentSection } = useView();
-  
-  // Smoothly animate to target value with immediate transition to pink
-  const animateProgress = (targetValue: number) => {
-    // If any scrolling happens, immediately go to pink (progress = 1)
-    if (targetValue > 0) {
-      targetValue = 1;
-    }
-    
-    if (animationRef.current) {
-      cancelAnimationFrame(animationRef.current);
-    }
-    
-    const animate = () => {
-      const currentProgress = progressRef.current;
-      const diff = targetValue - currentProgress;
-      
-      // If we're very close to the target or have reached it, set the final value
-      if (Math.abs(diff) < 0.001) {
-        progressRef.current = targetValue;
-        setScrollProgress(targetValue);
-        animationRef.current = null;
-        return;
-      }
-      
-      // Very fast transition - move directly to target
-      const easeAmount = 0.5; // Higher value for faster transition
-      const newProgress = currentProgress + diff * easeAmount;
-      
-      progressRef.current = newProgress;
-      setScrollProgress(newProgress);
-      
-      // Continue animation
-      animationRef.current = requestAnimationFrame(animate);
-    };
-    
-    animationRef.current = requestAnimationFrame(animate);
-  };
   
   useEffect(() => {
     const handleScroll = () => {
@@ -64,26 +25,34 @@ export const useBackgroundTransition = () => {
       }
       
       // Calculate progress based on video section's position
-      let targetProgress = 0;
+      let progress = 0;
       
       if (!isMobile) { // Desktop (horizontal scroll)
-        // When any scroll happens, immediately set to 1 (pink)
-        if (videoRect.left < 0) {
-          targetProgress = 1;
-        } else {
-          targetProgress = 0;
+        // Calculate where the video section is relative to the viewport
+        // When it's fully visible (left edge at 0), progress should be 0
+        // When it's moving out (right edge at 0), progress should be 1
+        const videoWidth = videoRect.width;
+        
+        // If video is fully on screen (left edge at 0), progress is 0
+        if (videoRect.left >= 0) {
+          progress = 0;
+        } 
+        // If video is partially off screen to the left
+        else if (videoRect.right > 0) {
+          // Calculate how much of the video has scrolled off screen
+          progress = Math.min(1, Math.abs(videoRect.left) / videoWidth);
+        } 
+        // If video is completely off screen
+        else {
+          progress = 1;
         }
       } else { // Mobile (vertical scroll)
-        // When any scroll happens, immediately set to 1 (pink)
-        if (videoRect.top < 0) {
-          targetProgress = 1;
-        } else {
-          targetProgress = 0;
-        }
+        const totalHeight = videoRect.height;
+        const scrolled = -videoRect.top;
+        progress = Math.max(0, Math.min(1, scrolled / totalHeight));
       }
       
-      // Smoothly animate to the target progress
-      animateProgress(targetProgress);
+      setScrollProgress(progress);
     };
     
     // For desktop horizontal scrolling, we need to listen to the right container
@@ -99,12 +68,8 @@ export const useBackgroundTransition = () => {
     
     return () => {
       scrollContainer.removeEventListener(scrollEvent, handleScroll);
-      // Clean up any ongoing animation
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
     };
-  }, [isMobile, currentSection]);
+  }, [isMobile, currentSection]); // Add currentSection as dependency to trigger recalculation
   
   return scrollProgress;
 };

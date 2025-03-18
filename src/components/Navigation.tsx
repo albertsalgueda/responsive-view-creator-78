@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -10,6 +9,7 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer";
 import { useView } from '@/context/ViewContext';
+import { useBackgroundTransition } from '@/hooks/use-background-transition';
 
 interface NavigationProps {
   links?: Array<{ text: string; href: string; }>;
@@ -26,25 +26,13 @@ const Navigation = ({
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const { currentSection } = useView();
+  const scrollProgress = useBackgroundTransition();
   
-  // Define colors based on currentSection
   const getNavColor = () => {
-    switch (currentSection) {
-      case 'video':
-        return '#FDB0C2'; // Pink for video section
-      case 'main1':
-        return '#132ABC'; // Blue
-      case 'main2':
-        return '#FFBD89'; // Coral
-      case 'main3':
-        return '#97ECCF'; // Green Light
-      case 'services':
-        return '#97ECCF'; // Green Light
-      case 'contact':
-        return '#FDB0C2'; // Pink
-      default:
-        return '#132ABC'; // Default to Blue
-    }
+    const r = Math.round(19 + (253 - 19) * scrollProgress);
+    const g = Math.round(42 + (176 - 42) * scrollProgress);
+    const b = Math.round(188 + (194 - 188) * scrollProgress);
+    return `rgb(${r}, ${g}, ${b})`;
   };
 
   const navColor = getNavColor();
@@ -65,7 +53,6 @@ const Navigation = ({
     </svg>
   );
   
-  // Mobile Drawer View
   const MobileMenu = () => (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>

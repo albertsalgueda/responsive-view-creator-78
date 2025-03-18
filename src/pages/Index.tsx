@@ -43,7 +43,11 @@ const Index = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    
+    // Log the current background color for debugging
+    console.info(`Current bg color: ${getBgColor()}`);
+    console.info(`Current scrollProgress in Index: ${scrollProgress}`);
+  }, [scrollProgress]);
 
   if (!mounted) return null;
 

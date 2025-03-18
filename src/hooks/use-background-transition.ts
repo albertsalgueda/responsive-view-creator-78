@@ -1,12 +1,44 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from './use-mobile';
 import { useView } from '@/context/ViewContext';
 
 export const useBackgroundTransition = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const progressRef = useRef(scrollProgress);
+  const animationRef = useRef<number | null>(null);
   const isMobile = useIsMobile();
   const { currentSection } = useView();
+  
+  // Smoothly animate to target value
+  const animateProgress = (targetValue: number) => {
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+    
+    const animate = () => {
+      const currentProgress = progressRef.current;
+      const diff = targetValue - currentProgress;
+      
+      // If we're very close to the target or have reached it, set the final value
+      if (Math.abs(diff) < 0.01) {
+        progressRef.current = targetValue;
+        setScrollProgress(targetValue);
+        animationRef.current = null;
+        return;
+      }
+      
+      // Smooth easing - move 10% of remaining distance each frame
+      const newProgress = currentProgress + diff * 0.1;
+      progressRef.current = newProgress;
+      setScrollProgress(newProgress);
+      
+      // Continue animation
+      animationRef.current = requestAnimationFrame(animate);
+    };
+    
+    animationRef.current = requestAnimationFrame(animate);
+  };
   
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +57,7 @@ export const useBackgroundTransition = () => {
       }
       
       // Calculate progress based on video section's position
-      let progress = 0;
+      let targetProgress = 0;
       
       if (!isMobile) { // Desktop (horizontal scroll)
         // Calculate where the video section is relative to the viewport
@@ -35,24 +67,25 @@ export const useBackgroundTransition = () => {
         
         // If video is fully on screen (left edge at 0), progress is 0
         if (videoRect.left >= 0) {
-          progress = 0;
+          targetProgress = 0;
         } 
         // If video is partially off screen to the left
         else if (videoRect.right > 0) {
           // Calculate how much of the video has scrolled off screen
-          progress = Math.min(1, Math.abs(videoRect.left) / videoWidth);
+          targetProgress = Math.min(1, Math.abs(videoRect.left) / videoWidth);
         } 
         // If video is completely off screen
         else {
-          progress = 1;
+          targetProgress = 1;
         }
       } else { // Mobile (vertical scroll)
         const totalHeight = videoRect.height;
         const scrolled = -videoRect.top;
-        progress = Math.max(0, Math.min(1, scrolled / totalHeight));
+        targetProgress = Math.max(0, Math.min(1, scrolled / totalHeight));
       }
       
-      setScrollProgress(progress);
+      // Smoothly animate to the target progress instead of setting directly
+      animateProgress(targetProgress);
     };
     
     // For desktop horizontal scrolling, we need to listen to the right container
@@ -68,6 +101,10 @@ export const useBackgroundTransition = () => {
     
     return () => {
       scrollContainer.removeEventListener(scrollEvent, handleScroll);
+      // Clean up any ongoing animation
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
   }, [isMobile, currentSection]); // Add currentSection as dependency to trigger recalculation
   

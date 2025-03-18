@@ -13,7 +13,6 @@ import Image3 from "@/components/Image3";
 import VideoSection from "@/components/VideoSection";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
-import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
 
@@ -50,7 +49,7 @@ const Index = () => {
   // On mobile, stack the components vertically
   if (isMobile) {
     return (
-      <ViewProvider>
+      <>
         <SectionObserver />
         <main className="min-h-screen" style={bgStyle}>
           <Navigation />
@@ -73,13 +72,13 @@ const Index = () => {
           <Image3 />
           <div id="contact"><Contact /></div>
         </main>
-      </ViewProvider>
+      </>
     );
   }
 
   // On desktop, use a horizontal scrolling container with explicit overflow-x-auto class
   return (
-    <ViewProvider>
+    <>
       <SectionObserver />
       <div className="h-screen w-screen overflow-x-auto scrollbar-hide" style={bgStyle}>
         <Navigation />
@@ -118,7 +117,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-    </ViewProvider>
+    </>
   );
 };
 

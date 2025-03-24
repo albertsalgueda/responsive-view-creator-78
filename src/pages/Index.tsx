@@ -17,16 +17,30 @@ import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
 
-const SectionObserver = () => {
-  useSectionObserver();
-  return null;
-};
-
+// The SectionObserver component must be inside the ViewProvider
 const Index = () => {
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
   const scrollProgress = useBackgroundTransition();
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <ViewProvider>
+      {/* SectionObserver is now inside the ViewProvider */}
+      <SectionObserverWithBackground />
+    </ViewProvider>
+  );
+};
+
+// Move the SectionObserver and background logic to a component that's inside the ViewProvider
+const SectionObserverWithBackground = () => {
   const { currentSection } = useSectionObserver();
+  const isMobile = useIsMobile();
   
   // Get background color based on the current section (menu color)
   const getBackgroundColor = () => {
@@ -52,84 +66,72 @@ const Index = () => {
     transition: 'background 0.5s ease-out',
   };
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   // On mobile, stack the components vertically
   if (isMobile) {
     return (
-      <ViewProvider>
-        <SectionObserver />
-        <main className="min-h-screen" style={bgStyle}>
-          <Navigation />
-          <div id="video"><VideoSection /></div>
-          <div id="main1"><Main1 /></div>
-          <Image1 />
-          <div id="main2">
-            <Main2 
-              title="Prompting human potential." 
-              subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-              description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
-              ctaText=""
-            />
-          </div>
-          <Image2 />
-          <div id="main3"><Main3 /></div>
-          <div id="services1"><Services1 /></div>
-          <div id="services2"><Services2 /></div>
-          <div id="services3"><Services3 /></div>
-          <Image3 />
-          <div id="contact"><Contact /></div>
-        </main>
-      </ViewProvider>
+      <main className="min-h-screen" style={bgStyle}>
+        <Navigation />
+        <div id="video"><VideoSection /></div>
+        <div id="main1"><Main1 /></div>
+        <Image1 />
+        <div id="main2">
+          <Main2 
+            title="Prompting human potential." 
+            subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+            description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            ctaText=""
+          />
+        </div>
+        <Image2 />
+        <div id="main3"><Main3 /></div>
+        <div id="services1"><Services1 /></div>
+        <div id="services2"><Services2 /></div>
+        <div id="services3"><Services3 /></div>
+        <Image3 />
+        <div id="contact"><Contact /></div>
+      </main>
     );
   }
 
   // On desktop, use a horizontal scrolling container
   return (
-    <ViewProvider>
-      <SectionObserver />
-      <div className="h-screen w-screen overflow-x-auto scrollbar-hide" style={bgStyle}>
-        <Navigation />
-        <div className="flex h-screen">
-          <div id="video" className="h-screen w-screen flex-shrink-0">
-            <VideoSection />
-          </div>
-          <div id="main1" className="h-screen w-screen flex-shrink-0">
-            <Main1 />
-          </div>
-          <Image1 />
-          <div id="main2" className="h-screen w-screen flex-shrink-0">
-            <Main2 
-              title="Prompting human potential." 
-              subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-              description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
-              ctaText=""
-            />
-          </div>
-          <Image2 />
-          <div id="main3" className="h-screen w-1/2 flex-shrink-0">
-            <Main3 />
-          </div>
-          <div id="services1" className="h-screen w-2/3 flex-shrink-0">
-            <Services1 />
-          </div>
-          <div id="services2" className="h-screen w-2/3 flex-shrink-0">
-            <Services2 />
-          </div>
-          <div id="services3" className="h-screen w-2/3 flex-shrink-0">
-            <Services3 />
-          </div>
-          <Image3 />
-          <div id="contact" className="h-screen w-screen flex-shrink-0">
-            <Contact />
-          </div>
+    <div className="h-screen w-screen overflow-x-auto scrollbar-hide" style={bgStyle}>
+      <Navigation />
+      <div className="flex h-screen">
+        <div id="video" className="h-screen w-screen flex-shrink-0">
+          <VideoSection />
+        </div>
+        <div id="main1" className="h-screen w-screen flex-shrink-0">
+          <Main1 />
+        </div>
+        <Image1 />
+        <div id="main2" className="h-screen w-screen flex-shrink-0">
+          <Main2 
+            title="Prompting human potential." 
+            subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+            description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            ctaText=""
+          />
+        </div>
+        <Image2 />
+        <div id="main3" className="h-screen w-1/2 flex-shrink-0">
+          <Main3 />
+        </div>
+        <div id="services1" className="h-screen w-2/3 flex-shrink-0">
+          <Services1 />
+        </div>
+        <div id="services2" className="h-screen w-2/3 flex-shrink-0">
+          <Services2 />
+        </div>
+        <div id="services3" className="h-screen w-2/3 flex-shrink-0">
+          <Services3 />
+        </div>
+        <Image3 />
+        <div id="contact" className="h-screen w-screen flex-shrink-0">
+          <Contact />
         </div>
       </div>
-    </ViewProvider>
+    </div>
   );
 };
 

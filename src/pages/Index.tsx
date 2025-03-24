@@ -26,19 +26,32 @@ const Index = () => {
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
   const scrollProgress = useBackgroundTransition();
+  const { currentSection } = useSectionObserver();
   
-  // Calculate the background color based on scroll progress
-  const getBgColor = () => {
-    // Interpolate between brand-blue (#132ABC) and brand-pink (#FDB0C2)
-    const r = Math.round(19 + (253 - 19) * scrollProgress);
-    const g = Math.round(42 + (176 - 42) * scrollProgress);
-    const b = Math.round(188 + (194 - 188) * scrollProgress);
-    return `rgb(${r}, ${g}, ${b})`;
+  // Get background color based on the current section (menu color)
+  const getBackgroundColor = () => {
+    switch (currentSection) {
+      case 'video':
+        return '#132ABC'; // Blue when menu is pink
+      case 'main1':
+      case 'contact':
+        return '#FDB0C2'; // Pink when menu is blue
+      case 'main2':
+        return '#2A0C41'; // Purple when menu is yellow/coral
+      case 'main3':
+      case 'services1':
+      case 'services2':
+      case 'services3':
+        return '#1A1F2C'; // Dark green when menu is light green
+      default:
+        return '#132ABC'; // Default to blue
+    }
   };
   
+  // Get background style
   const bgStyle = {
-    background: getBgColor(),
-    transition: 'background 0.1s ease-out',
+    background: getBackgroundColor(),
+    transition: 'background 0.5s ease-out',
   };
 
   useEffect(() => {
@@ -77,7 +90,7 @@ const Index = () => {
     );
   }
 
-  // On desktop, use a horizontal scrolling container with explicit overflow-x-auto class
+  // On desktop, use a horizontal scrolling container
   return (
     <ViewProvider>
       <SectionObserver />

@@ -39,9 +39,7 @@ const Index = () => {
       case 'main2':
         return '#2A0C41'; // Purple when menu is yellow/coral
       case 'main3':
-      case 'services1':
-      case 'services2':
-      case 'services3':
+      case 'services':
         return '#1A1F2C'; // Dark green when menu is light green
       default:
         return '#132ABC'; // Default to blue

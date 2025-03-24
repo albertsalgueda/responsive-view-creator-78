@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -28,12 +27,10 @@ const Main1 = ({
     const main3Element = document.getElementById('main3');
     if (main3Element) {
       if (isMobile) {
-        // For mobile, use standard scroll into view
         main3Element.scrollIntoView({
           behavior: 'smooth'
         });
       } else {
-        // For desktop, get the parent scroll container and scroll horizontally
         const scrollContainer = document.querySelector('.overflow-x-auto');
         if (scrollContainer) {
           const main3Position = main3Element.offsetLeft;
@@ -49,10 +46,9 @@ const Main1 = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
-      // Mobile layout
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[44.5rem] font-extrabold slide-in-left font-barlow" style={{
+              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
             lineHeight: 1,
             fontWeight: 800,
             fontStyle: 'italic',
@@ -78,7 +74,6 @@ const Main1 = ({
               </button>
             </div>
           </div> :
-      // Desktop layout - full screen with no scrolling
       <div className="flex flex-col h-full justify-between px-6 py-[32px]">
             <div className="flex items-start pt-16 flex-1 py-0">
               <div className="grid grid-cols-2 gap-8 w-full">

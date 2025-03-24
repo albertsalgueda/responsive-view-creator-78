@@ -12,27 +12,6 @@ const ParallaxOverlay: React.FC = () => {
   // Only show when main1 is visible - no conditional hiding after
   const isVisible = currentSection === 'main1';
   
-  // Define colors based on currentSection to match Navigation
-  const getTextColor = () => {
-    switch (currentSection) {
-      case 'video':
-        return '#FDB0C2'; // Pink for video section
-      case 'main1':
-        return '#132ABC'; // Blue
-      case 'main2':
-        return '#FFBD89'; // Coral
-      case 'main3':
-      case 'services':
-        return '#97ECCF'; // Green Light
-      case 'contact':
-        return '#FDB0C2'; // Pink
-      default:
-        return '#132ABC'; // Default to Blue
-    }
-  };
-
-  const textColor = getTextColor();
-  
   useEffect(() => {
     setMounted(true);
     
@@ -68,10 +47,12 @@ const ParallaxOverlay: React.FC = () => {
   if (!isVisible) return null;
   
   // Calculate horizontal parallax effect based on scroll position
+  // Changing the signs to make parallax move in the same direction as scroll
   const getParallaxStyle = (factor: number) => {
+    // Removed the negative signs to reverse the direction
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
-      transform: `translateX(${-baseDelta}px)`,
+      transform: `translateX(${-baseDelta}px)`, // Added negative sign here to reverse direction
     };
   };
   
@@ -80,12 +61,8 @@ const ParallaxOverlay: React.FC = () => {
       <div className="relative w-full h-full">
         {/* TEN */}
         <div 
-          style={{
-            ...getParallaxStyle(0.1),
-            color: textColor,
-            transition: 'color 1.2s ease-out', // Match the exact transition time of Navigation
-          }}
-          className={`absolute font-barlow font-extrabold italic tracking-tighter
+          style={getParallaxStyle(0.1)}
+          className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[30%] left-[25%]' : 'text-[24px] top-[35%] left-[30%]'}`}
         >
           TEN
@@ -93,12 +70,8 @@ const ParallaxOverlay: React.FC = () => {
         
         {/* THOUSAND */}
         <div 
-          style={{
-            ...getParallaxStyle(0.16),
-            color: textColor,
-            transition: 'color 1.2s ease-out',
-          }}
-          className={`absolute font-barlow font-extrabold italic tracking-tighter
+          style={getParallaxStyle(0.16)}
+          className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[40%] left-[35%]' : 'text-[24px] top-[45%] left-[40%]'}`}
         >
           THOUSAND
@@ -106,12 +79,8 @@ const ParallaxOverlay: React.FC = () => {
         
         {/* ROBOTS */}
         <div 
-          style={{
-            ...getParallaxStyle(0.24),
-            color: textColor,
-            transition: 'color 1.2s ease-out',
-          }}
-          className={`absolute font-barlow font-extrabold italic tracking-tighter
+          style={getParallaxStyle(0.24)}
+          className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[50%] left-[30%]' : 'text-[24px] top-[55%] left-[35%]'}`}
         >
           ROBOTS

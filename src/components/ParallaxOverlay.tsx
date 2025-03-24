@@ -44,28 +44,35 @@ const ParallaxOverlay: React.FC = () => {
   
   if (!mounted) return null;
   
-  // Removed conditional return - component will always render
-  
   // Calculate horizontal parallax effect based on scroll position
-  // Changed all factor values to 1 as requested
   const getParallaxStyle = (factor: number) => {
-    // Removed the negative signs to reverse the direction
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
-      transform: `translateX(${-baseDelta}px)`, // Added negative sign here to reverse direction
+      transform: `translateX(${-baseDelta}px)`,
       color: textColor,
       transition: transition
     };
   };
   
+  // Position the overlay to be centered within the video section
+  const getOverlayPosition = () => {
+    if (isMobile) {
+      // On mobile, position fixed at top of the page (video is first section)
+      return "fixed inset-0 pointer-events-none z-10 overflow-hidden h-screen";
+    } else {
+      // On desktop, position absolute at the start of the horizontal scroll container
+      return "fixed inset-0 pointer-events-none z-10 overflow-hidden w-screen";
+    }
+  };
+  
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className={getOverlayPosition()}>
       <div className="relative w-full h-full flex items-center justify-center">
         {/* Centered container for all parallax words */}
         <div className="relative flex flex-col items-center justify-center gap-4">
           {/* TEN */}
           <div 
-            style={getParallaxStyle(1)} // Updated to 1
+            style={getParallaxStyle(1)}
             className={`font-barlow font-extrabold italic tracking-tighter
                        ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
           >
@@ -74,7 +81,7 @@ const ParallaxOverlay: React.FC = () => {
           
           {/* THOUSAND */}
           <div 
-            style={getParallaxStyle(1)} // Updated to 1
+            style={getParallaxStyle(1)}
             className={`font-barlow font-extrabold italic tracking-tighter
                        ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
           >
@@ -83,7 +90,7 @@ const ParallaxOverlay: React.FC = () => {
           
           {/* ROBOTS */}
           <div 
-            style={getParallaxStyle(1)} // Updated to 1
+            style={getParallaxStyle(1)}
             className={`font-barlow font-extrabold italic tracking-tighter
                        ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
           >

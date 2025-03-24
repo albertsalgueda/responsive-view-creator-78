@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 interface Main1Props {
   title?: string;
   subtitle?: string;
   ctaText?: string;
   ctaAction?: () => void;
 }
+
 const Main1 = ({
   title = "We are 10kR.",
   subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
@@ -15,10 +17,33 @@ const Main1 = ({
 }: Main1Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
+  
+  const scrollToMain3 = () => {
+    const main3Element = document.getElementById('main3');
+    if (main3Element) {
+      if (isMobile) {
+        // For mobile, use standard scroll into view
+        main3Element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // For desktop, get the parent scroll container and scroll horizontally
+        const scrollContainer = document.querySelector('.overflow-x-auto');
+        if (scrollContainer) {
+          const main3Position = main3Element.offsetLeft;
+          scrollContainer.scrollTo({
+            left: main3Position,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+  };
+  
   if (!mounted) return null;
+  
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
@@ -37,7 +62,7 @@ const Main1 = ({
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
-              <button onClick={ctaAction} className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
+              <button onClick={scrollToMain3} className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
                 {ctaText}
               </button>
             </div>
@@ -59,7 +84,7 @@ const Main1 = ({
             </div>
             <div>
               <div className="fade-in mb-4">
-                <button onClick={ctaAction} className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
+                <button onClick={scrollToMain3} className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
                   {ctaText}
                 </button>
               </div>
@@ -75,4 +100,5 @@ const Main1 = ({
       </div>
     </section>;
 };
+
 export default Main1;

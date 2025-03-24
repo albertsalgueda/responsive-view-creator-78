@@ -23,7 +23,7 @@ const Services2 = ({
   if (!mounted) return null;
   
   return (
-    <section className={`w-full bg-[#105A43] relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+    <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? 
           <div className="flex flex-col min-h-screen justify-between py-12 px-6">

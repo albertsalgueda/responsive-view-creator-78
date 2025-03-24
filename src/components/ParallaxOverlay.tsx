@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -99,6 +100,31 @@ const ParallaxOverlay: React.FC = () => {
                      ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
         >
           IN
+        </div>
+        
+        {/* New elements with their specific positions and speeds */}
+        <div 
+          style={getParallaxStyle(0.9)}
+          className={`absolute font-barlow font-bold tracking-tighter
+                     ${isMobile ? 'text-[18px] top-[20%] left-[50%]' : 'text-[18px] top-[20%] left-[500%]'}`}
+        >
+          OUR
+        </div>
+        
+        <div 
+          style={getParallaxStyle(1.1)}
+          className={`absolute font-barlow font-bold tracking-tighter
+                     ${isMobile ? 'text-[18px] top-[45%] left-[55%]' : 'text-[18px] top-[45%] left-[490%]'}`}
+        >
+          SERVICES
+        </div>
+        
+        <div 
+          style={getParallaxStyle(1.2)}
+          className={`absolute font-barlow font-bold tracking-tighter
+                     ${isMobile ? 'text-[18px] top-[65%] left-[50%]' : 'text-[18px] top-[65%] left-[500%]'}`}
+        >
+          ARE
         </div>
       </div>
     </div>

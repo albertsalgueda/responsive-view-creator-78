@@ -18,7 +18,7 @@ const Main1 = ({
 }: Main1Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
-  const { textColor, transition } = useSectionColors();
+  const { textColor, backgroundColor, transition } = useSectionColors();
   
   useEffect(() => {
     setMounted(true);
@@ -70,9 +70,10 @@ const Main1 = ({
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
               <button onClick={scrollToMain3} 
-                className="text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" 
+                className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" 
                 style={{ 
                   backgroundColor: textColor, 
+                  color: backgroundColor,
                   transition: transition 
                 }}>
                 {ctaText}
@@ -100,9 +101,10 @@ const Main1 = ({
             <div>
               <div className="fade-in mb-4">
                 <button onClick={scrollToMain3} 
-                  className="text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
+                  className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
                   style={{ 
                     backgroundColor: textColor, 
+                    color: backgroundColor,
                     transition: transition 
                   }}>
                   {ctaText}

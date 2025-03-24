@@ -24,11 +24,11 @@ const ParallaxOverlay: React.FC = () => {
       }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     const horizontalContainer = document.querySelector('.overflow-x-auto');
     if (horizontalContainer) {
-      horizontalContainer.addEventListener('scroll', handleScroll);
+      horizontalContainer.addEventListener('scroll', handleScroll, { passive: true });
     }
     
     return () => {

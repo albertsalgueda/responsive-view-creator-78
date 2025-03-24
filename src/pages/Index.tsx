@@ -17,6 +17,7 @@ import { useState, useEffect, useRef } from "react";
 import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
+import { useSectionColors } from "@/hooks/use-section-colors";
 
 // The SectionObserver component must be inside the ViewProvider
 const Index = () => {
@@ -45,6 +46,7 @@ const SectionObserverWithBackground = () => {
   const { currentSection } = useSectionObserver();
   const isMobile = useIsMobile();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { backgroundColor, transition } = useSectionColors();
   
   // Add wheel event handler to convert vertical scroll to horizontal scroll
   useEffect(() => {
@@ -65,29 +67,10 @@ const SectionObserverWithBackground = () => {
     };
   }, [isMobile]);
   
-  // Get background color based on the current section (menu color)
-  const getBackgroundColor = () => {
-    switch (currentSection) {
-      case 'main1':
-        return '#FDB0C2'; // Pink background when menu is blue
-      case 'contact':
-        return '#132ABC'; // Blue background when menu is pink
-      case 'main2':
-        return '#2A0C41'; // Purple when menu is yellow/coral
-      case 'main3':
-      case 'services':
-        return '#105A43'; // Dark green when menu is light green - updated to correct green
-      case 'video':
-        return '#132ABC'; // Blue background when menu is pink
-      default:
-        return '#132ABC'; // Default to blue
-    }
-  };
-  
   // Get background style
   const bgStyle = {
-    background: getBackgroundColor(),
-    transition: 'background 1.2s ease-out', // Increased from 0.5s to 1.2s for slower transition
+    background: backgroundColor,
+    transition: transition, // Using transition from sectionColors
   };
 
   // On mobile, stack the components vertically

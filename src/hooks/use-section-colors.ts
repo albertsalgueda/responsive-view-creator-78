@@ -45,6 +45,6 @@ export const useSectionColors = () => {
   return {
     textColor: getNavColor(),
     backgroundColor: getBackgroundColor(),
-    transition: 'color 1.2s ease-out, background-color 1.2s ease-out'
+    transition: 'color 0.8s ease-out, background-color 0.8s ease-out' // Slightly faster transition for mobile
   };
 };

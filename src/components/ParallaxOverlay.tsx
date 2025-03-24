@@ -60,32 +60,35 @@ const ParallaxOverlay: React.FC = () => {
   
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      <div className="relative w-full h-full">
-        {/* TEN */}
-        <div 
-          style={getParallaxStyle(1)} // Updated to 1
-          className={`absolute font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[24px] top-[30%] left-[25%]' : 'text-[24px] top-[35%] left-[30%]'}`}
-        >
-          TEN
-        </div>
-        
-        {/* THOUSAND */}
-        <div 
-          style={getParallaxStyle(1)} // Updated to 1
-          className={`absolute font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[24px] top-[40%] left-[35%]' : 'text-[24px] top-[45%] left-[40%]'}`}
-        >
-          THOUSAND
-        </div>
-        
-        {/* ROBOTS */}
-        <div 
-          style={getParallaxStyle(1)} // Updated to 1
-          className={`absolute font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[24px] top-[50%] left-[30%]' : 'text-[24px] top-[55%] left-[35%]'}`}
-        >
-          ROBOTS
+      <div className="relative w-full h-full flex items-center justify-center">
+        {/* Centered container for all parallax words */}
+        <div className="relative flex flex-col items-center justify-center gap-4">
+          {/* TEN */}
+          <div 
+            style={getParallaxStyle(1)} // Updated to 1
+            className={`font-barlow font-extrabold italic tracking-tighter
+                       ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
+          >
+            TEN
+          </div>
+          
+          {/* THOUSAND */}
+          <div 
+            style={getParallaxStyle(1)} // Updated to 1
+            className={`font-barlow font-extrabold italic tracking-tighter
+                       ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
+          >
+            THOUSAND
+          </div>
+          
+          {/* ROBOTS */}
+          <div 
+            style={getParallaxStyle(1)} // Updated to 1
+            className={`font-barlow font-extrabold italic tracking-tighter
+                       ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
+          >
+            ROBOTS
+          </div>
         </div>
       </div>
     </div>

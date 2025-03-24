@@ -70,7 +70,7 @@ const ParallaxOverlay: React.FC = () => {
         
         {/* THOUSAND */}
         <div 
-          style={getParallaxStyle(0.08)} {/* Changed from -0.08 to 0.08 to make it move in the same direction */}
+          style={getParallaxStyle(0.08)}
           className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[40%] right-[5%]' : 'text-[24px] top-[40%] right-[10%]'}`}
         >

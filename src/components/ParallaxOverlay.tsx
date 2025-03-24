@@ -9,7 +9,7 @@ const ParallaxOverlay: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   
-  // Only show the overlay when Main1 is in view
+  // Only modify visibility based on section, but don't fade
   const isVisible = currentSection === 'main1';
   
   useEffect(() => {
@@ -43,13 +43,15 @@ const ParallaxOverlay: React.FC = () => {
   
   if (!mounted) return null;
   
-  // Calculate parallax effect based on scroll position
-  const getParallaxStyle = (baseDelay: number) => {
-    const baseDelta = isMobile ? scrollPosition * 0.2 : scrollPosition * 0.1;
+  // If not visible, don't render
+  if (!isVisible) return null;
+  
+  // Calculate horizontal parallax effect based on scroll position
+  const getParallaxStyle = (factor: number) => {
+    const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
-      transform: `translateY(${baseDelta}px)`,
-      transition: 'opacity 1.2s ease-out',
-      opacity: isVisible ? 1 : 0
+      transform: `translateX(${baseDelta}px)`,
+      // No transition for opacity - removed the fade in/out effect
     };
   };
   
@@ -58,27 +60,27 @@ const ParallaxOverlay: React.FC = () => {
       <div className="relative w-full h-full">
         {/* TEN */}
         <div 
-          style={getParallaxStyle(0)}
+          style={getParallaxStyle(-0.05)}
           className={`absolute text-brand-blue opacity-10 font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[10rem] top-[15%] left-[5%]' : 'text-[15rem] top-[15%] left-[10%]'}`}
+                     ${isMobile ? 'text-[24px] top-[15%] left-[5%]' : 'text-[24px] top-[15%] left-[10%]'}`}
         >
           TEN
         </div>
         
         {/* THOUSAND */}
         <div 
-          style={getParallaxStyle(0.1)}
+          style={getParallaxStyle(0.08)}
           className={`absolute text-brand-blue opacity-10 font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[5rem] top-[40%] right-[5%]' : 'text-[10rem] top-[40%] right-[10%]'}`}
+                     ${isMobile ? 'text-[24px] top-[40%] right-[5%]' : 'text-[24px] top-[40%] right-[10%]'}`}
         >
           THOUSAND
         </div>
         
         {/* ROBOTS */}
         <div 
-          style={getParallaxStyle(0.2)}
+          style={getParallaxStyle(-0.12)}
           className={`absolute text-brand-blue opacity-10 font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[7rem] bottom-[15%] left-[5%]' : 'text-[12rem] bottom-[15%] left-[10%]'}`}
+                     ${isMobile ? 'text-[24px] bottom-[15%] left-[5%]' : 'text-[24px] bottom-[15%] left-[10%]'}`}
         >
           ROBOTS
         </div>

@@ -84,7 +84,7 @@ const SectionObserverWithBackground = () => {
   // Get background style
   const bgStyle = {
     background: getBackgroundColor(),
-    transition: 'background 0.5s ease-out',
+    transition: 'background 1.2s ease-out', // Increased from 0.5s to 1.2s for slower transition
   };
 
   // On mobile, stack the components vertically

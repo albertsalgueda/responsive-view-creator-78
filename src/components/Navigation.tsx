@@ -72,7 +72,7 @@ const Navigation = ({
           size="icon" 
           className="p-2"
         >
-          <Menu size={32} style={{ color: navColor }} />
+          <Menu size={32} style={{ color: navColor, transition: 'color 1.2s ease-out' }} />
         </Button>
       </DrawerTrigger>
       <DrawerContent className="h-[90vh] bg-[#0A2DD1] border-none">
@@ -83,7 +83,7 @@ const Navigation = ({
               size="icon" 
               className="absolute right-4 top-4"
             >
-              <X size={32} style={{ color: navColor }} />
+              <X size={32} style={{ color: navColor, transition: 'color 1.2s ease-out' }} />
             </Button>
           </DrawerClose>
           <div className="flex flex-col gap-8 items-center">
@@ -92,7 +92,7 @@ const Navigation = ({
                 key={index} 
                 href={link.href} 
                 className="text-xl font-barlow hover:opacity-80 transition-all"
-                style={{ color: navColor }}
+                style={{ color: navColor, transition: 'color 1.2s ease-out' }}
                 onClick={() => setOpen(false)}
               >
                 {link.text}
@@ -105,7 +105,7 @@ const Navigation = ({
   );
   
   return (
-    <nav className="fixed top-0 left-0 w-full h-[80px] bg-transparent z-50 flex items-center justify-between px-6 transition-colors duration-500">
+    <nav className="fixed top-0 left-0 w-full h-[80px] bg-transparent z-50 flex items-center justify-between px-6 transition-colors duration-1200">
       <a href="/" className="h-full flex items-center">
         <div className="h-[40px] w-[90px]">
           <Logo />
@@ -121,7 +121,7 @@ const Navigation = ({
               key={index} 
               href={link.href} 
               className="font-barlow hover:opacity-80 transition-all"
-              style={{ color: navColor }}
+              style={{ color: navColor, transition: 'color 1.2s ease-out' }}
             >
               {link.text}
             </a>

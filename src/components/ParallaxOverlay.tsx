@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -42,13 +41,10 @@ const ParallaxOverlay: React.FC = () => {
   
   if (!mounted) return null;
   
-  // Calculate horizontal parallax effect based on scroll position
-  // Changing the signs to make parallax move in the same direction as scroll
   const getParallaxStyle = (factor: number) => {
-    // Removed the negative signs to reverse the direction
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
-      transform: `translateX(${-baseDelta}px)`, // Added negative sign here to reverse direction
+      transform: `translateX(${-baseDelta}px)`,
       color: textColor,
       transition: transition
     };
@@ -57,7 +53,6 @@ const ParallaxOverlay: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       <div className="relative w-full h-full">
-        {/* TEN - moved up by 20% */}
         <div 
           style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-bold tracking-tighter
@@ -66,7 +61,6 @@ const ParallaxOverlay: React.FC = () => {
           TEN
         </div>
         
-        {/* THOUSAND */}
         <div 
           style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
@@ -75,7 +69,6 @@ const ParallaxOverlay: React.FC = () => {
           THOUSAND
         </div>
         
-        {/* ROBOTS - moved down by 20% */}
         <div 
           style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
@@ -84,32 +77,28 @@ const ParallaxOverlay: React.FC = () => {
           ROBOTS
         </div>
 
-        {/* New elements with updated individual horizontal positions */}
-        {/* OUR - position updated to 260% */}
         <div 
           style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
                      ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[260%]'}`}
         >
-          OUR
+          WE
         </div>
         
-        {/* SERVICES - position updated to 290% */}
         <div 
           style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-bold tracking-tighter
                      ${isMobile ? 'text-[18px] top-[50%] left-[45%]' : 'text-[18px] top-[50%] left-[290%]'}`}
         >
-          SERVICES
+          BELIEVE
         </div>
         
-        {/* ARE - position updated to 310% */}
         <div 
           style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
                      ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
         >
-          ARE
+          IN
         </div>
       </div>
     </div>

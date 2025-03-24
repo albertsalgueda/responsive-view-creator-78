@@ -9,7 +9,7 @@ const ParallaxOverlay: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   
-  // Now we're checking if main1 is visible AND if main2 (where Image1 is located) is not visible
+  // Only show when main1 is visible - no conditional hiding after
   const isVisible = currentSection === 'main1';
   
   useEffect(() => {
@@ -52,7 +52,6 @@ const ParallaxOverlay: React.FC = () => {
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
       transform: `translateX(${baseDelta}px)`,
-      // No transition for opacity - removed the fade in/out effect
     };
   };
   

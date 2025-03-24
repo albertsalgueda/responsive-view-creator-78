@@ -2,12 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useSectionColors } from '@/hooks/use-section-colors';
 
 const ParallaxOverlay: React.FC = () => {
   const { currentSection } = useView();
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { textColor, transition } = useSectionColors();
   
   // Only show when main1 is visible - no conditional hiding after
   const isVisible = currentSection === 'main1';
@@ -53,6 +55,8 @@ const ParallaxOverlay: React.FC = () => {
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
       transform: `translateX(${-baseDelta}px)`, // Added negative sign here to reverse direction
+      color: textColor,
+      transition: transition
     };
   };
   
@@ -62,7 +66,7 @@ const ParallaxOverlay: React.FC = () => {
         {/* TEN */}
         <div 
           style={getParallaxStyle(0.1)}
-          className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
+          className={`absolute font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[30%] left-[25%]' : 'text-[24px] top-[35%] left-[30%]'}`}
         >
           TEN
@@ -71,7 +75,7 @@ const ParallaxOverlay: React.FC = () => {
         {/* THOUSAND */}
         <div 
           style={getParallaxStyle(0.16)}
-          className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
+          className={`absolute font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[40%] left-[35%]' : 'text-[24px] top-[45%] left-[40%]'}`}
         >
           THOUSAND
@@ -80,7 +84,7 @@ const ParallaxOverlay: React.FC = () => {
         {/* ROBOTS */}
         <div 
           style={getParallaxStyle(0.24)}
-          className={`absolute text-brand-blue font-barlow font-extrabold italic tracking-tighter
+          className={`absolute font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[50%] left-[30%]' : 'text-[24px] top-[55%] left-[35%]'}`}
         >
           ROBOTS

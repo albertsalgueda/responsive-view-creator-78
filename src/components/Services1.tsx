@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Services1Props {
   title?: string;
@@ -15,6 +16,7 @@ const Services1 = ({
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
+  const { textColor, transition } = useSectionColors();
   
   useEffect(() => {
     setMounted(true);
@@ -28,14 +30,19 @@ const Services1 = ({
         {isMobile ? 
           <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[4.5rem] font-extrabold text-[#97ECCF] slide-in-left font-barlow" style={{
+              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
                 lineHeight: 1,
                 fontWeight: 800,
-                fontStyle: 'italic'
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
               }}>
                 {title}
               </h1>
-              <div className="text-[#97ECCF] mt-6 fade-in-delay-1 font-barlow font-medium text-xl">
+              <div className="mt-6 fade-in-delay-1 font-barlow font-medium text-xl" style={{
+                color: textColor,
+                transition: transition
+              }}>
                 <p className="mb-4" dangerouslySetInnerHTML={{ __html: subtitle }}></p>
                 <p dangerouslySetInnerHTML={{ __html: description }}></p>
               </div>
@@ -49,20 +56,29 @@ const Services1 = ({
                     style={{
                       lineHeight: 1,
                       fontWeight: 800,
-                      fontStyle: 'italic'
+                      fontStyle: 'italic',
+                      color: textColor,
+                      transition: transition
                     }} 
-                    className="text-[4.5rem] font-extrabold text-[#97ECCF] slide-in-left font-barlow mt-10 my-0"
+                    className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
                   >
                     {title}
                   </h1>
                 </div>
                 <div className="flex flex-col justify-end">
-                  <div className="grid grid-cols-3 gap-8 text-[#97ECCF] text-xl font-barlow font-medium mb-0">
+                  <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
                     <div></div>
-                    <div className="slide-in-right">
+                    <div className="slide-in-right" style={{
+                      color: textColor,
+                      transition: transition
+                    }}>
                       <p dangerouslySetInnerHTML={{ __html: subtitle }}></p>
                     </div>
-                    <div className="slide-in-right" style={{ animationDelay: '0.1s' }}>
+                    <div className="slide-in-right" style={{ 
+                      animationDelay: '0.1s',
+                      color: textColor,
+                      transition: transition
+                    }}>
                       <p dangerouslySetInnerHTML={{ __html: description }}></p>
                     </div>
                   </div>

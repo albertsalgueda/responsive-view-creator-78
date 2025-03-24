@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Main1Props {
   title?: string;
@@ -17,6 +18,7 @@ const Main1 = ({
 }: Main1Props) => {
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
+  const { textColor, transition } = useSectionColors();
   
   useEffect(() => {
     setMounted(true);
@@ -50,19 +52,29 @@ const Main1 = ({
       // Mobile layout
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{
-            lineHeight: 1,
-            fontWeight: 800,
-            fontStyle: 'italic'
-          }}>
+              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+                lineHeight: 1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }}>
                 {title}
               </h1>
-              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium">
+              <p className="mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{
+                color: textColor,
+                transition: transition
+              }}>
                 {subtitle}
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
-              <button onClick={scrollToMain3} className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
+              <button onClick={scrollToMain3} 
+                className="text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" 
+                style={{ 
+                  backgroundColor: textColor, 
+                  transition: transition 
+                }}>
                 {ctaText}
               </button>
             </div>
@@ -76,7 +88,10 @@ const Main1 = ({
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
-                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl font-barlow font-medium">
+                  <p className="text-2xl slide-in-right max-w-xl font-barlow font-medium" style={{
+                    color: textColor,
+                    transition: transition
+                  }}>
                     {subtitle}
                   </p>
                 </div>
@@ -84,15 +99,22 @@ const Main1 = ({
             </div>
             <div>
               <div className="fade-in mb-4">
-                <button onClick={scrollToMain3} className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow">
+                <button onClick={scrollToMain3} 
+                  className="text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
+                  style={{ 
+                    backgroundColor: textColor, 
+                    transition: transition 
+                  }}>
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{
-            lineHeight: 1,
-            fontWeight: 800,
-            fontStyle: 'italic'
-          }}>
+              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+                lineHeight: 1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }}>
                 {title}
               </h1>
             </div>

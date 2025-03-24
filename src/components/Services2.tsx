@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -65,7 +66,7 @@ const Services2 = ({
                   </h1>
                 </div>
                 <div className="flex flex-col justify-end">
-                  <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
+                  <div className="grid grid-cols-3 gap-8 text-[2.5rem] font-barlow font-medium mb-0">
                     <div></div>
                     <div className="slide-in-right" style={{
                       color: textColor,

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -78,7 +79,7 @@ const Main2 = ({
                 </div>
                 <div className="grid grid-cols-3 gap-12">
                   <div className="col-span-1 col-start-2 flex flex-col justify-end">
-                    <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                    <p className="text-[2.5rem] slide-in-right font-barlow font-medium mb-0" style={{
                       color: textColor,
                       transition: transition
                     }}>
@@ -86,7 +87,7 @@ const Main2 = ({
                     </p>
                   </div>
                   <div className="col-span-1 col-start-3 flex flex-col justify-end">
-                    <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                    <p className="text-[2.5rem] slide-in-right font-barlow font-medium mb-0" style={{
                       color: textColor,
                       transition: transition
                     }}>

@@ -22,6 +22,9 @@ const Main1 = ({
   
   useEffect(() => {
     setMounted(true);
+    
+    // Log to verify this component is rendering
+    console.log('Main1 component mounted');
   }, [isMobile]);
   
   const scrollToMain3 = () => {
@@ -46,7 +49,7 @@ const Main1 = ({
   
   if (!mounted) return null;
   
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section id="main1-section" className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
       // Mobile layout

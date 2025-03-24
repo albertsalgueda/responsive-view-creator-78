@@ -43,6 +43,11 @@ const ParallaxOverlay: React.FC = () => {
     };
   }, [isMobile]);
   
+  useEffect(() => {
+    // Debug log to check if the component is rendering and what section is active
+    console.log('ParallaxOverlay rendered, current section:', currentSection, 'isVisible:', isVisible);
+  }, [currentSection, isVisible]);
+  
   if (!mounted) return null;
   
   // If not visible, don't render
@@ -67,7 +72,7 @@ const ParallaxOverlay: React.FC = () => {
         <div 
           style={getParallaxStyle(1.05)}
           className={`absolute font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[24px] top-[40%] left-[40%]' : 'text-[24px] top-[45%] left-[45%]'}`}
+                     ${isMobile ? 'text-[40px] top-[30%] left-[30%]' : 'text-[60px] top-[35%] left-[35%]'}`}
         >
           TEN
         </div>
@@ -76,7 +81,7 @@ const ParallaxOverlay: React.FC = () => {
         <div 
           style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[24px] top-[45%] left-[45%]' : 'text-[24px] top-[50%] left-[50%]'}`}
+                     ${isMobile ? 'text-[40px] top-[40%] left-[25%]' : 'text-[60px] top-[45%] left-[30%]'}`}
         >
           THOUSAND
         </div>
@@ -85,7 +90,7 @@ const ParallaxOverlay: React.FC = () => {
         <div 
           style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-extrabold italic tracking-tighter
-                     ${isMobile ? 'text-[24px] top-[50%] left-[42%]' : 'text-[24px] top-[55%] left-[47%]'}`}
+                     ${isMobile ? 'text-[40px] top-[50%] left-[30%]' : 'text-[60px] top-[55%] left-[33%]'}`}
         >
           ROBOTS
         </div>

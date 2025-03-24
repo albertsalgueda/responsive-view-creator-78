@@ -47,7 +47,7 @@ const SectionObserverWithBackground = () => {
     switch (currentSection) {
       case 'main1':
       case 'contact':
-        return '#132ABC'; // Blue when menu is pink
+        return '#FDB0C2'; // Pink background when menu is blue
       case 'main2':
         return '#2A0C41'; // Purple when menu is yellow/coral
       case 'main3':
@@ -55,7 +55,7 @@ const SectionObserverWithBackground = () => {
         return '#1A1F2C'; // Dark green when menu is light green
       case 'video':
       default:
-        return '#132ABC'; // Default to blue
+        return '#132ABC'; // Blue background when menu is pink
     }
   };
   

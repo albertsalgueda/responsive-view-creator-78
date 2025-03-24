@@ -84,30 +84,30 @@ const ParallaxOverlay: React.FC = () => {
           ROBOTS
         </div>
 
-        {/* New elements with updated horizontal positions to 310% */}
-        {/* OUR */}
+        {/* New elements with updated individual horizontal positions */}
+        {/* OUR - position updated to 280% */}
         <div 
           style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[310%]'}`}
+                     ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[280%]'}`}
         >
           OUR
         </div>
         
-        {/* SERVICES */}
+        {/* SERVICES - position updated to 290% */}
         <div 
           style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[50%] left-[45%]' : 'text-[18px] top-[50%] left-[310%]'}`}
+                     ${isMobile ? 'text-[18px] top-[50%] left-[45%]' : 'text-[18px] top-[50%] left-[290%]'}`}
         >
           SERVICES
         </div>
         
-        {/* ARE */}
+        {/* ARE - position updated to 290% */}
         <div 
           style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
+                     ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[290%]'}`}
         >
           ARE
         </div>

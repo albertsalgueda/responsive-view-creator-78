@@ -11,9 +11,6 @@ const ParallaxOverlay: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { textColor, transition } = useSectionColors();
   
-  // Only show when main1 is visible - no conditional hiding after
-  const isVisible = currentSection === 'main1';
-  
   useEffect(() => {
     setMounted(true);
     
@@ -44,9 +41,6 @@ const ParallaxOverlay: React.FC = () => {
   }, [isMobile]);
   
   if (!mounted) return null;
-  
-  // If not visible, don't render
-  if (!isVisible) return null;
   
   // Calculate horizontal parallax effect based on scroll position
   // Changing the signs to make parallax move in the same direction as scroll

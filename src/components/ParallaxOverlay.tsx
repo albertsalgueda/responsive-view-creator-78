@@ -85,11 +85,11 @@ const ParallaxOverlay: React.FC = () => {
         </div>
 
         {/* New elements with updated individual horizontal positions */}
-        {/* OUR - position updated to 280% */}
+        {/* OUR - position updated to 260% */}
         <div 
           style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[280%]'}`}
+                     ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[260%]'}`}
         >
           OUR
         </div>
@@ -103,11 +103,11 @@ const ParallaxOverlay: React.FC = () => {
           SERVICES
         </div>
         
-        {/* ARE - position updated to 290% */}
+        {/* ARE - position updated to 310% */}
         <div 
           style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[290%]'}`}
+                     ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
         >
           ARE
         </div>

@@ -16,10 +16,8 @@ const ParallaxOverlay: React.FC = () => {
     
     const handleScroll = () => {
       if (isMobile) {
-        // For mobile, track vertical scroll
         setScrollPosition(window.scrollY);
       } else {
-        // For desktop, track horizontal scroll
         const horizontalContainer = document.querySelector('.overflow-x-auto');
         if (horizontalContainer) {
           setScrollPosition(horizontalContainer.scrollLeft);
@@ -31,7 +29,7 @@ const ParallaxOverlay: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     const horizontalContainer = document.querySelector('.overflow-x-auto');
-    if (horizontalContainer && !isMobile) {
+    if (horizontalContainer) {
       horizontalContainer.addEventListener('scroll', handleScroll, { passive: true });
     }
     
@@ -40,7 +38,7 @@ const ParallaxOverlay: React.FC = () => {
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (horizontalContainer && !isMobile) {
+      if (horizontalContainer) {
         horizontalContainer.removeEventListener('scroll', handleScroll);
       }
     };
@@ -49,99 +47,85 @@ const ParallaxOverlay: React.FC = () => {
   if (!mounted) return null;
   
   const getParallaxStyle = (factor: number) => {
-    if (isMobile) {
-      // Vertical parallax for mobile devices
-      const parallaxY = scrollPosition * factor;
-      return {
-        transform: `translateY(${-parallaxY}px)`,
-        color: textColor,
-        transition: transition
-      };
-    } else {
-      // Horizontal parallax for desktop
-      const parallaxX = scrollPosition * factor;
-      return {
-        transform: `translateX(${-parallaxX}px)`,
-        color: textColor,
-        transition: transition
-      };
-    }
+    const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
+    return {
+      transform: `translateX(${-baseDelta}px)`,
+      color: textColor,
+      transition: transition
+    };
   };
   
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       <div className="relative w-full h-full">
-        {/* First row of parallel text */}
         <div 
-          style={getParallaxStyle(0.15)}
+          style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[15%] left-[5%]' : 'text-[18px] top-[15%] left-[130%]'}`}
+                     ${isMobile ? 'text-[18px] top-[10%] left-[25%]' : 'text-[18px] top-[15%] left-[130%]'}`}
         >
           TEN
         </div>
         
         <div 
-          style={getParallaxStyle(0.2)}
+          style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[25%] left-[25%]' : 'text-[18px] top-[45%] left-[130%]'}`}
+                     ${isMobile ? 'text-[18px] top-[40%] left-[35%]' : 'text-[18px] top-[45%] left-[130%]'}`}
         >
           THOUSAND
         </div>
         
         <div 
-          style={getParallaxStyle(0.1)}
+          style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[35%] left-[15%]' : 'text-[18px] top-[75%] left-[130%]'}`}
+                     ${isMobile ? 'text-[18px] top-[70%] left-[30%]' : 'text-[18px] top-[75%] left-[130%]'}`}
         >
           ROBOTS
         </div>
 
-        {/* Second row of parallel text */}
         <div 
-          style={getParallaxStyle(0.12)}
+          style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[45%] left-[35%]' : 'text-[18px] top-[25%] left-[260%]'}`}
+                     ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[260%]'}`}
         >
           WE
         </div>
         
         <div 
-          style={getParallaxStyle(0.18)}
+          style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[55%] left-[20%]' : 'text-[18px] top-[50%] left-[290%]'}`}
+                     ${isMobile ? 'text-[18px] top-[50%] left-[45%]' : 'text-[18px] top-[50%] left-[290%]'}`}
         >
           BELIEVE
         </div>
         
         <div 
-          style={getParallaxStyle(0.22)}
+          style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[65%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
+                     ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
         >
           IN
         </div>
         
-        {/* Third row of parallel text */}
         <div 
-          style={getParallaxStyle(0.13)}
+          style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[75%] left-[10%]' : 'text-[18px] top-[20%] left-[420%]'}`}
+                     ${isMobile ? 'text-[18px] top-[20%] left-[50%]' : 'text-[18px] top-[20%] left-[420%]'}`}
         >
           OUR
         </div>
         
         <div 
-          style={getParallaxStyle(0.19)}
+          style={getParallaxStyle(1.1)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[85%] left-[30%]' : 'text-[18px] top-[45%] left-[490%]'}`}
+                     ${isMobile ? 'text-[18px] top-[45%] left-[55%]' : 'text-[18px] top-[45%] left-[490%]'}`}
         >
           SERVICES
         </div>
         
         <div 
-          style={getParallaxStyle(0.24)}
+          style={getParallaxStyle(1.2)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[95%] left-[45%]' : 'text-[18px] top-[65%] left-[500%]'}`}
+                     ${isMobile ? 'text-[18px] top-[65%] left-[50%]' : 'text-[18px] top-[65%] left-[500%]'}`}
         >
           ARE
         </div>

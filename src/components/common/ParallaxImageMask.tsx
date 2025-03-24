@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ParallaxImageMaskProps {
   imageSrc: string;
@@ -57,18 +56,14 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         
-        // Enhanced parallax effect with smoother movement
         let parallaxOffset;
         
         if (isMobile) {
-          // For mobile: vertical parallax based on container position
-          const relativePositionY = (containerRect.top + containerRect.height/2) / viewportHeight;
-          // Increase parallax effect strength for mobile (50 → 70)
-          const parallaxAmountY = 70;
+          const relativePositionY = containerRect.top / viewportHeight;
+          const parallaxAmountY = 50;
           parallaxOffset = `translateY(${relativePositionY * parallaxAmountY}px)`;
         } else {
-          // For desktop: horizontal parallax
-          const relativePositionX = (containerRect.left + containerRect.width/2) / viewportWidth;
+          const relativePositionX = containerRect.left / viewportWidth;
           const parallaxAmountX = 100;
           parallaxOffset = `translateX(${relativePositionX * parallaxAmountX}px)`;
         }
@@ -77,11 +72,9 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       }
     };
     
-    // Use IntersectionObserver for performance optimization
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          // Only add scroll listeners when the element is in view
           window.addEventListener('scroll', updateParallax, { passive: true });
           
           if (!isMobile) {
@@ -93,10 +86,8 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
           
           window.addEventListener('resize', updateParallax, { passive: true });
           
-          // Initial calculation
           updateParallax();
         } else {
-          // Remove listeners when element is not in view
           window.removeEventListener('scroll', updateParallax);
           
           if (!isMobile) {
@@ -116,7 +107,6 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
       observer.observe(containerRef.current);
     }
     
-    // Initial calculation after a short delay to ensure layout has settled
     setTimeout(updateParallax, 100);
     
     return () => {

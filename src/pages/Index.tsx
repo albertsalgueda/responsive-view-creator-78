@@ -53,7 +53,7 @@ const SectionObserverWithBackground = () => {
         return '#2A0C41'; // Purple when menu is yellow/coral
       case 'main3':
       case 'services':
-        return '#1A1F2C'; // Dark green when menu is light green
+        return '#105A43'; // Dark green when menu is light green - updated to correct green
       case 'video':
         return '#132ABC'; // Blue background when menu is pink
       default:

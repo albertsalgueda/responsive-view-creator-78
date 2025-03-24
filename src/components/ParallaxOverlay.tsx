@@ -57,11 +57,11 @@ const ParallaxOverlay: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       <div className="relative w-full h-full">
-        {/* TEN */}
+        {/* TEN - moved up by 20% */}
         <div 
           style={getParallaxStyle(1.05)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[30%] left-[25%]' : 'text-[18px] top-[35%] left-[130%]'}`}
+                     ${isMobile ? 'text-[18px] top-[10%] left-[25%]' : 'text-[18px] top-[15%] left-[130%]'}`}
         >
           TEN
         </div>
@@ -75,11 +75,11 @@ const ParallaxOverlay: React.FC = () => {
           THOUSAND
         </div>
         
-        {/* ROBOTS */}
+        {/* ROBOTS - moved down by 20% */}
         <div 
           style={getParallaxStyle(0.9)}
           className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[18px] top-[50%] left-[30%]' : 'text-[18px] top-[55%] left-[130%]'}`}
+                     ${isMobile ? 'text-[18px] top-[70%] left-[30%]' : 'text-[18px] top-[75%] left-[130%]'}`}
         >
           ROBOTS
         </div>

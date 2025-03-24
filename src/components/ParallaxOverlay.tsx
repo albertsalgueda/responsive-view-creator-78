@@ -74,24 +74,24 @@ const ParallaxOverlay: React.FC = () => {
         {/* First row of parallel text */}
         <div 
           style={getParallaxStyle(0.15)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[15%] left-[5%]' : 'text-[18px] top-[15%] left-[130%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[15%] left-[5%]' : 'top-[15%] left-[130%]'}`}
         >
           TEN
         </div>
         
         <div 
           style={getParallaxStyle(0.2)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[25%] left-[25%]' : 'text-[18px] top-[45%] left-[130%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[25%] left-[25%]' : 'top-[45%] left-[130%]'}`}
         >
           THOUSAND
         </div>
         
         <div 
           style={getParallaxStyle(0.1)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[35%] left-[15%]' : 'text-[18px] top-[75%] left-[130%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[35%] left-[15%]' : 'top-[75%] left-[130%]'}`}
         >
           ROBOTS
         </div>
@@ -99,24 +99,24 @@ const ParallaxOverlay: React.FC = () => {
         {/* Second row of parallel text */}
         <div 
           style={getParallaxStyle(0.12)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[45%] left-[35%]' : 'text-[18px] top-[25%] left-[260%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[45%] left-[35%]' : 'top-[25%] left-[260%]'}`}
         >
           WE
         </div>
         
         <div 
           style={getParallaxStyle(0.18)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[55%] left-[20%]' : 'text-[18px] top-[50%] left-[290%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[55%] left-[20%]' : 'top-[50%] left-[290%]'}`}
         >
           BELIEVE
         </div>
         
         <div 
           style={getParallaxStyle(0.22)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[65%] left-[40%]' : 'text-[18px] top-[60%] left-[310%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[65%] left-[40%]' : 'top-[60%] left-[310%]'}`}
         >
           IN
         </div>
@@ -124,24 +124,24 @@ const ParallaxOverlay: React.FC = () => {
         {/* Third row of parallel text */}
         <div 
           style={getParallaxStyle(0.13)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[75%] left-[10%]' : 'text-[18px] top-[20%] left-[420%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[75%] left-[10%]' : 'top-[20%] left-[420%]'}`}
         >
           OUR
         </div>
         
         <div 
           style={getParallaxStyle(0.19)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[85%] left-[30%]' : 'text-[18px] top-[45%] left-[490%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[85%] left-[30%]' : 'top-[45%] left-[490%]'}`}
         >
           SERVICES
         </div>
         
         <div 
           style={getParallaxStyle(0.24)}
-          className={`absolute font-barlow font-bold tracking-tighter
-                     ${isMobile ? 'text-[32px] top-[95%] left-[45%]' : 'text-[18px] top-[65%] left-[500%]'}`}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[95%] left-[45%]' : 'top-[65%] left-[500%]'}`}
         >
           ARE
         </div>

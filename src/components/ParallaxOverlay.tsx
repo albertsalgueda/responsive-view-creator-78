@@ -11,8 +11,7 @@ const ParallaxOverlay: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { textColor, transition } = useSectionColors();
   
-  // Only show when main1 is visible - no conditional hiding after
-  const isVisible = currentSection === 'main1';
+  // Removed conditional visibility check - text elements will always show
   
   useEffect(() => {
     setMounted(true);
@@ -45,8 +44,7 @@ const ParallaxOverlay: React.FC = () => {
   
   if (!mounted) return null;
   
-  // If not visible, don't render
-  if (!isVisible) return null;
+  // Removed conditional return - component will always render
   
   // Calculate horizontal parallax effect based on scroll position
   // Changed all factor values to 1 as requested

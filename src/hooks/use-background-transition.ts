@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from './use-mobile';
 
 export const useBackgroundTransition = () => {
@@ -60,6 +60,20 @@ export const useBackgroundTransition = () => {
     
     const scrollEvent = 'scroll';
     scrollContainer.addEventListener(scrollEvent, handleScroll);
+    
+    // Also listen for wheel events on desktop which will now cause horizontal scrolling
+    if (!isMobile) {
+      const wheelHandler = () => {
+        // Need to recalculate after the wheel causes a horizontal scroll
+        requestAnimationFrame(handleScroll);
+      };
+      scrollContainer.addEventListener('wheel', wheelHandler, { passive: true });
+      
+      return () => {
+        scrollContainer.removeEventListener(scrollEvent, handleScroll);
+        scrollContainer.removeEventListener('wheel', wheelHandler);
+      };
+    }
     
     // Initial calculation
     handleScroll();

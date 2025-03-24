@@ -12,7 +12,7 @@ import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
 import VideoSection from "@/components/VideoSection";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
@@ -41,6 +41,26 @@ const Index = () => {
 const SectionObserverWithBackground = () => {
   const { currentSection } = useSectionObserver();
   const isMobile = useIsMobile();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
+  // Add wheel event handler to convert vertical scroll to horizontal scroll
+  useEffect(() => {
+    if (isMobile || !scrollContainerRef.current) return;
+    
+    const handleWheel = (e: WheelEvent) => {
+      if (scrollContainerRef.current) {
+        e.preventDefault();
+        scrollContainerRef.current.scrollLeft += e.deltaY;
+      }
+    };
+    
+    const container = scrollContainerRef.current;
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
+  }, [isMobile]);
   
   // Get background color based on the current section (menu color)
   const getBackgroundColor = () => {
@@ -94,9 +114,13 @@ const SectionObserverWithBackground = () => {
     );
   }
 
-  // On desktop, use a horizontal scrolling container
+  // On desktop, use a horizontal scrolling container with wheel event conversion
   return (
-    <div className="h-screen w-screen overflow-x-auto scrollbar-hide" style={bgStyle}>
+    <div 
+      ref={scrollContainerRef}
+      className="h-screen w-screen overflow-x-auto scrollbar-hide" 
+      style={bgStyle}
+    >
       <Navigation />
       <div className="flex h-screen">
         <div id="video" className="h-screen w-screen flex-shrink-0">

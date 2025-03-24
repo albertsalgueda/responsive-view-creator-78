@@ -52,7 +52,7 @@ const Main1 = ({
       // Mobile layout
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+              <h1 className="text-[6rem] font-extrabold slide-in-left font-barlow" style={{
                 lineHeight: 1,
                 fontWeight: 800,
                 fontStyle: 'italic',
@@ -110,7 +110,7 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+              <h1 className="text-[6rem] font-extrabold slide-in-left font-barlow" style={{
                 lineHeight: 1,
                 fontWeight: 800,
                 fontStyle: 'italic',

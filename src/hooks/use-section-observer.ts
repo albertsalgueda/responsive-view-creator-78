@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useView } from '@/context/ViewContext';
 
 export const useSectionObserver = () => {
-  const { setCurrentSection } = useView();
+  const { currentSection, setCurrentSection } = useView();
 
   useEffect(() => {
     const options = {
@@ -57,4 +57,6 @@ export const useSectionObserver = () => {
       });
     };
   }, [setCurrentSection]);
+
+  return { currentSection };
 };

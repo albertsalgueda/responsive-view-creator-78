@@ -11,6 +11,7 @@ import Image1 from "@/components/Image1";
 import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
 import VideoSection from "@/components/VideoSection";
+import ParallaxOverlay from "@/components/ParallaxOverlay";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect, useRef } from "react";
 import { ViewProvider } from "@/context/ViewContext";
@@ -31,6 +32,8 @@ const Index = () => {
 
   return (
     <ViewProvider>
+      {/* ParallaxOverlay added inside ViewProvider to access current section */}
+      <ParallaxOverlay />
       {/* SectionObserver is now inside the ViewProvider */}
       <SectionObserverWithBackground />
     </ViewProvider>

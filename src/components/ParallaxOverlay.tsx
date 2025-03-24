@@ -52,70 +52,56 @@ const ParallaxOverlay: React.FC = () => {
     };
   };
   
-  // Position the overlay based on current section
-  const getOverlayPosition = () => {
-    // Base styles for overlay
-    let positionClasses = "fixed pointer-events-none z-10 overflow-hidden";
-    
-    if (isMobile) {
-      // For mobile, adjust position to main1 section when applicable
-      if (currentSection === 'main1') {
-        const main1Element = document.getElementById('main1');
-        if (main1Element) {
-          const rect = main1Element.getBoundingClientRect();
-          return `${positionClasses} top-0 left-0 w-full h-screen`;
-        }
-      }
-      return `${positionClasses} inset-0 h-screen`;
-    } else {
-      // For desktop, position overlay over main1 section when applicable
-      if (currentSection === 'main1') {
-        const main1Element = document.getElementById('main1');
-        if (main1Element) {
-          return `${positionClasses} left-[100vw] top-0 w-screen h-screen`; // Position at second screen-width (main1 is after video)
-        }
-      }
-      return `${positionClasses} inset-0 w-screen`;
-    }
-  };
+  // Only render the overlay when we're in the main1 section
+  if (currentSection !== 'main1') {
+    return null;
+  }
   
   // Get font size based on section
   const getFontSize = () => {
-    // Make text larger when in main1 section
-    if (currentSection === 'main1') {
-      return isMobile ? 'text-[48px]' : 'text-[80px]';
+    return isMobile ? 'text-[48px]' : 'text-[80px]';
+  };
+  
+  // Position exactly in main1 section
+  const getOverlayPosition = () => {
+    if (isMobile) {
+      // For mobile, position relative to main1
+      const main1Element = document.getElementById('main1');
+      if (main1Element) {
+        return "fixed inset-0 pointer-events-none z-10 flex items-center justify-center";
+      }
     }
-    return isMobile ? 'text-[36px]' : 'text-[60px]';
+    
+    // For desktop, position at the second screen (main1 is after video)
+    return "fixed inset-0 pointer-events-none z-10 flex items-center justify-center";
   };
   
   return (
     <div className={getOverlayPosition()}>
-      <div className="relative w-full h-full flex items-center justify-center">
-        {/* Centered container for all parallax words */}
-        <div className="relative flex flex-col items-center justify-center gap-4">
-          {/* TEN */}
-          <div 
-            style={getParallaxStyle(1)}
-            className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
-          >
-            TEN
-          </div>
-          
-          {/* THOUSAND */}
-          <div 
-            style={getParallaxStyle(1)}
-            className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
-          >
-            THOUSAND
-          </div>
-          
-          {/* ROBOTS */}
-          <div 
-            style={getParallaxStyle(1)}
-            className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
-          >
-            ROBOTS
-          </div>
+      {/* Centered container for all parallax words */}
+      <div className="relative flex flex-col items-center justify-center gap-4">
+        {/* TEN */}
+        <div 
+          style={getParallaxStyle(1)}
+          className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
+        >
+          TEN
+        </div>
+        
+        {/* THOUSAND */}
+        <div 
+          style={getParallaxStyle(1)}
+          className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
+        >
+          THOUSAND
+        </div>
+        
+        {/* ROBOTS */}
+        <div 
+          style={getParallaxStyle(1)}
+          className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
+        >
+          ROBOTS
         </div>
       </div>
     </div>

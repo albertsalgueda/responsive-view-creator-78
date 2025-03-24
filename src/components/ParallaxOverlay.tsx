@@ -47,11 +47,12 @@ const ParallaxOverlay: React.FC = () => {
   if (!isVisible) return null;
   
   // Calculate horizontal parallax effect based on scroll position
-  // Reversed the factors (changed sign) to reverse the direction
+  // Changing the signs to make parallax move in the same direction as scroll
   const getParallaxStyle = (factor: number) => {
+    // Removed the negative signs to reverse the direction
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
     return {
-      transform: `translateX(${baseDelta}px)`,
+      transform: `translateX(${-baseDelta}px)`, // Added negative sign here to reverse direction
     };
   };
   

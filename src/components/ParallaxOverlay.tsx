@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -24,12 +25,16 @@ const ParallaxOverlay: React.FC = () => {
       }
     };
     
+    // Add event listeners with passive: true for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     const horizontalContainer = document.querySelector('.overflow-x-auto');
     if (horizontalContainer) {
       horizontalContainer.addEventListener('scroll', handleScroll, { passive: true });
     }
+    
+    // Initial calculation
+    handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);

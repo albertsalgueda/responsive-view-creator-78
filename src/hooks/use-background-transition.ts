@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useIsMobile } from './use-mobile';
 
 export const useBackgroundTransition = () => {
@@ -27,8 +27,6 @@ export const useBackgroundTransition = () => {
       
       if (!isMobile) { // Desktop (horizontal scroll)
         // Calculate where the video section is relative to the viewport
-        // When it's fully visible (left edge at 0), progress should be 0
-        // When it's moving out (right edge at 0), progress should be 1
         const videoWidth = videoRect.width;
         
         // If video is fully on screen (left edge at 0), progress is 0
@@ -59,9 +57,9 @@ export const useBackgroundTransition = () => {
       : document.querySelector('.overflow-x-auto') || window;
     
     const scrollEvent = 'scroll';
-    scrollContainer.addEventListener(scrollEvent, handleScroll);
+    scrollContainer.addEventListener(scrollEvent, handleScroll, { passive: true });
     
-    // Also listen for wheel events on desktop which will now cause horizontal scrolling
+    // Handle wheel events for desktop horizontal scrolling
     if (!isMobile) {
       const wheelHandler = () => {
         // Need to recalculate after the wheel causes a horizontal scroll
@@ -81,7 +79,7 @@ export const useBackgroundTransition = () => {
     return () => {
       scrollContainer.removeEventListener(scrollEvent, handleScroll);
     };
-  }, [isMobile]); // Add isMobile as dependency
+  }, [isMobile]); // Keep isMobile as dependency
   
   return scrollProgress;
 };

@@ -11,8 +11,6 @@ const ParallaxOverlay: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { textColor, transition } = useSectionColors();
   
-  // Removed conditional visibility check - text elements will always show
-  
   useEffect(() => {
     setMounted(true);
     
@@ -54,15 +52,40 @@ const ParallaxOverlay: React.FC = () => {
     };
   };
   
-  // Position the overlay to be centered within the video section
+  // Position the overlay based on current section
   const getOverlayPosition = () => {
+    // Base styles for overlay
+    let positionClasses = "fixed pointer-events-none z-10 overflow-hidden";
+    
     if (isMobile) {
-      // On mobile, position fixed at top of the page (video is first section)
-      return "fixed inset-0 pointer-events-none z-10 overflow-hidden h-screen";
+      // For mobile, adjust position to main1 section when applicable
+      if (currentSection === 'main1') {
+        const main1Element = document.getElementById('main1');
+        if (main1Element) {
+          const rect = main1Element.getBoundingClientRect();
+          return `${positionClasses} top-0 left-0 w-full h-screen`;
+        }
+      }
+      return `${positionClasses} inset-0 h-screen`;
     } else {
-      // On desktop, position absolute at the start of the horizontal scroll container
-      return "fixed inset-0 pointer-events-none z-10 overflow-hidden w-screen";
+      // For desktop, position overlay over main1 section when applicable
+      if (currentSection === 'main1') {
+        const main1Element = document.getElementById('main1');
+        if (main1Element) {
+          return `${positionClasses} left-[100vw] top-0 w-screen h-screen`; // Position at second screen-width (main1 is after video)
+        }
+      }
+      return `${positionClasses} inset-0 w-screen`;
     }
+  };
+  
+  // Get font size based on section
+  const getFontSize = () => {
+    // Make text larger when in main1 section
+    if (currentSection === 'main1') {
+      return isMobile ? 'text-[48px]' : 'text-[80px]';
+    }
+    return isMobile ? 'text-[36px]' : 'text-[60px]';
   };
   
   return (
@@ -73,8 +96,7 @@ const ParallaxOverlay: React.FC = () => {
           {/* TEN */}
           <div 
             style={getParallaxStyle(1)}
-            className={`font-barlow font-extrabold italic tracking-tighter
-                       ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
+            className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
           >
             TEN
           </div>
@@ -82,8 +104,7 @@ const ParallaxOverlay: React.FC = () => {
           {/* THOUSAND */}
           <div 
             style={getParallaxStyle(1)}
-            className={`font-barlow font-extrabold italic tracking-tighter
-                       ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
+            className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
           >
             THOUSAND
           </div>
@@ -91,8 +112,7 @@ const ParallaxOverlay: React.FC = () => {
           {/* ROBOTS */}
           <div 
             style={getParallaxStyle(1)}
-            className={`font-barlow font-extrabold italic tracking-tighter
-                       ${isMobile ? 'text-[36px]' : 'text-[60px]'}`}
+            className={`font-barlow font-extrabold italic tracking-tighter ${getFontSize()}`}
           >
             ROBOTS
           </div>

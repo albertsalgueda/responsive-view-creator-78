@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";

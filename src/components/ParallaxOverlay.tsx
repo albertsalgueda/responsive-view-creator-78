@@ -49,7 +49,7 @@ const ParallaxOverlay: React.FC = () => {
   if (!isVisible) return null;
   
   // Calculate horizontal parallax effect based on scroll position
-  // Changing the signs to make parallax move in the same direction as scroll
+  // Changed all factor values to 1 as requested
   const getParallaxStyle = (factor: number) => {
     // Removed the negative signs to reverse the direction
     const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
@@ -65,7 +65,7 @@ const ParallaxOverlay: React.FC = () => {
       <div className="relative w-full h-full">
         {/* TEN */}
         <div 
-          style={getParallaxStyle(0.1)}
+          style={getParallaxStyle(1)} // Updated to 1
           className={`absolute font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[30%] left-[25%]' : 'text-[24px] top-[35%] left-[30%]'}`}
         >
@@ -74,7 +74,7 @@ const ParallaxOverlay: React.FC = () => {
         
         {/* THOUSAND */}
         <div 
-          style={getParallaxStyle(0.16)}
+          style={getParallaxStyle(1)} // Updated to 1
           className={`absolute font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[40%] left-[35%]' : 'text-[24px] top-[45%] left-[40%]'}`}
         >
@@ -83,7 +83,7 @@ const ParallaxOverlay: React.FC = () => {
         
         {/* ROBOTS */}
         <div 
-          style={getParallaxStyle(0.24)}
+          style={getParallaxStyle(1)} // Updated to 1
           className={`absolute font-barlow font-extrabold italic tracking-tighter
                      ${isMobile ? 'text-[24px] top-[50%] left-[30%]' : 'text-[24px] top-[55%] left-[35%]'}`}
         >

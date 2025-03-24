@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -47,35 +46,35 @@ const Main1 = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
-          <div className="flex flex-col min-h-screen justify-between py-12 px-6">
+      <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
               <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
-                lineHeight: 1,
-                fontWeight: 800,
-                fontStyle: 'italic',
-                color: textColor,
-                transition: transition
-              }}>
+            lineHeight: 1,
+            fontWeight: 800,
+            fontStyle: 'italic',
+            color: textColor,
+            transition: transition
+          }}>
                 {title}
               </h1>
               <p className="mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{
-                color: textColor,
-                transition: transition
-              }}>
+            color: textColor,
+            transition: transition
+          }}>
                 {subtitle}
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
               <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-                backgroundColor: textColor,
-                color: backgroundColor,
-                transition: transition
-              }}>
+            backgroundColor: textColor,
+            color: backgroundColor,
+            transition: transition
+          }}>
                 {ctaText}
               </button>
             </div>
           </div> :
-          <div className="flex flex-col h-full justify-between px-6 py-[32px]">
+      <div className="flex flex-col h-full justify-between px-6 py-[32px]">
             <div className="flex items-start pt-16 flex-1 py-0">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
@@ -84,9 +83,9 @@ const Main1 = ({
                 <div className="col-span-1">
                   {/* Right side content */}
                   <p style={{
-                    color: textColor,
-                    transition: transition
-                  }} className="slide-in-right max-w-xl font-barlow font-medium text-[2.5rem]">
+                color: textColor,
+                transition: transition
+              }} className="slide-in-right max-w-xl font-barlow font-medium text-2xl">
                     {subtitle}
                   </p>
                 </div>
@@ -95,20 +94,20 @@ const Main1 = ({
             <div>
               <div className="fade-in mb-4">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-                  backgroundColor: textColor,
-                  color: backgroundColor,
-                  transition: transition
-                }}>
+              backgroundColor: textColor,
+              color: backgroundColor,
+              transition: transition
+            }}>
                   {ctaText}
                 </button>
               </div>
               <h1 className="text-[6rem] font-extrabold slide-in-left font-barlow" style={{
-                lineHeight: 1,
-                fontWeight: 800,
-                fontStyle: 'italic',
-                color: textColor,
-                transition: transition
-              }}>
+            lineHeight: 1,
+            fontWeight: 800,
+            fontStyle: 'italic',
+            color: textColor,
+            transition: transition
+          }}>
                 {title}
               </h1>
             </div>

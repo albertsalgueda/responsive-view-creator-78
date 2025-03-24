@@ -39,7 +39,7 @@ const Main3 = ({
           <div className="flex flex-col h-full justify-between px-6 py-[32px] w-full">
             <div className="flex items-start pt-12 flex-1 py-0 w-full">
               <div className="w-full">
-                <p className="text-[2.5rem] slide-in-right w-full font-barlow font-medium" style={{
+                <p className="text-2xl slide-in-right w-full font-barlow font-medium" style={{
                   color: textColor,
                   transition: transition
                 }}>

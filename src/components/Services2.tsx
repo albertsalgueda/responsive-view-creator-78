@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -59,7 +60,7 @@ const Services2 = ({
                       color: textColor,
                       transition: transition
                     }} 
-                    className="text-[6rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
+                    className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
                   >
                     {title}
                   </h1>

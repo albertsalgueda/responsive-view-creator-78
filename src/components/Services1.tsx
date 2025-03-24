@@ -60,7 +60,7 @@ const Services1 = ({
                       color: textColor,
                       transition: transition
                     }} 
-                    className="text-[6rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
+                    className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
                   >
                     {title}
                   </h1>

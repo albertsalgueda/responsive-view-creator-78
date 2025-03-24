@@ -83,6 +83,34 @@ const ParallaxOverlay: React.FC = () => {
         >
           ROBOTS
         </div>
+
+        {/* New elements */}
+        {/* OUR */}
+        <div 
+          style={getParallaxStyle(0.9)}
+          className={`absolute font-barlow font-bold tracking-tighter
+                     ${isMobile ? 'text-[18px] top-[25%] left-[40%]' : 'text-[18px] top-[25%] left-[160%]'}`}
+        >
+          OUR
+        </div>
+        
+        {/* SERVICES */}
+        <div 
+          style={getParallaxStyle(1.1)}
+          className={`absolute font-barlow font-bold tracking-tighter
+                     ${isMobile ? 'text-[18px] top-[50%] left-[45%]' : 'text-[18px] top-[50%] left-[160%]'}`}
+        >
+          SERVICES
+        </div>
+        
+        {/* ARE */}
+        <div 
+          style={getParallaxStyle(1.2)}
+          className={`absolute font-barlow font-bold tracking-tighter
+                     ${isMobile ? 'text-[18px] top-[60%] left-[40%]' : 'text-[18px] top-[60%] left-[160%]'}`}
+        >
+          ARE
+        </div>
       </div>
     </div>
   );

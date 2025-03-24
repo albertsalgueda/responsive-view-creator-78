@@ -44,11 +44,11 @@ export const useSectionColors = () => {
     }
   };
 
-  // Use different transition speeds for mobile and desktop
+  // Use uniform transition speed that works well on both mobile and desktop
   const getTransitionSpeed = () => {
     return isMobile 
-      ? 'color 0.6s ease-out, background-color 0.6s ease-out' 
-      : 'color 1.2s ease-out, background-color 1.2s ease-out';
+      ? 'color 0.4s ease-out, background-color 0.4s ease-out' 
+      : 'color 0.8s ease-out, background-color 0.8s ease-out';
   };
 
   return {

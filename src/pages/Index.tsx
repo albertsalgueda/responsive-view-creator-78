@@ -67,16 +67,18 @@ const SectionObserverWithBackground = () => {
     };
   }, [isMobile]);
   
-  // Get background style
+  // Get background style with forced hardware acceleration
   const bgStyle = {
     background: backgroundColor,
-    transition: transition, // Using transition from sectionColors
+    transition: transition,
+    transform: 'translateZ(0)', // Force hardware acceleration
+    WebkitTransform: 'translateZ(0)' // For Safari
   };
 
   // On mobile, stack the components vertically
   if (isMobile) {
     return (
-      <main className="min-h-screen" style={bgStyle}>
+      <main className="min-h-screen will-change-auto" style={bgStyle}>
         <Navigation />
         <div id="video"><VideoSection /></div>
         <div id="main1"><Main1 /></div>
@@ -104,7 +106,7 @@ const SectionObserverWithBackground = () => {
   return (
     <div 
       ref={scrollContainerRef}
-      className="h-screen w-screen overflow-x-auto scrollbar-hide" 
+      className="h-screen w-screen overflow-x-auto scrollbar-hide will-change-auto" 
       style={bgStyle}
     >
       <Navigation />

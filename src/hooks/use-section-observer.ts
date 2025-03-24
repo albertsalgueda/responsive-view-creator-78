@@ -8,11 +8,11 @@ export const useSectionObserver = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Use different thresholds for mobile and desktop
+    // Different thresholds for mobile and desktop
     const options = {
       root: null,
-      rootMargin: '0px',
-      threshold: isMobile ? 0.25 : 0.5, // Slightly lower thresholds for better transitions
+      rootMargin: isMobile ? '-10% 0px' : '0px',
+      threshold: isMobile ? 0.15 : 0.5, // Lower threshold for mobile
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
@@ -59,7 +59,7 @@ export const useSectionObserver = () => {
         if (section) observer.unobserve(section);
       });
     };
-  }, [setCurrentSection, isMobile]); // Keep isMobile as dependency
+  }, [setCurrentSection, isMobile]); 
 
   return { currentSection };
 };

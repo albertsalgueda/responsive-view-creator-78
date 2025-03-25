@@ -16,8 +16,10 @@ const ParallaxOverlay: React.FC = () => {
     
     const handleScroll = () => {
       if (isMobile) {
+        // For mobile, track vertical scroll
         setScrollPosition(window.scrollY);
       } else {
+        // For desktop, track horizontal scroll
         const horizontalContainer = document.querySelector('.overflow-x-auto');
         if (horizontalContainer) {
           setScrollPosition(horizontalContainer.scrollLeft);
@@ -29,7 +31,7 @@ const ParallaxOverlay: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     const horizontalContainer = document.querySelector('.overflow-x-auto');
-    if (horizontalContainer) {
+    if (horizontalContainer && !isMobile) {
       horizontalContainer.addEventListener('scroll', handleScroll, { passive: true });
     }
     
@@ -38,7 +40,7 @@ const ParallaxOverlay: React.FC = () => {
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (horizontalContainer) {
+      if (horizontalContainer && !isMobile) {
         horizontalContainer.removeEventListener('scroll', handleScroll);
       }
     };
@@ -47,148 +49,99 @@ const ParallaxOverlay: React.FC = () => {
   if (!mounted) return null;
   
   const getParallaxStyle = (factor: number) => {
-    const baseDelta = isMobile ? scrollPosition * factor : scrollPosition * factor;
-    return {
-      transform: `translateX(${-baseDelta}px)`,
-      color: textColor,
-      transition: transition
-    };
+    if (isMobile) {
+      // Vertical parallax for mobile devices
+      const parallaxY = scrollPosition * factor;
+      return {
+        transform: `translateY(${-parallaxY}px)`,
+        color: textColor,
+        transition: transition
+      };
+    } else {
+      // Horizontal parallax for desktop
+      const parallaxX = scrollPosition * factor;
+      return {
+        transform: `translateX(${-parallaxX}px)`,
+        color: textColor,
+        transition: transition
+      };
+    }
   };
-  
-  // If mobile, return an empty div to avoid rendering the parallax text
-  if (isMobile) {
-    return <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>;
-  }
   
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       <div className="relative w-full h-full">
-        {/* 
-          Mobile parallax text elements - commented out but preserved for future use
-          
-          <div 
-            style={getParallaxStyle(1.1)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[10%] left-[25%]"
-          >
-            TEN
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.2)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[40%] left-[35%]"
-          >
-            THOUSAND
-          </div>
-          
-          <div 
-            style={getParallaxStyle(0.9)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[70%] left-[30%]"
-          >
-            ROBOTS
-          </div>
-
-          <div 
-            style={getParallaxStyle(0.9)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[25%] left-[40%]"
-          >
-            WE
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.1)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[50%] left-[45%]"
-          >
-            BELIEVE
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.2)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[40%]"
-          >
-            IN
-          </div>
-          
-          <div 
-            style={getParallaxStyle(0.9)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[20%] left-[50%]"
-          >
-            OUR
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.1)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[55%]"
-          >
-            SERVICES
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.2)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[50%]"
-          >
-            ARE
-          </div>
-        */}
-        
+        {/* First row of parallel text */}
         <div 
-          style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[15%] left-[130%]"
+          style={getParallaxStyle(0.15)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[15%] left-[5%]' : 'top-[15%] left-[130%]'}`}
         >
           TEN
         </div>
         
         <div 
-          style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[130%]"
+          style={getParallaxStyle(0.2)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[25%] left-[25%]' : 'top-[45%] left-[130%]'}`}
         >
           THOUSAND
         </div>
         
         <div 
-          style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[75%] left-[130%]"
+          style={getParallaxStyle(0.1)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[35%] left-[15%]' : 'top-[75%] left-[130%]'}`}
         >
           ROBOTS
         </div>
 
+        {/* Second row of parallel text */}
         <div 
-          style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[25%] left-[260%]"
+          style={getParallaxStyle(0.12)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[45%] left-[35%]' : 'top-[25%] left-[260%]'}`}
         >
           WE
         </div>
         
         <div 
-          style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[50%] left-[290%]"
+          style={getParallaxStyle(0.18)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[55%] left-[20%]' : 'top-[50%] left-[290%]'}`}
         >
           BELIEVE
         </div>
         
         <div 
-          style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[310%]"
+          style={getParallaxStyle(0.22)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[65%] left-[40%]' : 'top-[60%] left-[310%]'}`}
         >
           IN
         </div>
         
+        {/* Third row of parallel text */}
         <div 
-          style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[20%] left-[420%]"
+          style={getParallaxStyle(0.13)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[75%] left-[10%]' : 'top-[20%] left-[420%]'}`}
         >
           OUR
         </div>
         
         <div 
-          style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[490%]"
+          style={getParallaxStyle(0.19)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[85%] left-[30%]' : 'top-[45%] left-[490%]'}`}
         >
           SERVICES
         </div>
         
         <div 
-          style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[500%]"
+          style={getParallaxStyle(0.24)}
+          className={`absolute font-barlow font-bold tracking-tighter text-[18px]
+                     ${isMobile ? 'top-[95%] left-[45%]' : 'top-[65%] left-[500%]'}`}
         >
           ARE
         </div>

@@ -84,7 +84,7 @@ const Hero = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 className="text-[6rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
             </div>

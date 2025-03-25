@@ -33,8 +33,6 @@ const Index = () => {
 
   return (
     <ViewProvider>
-      {/* Navigation placed outside of scroll containers to ensure it's always fixed */}
-      <Navigation />
       {/* ParallaxOverlay added inside ViewProvider to access current section */}
       <ParallaxOverlay />
       {/* SectionObserver is now inside the ViewProvider */}
@@ -81,6 +79,7 @@ const SectionObserverWithBackground = () => {
   if (isMobile) {
     return (
       <main className="min-h-screen will-change-auto" style={bgStyle}>
+        <Navigation />
         <div id="video"><VideoSection /></div>
         <div id="main1"><Main1 /></div>
         <Image1 />
@@ -110,6 +109,7 @@ const SectionObserverWithBackground = () => {
       className="h-screen w-screen overflow-x-auto scrollbar-hide will-change-auto" 
       style={bgStyle}
     >
+      <Navigation />
       <div className="flex h-screen">
         <div id="video" className="h-screen w-screen flex-shrink-0">
           <VideoSection />

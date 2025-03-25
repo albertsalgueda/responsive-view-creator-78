@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -49,7 +48,8 @@ const Main1 = ({
         {isMobile ?
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+              <h1 className="font-extrabold slide-in-left font-barlow" style={{
+            fontSize: 'calc(4.5rem + 2vw)',
             lineHeight: 1,
             fontWeight: 800,
             fontStyle: 'italic',
@@ -102,7 +102,8 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+              <h1 className="font-extrabold slide-in-left font-barlow" style={{
+            fontSize: 'calc(4.5rem + 2vw)',
             lineHeight: 1,
             fontWeight: 800,
             fontStyle: 'italic',

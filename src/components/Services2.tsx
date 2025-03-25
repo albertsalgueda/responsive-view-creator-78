@@ -31,12 +31,12 @@ const Services2 = ({
           <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
               <h1 className="font-extrabold slide-in-left font-barlow" style={{
+                fontSize: 'calc(4.5rem + 2vw)',
                 lineHeight: 1,
                 fontWeight: 800,
                 fontStyle: 'italic',
                 color: textColor,
-                transition: transition,
-                fontSize: 'calc(4.5rem + 20vw)'
+                transition: transition
               }}>
                 {title}
               </h1>
@@ -55,12 +55,12 @@ const Services2 = ({
                 <div>
                   <h1 
                     style={{
+                      fontSize: 'calc(4.5rem + 2vw)',
                       lineHeight: 1,
                       fontWeight: 800,
                       fontStyle: 'italic',
                       color: textColor,
-                      transition: transition,
-                      fontSize: 'calc(4.5rem + 20vw)'
+                      transition: transition
                     }} 
                     className="font-extrabold slide-in-left font-barlow mt-10 my-0"
                   >

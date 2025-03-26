@@ -43,10 +43,10 @@ const Hero = ({
           // Mobile layout
           <div className="flex flex-col min-h-screen justify-between py-12">
             <div className="mt-16">
-              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1.2, fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
-              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium">
+              <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{ lineHeight: 1.2 }}>
                 {subtitle}
               </p>
             </div>
@@ -69,7 +69,7 @@ const Hero = ({
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
-                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl font-barlow font-medium">
+                  <p className="text-brand-blue text-2xl slide-in-right max-w-xl font-barlow font-medium" style={{ lineHeight: 1.2 }}>
                     {subtitle}
                   </p>
                 </div>
@@ -84,7 +84,7 @@ const Hero = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1.2, fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
             </div>

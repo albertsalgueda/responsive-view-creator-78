@@ -30,7 +30,7 @@ const Main2 = ({
           <div className="flex flex-col min-h-screen py-12 px-6">
             <div className="mt-16">
               <h1 style={{
-                lineHeight: 1.1,
+                lineHeight: 1.2,
                 fontWeight: 800,
                 fontStyle: 'italic',
                 color: textColor,
@@ -39,14 +39,14 @@ const Main2 = ({
                 {title}
               </h1>
               <p style={{
-                lineHeight: 1.1,
+                lineHeight: 1.2,
                 color: textColor,
                 transition: transition
               }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
                 {subtitle}
               </p>
               <p className="mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" style={{
-                lineHeight: 1.1,
+                lineHeight: 1.2,
                 color: textColor,
                 transition: transition
               }}>
@@ -67,7 +67,7 @@ const Main2 = ({
             {/* Title at the top */}
             <div className="w-1/2 mb-auto">
               <h1 style={{
-                lineHeight: 1.1,
+                lineHeight: 1.2,
                 fontWeight: 800,
                 fontStyle: 'italic',
                 color: textColor,
@@ -82,7 +82,7 @@ const Main2 = ({
               {/* Text column 1 */}
               <div className="col-span-4 col-start-5 flex flex-col justify-end">
                 <p style={{
-                  lineHeight: 1.1,
+                  lineHeight: 1.2,
                   color: textColor,
                   transition: transition
                 }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
@@ -93,7 +93,7 @@ const Main2 = ({
               {/* Text column 2 */}
               <div className="col-span-4 col-start-9 flex flex-col justify-end">
                 <p style={{
-                  lineHeight: 1.1,
+                  lineHeight: 1.2,
                   color: textColor,
                   transition: transition
                 }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">

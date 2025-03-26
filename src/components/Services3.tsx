@@ -75,7 +75,7 @@ const Services3 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: description
-              }}></p>
+              }} className="text-sm"></p>
                 </div>
               </div>
             </div>

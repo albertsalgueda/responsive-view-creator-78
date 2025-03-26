@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -25,7 +24,6 @@ const ParallaxOverlay: React.FC = () => {
       }
     };
     
-    // Add event listeners with passive: true for better performance
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     const horizontalContainer = document.querySelector('.overflow-x-auto');
@@ -33,7 +31,6 @@ const ParallaxOverlay: React.FC = () => {
       horizontalContainer.addEventListener('scroll', handleScroll, { passive: true });
     }
     
-    // Initial calculation
     handleScroll();
     
     return () => {
@@ -55,7 +52,6 @@ const ParallaxOverlay: React.FC = () => {
     };
   };
   
-  // If mobile, return an empty div to avoid rendering the parallax text
   if (isMobile) {
     return <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>;
   }
@@ -63,73 +59,6 @@ const ParallaxOverlay: React.FC = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       <div className="relative w-full h-full">
-        {/* 
-          Mobile parallax text elements - commented out but preserved for future use
-          
-          <div 
-            style={getParallaxStyle(1.1)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[10%] left-[25%]"
-          >
-            TEN
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.2)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[40%] left-[35%]"
-          >
-            THOUSAND
-          </div>
-          
-          <div 
-            style={getParallaxStyle(0.9)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[70%] left-[30%]"
-          >
-            ROBOTS
-          </div>
-
-          <div 
-            style={getParallaxStyle(0.9)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[25%] left-[40%]"
-          >
-            WE
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.1)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[50%] left-[45%]"
-          >
-            BELIEVE
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.2)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[40%]"
-          >
-            IN
-          </div>
-          
-          <div 
-            style={getParallaxStyle(0.9)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[20%] left-[50%]"
-          >
-            OUR
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.1)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[55%]"
-          >
-            SERVICES
-          </div>
-          
-          <div 
-            style={getParallaxStyle(1.2)}
-            className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[50%]"
-          >
-            ARE
-          </div>
-        */}
-        
         <div 
           style={getParallaxStyle(1.1)}
           className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[15%] left-[130%]"
@@ -174,21 +103,21 @@ const ParallaxOverlay: React.FC = () => {
         
         <div 
           style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[20%] left-[420%]"
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[20%] left-[400%]"
         >
           OUR
         </div>
         
         <div 
           style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[490%]"
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[470%]"
         >
           SERVICES
         </div>
         
         <div 
           style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[500%]"
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[480%]"
         >
           ARE
         </div>

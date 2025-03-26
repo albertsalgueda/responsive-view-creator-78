@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -80,58 +79,49 @@ const Main1 = ({
             </div>
           </div> : <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
             <div className="">
-              <div className="grid grid-cols-12 gap-4 w-full">
-                <div className="col-span-6">
-                  {/* Title spans columns 1-6 */}
-                  <h1 style={{
-                    lineHeight: 1.1,
-                    fontWeight: 800,
-                    fontStyle: 'italic',
-                    color: textColor,
-                    transition: transition
-                  }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
-                    {title}
-                  </h1>
+              <div className="grid grid-cols-2 gap-8 w-full">
+                <div className="col-span-1">
+                  {/* Left side content (empty on desktop based on reference) */}
                 </div>
-                <div className="col-span-6">
-                  {/* Subtitle spans columns 7-12 */}
+                <div className="col-span-1">
+                  {/* Right side content */}
                   <p style={{
-                    lineHeight: 1.1,
-                    color: textColor,
-                    transition: transition
-                  }} className="slide-in-left max-w-xl font-barlow font-medium text-[4vh]">
+                lineHeight: 1.1,
+                color: textColor,
+                transition: transition
+              }} className="slide-in-left max-w-xl font-barlow font-medium text-[4vh]">
                     {subtitle}
                   </p>
                 </div>
               </div>
             </div>
             <div>
-              <div className="fade-in mb-4 flex justify-start">
+              <div className="fade-in mb-4">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-                  backgroundColor: textColor,
-                  color: backgroundColor,
-                  transition: transition
-                }}>
+              backgroundColor: textColor,
+              color: backgroundColor,
+              transition: transition
+            }}>
                   {ctaText}
                 </button>
               </div>
-              <div className="grid grid-cols-12 gap-4 items-end">
-                <div className="col-span-6">
-                  {/* Empty space for columns 1-6 in the bottom section */}
-                </div>
-                <div className="col-span-3">
-                  {/* Empty space for columns 7-9 */}
-                </div>
-                <div className="col-span-3">
-                  {/* Footnote spans columns 10-12 */}
-                  <p style={{
-                    lineHeight: 1.1,
-                    color: textColor,
-                    transition: transition
-                  }} className="slide-in-left font-barlow text-[2vh] pb-[5px]">
-                    This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
-                  </p>
-                </div>
+              <div className="flex justify-between items-end">
+                <h1 style={{
+              lineHeight: 1.1,
+              fontWeight: 800,
+              fontStyle: 'italic',
+              color: textColor,
+              transition: transition
+            }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
+                  {title}
+                </h1>
+                <p style={{
+              lineHeight: 1.1,
+              color: textColor,
+              transition: transition
+            }} className="slide-in-left font-barlow text-[2vh] max-w-md pb-[5px]">
+                  This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+                </p>
               </div>
             </div>
           </div>}

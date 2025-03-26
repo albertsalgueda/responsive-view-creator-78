@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -46,8 +45,7 @@ const Main1 = ({
   if (!mounted) return null;
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
-        {isMobile ?
-      <div className="flex flex-col min-h-screen justify-between py-12 px-6">
+        {isMobile ? <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
               <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
             lineHeight: 1,
@@ -74,9 +72,8 @@ const Main1 = ({
                 {ctaText}
               </button>
             </div>
-          </div> :
-      <div className="flex flex-col h-full justify-between px-6 py-[32px]">
-            <div className="flex items-start pt-16 flex-1 py-0">
+          </div> : <div className="flex flex-col h-full justify-between px-6 py-[32px]">
+            <div className="flex items-start pt-16 flex-1 py-[120px]">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
                   {/* Left side content (empty on desktop based on reference) */}

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -26,46 +25,38 @@ const Services2 = ({
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
-              <h1 
-                className="text-[8vw] font-extrabold slide-in-left font-barlow" 
-                style={{
-                  lineHeight: 1,
-                  fontWeight: 800,
-                  fontStyle: 'italic',
-                  color: textColor,
-                  transition: transition,
-                  fontSize: '8vw' // Force font size in inline style as well
-                }}
-              >
+              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
+            lineHeight: 1,
+            fontWeight: 800,
+            fontStyle: 'italic',
+            color: textColor,
+            transition: transition
+          }}>
                 {title}
               </h1>
               <div className="mt-6 fade-in-delay-1 font-barlow font-medium text-xl" style={{
-                color: textColor,
-                transition: transition
-              }}>
+            color: textColor,
+            transition: transition
+          }}>
                 <p className="mb-4" dangerouslySetInnerHTML={{
-                  __html: subtitle
-                }}></p>
+              __html: subtitle
+            }}></p>
                 <p dangerouslySetInnerHTML={{
-                  __html: description
-                }}></p>
+              __html: description
+            }}></p>
               </div>
             </div>
           </div> : <div className="flex flex-col justify-between h-full px-6 pt-[112px] pb-[40px]">
             <div className="flex-1">
               <div className="h-full flex flex-col justify-between">
                 <div>
-                  <h1 
-                    className="text-[8vw] font-extrabold slide-in-left font-barlow mt-10 my-0"
-                    style={{
-                      lineHeight: 1,
-                      fontWeight: 800,
-                      fontStyle: 'italic',
-                      color: textColor,
-                      transition: transition,
-                      fontSize: '8vw' // Force font size in inline style as well
-                    }}
-                  >
+                  <h1 style={{
+                lineHeight: 1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }} className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0">
                     {title}
                   </h1>
                 </div>
@@ -73,21 +64,21 @@ const Services2 = ({
                   <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
                     <div></div>
                     <div className="slide-in-right" style={{
-                      color: textColor,
-                      transition: transition
-                    }}>
+                  color: textColor,
+                  transition: transition
+                }}>
                       <p dangerouslySetInnerHTML={{
-                        __html: subtitle
-                      }}></p>
+                    __html: subtitle
+                  }}></p>
                     </div>
                     <div className="slide-in-right" style={{
-                      animationDelay: '0.1s',
-                      color: textColor,
-                      transition: transition
-                    }}>
+                  animationDelay: '0.1s',
+                  color: textColor,
+                  transition: transition
+                }}>
                       <p dangerouslySetInnerHTML={{
-                        __html: description
-                      }}></p>
+                    __html: description
+                  }}></p>
                     </div>
                   </div>
                 </div>

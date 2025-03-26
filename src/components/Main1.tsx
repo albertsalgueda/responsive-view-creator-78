@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -120,7 +119,7 @@ const Main1 = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="slide-in-left font-barlow text-[2vh] max-w-md">
+            }} className="slide-in-left font-barlow text-[2vh] max-w-md pb-[5px]">
                   This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
                 </p>
               </div>

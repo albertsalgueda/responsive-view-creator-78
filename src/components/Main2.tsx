@@ -60,8 +60,8 @@ const Main2 = ({
                 </button>
               </div>}
           </div> : <div className="flex flex-col justify-between h-full px-6 pt-[144px] pb-[40px]">
-            <div className="">
-              <div className="">
+            <div className="flex-1">
+              <div className="h-full flex flex-col justify-between">
                 <div>
                   <h1 style={{
                 lineHeight: 1,

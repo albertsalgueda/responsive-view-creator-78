@@ -55,8 +55,36 @@ const ParallaxOverlay: React.FC = () => {
     };
   };
   
-  // Return empty overlay for all devices to avoid any rendering issues
-  return <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>;
+  return (
+    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+      <div className="absolute top-[15vh] w-[300vw] whitespace-nowrap" style={getParallaxStyle(0.2)}>
+        <span className="text-[14vw] font-extrabold font-barlow italic tracking-tight pr-8">
+          DESIGN STUDIO OF THE FUTURE
+        </span>
+        <span className="text-[14vw] font-extrabold font-barlow italic tracking-tight">
+          DESIGN STUDIO OF THE FUTURE
+        </span>
+      </div>
+      
+      <div className="absolute top-[30vh] w-[300vw] whitespace-nowrap" style={getParallaxStyle(0.1)}>
+        <span className="text-[14vw] font-extrabold font-barlow italic tracking-tight pr-8">
+          AI POWERED EXPERIENCES
+        </span>
+        <span className="text-[14vw] font-extrabold font-barlow italic tracking-tight">
+          AI POWERED EXPERIENCES
+        </span>
+      </div>
+      
+      <div className="absolute top-[45vh] w-[300vw] whitespace-nowrap" style={getParallaxStyle(0.3)}>
+        <span className="text-[14vw] font-extrabold font-barlow italic tracking-tight pr-8">
+          PROMPT HUMAN POTENTIAL
+        </span>
+        <span className="text-[14vw] font-extrabold font-barlow italic tracking-tight">
+          PROMPT HUMAN POTENTIAL
+        </span>
+      </div>
+    </div>
+  );
 };
 
 export default ParallaxOverlay;

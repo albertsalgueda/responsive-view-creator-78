@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -20,7 +19,6 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
-
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -40,7 +38,6 @@ const Main1 = ({
       }
     }
   };
-  
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
@@ -71,7 +68,7 @@ const Main1 = ({
                 {ctaText}
               </button>
             </div>
-          </div> : <div className="flex flex-col h-full justify-between pt-[20vh] pb-[40px] px-[40px]">
+          </div> : <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
             <div className="">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">

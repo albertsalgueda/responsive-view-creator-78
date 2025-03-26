@@ -2,9 +2,11 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main3Props {
   subtitle?: string;
 }
+
 const Main3 = ({
   subtitle = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
 }: Main3Props) => {
@@ -37,7 +39,7 @@ const Main3 = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="slide-in-left w-full font-barlow font-medium text-3xl">
+            }} className="slide-in-left w-full font-barlow font-medium text-[5vh]">
                   {subtitle}
                 </p>
               </div>
@@ -46,4 +48,5 @@ const Main3 = ({
       </div>
     </section>;
 };
+
 export default Main3;

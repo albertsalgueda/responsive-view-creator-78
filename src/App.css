@@ -1,4 +1,3 @@
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -42,29 +41,29 @@
   color: #888;
 }
 
-/* Paragraph size classes with increased specificity */
-.p-large {
-  font-size: 5vw !important; /* Adding !important to override any other styling */
+/* Paragraph size classes with maximum specificity */
+html body .p-large {
+  font-size: 5vw !important; /* Using !important and increased selector specificity */
 }
 
-.p-medium {
+html body .p-medium {
   font-size: 1.5vw !important;
 }
 
-.p-small {
+html body .p-small {
   font-size: 1vw !important;
 }
 
 @media (max-width: 768px) {
-  .p-large {
+  html body .p-large {
     font-size: 5vw !important;
   }
   
-  .p-medium {
+  html body .p-medium {
     font-size: 4vw !important;
   }
   
-  .p-small {
+  html body .p-small {
     font-size: 3.5vw !important;
   }
 }

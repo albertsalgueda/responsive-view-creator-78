@@ -62,18 +62,20 @@ const Main1 = ({
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
-                  fontSize: '8vw' // Setting explicit font size for the title
+                  fontSize: '8vw'
                 }}
               >
                 {title}
               </h1>
-              {/* Remove any potential inline styles here and just use the class */}
-              <p className="mt-6 p-large fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{
-                color: textColor,
-                transition: transition
-              }}>
-                {subtitle}
-              </p>
+              {/* Use p-large class by itself without any conflicting size classes */}
+              <div className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium">
+                <p className="p-large" style={{
+                  color: textColor,
+                  transition: transition
+                }}>
+                  {subtitle}
+                </p>
+              </div>
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
               <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
@@ -91,13 +93,15 @@ const Main1 = ({
                   {/* Left side content (empty on desktop based on reference) */}
                 </div>
                 <div className="col-span-1">
-                  {/* Right side content - ensure no inline font-size styles here */}
-                  <p className="p-large slide-in-right max-w-xl font-barlow font-medium" style={{
-                    color: textColor,
-                    transition: transition
-                  }}>
-                    {subtitle}
-                  </p>
+                  {/* Use p-large class by itself without any conflicting size classes */}
+                  <div className="slide-in-right max-w-xl font-barlow font-medium">
+                    <p className="p-large" style={{
+                      color: textColor,
+                      transition: transition
+                    }}>
+                      {subtitle}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,7 +123,7 @@ const Main1 = ({
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
-                  fontSize: '8vw' // Setting explicit font size for the title
+                  fontSize: '8vw'
                 }}
               >
                 {title}

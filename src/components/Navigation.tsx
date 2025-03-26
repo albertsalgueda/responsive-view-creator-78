@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -56,6 +57,9 @@ const Navigation = ({
     setMounted(true);
   }, [isMobile]);
   if (!mounted) return null;
+
+  // Find only the "let's talk" link for desktop view
+  const letsTalkLink = links.find(link => link.text === "let's talk");
 
   const SmallLogo = () => <svg width="100%" height="100%" viewBox="0 0 343 153" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
       <path d="M165.99 38.1758C165.99 45.1565 164.316 51.5555 160.968 57.3727C157.474 63.19 152.889 67.8438 147.212 71.3342C141.389 74.6791 134.911 76.3515 127.778 76.3515H38.2119C31.079 76.3515 24.674 74.6791 18.9968 71.3342C13.174 67.8438 8.58858 63.19 5.24049 57.3727C1.74683 51.5555 3.05426e-07 45.1565 0 38.1758C-3.05426e-07 31.1951 1.74682 24.7961 5.24049 18.9788C8.58858 13.1616 13.174 8.58047 18.9968 5.23555C24.674 1.74519 31.079 3.83964e-06 38.2119 3.52814e-06L127.778 0C134.911 -3.11493e-07 141.389 1.74518 147.212 5.23554C152.889 8.58047 157.474 13.1616 160.968 18.9788C164.316 24.7961 165.99 31.1951 165.99 38.1758ZM137.168 38.1758C137.168 36.576 136.658 35.2671 135.639 34.2491C134.475 33.2311 133.164 32.7221 131.709 32.7221L34.0632 32.7221C32.462 32.7221 31.1518 33.2311 30.1328 34.2491C28.9683 35.2671 28.386 36.576 28.386 38.1758C28.386 39.7755 28.9683 41.1571 30.1328 42.3206C31.1518 43.3386 32.462 43.8476 34.0632 43.8476L131.709 43.8476C133.164 43.8476 134.475 43.3386 135.639 42.3206C136.658 41.1571 137.168 39.7755 137.168 38.1758Z" fill={navColor} />
@@ -139,15 +143,21 @@ const Navigation = ({
         </div>
       </a>
       
-      {isMobile ? <MobileMenu /> : <div className="flex items-center gap-8">
-          {links.map((link, index) => <a key={index} href={link.href} className="font-barlow font-extrabold italic font-weight-800 hover:opacity-80 transition-all" style={{
-        color: navColor,
-        transition: 'color 1.2s ease-out',
-        lineHeight: 1.2
-      }}>
-              {link.text}
-            </a>)}
-        </div>}
+      {isMobile ? <MobileMenu /> : 
+        <div className="flex items-center gap-8">
+          {letsTalkLink && (
+            <a href={letsTalkLink.href} 
+               className="font-barlow font-extrabold italic font-weight-800 hover:opacity-80 transition-all" 
+               style={{
+                 color: navColor,
+                 transition: 'color 1.2s ease-out',
+                 lineHeight: 1.2
+               }}>
+              {letsTalkLink.text}
+            </a>
+          )}
+        </div>
+      }
     </nav>;
 };
 

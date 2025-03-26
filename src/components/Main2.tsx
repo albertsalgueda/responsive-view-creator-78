@@ -77,13 +77,13 @@ const Main2 = ({
               </h1>
             </div>
             
-            {/* Spacer */}
-            <div className="h-[10vh]"></div>
+            {/* Content section that takes up remaining space */}
+            <div className="flex-grow"></div>
             
             {/* Text sections with flex-col and justify-end to anchor at bottom - REMOVED MARGIN */}
-            <div className="grid grid-cols-12 gap-8">
+            <div className="grid grid-cols-12 gap-8 mb-[40px]">
               {/* Text column 1 */}
-              <div className="col-span-4 col-start-5 flex flex-col justify-end mb-[40px]">
+              <div className="col-span-4 col-start-5 flex flex-col justify-end">
                 <p style={{
                   lineHeight: 1.1,
                   color: textColor,
@@ -94,7 +94,7 @@ const Main2 = ({
               </div>
               
               {/* Text column 2 */}
-              <div className="col-span-4 col-start-9 flex flex-col justify-end mb-[40px]">
+              <div className="col-span-4 col-start-9 flex flex-col justify-end">
                 <p style={{
                   lineHeight: 1.1,
                   color: textColor,

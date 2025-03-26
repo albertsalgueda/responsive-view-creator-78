@@ -79,11 +79,11 @@ const Main2 = ({
                   </p>
                 </div>
                 <div className="col-span-1 col-start-3 flex flex-col justify-end">
-                  <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                  <p style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }}>
+              }} className="text-[3vh]slide-in-right font-barlow font-medium mb-0">
                     {description}
                   </p>
                 </div>

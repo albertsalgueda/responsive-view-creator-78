@@ -16,12 +16,12 @@ const MuteButton = ({ isMuted, onToggle }: MuteButtonProps) => {
         position: 'fixed',
         bottom: isMobile ? '20px' : '16px',
         right: '16px',
-        zIndex: 99999
+        zIndex: 999999
       }}
     >
       <button
         onClick={onToggle}
-        className="w-[60px] h-[60px] hover:opacity-80 transition-opacity duration-500"
+        className="w-[60px] h-[60px] hover:opacity-80 transition-opacity duration-500 bg-white rounded-full shadow-lg"
       >
         {isMuted ? (
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">

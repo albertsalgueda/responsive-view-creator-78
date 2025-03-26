@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -17,11 +18,27 @@ import { ViewProvider } from "@/context/ViewContext";
 import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
 import { useSectionColors } from "@/hooks/use-section-colors";
+import MuteButton from "@/components/MuteButton";
+import { useVideoControl } from "@/hooks/useVideoControl";
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
   const scrollProgress = useBackgroundTransition();
+  
+  // Get the global video control state to pass to the MuteButton
+  const videos = [
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427234/1_Perfume_bgcjis.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427238/2_SuperHero_wqmla0.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427236/3_CarCommercial_tkijvf.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427234/4_Cereal_tof0fd.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427240/5_OldMan4_w1fg8m.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427235/6_motel2_cmfw3s.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427232/7_Rapper2_n3p3eo.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427233/8_Anime2_brrj38.mp4",
+    "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737578062/9_Honeybee_y34id6.mp4"
+  ];
+  const { isMuted, toggleMute } = useVideoControl(videos);
   
   useEffect(() => {
     setMounted(true);
@@ -34,6 +51,8 @@ const Index = () => {
       <Navigation />
       <ParallaxOverlay />
       <SectionObserverWithBackground />
+      {/* MuteButton placed at the root level outside of any scrollable container */}
+      <MuteButton isMuted={isMuted} onToggle={toggleMute} />
     </ViewProvider>
   );
 };

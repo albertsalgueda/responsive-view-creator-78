@@ -37,7 +37,7 @@ const VideoSection = () => {
         onVideoEnded={handleVideoEnded}
         mainVideoRef={mainVideoRef}
       />
-      <MuteButton isMuted={isMuted} onToggle={toggleMute} />
+      {/* Mute button is now moved to the Index component to ensure it's at the root level */}
     </div>
   );
 };

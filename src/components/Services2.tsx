@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Services2Props {
   title?: string;
   subtitle?: string;
   description?: string;
   descriptionText?: string;
 }
+
 const Services2 = ({
   title = "Product",
   subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
@@ -19,6 +21,7 @@ const Services2 = ({
     textColor,
     transition
   } = useSectionColors();
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
@@ -55,7 +58,7 @@ const Services2 = ({
             }}></p>
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full px-6 pt-[25vh] pb-[40px]">
+          </div> : <div className="flex flex-col h-full px-6 pr-[25%] pt-[25vh] pb-[40px]">
             <div>
               <h1 style={{
             lineHeight: 1.1,
@@ -103,4 +106,5 @@ const Services2 = ({
       </div>
     </section>;
 };
+
 export default Services2;

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -84,7 +83,7 @@ const Main2 = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="text-[3vh]slide-in-right font-barlow font-medium mb-0">
+              }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
                     {description}
                   </p>
                 </div>

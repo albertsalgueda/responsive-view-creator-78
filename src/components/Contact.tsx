@@ -147,10 +147,10 @@ const Contact = ({
               </div>
               
               <div className="flex flex-col items-start gap-2">
-                <a href="https://linkedin.com" className="font-barlow text-sm hover:underline" style={{
+                <a href="https://linkedin.com" style={{
               color: textColor,
               transition: transition
-            }}>LINKEDIN</a>
+            }} className="font-barlow text-[2.25vh] hover:underline">LINKEDIN</a>
                 <a href="https://instagram.com" className="font-barlow text-sm hover:underline" style={{
               color: textColor,
               transition: transition

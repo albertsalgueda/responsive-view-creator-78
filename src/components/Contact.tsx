@@ -135,7 +135,7 @@ const Contact = ({
               </div>
             </div>
             
-            <div className="flex justify-between items-end pb-4">
+            <div className="flex justify-between items-end">
               <div className="text-sm font-barlow" style={{
             color: textColor,
             transition: transition

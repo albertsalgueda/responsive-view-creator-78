@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -8,19 +9,12 @@ const Main3 = ({
   subtitle = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
 }: Main3Props) => {
   const isMobile = useIsMobile();
-  // const [mounted, setMounted] = useState(false);
   const {
     textColor,
     transition
   } = useSectionColors();
 
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, [isMobile]);
-
-  // if (!mounted) return null;
-
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
       // Mobile layout - anchored to top

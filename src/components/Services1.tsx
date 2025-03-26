@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Services1Props {
   title?: string;
   subtitle?: string;
   description?: string;
 }
+
 const Services1 = ({
   title = "Brand",
   subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
@@ -18,10 +20,13 @@ const Services1 = ({
     textColor,
     transition
   } = useSectionColors();
+
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
+
   if (!mounted) return null;
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col min-h-screen justify-between py-12 px-6">
@@ -91,4 +96,5 @@ const Services1 = ({
       </div>
     </section>;
 };
+
 export default Services1;

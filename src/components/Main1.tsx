@@ -48,7 +48,7 @@ const Main1 = ({
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ?
       <div className="flex flex-col min-h-screen justify-between py-12 px-6">
-            <div className="mt-16 pt-24">
+            <div className="mt-16">
               <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
             lineHeight: 1,
             fontWeight: 800,
@@ -76,7 +76,7 @@ const Main1 = ({
             </div>
           </div> :
       <div className="flex flex-col h-full justify-between px-6 py-[32px]">
-            <div className="flex items-start pt-24 flex-1 py-0">
+            <div className="flex items-start pt-16 flex-1 py-0">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
                   {/* Left side content (empty on desktop based on reference) */}

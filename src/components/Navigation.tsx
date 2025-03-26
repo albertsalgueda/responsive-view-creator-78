@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -109,7 +110,7 @@ const Navigation = ({
               <X size={32} className="text-brand-blue" />
             </Button>
           </DrawerClose>
-          <div className="flex flex-col gap-5 items-start w-full">
+          <div className="flex flex-col gap-5 items-start w-full pb-[20px]">
             {links.map((link, index) => <a key={index} href={link.href} style={{
             lineHeight: 1.2
           }} onClick={() => setOpen(false)} className="text-3xl font-extrabold font-barlow italic font-weight-800 hover:opacity-80 transition-all text-brand-blue">

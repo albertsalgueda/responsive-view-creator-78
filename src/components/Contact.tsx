@@ -48,7 +48,7 @@ const Contact = ({
           <div className="flex flex-col min-h-screen justify-between p-6">
             <div className="mt-16">
               <h2 
-                className="text-xl font-medium slide-in-left font-barlow p-large" 
+                className="text-xl font-medium slide-in-left font-barlow" 
                 style={{
                   lineHeight: 1.1,
                   color: textColor,
@@ -59,7 +59,7 @@ const Contact = ({
               </h2>
               
               <p 
-                className="mt-8 fade-in-delay-1 font-barlow font-medium p-medium" 
+                className="mt-8 fade-in-delay-1 font-barlow font-medium text-base" 
                 style={{
                   color: textColor,
                   transition: transition
@@ -141,7 +141,7 @@ const Contact = ({
               <div className="w-full grid grid-cols-2 gap-12">
                 <div className="col-span-1">
                   <h2 
-                    className="text-2xl font-medium slide-in-left font-barlow p-large" 
+                    className="text-2xl font-medium slide-in-left font-barlow" 
                     style={{
                       lineHeight: 1.1,
                       color: textColor,
@@ -154,7 +154,7 @@ const Contact = ({
                 
                 <div className="col-span-1 flex flex-col">
                   <p 
-                    className="p-medium slide-in-right font-barlow font-medium mb-8" 
+                    className="text-xl slide-in-right font-barlow font-medium mb-8" 
                     style={{
                       color: textColor,
                       transition: transition

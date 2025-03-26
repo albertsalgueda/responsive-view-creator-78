@@ -40,30 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* Paragraph size classes with maximum specificity */
-html body .p-large {
-  font-size: 5vw !important; /* Using !important and increased selector specificity */
-}
-
-html body .p-medium {
-  font-size: 1.5vw !important;
-}
-
-html body .p-small {
-  font-size: 1vw !important;
-}
-
-@media (max-width: 768px) {
-  html body .p-large {
-    font-size: 5vw !important;
-  }
-  
-  html body .p-medium {
-    font-size: 4vw !important;
-  }
-  
-  html body .p-small {
-    font-size: 3.5vw !important;
-  }
-}

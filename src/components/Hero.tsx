@@ -43,7 +43,15 @@ const Hero = ({
           // Mobile layout
           <div className="flex flex-col min-h-screen justify-between py-12">
             <div className="mt-16">
-              <h1 className="text-[8vw] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 
+                className="text-[8vw] font-extrabold text-brand-blue slide-in-left font-barlow" 
+                style={{ 
+                  lineHeight: 1, 
+                  fontWeight: 800, 
+                  fontStyle: 'italic',
+                  fontSize: '8vw' // Force font size in inline style as well
+                }}
+              >
                 {title}
               </h1>
               <p className="text-brand-blue mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium">
@@ -84,7 +92,15 @@ const Hero = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[8vw] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 
+                className="text-[8vw] font-extrabold text-brand-blue slide-in-left font-barlow" 
+                style={{ 
+                  lineHeight: 1, 
+                  fontWeight: 800, 
+                  fontStyle: 'italic',
+                  fontSize: '8vw' // Force font size in inline style as well
+                }}
+              >
                 {title}
               </h1>
             </div>

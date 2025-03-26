@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -128,7 +127,7 @@ const Navigation = ({
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:opacity-80 transition-all uppercase text-[2.25vh] font-barlow font-medium">
                 LinkedIn
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:opacity-80 transition-all uppercase text-sm">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:opacity-80 transition-all uppercase text-[2.25vh] font-barlow font-medium">
                 Instagram
               </a>
             </div>

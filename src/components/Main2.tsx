@@ -63,9 +63,9 @@ const Main2 = ({
               </div>}
           </div>
         ) : (
-          <div className="grid grid-cols-12 h-full pt-[25vh] pb-[40px] px-[40px]">
+          <div className="grid grid-cols-12 h-full pt-[15vh] pb-[40px] px-[40px]">
             {/* H1 spans columns 1-6 */}
-            <div className="col-span-6 mb-20">
+            <div className="col-span-6 mb-10">
               <h1 style={{
                 lineHeight: 1.1,
                 fontWeight: 800,
@@ -77,11 +77,11 @@ const Main2 = ({
               </h1>
             </div>
             
-            {/* Empty columns for spacing */}
-            <div className="col-span-12 flex-1"></div>
+            {/* Empty columns for spacing - reduced flex-1 to flex-none with specific height */}
+            <div className="col-span-12 h-[10vh]"></div>
             
             {/* Text column 1 spans columns 5-8 */}
-            <div className="col-span-4 col-start-5 self-end mb-[40px]">
+            <div className="col-span-4 col-start-5 mb-[40px]">
               <p style={{
                 lineHeight: 1.1,
                 color: textColor,
@@ -92,7 +92,7 @@ const Main2 = ({
             </div>
             
             {/* Text column 2 spans columns 9-12 */}
-            <div className="col-span-4 col-start-9 self-end mb-[40px]">
+            <div className="col-span-4 col-start-9 mb-[40px]">
               <p style={{
                 lineHeight: 1.1,
                 color: textColor,

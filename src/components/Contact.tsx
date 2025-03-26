@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -75,7 +76,7 @@ const Contact = ({
           }}></div>
               
               <div className="flex justify-between items-center">
-                <p className="text-sm font-barlow" style={{
+                <p className="text-sm font-barlow font-medium" style={{
               color: textColor,
               transition: transition
             }}>10kR ©2025</p>
@@ -142,7 +143,7 @@ const Contact = ({
               <div style={{
             color: textColor,
             transition: transition
-          }} className="text-[2.25vh] font-barlow">
+          }} className="text-[2.25vh] font-barlow font-medium">
                 10kR ©2025
               </div>
               

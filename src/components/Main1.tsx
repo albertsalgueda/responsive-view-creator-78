@@ -62,7 +62,7 @@ const Main1 = ({
               <p style={{
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl py-[24px]">
                 {subtitle}
               </p>
             </div>

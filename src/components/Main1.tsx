@@ -46,7 +46,7 @@ const Main1 = ({
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
             <div className="mt-16">
               <h1 style={{
-            lineHeight: 1,
+            lineHeight: 0.9,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
@@ -55,6 +55,7 @@ const Main1 = ({
                 {title}
               </h1>
               <p style={{
+            lineHeight: 0.9,
             color: textColor,
             transition: transition
           }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[24px] my-0">
@@ -79,6 +80,7 @@ const Main1 = ({
                 <div className="col-span-1">
                   {/* Right side content */}
                   <p style={{
+                lineHeight: 0.9,
                 color: textColor,
                 transition: transition
               }} className="slide-in-left max-w-xl font-barlow font-medium text-[5vh]">
@@ -98,7 +100,7 @@ const Main1 = ({
                 </button>
               </div>
               <h1 style={{
-            lineHeight: 1,
+            lineHeight: 0.9,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,

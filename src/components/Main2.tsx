@@ -17,24 +17,17 @@ const Main2 = ({
   ctaAction = () => console.log("CTA clicked")
 }: Main2Props) => {
   const isMobile = useIsMobile();
-  // const [mounted, setMounted] = useState(false);
   const {
     textColor,
     transition
   } = useSectionColors();
-
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, [isMobile]);
-
-  // if (!mounted) return null;
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col min-h-screen py-12 px-6">
             <div className="mt-16">
               <h1 style={{
-            lineHeight: 1,
+            lineHeight: 0.9,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
@@ -43,12 +36,14 @@ const Main2 = ({
                 {title}
               </h1>
               <p style={{
+            lineHeight: 0.9,
             color: textColor,
             transition: transition
           }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
                 {subtitle}
               </p>
               <p className="mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" style={{
+            lineHeight: 0.9,
             color: textColor,
             transition: transition
           }}>
@@ -66,7 +61,7 @@ const Main2 = ({
           </div> : <div className="flex flex-col h-full pt-[20vh] pb-[40px] px-[40px]">
             <div className="flex-1 flex flex-col">
               <h1 style={{
-            lineHeight: 1,
+            lineHeight: 0.9,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
@@ -78,6 +73,7 @@ const Main2 = ({
               <div className="mt-auto grid grid-cols-3 gap-12">
                 <div className="col-span-1 col-start-2 flex flex-col justify-end">
                   <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                lineHeight: 0.9,
                 color: textColor,
                 transition: transition
               }}>
@@ -86,6 +82,7 @@ const Main2 = ({
                 </div>
                 <div className="col-span-1 col-start-3 flex flex-col justify-end">
                   <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                lineHeight: 0.9,
                 color: textColor,
                 transition: transition
               }}>

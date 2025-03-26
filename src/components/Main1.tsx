@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -55,8 +56,15 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[24px] my-0">
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[12px] my-0">
                 {subtitle}
+              </p>
+              <p style={{
+            lineHeight: 1.1,
+            color: textColor,
+            transition: transition
+          }} className="fade-in-delay-1 max-w-[85%] font-barlow text-lg">
+                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
@@ -82,6 +90,13 @@ const Main1 = ({
                 transition: transition
               }} className="slide-in-left max-w-xl font-barlow font-medium text-[4vh]">
                     {subtitle}
+                  </p>
+                  <p style={{
+                lineHeight: 1.1,
+                color: textColor,
+                transition: transition
+              }} className="mt-4 slide-in-left max-w-xl font-barlow text-[2vh]">
+                    This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
                   </p>
                 </div>
               </div>

@@ -73,7 +73,7 @@ const Main1 = ({
               </button>
             </div>
           </div> : <div className="flex flex-col h-full justify-between px-6 pt-[144px] pb-[40px]">
-            <div className="flex items-start pt-16 flex-1 py-0">
+            <div className="flex items-start pt-16 flex-1">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
                   {/* Left side content (empty on desktop based on reference) */}

@@ -59,7 +59,7 @@ const Main2 = ({
                   {ctaText}
                 </button>
               </div>}
-          </div> : <div className="flex flex-col h-full pt-[144px] pb-[40px] px-[40px]">
+          </div> : <div className="flex flex-col h-full pt-[20vh] pb-[40px] px-[40px]">
             <div className="flex-1 flex flex-col">
               <h1 style={{
             lineHeight: 1,

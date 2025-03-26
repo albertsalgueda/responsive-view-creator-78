@@ -1,15 +1,12 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main1Props {
   title?: string;
   subtitle?: string;
   ctaText?: string;
   ctaAction?: () => void;
 }
-
 const Main1 = ({
   title = "We are 10kR.",
   subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
@@ -23,13 +20,13 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
-  
+
   // useEffect(() => {
   //   setMounted(true);
   // }, [isMobile]);
-  
+
   // if (!mounted) return null;
-  
+
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -49,7 +46,6 @@ const Main1 = ({
       }
     }
   };
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="flex flex-col min-h-screen justify-between py-12 px-6">
@@ -63,10 +59,10 @@ const Main1 = ({
           }}>
                 {title}
               </h1>
-              <p className="mt-6 text-xl fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{
+              <p style={{
             color: textColor,
             transition: transition
-          }}>
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
                 {subtitle}
               </p>
             </div>
@@ -120,5 +116,4 @@ const Main1 = ({
       </div>
     </section>;
 };
-
 export default Main1;

@@ -11,12 +11,12 @@ const MuteButton = ({ isMuted, onToggle }: MuteButtonProps) => {
   
   return (
     <div 
-      className="fixed bottom-0 right-0 p-4 z-[1000]"
+      className="fixed bottom-0 right-0 p-4"
       style={{ 
         position: 'fixed',
         bottom: isMobile ? '20px' : '16px',
         right: '16px',
-        zIndex: 9999
+        zIndex: 99999
       }}
     >
       <button

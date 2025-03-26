@@ -29,7 +29,7 @@ const Services3 = ({
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? 
           <div className="flex flex-col min-h-screen justify-between py-12 px-6">
-            <div className="mt-16">
+            <div className="mt-16 pt-24">
               <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
                 lineHeight: 1,
                 fontWeight: 800,
@@ -60,7 +60,7 @@ const Services3 = ({
                       color: textColor,
                       transition: transition
                     }} 
-                    className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
+                    className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 pt-24 my-0"
                   >
                     {title}
                   </h1>

@@ -105,7 +105,7 @@ const Main1 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-7xl">
+          }} className="font-extrabold slide-in-left font-barlow text-8xl">
                 {title}
               </h1>
             </div>

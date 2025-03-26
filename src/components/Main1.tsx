@@ -1,12 +1,15 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main1Props {
   title?: string;
   subtitle?: string;
   ctaText?: string;
   ctaAction?: () => void;
 }
+
 const Main1 = ({
   title = "We are 10kR.",
   subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
@@ -19,6 +22,7 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
+
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -38,94 +42,104 @@ const Main1 = ({
       }
     }
   };
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
-        {isMobile ? <div className="flex flex-col justify-between h-full py-12 px-6">
+        {isMobile ? (
+          <div className="flex flex-col justify-between h-full py-12 px-6">
             <div className="mt-16">
               <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-6xl">
+                lineHeight: 1.1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }} className="font-extrabold slide-in-left font-barlow text-6xl col-span-6">
                 {title}
               </h1>
               <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[12px] my-0">
+                lineHeight: 1.1,
+                color: textColor,
+                transition: transition
+              }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[12px] my-0">
                 {subtitle}
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2">
               <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="fade-in-delay-1 max-w-[85%] font-barlow text-lg mb-6">
+                lineHeight: 1.1,
+                color: textColor,
+                transition: transition
+              }} className="fade-in-delay-1 max-w-[85%] font-barlow text-lg mb-6">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
               <div className="flex justify-end">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-              backgroundColor: textColor,
-              color: backgroundColor,
-              transition: transition
-            }}>
+                  backgroundColor: textColor,
+                  color: backgroundColor,
+                  transition: transition
+                }}>
                   {ctaText}
                 </button>
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
-            <div className="">
-              <div className="grid grid-cols-2 gap-8 w-full">
-                <div className="col-span-1">
-                  {/* Left side content (empty on desktop based on reference) */}
-                </div>
-                <div className="col-span-1">
-                  {/* Right side content */}
-                  <p style={{
+          </div>
+        ) : (
+          <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
+            {/* Empty columns 1-6 for top part */}
+            <div className="col-span-6"></div>
+            
+            {/* Right side content in columns 7-12 */}
+            <div className="col-span-6">
+              <p style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="slide-in-left max-w-xl font-barlow font-medium text-[4vh]">
-                    {subtitle}
-                  </p>
-                </div>
-              </div>
+              }} className="slide-in-left font-barlow font-medium text-[4vh] mt-[25vh]">
+                {subtitle}
+              </p>
             </div>
-            <div>
-              <div className="fade-in mb-4">
+            
+            {/* Button in column 12 */}
+            <div className="col-span-12 flex justify-end mb-4 mt-auto">
+              <div className="fade-in">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-              backgroundColor: textColor,
-              color: backgroundColor,
-              transition: transition
-            }}>
+                  backgroundColor: textColor,
+                  color: backgroundColor,
+                  transition: transition
+                }}>
                   {ctaText}
                 </button>
               </div>
-              <div className="flex justify-between items-end">
-                <h1 style={{
-              lineHeight: 1.1,
-              fontWeight: 800,
-              fontStyle: 'italic',
-              color: textColor,
-              transition: transition
-            }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
-                  {title}
-                </h1>
-                <p style={{
-              lineHeight: 1.1,
-              color: textColor,
-              transition: transition
-            }} className="slide-in-left font-barlow text-[2vh] max-w-md pb-[5px]">
-                  This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
-                </p>
-              </div>
             </div>
-          </div>}
+            
+            {/* Title in columns 1-6, anchored to bottom */}
+            <div className="col-span-6 self-end">
+              <h1 style={{
+                lineHeight: 1.1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
+                {title}
+              </h1>
+            </div>
+            
+            {/* Footnote in columns 10-12, anchored to bottom */}
+            <div className="col-span-3 col-start-10 self-end">
+              <p style={{
+                lineHeight: 1.1,
+                color: textColor,
+                transition: transition
+              }} className="slide-in-left font-barlow text-[2vh] pb-[5px]">
+                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>;
 };
+
 export default Main1;

@@ -60,7 +60,7 @@ const Main2 = ({
                 </button>
               </div>}
           </div> : <div className="flex flex-col justify-between h-full px-6 pt-[144px] pb-[40px]">
-            <div className="flex-1">
+            <div className="">
               <div className="">
                 <div>
                   <h1 style={{

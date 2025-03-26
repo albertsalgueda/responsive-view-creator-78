@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -21,7 +20,6 @@ const Main2 = ({
     textColor,
     transition
   } = useSectionColors();
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col min-h-screen py-12 px-6">
@@ -72,11 +70,11 @@ const Main2 = ({
               
               <div className="mt-auto grid grid-cols-3 gap-12">
                 <div className="col-span-1 col-start-2 flex flex-col justify-end">
-                  <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                  <p style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }}>
+              }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
                     {subtitle}
                   </p>
                 </div>

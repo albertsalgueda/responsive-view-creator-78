@@ -77,8 +77,8 @@ const Main2 = ({
               </h1>
             </div>
             
-            {/* Text sections at the bottom */}
-            <div className="grid grid-cols-12 gap-8 mb-[40px]">
+            {/* Text sections at the bottom - removed mb-[40px] */}
+            <div className="grid grid-cols-12 gap-8">
               {/* Text column 1 */}
               <div className="col-span-4 col-start-5 flex flex-col justify-end">
                 <p style={{

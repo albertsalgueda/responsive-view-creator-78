@@ -26,7 +26,7 @@ const Services1 = ({
 
   return <section className="">
       <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? <div className=" justify-between py-12 px-6">
+        {isMobile ? <div className="h-fit  justify-between py-12 px-6">
             <div className="mt-16">
               <h1 style={{
             lineHeight: 1,

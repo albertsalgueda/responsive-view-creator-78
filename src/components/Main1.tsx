@@ -91,10 +91,10 @@ const Main1 = ({
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
-                  <p style={{
+                  <p className="p-large slide-in-right max-w-xl font-barlow font-medium" style={{
                     color: textColor,
                     transition: transition
-                  }} className="slide-in-right max-w-xl font-barlow font-medium p-large">
+                  }}>
                     {subtitle}
                   </p>
                 </div>

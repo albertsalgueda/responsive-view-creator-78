@@ -70,7 +70,7 @@ const Services2 = ({
                 lineHeight: 1.3,
                 color: textColor,
                 transition: transition
-              }} className="mt-2 slide-in-left max-w-[50%] font-barlow font-medium text-[3vh]">
+              }} className="mt-2 slide-in-left max-w-full font-barlow font-medium text-[3vh]">
                 {descriptionText}
               </p>
             </div>

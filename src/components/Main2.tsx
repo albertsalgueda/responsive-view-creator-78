@@ -63,9 +63,9 @@ const Main2 = ({
               </div>}
           </div>
         ) : (
-          <div className="flex flex-col h-full pt-[15vh] pb-[40px] px-[40px]">
+          <div className="flex flex-col h-full justify-end pt-[15vh] pb-[40px] px-[40px]">
             {/* Title at the top */}
-            <div className="w-1/2 mb-10">
+            <div className="w-1/2 mb-auto">
               <h1 style={{
                 lineHeight: 1.1,
                 fontWeight: 800,
@@ -77,10 +77,7 @@ const Main2 = ({
               </h1>
             </div>
             
-            {/* Content section that takes up remaining space */}
-            <div className="flex-grow"></div>
-            
-            {/* Text sections with flex-col and justify-end to anchor at bottom - REMOVED MARGIN */}
+            {/* Text sections at the bottom */}
             <div className="grid grid-cols-12 gap-8 mb-[40px]">
               {/* Text column 1 */}
               <div className="col-span-4 col-start-5 flex flex-col justify-end">

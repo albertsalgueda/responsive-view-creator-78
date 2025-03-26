@@ -99,13 +99,13 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 style={{
+              <h1 className="text-[4.5rem] font-extrabold slide-in-left font-barlow" style={{
             lineHeight: 1,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-8xl">
+          }}>
                 {title}
               </h1>
             </div>

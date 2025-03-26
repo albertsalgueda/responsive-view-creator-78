@@ -78,7 +78,7 @@ const Services1 = ({
               </p>
             </div>
             <div className="mt-auto">
-              <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
+              <div className="grid grid-cols-2 gap-8 text-xl font-barlow font-medium mb-0">
                 <div className="flex flex-col justify-end slide-in-right" style={{
               color: textColor,
               transition: transition
@@ -100,7 +100,6 @@ const Services1 = ({
                 lineHeight: 1.1
               }}></p>
                 </div>
-                <div></div>
               </div>
             </div>
           </div>}

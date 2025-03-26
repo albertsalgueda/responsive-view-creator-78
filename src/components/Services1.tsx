@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -5,11 +6,13 @@ interface Services1Props {
   title?: string;
   subtitle?: string;
   description?: string;
+  descriptionText?: string;
 }
 const Services1 = ({
   title = "Brand",
   subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
-  description = "Brand whatsits<br>Brand somethings<br>Brand wibble wobbles<br>Brand brand & more brand"
+  description = "Brand whatsits<br>Brand somethings<br>Brand wibble wobbles<br>Brand brand & more brand",
+  descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof"
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const {
@@ -29,6 +32,13 @@ const Services1 = ({
           }} className="font-extrabold slide-in-left font-barlow text-7xl">
                 {title}
               </h1>
+              <p style={{
+                lineHeight: 1.3,
+                color: textColor,
+                transition: transition
+              }} className="mt-3 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-base">
+                {descriptionText}
+              </p>
               <div className="mt-6 fade-in-delay-1 font-barlow font-medium text-xl" style={{
             color: textColor,
             transition: transition
@@ -56,6 +66,13 @@ const Services1 = ({
           }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
                 {title}
               </h1>
+              <p style={{
+                lineHeight: 1.3,
+                color: textColor,
+                transition: transition
+              }} className="mt-2 slide-in-left max-w-[50%] font-barlow font-medium text-[2.25vh]">
+                {descriptionText}
+              </p>
             </div>
             <div className="mt-auto">
               <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -121,7 +120,7 @@ const Navigation = ({
         
         <div className="px-6 pb-6 flex flex-col">
           <div className="border-t border-brand-blue/20 w-full mb-4 pt-4 flex justify-between items-end">
-            <div className="text-brand-blue text-sm">
+            <div className="text-brand-blue text-[2.25vh]">
               10kR ©2025
             </div>
             <div className="flex gap-4">

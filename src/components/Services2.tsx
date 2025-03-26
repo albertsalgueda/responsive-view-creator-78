@@ -12,8 +12,8 @@ interface Services2Props {
 
 const Services2 = ({
   title = "Product",
-  subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
-  description = "Brand whatsits<br>Brand somethings<br>Brand wibble wobbles<br>Brand brand & more brand",
+  subtitle = "Product Strategy & Management<br>User Research & Testing<br>Website Design & Development<br>Mobile App Design & Development",
+  description = "Motion & Interaction Design<br>Design Systems<br>Concept Proofing & Prototyping",
   descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof"
 }: Services2Props) => {
   const isMobile = useIsMobile();

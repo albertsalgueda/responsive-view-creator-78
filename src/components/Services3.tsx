@@ -12,8 +12,8 @@ interface Services3Props {
 
 const Services3 = ({
   title = "Content",
-  subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
-  description = "Brand whatsits<br>Brand somethings<br>Brand wibble wobbles<br>Brand brand & more brand",
+  subtitle = "Content Strategy<br>Branded Content<br>Creative Production (Film, 3D, Photography, Animation)",
+  description = "Social Media Content Creation<br>Generative AI & Virtual Production",
   descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof"
 }: Services3Props) => {
   const isMobile = useIsMobile();

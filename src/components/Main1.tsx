@@ -100,9 +100,9 @@ const Main1 = ({
               </p>
             </div>
             
-            {/* Button in column 12 - Changed from justify-end to justify-start */}
-            <div className="col-span-12 flex justify-start mb-4 mt-auto">
-              <div className="fade-in">
+            {/* Title and button in columns 1-6, title anchored to bottom */}
+            <div className="col-span-6 self-end flex flex-col">
+              <div className="mb-6 fade-in">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
                   backgroundColor: textColor,
                   color: backgroundColor,
@@ -111,10 +111,6 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-            </div>
-            
-            {/* Title in columns 1-6, anchored to bottom */}
-            <div className="col-span-6 self-end">
               <h1 style={{
                 lineHeight: 1.1,
                 fontWeight: 800,

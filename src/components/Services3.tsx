@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Services3Props {
   title?: string;
   subtitle?: string;
   description?: string;
 }
+
 const Services3 = ({
   title = "Content",
   subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
@@ -17,6 +19,7 @@ const Services3 = ({
     textColor,
     transition
   } = useSectionColors();
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
@@ -36,10 +39,10 @@ const Services3 = ({
           }}>
                 <p dangerouslySetInnerHTML={{
               __html: subtitle
-            }} className="mb-4 text-sm"></p>
+            }} className="mb-4 text-sm" style={{ lineHeight: 1.1 }}></p>
                 <p dangerouslySetInnerHTML={{
               __html: description
-            }} className="text-sm"></p>
+            }} className="text-sm" style={{ lineHeight: 1.1 }}></p>
               </div>
             </div>
           </div> : <div className="flex flex-col h-full px-6 pt-[20vh] pb-[40px]">
@@ -62,7 +65,7 @@ const Services3 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: subtitle
-              }} className="mb-0 text-[2.25vh]"></p>
+              }} className="mb-0 text-[2.25vh]" style={{ lineHeight: 1.1 }}></p>
                 </div>
                 <div className="flex flex-col justify-end slide-in-right" style={{
               color: textColor,
@@ -70,7 +73,7 @@ const Services3 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: description
-              }} className="mb-0 text-[2.25vh]"></p>
+              }} className="mb-0 text-[2.25vh]" style={{ lineHeight: 1.1 }}></p>
                 </div>
                 <div></div>
               </div>
@@ -79,4 +82,5 @@ const Services3 = ({
       </div>
     </section>;
 };
+
 export default Services3;

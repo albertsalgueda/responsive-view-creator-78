@@ -20,7 +20,7 @@ const Main3 = ({
 
   // if (!mounted) return null;
 
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section className="">
       <div className="w-full mx-auto h-full">
         {isMobile ?
       // Mobile layout - anchored to top

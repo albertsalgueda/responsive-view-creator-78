@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -95,7 +96,12 @@ const Navigation = ({
   const MobileMenu = () => <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <Button variant="ghost" size="icon" className="p-2">
-          <TwoBarMenuIcon />
+          <div style={{ 
+            color: navColor,
+            transition: 'color 1.2s ease-out' 
+          }}>
+            <TwoBarMenuIcon />
+          </div>
           <span className="sr-only">Toggle menu</span>
         </Button>
       </DrawerTrigger>

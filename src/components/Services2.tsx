@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -68,7 +69,6 @@ const Services2 = ({
             </div>
             <div className="mt-auto">
               <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
-                <div></div>
                 <div className="flex flex-col justify-end slide-in-right" style={{
                   color: textColor,
                   transition: transition
@@ -85,6 +85,7 @@ const Services2 = ({
                     __html: description
                   }} className="text-sm mb-0"></p>
                 </div>
+                <div></div>
               </div>
             </div>
           </div>

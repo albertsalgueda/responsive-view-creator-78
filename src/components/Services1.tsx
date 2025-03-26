@@ -56,7 +56,7 @@ const Services1 = ({
                 fontStyle: 'italic',
                 color: textColor,
                 transition: transition
-              }} className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0">
+              }} className="text-[8vw] font-extrabold slide-in-left font-barlow mt-10 my-0">
                     {title}
                   </h1>
                 </div>

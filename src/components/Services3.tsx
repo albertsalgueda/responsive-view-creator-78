@@ -46,7 +46,7 @@ const Services3 = ({
             }} className="mb-4 text-sm"></p>
                 <p dangerouslySetInnerHTML={{
               __html: description
-            }}></p>
+            }} className="text-sm"></p>
               </div>
             </div>
           </div> : <div className="flex flex-col h-full px-6 pt-[20vh] pb-[40px]">

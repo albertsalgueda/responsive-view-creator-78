@@ -62,7 +62,6 @@ const Main1 = ({
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
-                  fontSize: '8vw'
                 }}
               >
                 {title}
@@ -118,7 +117,6 @@ const Main1 = ({
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
-                  fontSize: '8vw'
                 }}
               >
                 {title}

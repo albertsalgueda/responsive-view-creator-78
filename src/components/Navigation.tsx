@@ -100,7 +100,7 @@ const Navigation = ({
           <div className="flex flex-col gap-5 items-start w-full">
             {links.map((link, index) => <a key={index} href={link.href} style={{
             lineHeight: 1.2
-          }} onClick={() => setOpen(false)} className="text-3xl font-extrabold font-barlow hover:opacity-80 transition-all text-brand-blue">
+          }} onClick={() => setOpen(false)} className="text-3xl font-extrabold font-barlow italic font-weight-800 hover:opacity-80 transition-all text-brand-blue">
                 {link.text}
               </a>)}
           </div>
@@ -140,7 +140,7 @@ const Navigation = ({
       </a>
       
       {isMobile ? <MobileMenu /> : <div className="flex items-center gap-8">
-          {links.map((link, index) => <a key={index} href={link.href} className="font-barlow hover:opacity-80 transition-all" style={{
+          {links.map((link, index) => <a key={index} href={link.href} className="font-barlow font-extrabold italic font-weight-800 hover:opacity-80 transition-all" style={{
         color: navColor,
         transition: 'color 1.2s ease-out',
         lineHeight: 1.2

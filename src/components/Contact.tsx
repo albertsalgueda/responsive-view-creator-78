@@ -103,11 +103,11 @@ const Contact = ({
             <div className="flex items-start pt-12 flex-1 w-full py-0">
               <div className="w-full grid grid-cols-2 gap-12">
                 <div className="col-span-1">
-                  <h2 className="text-2xl font-medium slide-in-left font-barlow" style={{
+                  <h2 style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }}>
+              }} className="font-medium slide-in-left font-barlow text-3xl">
                     {title}
                   </h2>
                 </div>

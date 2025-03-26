@@ -20,11 +20,11 @@ const Main3 = ({
 
   // if (!mounted) return null;
 
-  return <section className="">
+  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
       // Mobile layout - anchored to top
-      <div className="py-12 px-6 w-full items-start">
+      <div className="flex flex-col h-fit py-12 px-6 w-full items-start">
             <div className="w-full pt-6">
               <p style={{
             color: textColor,

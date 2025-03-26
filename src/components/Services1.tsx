@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -21,7 +22,7 @@ const Services1 = ({
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
             <div className="mt-16">
               <h1 style={{
-            lineHeight: 1,
+            lineHeight: 1.1,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
@@ -44,7 +45,7 @@ const Services1 = ({
           </div> : <div className="flex flex-col h-full px-6 pt-[20vh] pb-[40px]">
             <div>
               <h1 style={{
-            lineHeight: 1,
+            lineHeight: 1.1,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,

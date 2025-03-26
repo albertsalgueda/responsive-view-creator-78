@@ -63,9 +63,9 @@ const Main2 = ({
               </div>}
           </div>
         ) : (
-          <div className="grid grid-cols-12 h-full pt-[15vh] pb-[40px] px-[40px]">
-            {/* H1 spans columns 1-6 */}
-            <div className="col-span-6 mb-10">
+          <div className="flex flex-col h-full pt-[15vh] pb-[40px] px-[40px]">
+            {/* Title at the top */}
+            <div className="w-1/2 mb-10">
               <h1 style={{
                 lineHeight: 1.1,
                 fontWeight: 800,
@@ -77,33 +77,36 @@ const Main2 = ({
               </h1>
             </div>
             
-            {/* Empty columns for spacing - reduced flex-1 to flex-none with specific height */}
-            <div className="col-span-12 h-[10vh]"></div>
+            {/* Spacer */}
+            <div className="h-[10vh]"></div>
             
-            {/* Text column 1 spans columns 5-8 */}
-            <div className="col-span-4 col-start-5 mb-[40px]">
-              <p style={{
-                lineHeight: 1.1,
-                color: textColor,
-                transition: transition
-              }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
-                {subtitle}
-              </p>
-            </div>
-            
-            {/* Text column 2 spans columns 9-12 */}
-            <div className="col-span-4 col-start-9 mb-[40px]">
-              <p style={{
-                lineHeight: 1.1,
-                color: textColor,
-                transition: transition
-              }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
-                {description}
-              </p>
+            {/* Text sections with flex-col and justify-end to anchor at bottom */}
+            <div className="mt-auto grid grid-cols-12 gap-8">
+              {/* Text column 1 */}
+              <div className="col-span-4 col-start-5 flex flex-col justify-end mb-[40px]">
+                <p style={{
+                  lineHeight: 1.1,
+                  color: textColor,
+                  transition: transition
+                }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
+                  {subtitle}
+                </p>
+              </div>
+              
+              {/* Text column 2 */}
+              <div className="col-span-4 col-start-9 flex flex-col justify-end mb-[40px]">
+                <p style={{
+                  lineHeight: 1.1,
+                  color: textColor,
+                  transition: transition
+                }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
+                  {description}
+                </p>
+              </div>
             </div>
             
             {/* CTA Button */}
-            {ctaText && <div className="col-span-12 fade-in mt-4 flex justify-end mb-6">
+            {ctaText && <div className="fade-in flex justify-end mb-6">
                 <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
                   backgroundColor: textColor,
                   transition: transition

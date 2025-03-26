@@ -29,10 +29,11 @@ const Main3 = ({
       // Mobile layout - anchored to top
       <div className="flex flex-col min-h-screen py-12 px-6 w-full items-start">
             <div className="w-full pt-6">
+              {/* Ensuring no inline styles override the p-large class */}
               <p className="p-large fade-in-delay-1 w-full font-barlow font-medium" style={{
-            color: textColor,
-            transition: transition
-          }}>
+                color: textColor,
+                transition: transition
+              }}>
                 {subtitle}
               </p>
             </div>
@@ -41,10 +42,11 @@ const Main3 = ({
       <div className="flex flex-col h-full justify-between px-6 pt-[112px] pb-[40px] w-full">
             <div className="flex items-start pt-12 flex-1 py-0 w-full">
               <div className="w-full">
+                {/* Ensuring no inline styles override the p-large class */}
                 <p className="p-large slide-in-right w-full font-barlow font-medium" style={{
-              color: textColor,
-              transition: transition
-            }}>
+                  color: textColor,
+                  transition: transition
+                }}>
                   {subtitle}
                 </p>
               </div>

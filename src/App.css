@@ -42,29 +42,29 @@
   color: #888;
 }
 
-/* Paragraph size classes */
+/* Paragraph size classes with increased specificity */
 .p-large {
-  font-size: 5vw;
+  font-size: 5vw !important; /* Adding !important to override any other styling */
 }
 
 .p-medium {
-  font-size: 1.5vw;
+  font-size: 1.5vw !important;
 }
 
 .p-small {
-  font-size: 1vw;
+  font-size: 1vw !important;
 }
 
 @media (max-width: 768px) {
   .p-large {
-    font-size: 5vw;
+    font-size: 5vw !important;
   }
   
   .p-medium {
-    font-size: 4vw;
+    font-size: 4vw !important;
   }
   
   .p-small {
-    font-size: 3.5vw;
+    font-size: 3.5vw !important;
   }
 }

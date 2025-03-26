@@ -55,17 +55,19 @@ const Main1 = ({
         {isMobile ? <div className="flex flex-col min-h-screen justify-between py-12 px-6">
             <div className="mt-16">
               <h1 
-                className="text-[8vw] font-extrabold slide-in-left font-barlow" 
+                className="font-extrabold slide-in-left font-barlow" 
                 style={{
                   lineHeight: 1,
                   fontWeight: 800,
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
+                  fontSize: '8vw' // Setting explicit font size for the title
                 }}
               >
                 {title}
               </h1>
+              {/* Remove any potential inline styles here and just use the class */}
               <p className="mt-6 p-large fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{
                 color: textColor,
                 transition: transition
@@ -89,7 +91,7 @@ const Main1 = ({
                   {/* Left side content (empty on desktop based on reference) */}
                 </div>
                 <div className="col-span-1">
-                  {/* Right side content */}
+                  {/* Right side content - ensure no inline font-size styles here */}
                   <p className="p-large slide-in-right max-w-xl font-barlow font-medium" style={{
                     color: textColor,
                     transition: transition
@@ -110,13 +112,14 @@ const Main1 = ({
                 </button>
               </div>
               <h1 
-                className="text-[8vw] font-extrabold slide-in-left font-barlow"
+                className="font-extrabold slide-in-left font-barlow"
                 style={{
                   lineHeight: 1,
                   fontWeight: 800,
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
+                  fontSize: '8vw' // Setting explicit font size for the title
                 }}
               >
                 {title}

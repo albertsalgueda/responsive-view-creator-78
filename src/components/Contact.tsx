@@ -151,10 +151,10 @@ const Contact = ({
               color: textColor,
               transition: transition
             }} className="font-barlow text-[2.25vh] hover:underline">LINKEDIN</a>
-                <a href="https://instagram.com" className="font-barlow text-sm hover:underline" style={{
+                <a href="https://instagram.com" style={{
               color: textColor,
               transition: transition
-            }}>INSTAGRAM</a>
+            }} className="font-barlow hover:underline text-[2.25vh]">INSTAGRAM</a>
               </div>
               
               <div style={{

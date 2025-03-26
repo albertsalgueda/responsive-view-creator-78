@@ -100,7 +100,7 @@ const Contact = ({
           </div> :
       // Desktop layout
       <div className="flex flex-col h-full justify-between pt-[140px] pb-[40px] px-[40px]">
-            <div className="flex items-start pt-12 flex-1 w-full py-0">
+            <div className="flex items-start flex-1 w-full py-0">
               <div className="w-full grid grid-cols-2 gap-12">
                 <div className="col-span-1">
                   <h2 className="text-2xl font-medium slide-in-left font-barlow" style={{

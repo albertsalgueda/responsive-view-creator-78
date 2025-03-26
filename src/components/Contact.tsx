@@ -139,10 +139,10 @@ const Contact = ({
             </div>
             
             <div className="flex justify-between items-end">
-              <div className="text-sm font-barlow" style={{
+              <div style={{
             color: textColor,
             transition: transition
-          }}>
+          }} className="text-[2.25vh] font-barlow">
                 10kR ©2025
               </div>
               

@@ -80,8 +80,8 @@ const Main2 = ({
             {/* Spacer */}
             <div className="h-[10vh]"></div>
             
-            {/* Text sections with flex-col and justify-end to anchor at bottom */}
-            <div className="mt-auto grid grid-cols-12 gap-8">
+            {/* Text sections with flex-col and justify-end to anchor at bottom - REMOVED MARGIN */}
+            <div className="grid grid-cols-12 gap-8">
               {/* Text column 1 */}
               <div className="col-span-4 col-start-5 flex flex-col justify-end mb-[40px]">
                 <p style={{

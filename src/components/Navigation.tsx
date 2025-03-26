@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -58,12 +57,10 @@ const Navigation = ({
   }, [isMobile]);
   if (!mounted) return null;
 
-  // Find only the "let's talk" link for desktop view
   const letsTalkLink = links.find(link => link.text === "let's talk");
 
-  // Custom 2-bar menu icon
   const TwoBarMenuIcon = () => (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect y="12" width="48" height="4" rx="2" fill="currentColor"/>
       <rect y="32" width="48" height="4" rx="2" fill="currentColor"/>
     </svg>

@@ -69,7 +69,7 @@ const Services3 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: description
-              }} className="text-sm mb-0"></p>
+              }} className="mb-0 text-[2.25vh]"></p>
                 </div>
                 <div></div>
               </div>

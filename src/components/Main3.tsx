@@ -1,12 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main3Props {
   subtitle?: string;
 }
-
 const Main3 = ({
   subtitle = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
 }: Main3Props) => {
@@ -16,13 +13,10 @@ const Main3 = ({
     textColor,
     transition
   } = useSectionColors();
-
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
-
   if (!mounted) return null;
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
@@ -38,7 +32,7 @@ const Main3 = ({
             </div>
           </div> :
       // Desktop layout - full screen with no scrolling
-      <div className="flex flex-col h-full justify-between px-6 pr-[16.67%] w-full py-[144px]">
+      <div className="flex flex-col h-full justify-between pr-[24%] w-full py-[144px] px-[40px]">
             <div className="">
               <div className="w-full">
                 <p style={{
@@ -53,5 +47,4 @@ const Main3 = ({
       </div>
     </section>;
 };
-
 export default Main3;

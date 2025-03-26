@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -17,7 +16,6 @@ const Services3 = ({
     textColor,
     transition
   } = useSectionColors();
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
@@ -63,7 +61,7 @@ const Services3 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: subtitle
-              }} className="text-sm mb-0"></p>
+              }} className="mb-0 text-[2.25vh]"></p>
                 </div>
                 <div className="flex flex-col justify-end slide-in-right" style={{
               color: textColor,

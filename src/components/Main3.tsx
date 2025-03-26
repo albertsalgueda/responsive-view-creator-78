@@ -21,6 +21,7 @@ const Main3 = ({
       <div className="flex flex-col h-fit py-12 px-6 w-full items-start">
             <div className="w-full pt-6">
               <p style={{
+            lineHeight: 1.1,
             color: textColor,
             transition: transition
           }} className="fade-in-delay-1 w-full font-barlow font-medium text-2xl">
@@ -33,6 +34,7 @@ const Main3 = ({
             <div className="">
               <div className="w-full">
                 <p style={{
+              lineHeight: 1.1,
               color: textColor,
               transition: transition
             }} className="slide-in-left w-full font-barlow font-medium text-3xl">

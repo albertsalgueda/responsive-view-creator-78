@@ -61,7 +61,7 @@ const Services1 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: subtitle
-              }} className="mb-0 text-[2vh]"></p>
+              }} className="mb-0 text-[2.25vh]"></p>
                 </div>
                 <div className="flex flex-col justify-end slide-in-right" style={{
               animationDelay: '0.1s',

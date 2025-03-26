@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -102,7 +103,7 @@ const ParallaxOverlay: React.FC = () => {
         </div>
         
         <div 
-          style={getParallaxStyle(0.9)}
+          style={getParallaxStyle(1.2)}
           className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[20%] left-[400%]"
         >
           OUR
@@ -116,7 +117,7 @@ const ParallaxOverlay: React.FC = () => {
         </div>
         
         <div 
-          style={getParallaxStyle(1.2)}
+          style={getParallaxStyle(0.9)}
           className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[480%]"
         >
           ARE

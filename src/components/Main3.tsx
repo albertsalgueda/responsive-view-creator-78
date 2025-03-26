@@ -35,10 +35,10 @@ const Main3 = ({
       <div className="flex flex-col h-full justify-between px-6 w-full py-[144px]">
             <div className="">
               <div className="w-full">
-                <p className="text-2xl slide-in-right w-full font-barlow font-medium" style={{
+                <p style={{
               color: textColor,
               transition: transition
-            }}>
+            }} className="slide-in-right w-full font-barlow font-medium text-3xl">
                   {subtitle}
                 </p>
               </div>

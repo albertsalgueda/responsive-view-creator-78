@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -23,7 +24,7 @@ const Main3 = ({
       // Mobile layout - anchored to top
       <div className="flex flex-col min-h-screen py-12 px-6 w-full items-start">
             <div className="w-full pt-6">
-              <p className="text-[2rem] fade-in-delay-1 w-full font-barlow font-medium" style={{
+              <p className="p-large fade-in-delay-1 w-full font-barlow font-medium" style={{
             color: textColor,
             transition: transition
           }}>
@@ -35,7 +36,7 @@ const Main3 = ({
       <div className="flex flex-col h-full justify-between px-6 pt-[112px] pb-[40px] w-full">
             <div className="flex items-start pt-12 flex-1 py-0 w-full">
               <div className="w-full">
-                <p className="text-2xl slide-in-right w-full font-barlow font-medium" style={{
+                <p className="p-large slide-in-right w-full font-barlow font-medium" style={{
               color: textColor,
               transition: transition
             }}>

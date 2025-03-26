@@ -34,12 +34,12 @@ const Services3 = ({
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
-                  fontSize: '8vw' // Force font size in inline style as well
+                  fontSize: '8vw'
                 }}
               >
                 {title}
               </h1>
-              <div className="mt-6 fade-in-delay-1 font-barlow font-medium text-xl" style={{
+              <div className="mt-6 fade-in-delay-1 font-barlow font-medium p-small" style={{
                 color: textColor,
                 transition: transition
               }}>
@@ -63,14 +63,14 @@ const Services3 = ({
                       fontStyle: 'italic',
                       color: textColor,
                       transition: transition,
-                      fontSize: '8vw' // Force font size in inline style as well
+                      fontSize: '8vw'
                     }}
                   >
                     {title}
                   </h1>
                 </div>
                 <div className="flex flex-col justify-end">
-                  <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
+                  <div className="grid grid-cols-3 gap-8 p-small font-barlow font-medium mb-0">
                     <div></div>
                     <div className="slide-in-right" style={{
                       color: textColor,

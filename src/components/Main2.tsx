@@ -38,18 +38,18 @@ const Main2 = ({
                   fontStyle: 'italic',
                   color: textColor,
                   transition: transition,
-                  fontSize: '8vw' // Force font size in inline style as well
+                  fontSize: '8vw'
                 }}
               >
                 {title}
               </h1>
-              <p className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-xl" style={{
+              <p className="mt-6 p-medium fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{
                 color: textColor,
                 transition: transition
               }}>
                 {subtitle}
               </p>
-              <p className="mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" style={{
+              <p className="mt-8 p-medium fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left" style={{
                 color: textColor,
                 transition: transition
               }}>
@@ -76,7 +76,7 @@ const Main2 = ({
                       fontStyle: 'italic',
                       color: textColor,
                       transition: transition,
-                      fontSize: '8vw' // Force font size in inline style as well
+                      fontSize: '8vw'
                     }}
                   >
                     {title}
@@ -84,7 +84,7 @@ const Main2 = ({
                 </div>
                 <div className="grid grid-cols-3 gap-12">
                   <div className="col-span-1 col-start-2 flex flex-col justify-end">
-                    <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                    <p className="p-medium slide-in-right font-barlow font-medium mb-0" style={{
                       color: textColor,
                       transition: transition
                     }}>
@@ -92,7 +92,7 @@ const Main2 = ({
                     </p>
                   </div>
                   <div className="col-span-1 col-start-3 flex flex-col justify-end">
-                    <p className="text-xl slide-in-right font-barlow font-medium mb-0" style={{
+                    <p className="p-medium slide-in-right font-barlow font-medium mb-0" style={{
                       color: textColor,
                       transition: transition
                     }}>

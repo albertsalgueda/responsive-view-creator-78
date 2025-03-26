@@ -1,14 +1,18 @@
 
+import { useIsMobile } from '@/hooks/use-mobile';
+
 interface MuteButtonProps {
   isMuted: boolean;
   onToggle: () => void;
 }
 
 const MuteButton = ({ isMuted, onToggle }: MuteButtonProps) => {
+  const isMobile = useIsMobile();
+  
   return (
     <button
       onClick={onToggle}
-      className="fixed bottom-4 right-3 w-[60px] h-[60px] z-50 hover:opacity-80 transition-opacity duration-500"
+      className={`fixed ${isMobile ? 'top-4 right-4' : 'bottom-4 right-3'} w-[60px] h-[60px] z-50 hover:opacity-80 transition-opacity duration-500`}
     >
       {isMuted ? (
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">

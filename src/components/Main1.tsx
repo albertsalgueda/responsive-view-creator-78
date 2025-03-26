@@ -128,8 +128,8 @@ const Main1 = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="slide-in-left font-barlow text-[2.25vh] pb-[5px]">
-                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+              }} className="slide-in-left font-barlow text-[2.25vh] pb-[5px] font-medium">
+                This website was made with Ai (robots) and refined by <span className="font-bold">humans (us)</span>. <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>
           </div>

@@ -48,40 +48,32 @@ const Services3 = ({
               </div>
             </div>
           </div> : 
-          <div className="flex flex-col justify-between h-full px-6 py-[40px]">
-            <div className="flex-1">
-              <div className="h-full flex flex-col justify-between">
-                <div>
-                  <h1 
-                    style={{
-                      lineHeight: 1,
-                      fontWeight: 800,
-                      fontStyle: 'italic',
-                      color: textColor,
-                      transition: transition
-                    }} 
-                    className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-10 my-0"
-                  >
-                    {title}
-                  </h1>
+          <div className="flex flex-col h-full px-6 pt-[144px] pb-[40px]">
+            <div>
+              <h1 style={{
+                lineHeight: 1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }} className="text-[4.5rem] font-extrabold slide-in-left font-barlow mt-0">
+                {title}
+              </h1>
+            </div>
+            <div className="mt-auto">
+              <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
+                <div></div>
+                <div className="slide-in-right" style={{
+                  color: textColor,
+                  transition: transition
+                }}>
+                  <p dangerouslySetInnerHTML={{ __html: subtitle }}></p>
                 </div>
-                <div className="flex flex-col justify-end">
-                  <div className="grid grid-cols-3 gap-8 text-xl font-barlow font-medium mb-0">
-                    <div></div>
-                    <div className="slide-in-right" style={{
-                      color: textColor,
-                      transition: transition
-                    }}>
-                      <p dangerouslySetInnerHTML={{ __html: subtitle }}></p>
-                    </div>
-                    <div className="slide-in-right" style={{ 
-                      animationDelay: '0.1s',
-                      color: textColor,
-                      transition: transition
-                    }}>
-                      <p dangerouslySetInnerHTML={{ __html: description }}></p>
-                    </div>
-                  </div>
+                <div className="slide-in-right" style={{ 
+                  color: textColor,
+                  transition: transition
+                }}>
+                  <p dangerouslySetInnerHTML={{ __html: description }}></p>
                 </div>
               </div>
             </div>

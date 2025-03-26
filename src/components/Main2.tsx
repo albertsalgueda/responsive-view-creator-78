@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -58,32 +59,39 @@ const Main2 = ({
               </div>}
           </div> : <div className="flex flex-col h-full pt-[25vh] pb-[40px] px-[40px]">
             <div className="flex-1 flex flex-col">
-              <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
-                {title}
-              </h1>
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-6">
+                  {/* Title spans columns 1-6 */}
+                  <h1 style={{
+                    lineHeight: 1.1,
+                    fontWeight: 800,
+                    fontStyle: 'italic',
+                    color: textColor,
+                    transition: transition
+                  }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
+                    {title}
+                  </h1>
+                </div>
+              </div>
               
-              <div className="mt-auto grid grid-cols-3 gap-12">
-                <div className="col-span-1 col-start-2 flex flex-col justify-end">
+              <div className="mt-auto grid grid-cols-12 gap-4">
+                <div className="col-span-4 col-start-5">
+                  {/* Text column 1 spans columns 5-8 */}
                   <p style={{
-                lineHeight: 1.1,
-                color: textColor,
-                transition: transition
-              }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
+                    lineHeight: 1.1,
+                    color: textColor,
+                    transition: transition
+                  }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
                     {subtitle}
                   </p>
                 </div>
-                <div className="col-span-1 col-start-3 flex flex-col justify-end">
+                <div className="col-span-4 col-start-9">
+                  {/* Text column 2 spans columns 9-12 */}
                   <p style={{
-                lineHeight: 1.1,
-                color: textColor,
-                transition: transition
-              }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
+                    lineHeight: 1.1,
+                    color: textColor,
+                    transition: transition
+                  }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
                     {description}
                   </p>
                 </div>

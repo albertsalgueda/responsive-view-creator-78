@@ -46,7 +46,7 @@ const Services1 = ({
             }}></p>
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full px-6 pt-[144px] pb-[40px]">
+          </div> : <div className="flex flex-col h-full px-6 pt-[20vh] pb-[40px]">
             <div>
               <h1 style={{
             lineHeight: 1,

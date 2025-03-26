@@ -67,7 +67,7 @@ const Services1 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: subtitle
-              }}></p>
+              }} className="text-sm"></p>
                 </div>
                 <div className="slide-in-right" style={{
               animationDelay: '0.1s',

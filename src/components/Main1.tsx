@@ -83,7 +83,7 @@ const Main1 = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="slide-in-left max-w-xl font-barlow font-medium text-[5vh]">
+              }} className="slide-in-left max-w-xl font-barlow font-medium text-[4vh]">
                     {subtitle}
                   </p>
                 </div>

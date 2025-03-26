@@ -32,7 +32,7 @@ const Main3 = ({
             </div>
           </div> :
       // Desktop layout - full screen with no scrolling
-      <div className="flex flex-col h-full justify-between pr-[24%] w-full py-[144px] px-[40px]">
+      <div className="flex flex-col h-full justify-between pr-[24%] w-full pt-[20vh] px-[40px]">
             <div className="">
               <div className="w-full">
                 <p style={{

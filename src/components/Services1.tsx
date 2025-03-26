@@ -84,7 +84,7 @@ const Services1 = ({
               transition: transition
             }}>
                   <p dangerouslySetInnerHTML={{
-                __html: subtitle
+                __html: subtitle.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 2vh;"></span>')
               }} className="mb-0 text-[2.25vh]" style={{
                 lineHeight: 1.1
               }}></p>
@@ -95,7 +95,7 @@ const Services1 = ({
               transition: transition
             }}>
                   <p dangerouslySetInnerHTML={{
-                __html: description
+                __html: description.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 2vh;"></span>')
               }} className="mb-0 text-[2.25vh]" style={{
                 lineHeight: 1.1
               }}></p>

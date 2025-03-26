@@ -67,7 +67,7 @@ const Services2 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: subtitle
-              }}></p>
+              }} className="text-sm"></p>
                 </div>
                 <div className="slide-in-right" style={{
               color: textColor,

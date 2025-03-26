@@ -153,21 +153,21 @@ const ParallaxOverlay: React.FC = () => {
 
         <div 
           style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[calc(25%-60px)] left-[260%]"
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[calc(25%-60px)] left-[280%]"
         >
           WE
         </div>
         
         <div 
           style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[50%] left-[290%]"
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[50%] left-[310%]"
         >
           BELIEVE
         </div>
         
         <div 
           style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[310%]"
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[330%]"
         >
           IN
         </div>

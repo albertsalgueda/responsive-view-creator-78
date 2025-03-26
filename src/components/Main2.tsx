@@ -81,7 +81,7 @@ const Main2 = ({
             <div className="col-span-12 flex-1"></div>
             
             {/* Text column 1 spans columns 5-8 */}
-            <div className="col-span-4 col-start-5 self-end">
+            <div className="col-span-4 col-start-5 self-end mb-[40px]">
               <p style={{
                 lineHeight: 1.1,
                 color: textColor,
@@ -92,7 +92,7 @@ const Main2 = ({
             </div>
             
             {/* Text column 2 spans columns 9-12 */}
-            <div className="col-span-4 col-start-9 self-end">
+            <div className="col-span-4 col-start-9 self-end mb-[40px]">
               <p style={{
                 lineHeight: 1.1,
                 color: textColor,

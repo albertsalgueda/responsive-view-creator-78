@@ -42,7 +42,7 @@ const Hero = ({
         {isMobile ? (
           // Mobile layout
           <div className="flex flex-col min-h-screen justify-between py-12">
-            <div className="mt-16 pt-24">
+            <div className="mt-16">
               <h1 className="text-[4.5rem] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1, fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
@@ -62,7 +62,7 @@ const Hero = ({
         ) : (
           // Desktop layout - full screen with no scrolling
           <div className="flex flex-col h-full justify-between py-12">
-            <div className="flex items-center flex-1 pt-24">
+            <div className="flex items-center flex-1">
               <div className="grid grid-cols-2 gap-8 w-full">
                 <div className="col-span-1">
                   {/* Left side content (empty on desktop based on reference) */}

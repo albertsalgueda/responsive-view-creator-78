@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -19,7 +18,6 @@ import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
 import { useSectionColors } from "@/hooks/use-section-colors";
 
-// The SectionObserver component must be inside the ViewProvider
 const Index = () => {
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
@@ -33,24 +31,19 @@ const Index = () => {
 
   return (
     <ViewProvider>
-      {/* Navigation placed outside of scroll containers to ensure it's always fixed */}
       <Navigation />
-      {/* ParallaxOverlay added inside ViewProvider to access current section */}
       <ParallaxOverlay />
-      {/* SectionObserver is now inside the ViewProvider */}
       <SectionObserverWithBackground />
     </ViewProvider>
   );
 };
 
-// Move the SectionObserver and background logic to a component that's inside the ViewProvider
 const SectionObserverWithBackground = () => {
   const { currentSection } = useSectionObserver();
   const isMobile = useIsMobile();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { backgroundColor, transition } = useSectionColors();
   
-  // Add wheel event handler to convert vertical scroll to horizontal scroll
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
     
@@ -69,15 +62,13 @@ const SectionObserverWithBackground = () => {
     };
   }, [isMobile]);
   
-  // Get background style with forced hardware acceleration
   const bgStyle = {
     background: backgroundColor,
     transition: transition,
-    transform: 'translateZ(0)', // Force hardware acceleration
-    WebkitTransform: 'translateZ(0)' // For Safari
+    transform: 'translateZ(0)',
+    WebkitTransform: 'translateZ(0)'
   };
 
-  // On mobile, stack the components vertically
   if (isMobile) {
     return (
       <main className="min-h-screen will-change-auto" style={bgStyle}>
@@ -103,7 +94,6 @@ const SectionObserverWithBackground = () => {
     );
   }
 
-  // On desktop, use a horizontal scrolling container with wheel event conversion
   return (
     <div 
       ref={scrollContainerRef}
@@ -127,7 +117,7 @@ const SectionObserverWithBackground = () => {
           />
         </div>
         <Image2 />
-        <div id="main3" className="h-screen w-1/2 flex-shrink-0">
+        <div id="main3" className="h-screen w-2/3 flex-shrink-0">
           <Main3 />
         </div>
         <div id="services1" className="h-screen w-2/3 flex-shrink-0">

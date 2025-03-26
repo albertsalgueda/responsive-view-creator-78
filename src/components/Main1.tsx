@@ -100,8 +100,8 @@ const Main1 = ({
               </p>
             </div>
             
-            {/* Button in columns 1-6 - Changed from col-span-12 to col-span-6 */}
-            <div className="col-span-6 flex justify-start mb-4 mt-auto">
+            {/* Button in column 12 - Changed from justify-end to justify-start */}
+            <div className="col-span-12 flex justify-start mb-4 mt-auto">
               <div className="fade-in">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
                   backgroundColor: textColor,

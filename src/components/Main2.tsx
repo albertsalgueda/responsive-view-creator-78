@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main2Props {
   title?: string;
   subtitle?: string;
@@ -8,6 +10,7 @@ interface Main2Props {
   ctaText?: string;
   ctaAction?: () => void;
 }
+
 const Main2 = ({
   title = "Prompting human potential.",
   subtitle = "What if AI wasn't designed to be prompted? What if it was designed to prompt us?",
@@ -16,15 +19,18 @@ const Main2 = ({
   ctaAction = () => console.log("CTA clicked")
 }: Main2Props) => {
   const isMobile = useIsMobile();
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
   const {
     textColor,
     transition
   } = useSectionColors();
-  useEffect(() => {
-    setMounted(true);
-  }, [isMobile]);
-  if (!mounted) return null;
+  
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, [isMobile]);
+  
+  // if (!mounted) return null;
+  
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col min-h-screen py-12 px-6">
@@ -103,4 +109,5 @@ const Main2 = ({
       </div>
     </section>;
 };
+
 export default Main2;

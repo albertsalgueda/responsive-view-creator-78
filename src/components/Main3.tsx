@@ -24,7 +24,7 @@ const Main3 = ({
       <div className="w-full mx-auto h-full">
         {isMobile ?
       // Mobile layout - anchored to top
-      <div className="flex flex-col min-h-screen py-12 px-6 w-full items-start">
+      <div className="py-12 px-6 w-full items-start">
             <div className="w-full pt-6">
               <p style={{
             color: textColor,

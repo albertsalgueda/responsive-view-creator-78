@@ -116,10 +116,10 @@ const Contact = ({
                 </div>
                 
                 <div className="col-span-1 flex flex-col">
-                  <p className="text-xl slide-in-right font-barlow font-medium mb-8" style={{
+                  <p style={{
                 color: textColor,
                 transition: transition
-              }}>
+              }} className="slide-in-right font-barlow font-medium mb-8 text-[3vh]">
                     {description}
                   </p>
                   

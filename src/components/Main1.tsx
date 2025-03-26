@@ -41,7 +41,7 @@ const Main1 = ({
   };
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
-        {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
+        {isMobile ? <div className="flex flex-col justify-between h-full py-12 px-6">
             <div className="mt-16">
               <h1 style={{
             lineHeight: 1.1,
@@ -59,22 +59,24 @@ const Main1 = ({
           }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[12px] my-0">
                 {subtitle}
               </p>
+            </div>
+            <div className="mb-16 fade-in-delay-2">
               <p style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="fade-in-delay-1 max-w-[85%] font-barlow text-lg">
+          }} className="fade-in-delay-1 max-w-[85%] font-barlow text-lg mb-6">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
-            </div>
-            <div className="mb-16 fade-in-delay-2 flex justify-end">
-              <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-            backgroundColor: textColor,
-            color: backgroundColor,
-            transition: transition
-          }}>
-                {ctaText}
-              </button>
+              <div className="flex justify-end">
+                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
+              backgroundColor: textColor,
+              color: backgroundColor,
+              transition: transition
+            }}>
+                  {ctaText}
+                </button>
+              </div>
             </div>
           </div> : <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
             <div className="">
@@ -91,13 +93,6 @@ const Main1 = ({
               }} className="slide-in-left max-w-xl font-barlow font-medium text-[4vh]">
                     {subtitle}
                   </p>
-                  <p style={{
-                lineHeight: 1.1,
-                color: textColor,
-                transition: transition
-              }} className="mt-4 slide-in-left max-w-xl font-barlow text-[2vh]">
-                    This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
-                  </p>
                 </div>
               </div>
             </div>
@@ -111,15 +106,24 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
-                {title}
-              </h1>
+              <div className="flex justify-between items-end">
+                <h1 style={{
+              lineHeight: 1.1,
+              fontWeight: 800,
+              fontStyle: 'italic',
+              color: textColor,
+              transition: transition
+            }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
+                  {title}
+                </h1>
+                <p style={{
+              lineHeight: 1.1,
+              color: textColor,
+              transition: transition
+            }} className="slide-in-left font-barlow text-[2vh] max-w-md">
+                  This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+                </p>
+              </div>
             </div>
           </div>}
       </div>

@@ -83,7 +83,7 @@ const Main1 = ({
                   <p style={{
                 color: textColor,
                 transition: transition
-              }} className="slide-in-right max-w-xl font-barlow font-medium text-2xl">
+              }} className="slide-in-right max-w-xl font-barlow font-medium text-3xl">
                     {subtitle}
                   </p>
                 </div>

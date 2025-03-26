@@ -1,14 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Services1Props {
   title?: string;
   subtitle?: string;
   description?: string;
 }
-
 const Services1 = ({
   title = "Brand",
   subtitle = "Brand strategy & identity<br>Brand creation<br>Brand positioning<br>Brand narrative<br>Naming",
@@ -19,7 +16,6 @@ const Services1 = ({
     textColor,
     transition
   } = useSectionColors();
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
@@ -39,13 +35,17 @@ const Services1 = ({
           }}>
                 <p dangerouslySetInnerHTML={{
               __html: subtitle
-            }} className="mb-4 text-sm" style={{ lineHeight: 1.1 }}></p>
+            }} className="mb-4 text-sm" style={{
+              lineHeight: 1.1
+            }}></p>
                 <p dangerouslySetInnerHTML={{
               __html: description
-            }} className="text-sm" style={{ lineHeight: 1.1 }}></p>
+            }} className="text-sm" style={{
+              lineHeight: 1.1
+            }}></p>
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full px-6 pt-[20vh] pb-[40px]">
+          </div> : <div className="flex flex-col h-full px-6 pt-[25vh] pb-[40px]">
             <div>
               <h1 style={{
             lineHeight: 1.1,
@@ -65,7 +65,9 @@ const Services1 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: subtitle
-              }} className="mb-0 text-[2.25vh]" style={{ lineHeight: 1.1 }}></p>
+              }} className="mb-0 text-[2.25vh]" style={{
+                lineHeight: 1.1
+              }}></p>
                 </div>
                 <div className="flex flex-col justify-end slide-in-right" style={{
               animationDelay: '0.1s',
@@ -74,7 +76,9 @@ const Services1 = ({
             }}>
                   <p dangerouslySetInnerHTML={{
                 __html: description
-              }} className="mb-0 text-[2.25vh]" style={{ lineHeight: 1.1 }}></p>
+              }} className="mb-0 text-[2.25vh]" style={{
+                lineHeight: 1.1
+              }}></p>
                 </div>
                 <div></div>
               </div>
@@ -83,5 +87,4 @@ const Services1 = ({
       </div>
     </section>;
 };
-
 export default Services1;

@@ -35,13 +35,13 @@ const Contact = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="text-[4vh] font-medium slide-in-left font-barlow mt-12">
+          }} className="text-[4.5vh] font-medium slide-in-left font-barlow mt-12">
                 {title}
               </h2>
             </div>
             
             <div className="col-span-2 col-start-2">
-              <p className="fade-in-delay-1 font-barlow font-medium text-[3vh]" style={{
+              <p className="fade-in-delay-1 font-barlow font-medium text-[2.5vh]" style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
@@ -69,18 +69,18 @@ const Contact = ({
           }}></div>
               
               <div className="flex justify-between items-center">
-                <p className="text-[2.25vh] font-barlow font-medium" style={{
+                <p className="text-[2vh] font-barlow font-medium" style={{
               lineHeight: 1.1,
               color: textColor,
               transition: transition
             }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
-                  <a href="https://linkedin.com" className="font-barlow text-[2.25vh] hover:underline font-medium" style={{
+                  <a href="https://linkedin.com" className="font-barlow text-[2vh] hover:underline font-medium" style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
               }}>LINKEDIN</a>
-                  <a href="https://instagram.com" className="font-barlow text-[2.25vh] hover:underline font-medium" style={{
+                  <a href="https://instagram.com" className="font-barlow text-[2vh] hover:underline font-medium" style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
@@ -105,7 +105,7 @@ const Contact = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="font-medium slide-in-left font-barlow text-[4vh]">
+              }} className="font-medium slide-in-left font-barlow text-[4.5vh]">
                     {title}
                   </h2>
                 </div>
@@ -115,7 +115,7 @@ const Contact = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="slide-in-right font-barlow font-medium mb-8 text-[3vh]">
+              }} className="slide-in-right font-barlow font-medium mb-8 text-[2.5vh]">
                     {description}
                   </p>
                   
@@ -139,7 +139,7 @@ const Contact = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="text-[2.25vh] font-barlow font-medium">
+          }} className="text-[2vh] font-barlow font-medium">
                 10kR ©2025
               </div>
               
@@ -148,12 +148,12 @@ const Contact = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="font-barlow text-[2.25vh] hover:underline font-medium">LINKEDIN</a>
+            }} className="font-barlow text-[2vh] hover:underline font-medium">LINKEDIN</a>
                 <a href="https://instagram.com" style={{
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="font-barlow hover:underline text-[2.25vh] font-medium">INSTAGRAM</a>
+            }} className="font-barlow hover:underline text-[2vh] font-medium">INSTAGRAM</a>
               </div>
               
               <div style={{

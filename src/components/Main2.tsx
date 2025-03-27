@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -37,11 +38,11 @@ const Main2 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-[4vh]">
+          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-[4.5vh]">
                 {subtitle}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-[3vh]" style={{
+            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-[2.5vh]" style={{
           lineHeight: 1.1,
           color: textColor,
           transition: transition
@@ -65,7 +66,7 @@ const Main2 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
+          }} className="font-extrabold slide-in-left font-barlow text-[10vh]">
                 {title}
               </h1>
             </div>
@@ -78,7 +79,7 @@ const Main2 = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
+            }} className="text-[2.5vh] slide-in-right font-barlow font-medium mb-0">
                   {subtitle}
                 </p>
               </div>
@@ -89,7 +90,7 @@ const Main2 = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="text-[3vh] slide-in-right font-barlow font-medium mb-0">
+            }} className="text-[2.5vh] slide-in-right font-barlow font-medium mb-0">
                   {description}
                 </p>
               </div>

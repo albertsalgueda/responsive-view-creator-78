@@ -36,12 +36,12 @@ const Services2 = ({
             lineHeight: 1.3,
             color: textColor,
             transition: transition
-          }} className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-[3vh]">
+          }} className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-[2.5vh]">
                 {descriptionText}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mb-6">
-              <div className="fade-in-delay-1 font-barlow font-medium text-[2.25vh]" style={{
+            <div className="col-start-2 col-span-2 mb-6 mt-auto">
+              <div className="fade-in-delay-1 font-barlow font-medium text-[2vh]" style={{
             color: textColor,
             transition: transition,
             columnCount: 1,
@@ -59,19 +59,19 @@ const Services2 = ({
             color: textColor,
             transition: transition,
             marginTop: '-2vh'
-          }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
+          }} className="font-extrabold slide-in-left font-barlow mt-0 text-[10vh]">
                 {titleText}
               </h1>
               <p style={{
             lineHeight: 1.3,
             color: textColor,
             transition: transition
-          }} className="mt-2 pb-[24px] slide-in-left max-w-full font-barlow font-medium text-[3vh]">
+          }} className="mt-2 pb-[24px] slide-in-left max-w-full font-barlow font-medium text-[2.5vh]">
                 {descriptionText}
               </p>
             </div>
             <div className="mb-0 mt-auto">
-              <div className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" style={{
+              <div className="text-[2vh] font-barlow font-medium mb-0 slide-in-right" style={{
             color: textColor,
             transition: transition,
             columnCount: 2,

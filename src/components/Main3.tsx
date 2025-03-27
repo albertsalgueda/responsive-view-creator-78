@@ -23,7 +23,7 @@ const Main3 = ({
             lineHeight: 1.2,
             color: textColor,
             transition: transition
-          }} className="fade-in-delay-1 font-barlow font-medium text-[4vh]">
+          }} className="fade-in-delay-1 font-barlow font-medium text-[4.5vh]">
                 {subtitle}
               </p>
             </div>
@@ -37,7 +37,7 @@ const Main3 = ({
               color: textColor,
               transition: transition,
               width: '60vw'
-            }} className="slide-in-left w-full font-barlow font-medium text-[4vh]">
+            }} className="slide-in-left w-full font-barlow font-medium text-[4.5vh]">
                   {subtitle}
                 </p>
               </div>

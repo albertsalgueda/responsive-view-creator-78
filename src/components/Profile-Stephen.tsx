@@ -1,3 +1,4 @@
+
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -85,11 +86,11 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(
             
             <div className="flex flex-col justify-end h-[40vh]">
               <h3 
-                className="text-text-large-desktop font-barlow font-black italic"
+                className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap"
                 style={{ color: textColor, transition }}
               >{name}</h3>
               <p 
-                className="text-text-medium mt-2"
+                className="text-text-medium mt-2 whitespace-nowrap"
                 style={{ color: textColor, transition }}
               >{role}</p>
               

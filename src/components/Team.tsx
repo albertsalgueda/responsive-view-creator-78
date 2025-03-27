@@ -99,13 +99,13 @@ const Team = ({
                     <h3 style={{
                 color: textColor,
                 transition
-              }} className="font-bold text-lg">
+              }} className="font-bold text-lg whitespace-nowrap">
                       {member.name}
                     </h3>
                     <p style={{
                 color: textColor,
                 transition
-              }} className="text-sm">
+              }} className="text-sm whitespace-nowrap">
                       {member.title}
                     </p>
                     {member.linkedin && <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
@@ -192,13 +192,13 @@ const TeamMemberCard = ({
         <h3 style={{
         color: textColor,
         transition
-      }} className="font-bold text-lg">
+      }} className="font-bold text-lg whitespace-nowrap">
           {member.name}
         </h3>
         <p style={{
         color: textColor,
         transition
-      }} className="text-sm">
+      }} className="text-sm whitespace-nowrap">
           {member.title}
         </p>
         {member.linkedin && <a href={member.linkedin} target="_blank" rel="noopener noreferrer">

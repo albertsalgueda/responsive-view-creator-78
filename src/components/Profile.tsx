@@ -56,7 +56,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
         
         <div className="flex flex-col justify-end h-[50vh]">
           <h3 
-            className="text-text-large-desktop font-bold"
+            className="text-text-large-desktop font-barlow font-black italic"
             style={{ color: textColor, transition }}
           >{name}</h3>
           <p 

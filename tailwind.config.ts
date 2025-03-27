@@ -73,6 +73,9 @@ export default {
 				inter: ['Inter', 'sans-serif'],
 				barlow: ['Barlow', 'sans-serif'],
 			},
+			fontWeight: {
+				black: '900',
+			},
 			fontSize: {
 				'h1-desktop': '10vh',
 				'h1-mobile': '8.5vh',

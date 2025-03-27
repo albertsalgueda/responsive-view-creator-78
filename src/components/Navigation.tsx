@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -252,14 +251,17 @@ const Navigation = ({
         <div className="flex items-center gap-8">
           {letsTalkLink && (
             <a href={letsTalkLink.href} 
-               onClick={scrollToEnd}
-               className="font-barlow font-extrabold italic font-weight-800 hover:opacity-80 transition-all" 
-               style={{
-                 color: textColor,
-                 transition: transition,
-                 lineHeight: 1.1
-               }}>
-              {letsTalkLink.text}
+               onClick={scrollToEnd}>
+              <Button 
+                className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base"
+                style={{
+                  backgroundColor: textColor,
+                  color: backgroundColor,
+                  transition: transition
+                }}
+              >
+                {letsTalkLink.text}
+              </Button>
             </a>
           )}
         </div>

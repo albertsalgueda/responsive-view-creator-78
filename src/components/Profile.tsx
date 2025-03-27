@@ -32,8 +32,14 @@ const LinkedInIcon = () => (
 );
 
 const Profile = forwardRef<HTMLDivElement, ProfileProps>(
-  ({ name, role, image = "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.jpg", background = "#FDB0C2", linkedin, className }, ref) => {
+  ({ name, role, image, background = "#FDB0C2", linkedin, className }, ref) => {
     const { textColor, transition } = useSectionColors();
+    
+    // If there's no image provided, use a default placeholder
+    const imageUrl = image || "/placeholder.svg";
+    
+    // Log when the component renders
+    console.log("Profile component rendering with image:", imageUrl);
     
     return (
       <div 
@@ -46,9 +52,13 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
         >
           <Avatar className="w-full h-full rounded-2xl">
             <AvatarImage 
-              src={image} 
+              src={imageUrl} 
               alt={name}
-              className="object-cover w-full h-full" 
+              className="object-cover w-full h-full"
+              onError={(e) => {
+                console.error("Error loading image:", imageUrl);
+                e.currentTarget.src = "/placeholder.svg";
+              }}
             />
             <AvatarFallback className="text-7xl">{name.charAt(0)}</AvatarFallback>
           </Avatar>

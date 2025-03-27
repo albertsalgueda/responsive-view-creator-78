@@ -21,7 +21,7 @@ const defaultMembers: TeamMember[] = [
   {
     name: "Neil Stoeckle",
     title: "Founder",
-    image: "/placeholder.svg",
+    image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.jpg",
     background: "#FDB0C2", // pink
     linkedin: "https://linkedin.com"
   },
@@ -61,6 +61,9 @@ const Team = ({
   const isMobile = useIsMobile();
   const { textColor, transition } = useSectionColors();
 
+  // Log the first team member's image when the component renders
+  console.log("Team component rendering with first member image:", members[0].image);
+
   return (
     <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
@@ -74,7 +77,14 @@ const Team = ({
                     style={{ background: member.background }}
                   >
                     <Avatar className="w-20 h-20 rounded-lg">
-                      <AvatarImage src={member.image} alt={member.name} />
+                      <AvatarImage 
+                        src={member.image} 
+                        alt={member.name}
+                        onError={(e) => {
+                          console.error("Error loading team member image:", member.image);
+                          e.currentTarget.src = "/placeholder.svg";
+                        }} 
+                      />
                       <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                   </div>
@@ -165,7 +175,14 @@ const TeamMemberCard = ({
         style={{ background: member.background }}
       >
         <Avatar className="w-32 h-32 rounded-2xl">
-          <AvatarImage src={member.image} alt={member.name} />
+          <AvatarImage 
+            src={member.image} 
+            alt={member.name}
+            onError={(e) => {
+              console.error("Error loading team member card image:", member.image);
+              e.currentTarget.src = "/placeholder.svg";
+            }}
+          />
           <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
         </Avatar>
       </div>

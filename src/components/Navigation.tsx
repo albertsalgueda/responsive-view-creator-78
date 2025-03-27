@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -60,32 +59,65 @@ const Navigation = ({
 
   const letsTalkLink = links.find(link => link.text === "let's talk");
 
-  // Function to scroll to the beginning
   const scrollToBeginning = (e: React.MouseEvent) => {
     e.preventDefault();
     if (isMobile) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
     } else {
-      // For horizontal scroll on desktop
       const container = document.querySelector('.h-screen.w-screen.overflow-x-auto.scrollbar-hide');
       if (container) {
-        container.scrollLeft = 0;
+        smoothHorizontalScroll(container as HTMLElement, container.scrollLeft, 0, 800);
       }
     }
   };
 
-  // Function to scroll to the end
   const scrollToEnd = (e: React.MouseEvent) => {
     e.preventDefault();
     if (isMobile) {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      window.scrollTo({ 
+        top: document.body.scrollHeight, 
+        behavior: 'smooth' 
+      });
     } else {
-      // For horizontal scroll on desktop
       const container = document.querySelector('.h-screen.w-screen.overflow-x-auto.scrollbar-hide');
       if (container) {
-        container.scrollLeft = container.scrollWidth;
+        const targetPosition = container.scrollWidth - container.clientWidth;
+        smoothHorizontalScroll(container as HTMLElement, container.scrollLeft, targetPosition, 800);
       }
     }
+  };
+
+  const smoothHorizontalScroll = (
+    element: HTMLElement,
+    start: number,
+    target: number,
+    duration: number
+  ) => {
+    const startTime = performance.now();
+    const change = target - start;
+    
+    const easeInOutQuad = (t: number): number => {
+      return t < 0.5 
+        ? 2 * t * t 
+        : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    };
+    
+    const animateScroll = (currentTime: number) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      const eased = easeInOutQuad(progress);
+      
+      element.scrollLeft = start + change * eased;
+      
+      if (elapsedTime < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+    
+    requestAnimationFrame(animateScroll);
   };
 
   const TwoBarMenuIcon = () => (

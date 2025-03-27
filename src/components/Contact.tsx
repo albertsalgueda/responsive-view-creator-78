@@ -12,7 +12,7 @@ interface ContactProps {
 const Contact = ({
   title = "Our dream clients aren't brands— they're people. Bold, brave, curious and forever obsessed with building meaningful experiences.",
   description = "If that sounds like you, we would love to work together.",
-  callToAction = "#contact",
+  callToAction = "mailto:HELLO@10KR.CO?subject=Hello,%20humans...",
   callToActionText = "HELLO@10KR.CO"
 }: ContactProps) => {
   const isMobile = useIsMobile();

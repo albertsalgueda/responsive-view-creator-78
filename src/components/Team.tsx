@@ -7,16 +7,12 @@ interface TeamProps {
   title?: string;
   text1?: string;
   text2?: string;
-  ctaText?: string;
-  ctaAction?: () => void;
 }
 
 const Team = ({
   title = "Meet our team.",
   text1 = "We're a group of designers, developers, and thinkers passionate about the intersection of AI and human creativity.",
   text2 = "Our diverse backgrounds and expertise allow us to approach problems from multiple angles, creating solutions that are both innovative and practical.",
-  ctaText = "JOIN US",
-  ctaAction = () => console.log("Team CTA clicked")
 }: TeamProps) => {
   const isMobile = useIsMobile();
   const {
@@ -52,14 +48,6 @@ const Team = ({
         }}>
               <p className="mb-16">{text2}</p>
             </div>
-            {ctaText && <div className="col-span-3 mt-auto mb-16 fade-in-delay-2 flex justify-end">
-                <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-            backgroundColor: textColor,
-            transition: transition
-          }}>
-                  {ctaText}
-                </button>
-              </div>}
           </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px] px-[40px]">
             {/* Title at the top */}
             <div className="w-1/2 mb-auto">
@@ -98,16 +86,6 @@ const Team = ({
                 </p>
               </div>
             </div>
-            
-            {/* CTA Button */}
-            {ctaText && <div className="fade-in flex justify-end mb-6">
-                <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-            backgroundColor: textColor,
-            transition: transition
-          }}>
-                  {ctaText}
-                </button>
-              </div>}
           </div>}
       </div>
     </section>;

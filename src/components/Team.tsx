@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -5,6 +6,7 @@ import { Linkedin } from 'lucide-react';
 import ProfileNeil from './Profile-Neil';
 import ProfileStephen from './Profile-Stephen';
 import { useEffect } from 'react';
+
 interface TeamMember {
   name: string;
   title: string;
@@ -12,10 +14,13 @@ interface TeamMember {
   background: string;
   linkedin?: string;
 }
+
 interface TeamProps {
   members?: TeamMember[];
 }
+
 const defaultMembers: TeamMember[] = [];
+
 const Team = ({
   members = defaultMembers
 }: TeamProps) => {
@@ -24,6 +29,7 @@ const Team = ({
     textColor,
     transition
   } = useSectionColors();
+  
   const displayMembers = members.length > 0 ? members : [{
     name: "Neil Stoekle",
     title: "Groovemeister",
@@ -39,7 +45,9 @@ const Team = ({
     // green
     linkedin: "https://linkedin.com"
   }];
+  
   console.log("Team component rendering with", members.length > 0 ? "actual team members" : "placeholder members");
+  
   useEffect(() => {
     if (displayMembers.length > 0) {
       displayMembers.forEach(member => {
@@ -50,6 +58,7 @@ const Team = ({
       });
     }
   }, [displayMembers]);
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-1 gap-4 min-h-screen py-12 px-6">            
@@ -107,6 +116,7 @@ const Team = ({
       </div>
     </section>;
 };
+
 const TeamMemberCard = ({
   member,
   textColor,
@@ -150,4 +160,5 @@ const TeamMemberCard = ({
       </div>
     </div>;
 };
+
 export default Team;

@@ -66,7 +66,7 @@ const Services1 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
+          }} className="font-extrabold slide-in-left font-barlow mt-0 pt-0 text-[13vh]">
                 {title}
               </h1>
               <p style={{
@@ -90,7 +90,6 @@ const Services1 = ({
               }}></p>
                 </div>
                 <div className="flex flex-col justify-end slide-in-right" style={{
-              animationDelay: '0.1s',
               color: textColor,
               transition: transition
             }}>

@@ -169,7 +169,7 @@ const SectionObserverWithBackground = ({
           <Services3 />
         </div>
         <Image3 />
-        <div id="team" className="h-screen w-screen flex-shrink-0">
+        <div id="team" className="h-screen w-2/3 flex-shrink-0">
           <Team />
         </div>
         <Image4 />

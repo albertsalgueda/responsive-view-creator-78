@@ -16,10 +16,7 @@ const TeamMobileView = ({ displayMembers, textColor, transition }: TeamMobileVie
         {displayMembers.map((member, index) => (
           <div key={index} className="fade-in-delay-2 flex items-center space-x-4">
             <div 
-              className="rounded-lg overflow-hidden relative" 
-              style={{
-                background: member.background
-              }}
+              className="rounded-lg overflow-hidden relative"
             >
               <img 
                 src={member.image} 

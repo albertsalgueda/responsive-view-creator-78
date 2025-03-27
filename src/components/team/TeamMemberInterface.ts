@@ -3,7 +3,7 @@ export interface TeamMember {
   name: string;
   title: string;
   image: string;
-  background: string;
+  background?: string;
   linkedin?: string;
 }
 

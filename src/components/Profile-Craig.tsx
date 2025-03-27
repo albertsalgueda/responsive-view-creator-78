@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -32,7 +31,7 @@ const LinkedInIcon = () => (
 );
 
 const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
-  ({ name, role, image, background = "#4EACF2", linkedin, className }, ref) => {
+  ({ name, role, image, background, linkedin, className }, ref) => {
     const { textColor, transition } = useSectionColors();
     
     // Use a placeholder image if none provided
@@ -56,7 +55,6 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
         <div className="flex items-start gap-6 h-full">
           <div 
             className="w-[30vh] h-[30vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
-            style={{ background }}
           >
             <img 
               src={imageUrl}

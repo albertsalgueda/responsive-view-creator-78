@@ -1,4 +1,3 @@
-
 import { TeamMember } from './TeamMemberInterface';
 import ProfileNeil from '../Profile-Neil';
 import ProfileStephen from '../Profile-Stephen';
@@ -18,8 +17,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
           <ProfileStephanie 
             name={displayMembers[2].name} 
             role={displayMembers[2].title} 
-            image={displayMembers[2].image} 
-            background={displayMembers[2].background} 
+            image={displayMembers[2].image}
             linkedin={displayMembers[2].linkedin} 
           />
         </div>
@@ -27,8 +25,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
           <ProfileNeil 
             name={displayMembers[0].name} 
             role={displayMembers[0].title} 
-            image={displayMembers[0].image} 
-            background={displayMembers[0].background} 
+            image={displayMembers[0].image}
             linkedin={displayMembers[0].linkedin} 
           />
         </div>
@@ -36,8 +33,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
           <ProfileStephen 
             name={displayMembers[1].name} 
             role={displayMembers[1].title} 
-            image={displayMembers[1].image} 
-            background={displayMembers[1].background} 
+            image={displayMembers[1].image}
             linkedin={displayMembers[1].linkedin} 
           />
         </div>
@@ -45,8 +41,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
           <ProfileCraig 
             name={displayMembers[3].name} 
             role={displayMembers[3].title} 
-            image={displayMembers[3].image} 
-            background={displayMembers[3].background} 
+            image={displayMembers[3].image}
             linkedin={displayMembers[3].linkedin} 
           />
         </div>
@@ -54,8 +49,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
           <ProfileAshish 
             name={displayMembers[4].name} 
             role={displayMembers[4].title} 
-            image={displayMembers[4].image} 
-            background={displayMembers[4].background} 
+            image={displayMembers[4].image}
             linkedin={displayMembers[4].linkedin} 
           />
         </div>

@@ -48,33 +48,33 @@ const Team = ({
         }}>
               <p className="mb-16">{text2}</p>
             </div>
-          </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px] px-[40px]">
-            {/* Title at the top */}
-            <div className="col-span-8 col-start-1 w-2/3 mb-auto">
-              <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-h1-desktop">
-                {title}
-              </h1>
-              {/* Removed the duplicated text1 from here */}
-            </div>
-            
-            {/* Text section at the bottom */}
-            <div className="grid grid-cols-12 gap-8">
-              {/* Text-1 spanning columns 1-8 */}
-              <div className="col-span-8 col-start-1 flex flex-col justify-end">
+          </div> : <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
+            {/* Title and Text-1 in top section */}
+            <div className="w-full">
+              <div className="col-span-8 col-start-1 w-2/3">
+                <h1 style={{
+              lineHeight: 1.1,
+              fontWeight: 800,
+              fontStyle: 'italic',
+              color: textColor,
+              transition: transition
+            }} className="font-extrabold slide-in-left font-barlow text-h1-desktop mb-8">
+                  {title}
+                </h1>
                 <p style={{
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="text-text-medium slide-in-left font-barlow font-medium mb-8">
+            }} className="text-text-medium slide-in-left font-barlow font-medium">
                   {text1}
                 </p>
               </div>
+            </div>
+            
+            {/* Text-2 at the bottom */}
+            <div className="grid grid-cols-12 gap-8">
+              {/* Empty space to maintain grid structure */}
+              <div className="col-span-6 col-start-1"></div>
               
               {/* Text-2 spanning columns 7-12 */}
               <div className="col-span-6 col-start-7 flex flex-col justify-end">

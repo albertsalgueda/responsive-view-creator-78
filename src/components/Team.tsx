@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -92,7 +93,7 @@ const Team = ({
                     </p>
                     {member.linkedin && (
                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="w-4 h-4 mt-1" style={{ color: textColor, transition }} />
+                        <Linkedin className="w-4 h-4 mt-1 rounded-sm" style={{ color: textColor, transition }} />
                       </a>
                     )}
                   </div>
@@ -183,7 +184,7 @@ const TeamMemberCard = ({
         </p>
         {member.linkedin && (
           <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-            <Linkedin className="w-4 h-4 mt-1" style={{ color: textColor, transition }} />
+            <Linkedin className="w-4 h-4 mt-1 rounded-sm" style={{ color: textColor, transition }} />
           </a>
         )}
       </div>

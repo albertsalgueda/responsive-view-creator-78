@@ -260,7 +260,7 @@ const Navigation = ({
                   transition: transition
                 }}
               >
-                {letsTalkLink.text}
+                LET'S TALK
               </Button>
             </a>
           )}

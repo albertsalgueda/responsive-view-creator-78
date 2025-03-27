@@ -22,6 +22,11 @@ const Services3 = ({
 
   // Split columns text into array items
   const columnItems = columns.split('<p>');
+  
+  // Split items for two columns on desktop
+  const halfwayIndex = Math.ceil(columnItems.length / 2);
+  const firstColumnItems = columnItems.slice(0, halfwayIndex);
+  const secondColumnItems = columnItems.slice(halfwayIndex);
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
@@ -75,17 +80,17 @@ const Services3 = ({
               </p>
             </div>
             <div className="mb-0 mt-auto">
-              <div className="font-barlow font-medium mb-0 slide-in-right text-text-small" style={{
+              <div className="grid grid-cols-2 gap-8 font-barlow font-medium mb-0 slide-in-right text-text-small" style={{
             color: textColor,
             transition: transition,
-            columnCount: 2,
-            columnGap: '2rem',
-            lineHeight: 1.1,
-            columnFill: 'auto',
-            display: 'flex',
-            flexDirection: 'column-reverse'
+            lineHeight: 1.1
           }}>
-                {columnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
+                <div className="flex flex-col-reverse">
+                  {firstColumnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
+                </div>
+                <div className="flex flex-col-reverse">
+                  {secondColumnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
+                </div>
               </div>
             </div>
           </div>}

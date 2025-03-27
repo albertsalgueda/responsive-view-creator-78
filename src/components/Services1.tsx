@@ -81,11 +81,11 @@ const Services1 = ({
             columnCount: 2,
             columnGap: '2rem',
             lineHeight: 1.1,
-            columnFill: 'auto',
-            display: 'flex',
-            flexDirection: 'column-reverse'
+            display: 'block'
           }}>
-                {columnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
+                <div className="flex flex-col-reverse">
+                  {columnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
+                </div>
               </div>
             </div>
           </div>}

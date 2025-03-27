@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -54,6 +55,73 @@ const defaultMembers: TeamMember[] = [
     linkedin: "https://linkedin.com"
   }
 ];
+
+// Add the missing TeamMemberCard component
+const TeamMemberCard = ({ 
+  member, 
+  textColor, 
+  transition 
+}: { 
+  member: TeamMember, 
+  textColor: string, 
+  transition: string 
+}) => {
+  const [imgSrc, setImgSrc] = useState(member.image);
+  const [error, setError] = useState(false);
+  
+  return (
+    <div className="fade-in-delay-1 flex flex-col items-center space-y-3">
+      <div 
+        className="w-16 h-16 rounded-full overflow-hidden relative"
+        style={{ background: member.background }}
+      >
+        {!error ? (
+          <img 
+            src={imgSrc}
+            alt={member.name}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error("Error loading team member card image:", imgSrc);
+              setError(true);
+              setImgSrc("/placeholder.svg");
+            }}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-xl font-bold bg-gray-200">
+            {member.name.charAt(0)}
+          </div>
+        )}
+      </div>
+      <div className="text-center">
+        <h3 
+          style={{ color: textColor, transition }}
+          className="font-bold text-sm"
+        >
+          {member.name}
+        </h3>
+        <p 
+          style={{ color: textColor, transition }}
+          className="text-xs"
+        >
+          {member.title}
+        </p>
+        {member.linkedin && (
+          <a 
+            href={member.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-1"
+          >
+            <Linkedin 
+              className="w-4 h-4 mx-auto" 
+              style={{ color: textColor, transition }} 
+            />
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const Team = ({
   members = defaultMembers,

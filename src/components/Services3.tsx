@@ -84,7 +84,7 @@ const Services3 = ({
             lineHeight: 1.1
           }} dangerouslySetInnerHTML={{
             __html: combinedServices.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>')
-          }} className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right justify-end">
+          }} className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right">
               </div>
             </div>
           </div>}

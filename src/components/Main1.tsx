@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -66,7 +65,7 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0">
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-24 my-0">
                 {text}
               </p>
             </div>
@@ -96,7 +95,7 @@ const Main1 = ({
             <div className="col-span-6 self-start"></div>
             
             {/* Right side content in columns 7-12 */}
-            <div className="col-span-6 self-start pt-[25vh]">
+            <div className="col-span-6 self-start">
               <p style={{
             lineHeight: 1.1,
             color: textColor,

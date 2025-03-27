@@ -1,4 +1,3 @@
-
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -18,43 +17,8 @@ interface TeamProps {
   members?: TeamMember[];
 }
 
-const defaultMembers: TeamMember[] = [
-  {
-    name: "Neil Stoeckle",
-    title: "Founder",
-    image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.jpg",
-    background: "#FDB0C2", // pink
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Stephen Clements",
-    title: "Founder",
-    image: "/placeholder.svg",
-    background: "#132ABC", // blue
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Stephanie Wiseman",
-    title: "Founder",
-    image: "/placeholder.svg",
-    background: "#FFBD89", // coral
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Craig Kind",
-    title: "Founder",
-    image: "/placeholder.svg",
-    background: "#97ECCF", // green
-    linkedin: "https://linkedin.com"
-  },
-  {
-    name: "Ashish Toshniwal",
-    title: "Founder",
-    image: "/placeholder.svg",
-    background: "#2A0831", // purple
-    linkedin: "https://linkedin.com"
-  }
-];
+// Empty array for team members
+const defaultMembers: TeamMember[] = [];
 
 // TeamMemberCard component definition
 function TeamMemberCard({ 

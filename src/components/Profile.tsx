@@ -2,6 +2,7 @@
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface ProfileProps {
   name: string;
@@ -32,6 +33,8 @@ const LinkedInIcon = () => (
 
 const Profile = forwardRef<HTMLDivElement, ProfileProps>(
   ({ name, role, image, background = "#FDB0C2", linkedin, className }, ref) => {
+    const { textColor, transition } = useSectionColors();
+    
     return (
       <div 
         ref={ref}
@@ -52,8 +55,14 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
         </div>
         
         <div className="flex flex-col justify-end h-[50vh]">
-          <h3 className="text-text-large-desktop font-bold">{name}</h3>
-          <p className="text-text-medium mt-2">{role}</p>
+          <h3 
+            className="text-text-large-desktop font-bold"
+            style={{ color: textColor, transition }}
+          >{name}</h3>
+          <p 
+            className="text-text-medium mt-2"
+            style={{ color: textColor, transition }}
+          >{role}</p>
           
           {linkedin && (
             <a 
@@ -63,7 +72,10 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
               className="mt-3 inline-block hover:opacity-80 transition-opacity"
               aria-label={`${name}'s LinkedIn profile`}
             >
-              <div className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px]">
+              <div 
+                className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px]"
+                style={{ color: textColor, transition }}
+              >
                 <LinkedInIcon />
               </div>
             </a>

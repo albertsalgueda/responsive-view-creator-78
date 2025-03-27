@@ -34,7 +34,7 @@ const Contact = ({
       <div className="w-full mx-auto h-full">
         {isMobile ?
         <div className="grid grid-cols-3 gap-4 min-h-screen p-6">
-            <div className="col-span-1 mt-16">
+            <div className="col-span-3 mb-8">
               <h2 className="text-xl font-medium slide-in-left font-barlow" style={{
                 lineHeight: 1.1,
                 color: textColor,
@@ -44,7 +44,7 @@ const Contact = ({
               </h2>
             </div>
             
-            <div className="col-span-2 col-start-2 mt-16">
+            <div className="col-span-2 col-start-2">
               <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
                 color: textColor,
                 transition: transition

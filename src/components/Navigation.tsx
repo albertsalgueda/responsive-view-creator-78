@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -49,7 +50,8 @@ const Navigation = ({
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > 100) {
+      // Only trigger hiding navigation after scrolling down at least 24px
+      if (currentScrollY > 24) {
         // Scrolling down
         if (currentScrollY > lastScrollY.current && isVisible) {
           setIsVisible(false);
@@ -234,7 +236,7 @@ const Navigation = ({
 
   return (
     <nav 
-      className={`fixed top-0 left-0 w-full h-[80px] z-50 flex items-center justify-between px-6 transition-all duration-300 ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`fixed top-0 left-0 w-full h-[80px] z-50 flex items-center justify-between px-6 transition-all duration-500 ease-in-out ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
       style={{
         backgroundColor: isMobile && isVisible ? backgroundColor : 'transparent',
         transition: transition
@@ -255,7 +257,7 @@ const Navigation = ({
                style={{
                  color: textColor,
                  transition: transition,
-                 lineHeight: 1.2
+                 lineHeight: 1.1
                }}>
               {letsTalkLink.text}
             </a>

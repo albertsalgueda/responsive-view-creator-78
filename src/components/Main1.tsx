@@ -74,11 +74,15 @@ const Main1 = ({
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
               <div className="flex justify-end">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-                  backgroundColor: textColor,
-                  color: backgroundColor,
-                  transition: transition
-                }}>
+                <button 
+                  onClick={scrollToMain3} 
+                  className="px-6 py-3 rounded-sm font-medium transition-all font-barlow hover:translate-y-[-2px] hover:shadow-md" 
+                  style={{
+                    backgroundColor: textColor,
+                    color: backgroundColor,
+                    transition: transition
+                  }}
+                >
                   {ctaText}
                 </button>
               </div>
@@ -103,11 +107,15 @@ const Main1 = ({
             {/* Title and button in columns 1-6, title anchored to bottom */}
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6 fade-in">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-                  backgroundColor: textColor,
-                  color: backgroundColor,
-                  transition: transition
-                }}>
+                <button 
+                  onClick={scrollToMain3} 
+                  className="px-6 py-3 rounded-sm font-medium transition-all font-barlow hover:translate-y-[-2px] hover:shadow-md" 
+                  style={{
+                    backgroundColor: textColor,
+                    color: backgroundColor,
+                    transition: transition
+                  }}
+                >
                   {ctaText}
                 </button>
               </div>

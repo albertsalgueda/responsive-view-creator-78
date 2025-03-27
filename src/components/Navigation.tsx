@@ -105,7 +105,7 @@ const Navigation = ({
       <DrawerContent className="h-[100vh] bg-brand-pink border-none py-8 flex flex-col justify-between">
         <div className="flex flex-col items-start pt-16 px-6">
           <DrawerClose asChild>
-            <Button variant="ghost" size="icon" className="absolute right-4 top-4">
+            <Button variant="ghost" size="icon" className="absolute right-6 top-6 p-2">
               <X size={32} strokeWidth={4} className="text-brand-blue" />
             </Button>
           </DrawerClose>

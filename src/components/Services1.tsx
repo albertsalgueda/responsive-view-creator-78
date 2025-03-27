@@ -26,17 +26,18 @@ const Services1 = ({
   const combinedServices = subtitle + '<br><br>' + description;
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
-      <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
+      <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
+        {isMobile ? 
+          <div className="flex flex-col justify-between py-12 px-6 h-full">
             <div className="mt-16">
               <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition,
-            marginTop: '-2vh'
-          }} className="font-extrabold slide-in-left font-barlow text-7xl">
+                lineHeight: 1.1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition,
+                marginTop: '-2vh'
+              }} className="font-extrabold slide-in-left font-barlow text-7xl">
                 {title}
               </h1>
               <p style={{
@@ -46,6 +47,8 @@ const Services1 = ({
               }} className="mt-3 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-base">
                 {descriptionText}
               </p>
+            </div>
+            <div className="mb-6"> 
               <div 
                 className="mt-6 fade-in-delay-1 font-barlow font-medium text-sm" 
                 style={{
@@ -59,16 +62,17 @@ const Services1 = ({
               >
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full px-6 pr-[25%] pt-[25vh] pb-[40px]">
+          </div> : 
+          <div className="flex flex-col h-full px-6 pr-[25%] pt-[25vh] pb-[40px] justify-between">
             <div>
               <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition,
-            marginTop: '-2vh'
-          }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
+                lineHeight: 1.1,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition,
+                marginTop: '-2vh'
+              }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
                 {title}
               </h1>
               <p style={{
@@ -79,7 +83,7 @@ const Services1 = ({
                 {descriptionText}
               </p>
             </div>
-            <div className="mt-auto">
+            <div className="mb-0">
               <div 
                 className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" 
                 style={{
@@ -95,7 +99,8 @@ const Services1 = ({
               >
               </div>
             </div>
-          </div>}
+          </div>
+        }
       </div>
     </section>;
 };

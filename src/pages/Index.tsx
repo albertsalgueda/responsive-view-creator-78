@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Main3 from "@/components/Main3";
-import Main4 from "@/components/Team";
+import Main4 from "@/components/Main4";
 import Services1 from "@/components/Services1";
 import Services2 from "@/components/Services2";
 import Services3 from "@/components/Services3";

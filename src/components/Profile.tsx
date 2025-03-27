@@ -40,19 +40,12 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
     // Add proper handling for image paths
     let imageUrl = image || defaultPlaceholder;
     
-    // Ensure paths to lovable-uploads include a full URL
-    if (imageUrl.includes('lovable-uploads') && !imageUrl.startsWith('http')) {
-      // If it's a relative path starting with /, use it as is
-      if (imageUrl.startsWith('/')) {
-        console.log("Using relative image path:", imageUrl);
-      } else {
-        // Otherwise prepend a slash if needed
-        imageUrl = `/${imageUrl}`;
-        console.log("Corrected image path:", imageUrl);
-      }
+    // Make sure file extension is correct for specific known files
+    if (imageUrl.includes('f34e0bc8-b159-4351-8da9-0d3aa6828578')) {
+      imageUrl = imageUrl.replace('.jpg', '.png');
     }
     
-    console.log("Profile component rendering with final image URL:", imageUrl);
+    console.log("Profile component rendering with image URL:", imageUrl);
     
     return (
       <div 

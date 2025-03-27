@@ -4,6 +4,7 @@ import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Main3 from "@/components/Main3";
 import Main4 from "@/components/Main4";
+import Team from "@/components/Team";
 import Services1 from "@/components/Services1";
 import Services2 from "@/components/Services2";
 import Services3 from "@/components/Services3";
@@ -124,6 +125,7 @@ const SectionObserverWithBackground = ({
         <div id="services3"><Services3 /></div>
         <Image3 />
         <div id="team"><Main4 /></div>
+        <div id="team-members"><Team /></div>
         <Image4 />
         <div id="contact"><Contact /></div>
       </main>
@@ -171,6 +173,9 @@ const SectionObserverWithBackground = ({
         <Image3 />
         <div id="team" className="h-screen w-2/3 flex-shrink-0">
           <Main4 />
+        </div>
+        <div id="team-members" className="h-screen w-screen flex-shrink-0">
+          <Team />
         </div>
         <Image4 />
         <div id="contact" className="h-screen w-screen flex-shrink-0">

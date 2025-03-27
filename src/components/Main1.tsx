@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main1Props {
   title?: string;
   subtitle?: string;
   ctaText?: string;
   ctaAction?: () => void;
 }
-
 const Main1 = ({
   title = "We are 10kR.",
   subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
@@ -21,7 +19,6 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
-
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -41,7 +38,6 @@ const Main1 = ({
       }
     }
   };
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="flex flex-col justify-between h-full py-12 px-6">
@@ -64,22 +60,22 @@ const Main1 = ({
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2">
-              <div className="flex justify-end mb-6">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
-              backgroundColor: textColor,
-              color: backgroundColor,
-              transition: transition
-            }}>
-                  {ctaText}
-                </button>
-              </div>
               <p style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="fade-in-delay-1 max-w-[85%] font-barlow font-medium text-sm pt-6">
+          }} className="fade-in-delay-1 max-w-[85%] font-barlow mb-6 text-sm">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
+              <div className="flex justify-end">
+                <button onClick={scrollToMain3} style={{
+              backgroundColor: textColor,
+              color: backgroundColor,
+              transition: transition
+            }} className="py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow max-w-[66%] px-0">
+                  {ctaText}
+                </button>
+              </div>
             </div>
           </div> : <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
             {/* Empty columns 1-6 for top part */}
@@ -124,7 +120,7 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="slide-in-left font-barlow font-medium text-[2.25vh] pb-[5px]">
+          }} className="slide-in-left font-barlow text-[2.25vh] pb-[5px]">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>
@@ -132,5 +128,4 @@ const Main1 = ({
       </div>
     </section>;
 };
-
 export default Main1;

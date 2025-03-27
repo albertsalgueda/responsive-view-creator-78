@@ -19,7 +19,7 @@ const MuteButton = ({
     position: 'fixed',
     bottom: isMobile ? '20px' : '16px',
     right: '16px',
-    zIndex: 999999
+    zIndex: 50 // Lower z-index value so it appears behind the drawer
   }}>
       <button 
         onClick={onToggle} 

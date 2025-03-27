@@ -38,7 +38,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
         className={cn("flex items-start gap-6", className)}
       >
         <div 
-          className="w-[380px] h-[380px] rounded-2xl overflow-hidden flex-shrink-0"
+          className="w-[50vh] h-[50vh] rounded-2xl overflow-hidden flex-shrink-0"
           style={{ background }}
         >
           <Avatar className="w-full h-full rounded-2xl">

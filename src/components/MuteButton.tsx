@@ -14,7 +14,7 @@ const MuteButton = ({
   onToggle
 }: MuteButtonProps) => {
   const isMobile = useIsMobile();
-  const { backgroundColor, transition } = useSectionColors();
+  const { textColor, backgroundColor, transition } = useSectionColors();
   
   console.log("MuteButton rendered with isMuted:", isMuted);
   
@@ -30,16 +30,16 @@ const MuteButton = ({
           console.log("Mute button clicked, current state:", isMuted);
           onToggle();
         }} 
-        className="w-[40px] h-[40px] bg-white rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
+        className="w-[40px] h-[40px] rounded-sm hover:opacity-90 transition-all duration-500 flex items-center justify-center"
         style={{
+          backgroundColor: textColor,
+          color: backgroundColor,
           transition
         }}
-        variant="outline"
-        size="icon"
       >
         {isMuted ? 
-          <VolumeX size={24} strokeWidth={3} style={{ color: backgroundColor }} /> : 
-          <Volume size={24} strokeWidth={3} style={{ color: backgroundColor }} />
+          <VolumeX size={20} strokeWidth={3} /> : 
+          <Volume size={20} strokeWidth={3} />
         }
       </Button>
     </div>

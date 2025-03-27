@@ -50,7 +50,7 @@ const Services3 = ({
             </div>
             <div className="mb-6 flex flex-col justify-end">
               <div 
-                className="mt-6 fade-in-delay-1 font-barlow font-medium text-sm" 
+                className="fade-in-delay-1 font-barlow font-medium text-sm" 
                 style={{
                   color: textColor,
                   transition: transition,
@@ -83,7 +83,7 @@ const Services3 = ({
                 {descriptionText}
               </p>
             </div>
-            <div className="mb-0 flex flex-col justify-end">
+            <div className="mb-0 flex flex-col justify-end mt-auto">
               <div 
                 className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" 
                 style={{

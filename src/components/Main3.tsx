@@ -39,7 +39,7 @@ const Main3 = ({
                   lineHeight: 1.2,
                   color: textColor,
                   transition: transition,
-                  width: '66%'
+                  width: '100%'
                 }} className="slide-in-left font-barlow font-medium text-[4.5vh]">
                   {subtitle}
                 </p>

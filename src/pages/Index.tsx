@@ -77,65 +77,17 @@ const SectionObserverWithBackground = () => {
         
         // Apply scroll with a multiplier for better response
         scrollContainerRef.current.scrollLeft += delta;
-        
-        // Console log for debugging
-        console.log("Scrolling horizontally:", delta);
       }
-    };
-    
-    // Add drag-to-scroll functionality
-    let isDown = false;
-    let startX: number;
-    let scrollLeft: number;
-    
-    const handleMouseDown = (e: MouseEvent) => {
-      if (!scrollContainerRef.current) return;
-      
-      isDown = true;
-      scrollContainerRef.current.style.cursor = 'grabbing';
-      startX = e.pageX - scrollContainerRef.current.offsetLeft;
-      scrollLeft = scrollContainerRef.current.scrollLeft;
-    };
-    
-    const handleMouseUp = () => {
-      if (!scrollContainerRef.current) return;
-      
-      isDown = false;
-      scrollContainerRef.current.style.cursor = 'auto';
-    };
-    
-    const handleMouseLeave = () => {
-      if (!scrollContainerRef.current) return;
-      
-      isDown = false;
-      scrollContainerRef.current.style.cursor = 'auto';
-    };
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDown || !scrollContainerRef.current) return;
-      
-      e.preventDefault();
-      const x = e.pageX - scrollContainerRef.current.offsetLeft;
-      const walk = (x - startX) * 2; // Adjust the multiplier for sensitivity
-      scrollContainerRef.current.scrollLeft = scrollLeft - walk;
     };
     
     const container = scrollContainerRef.current;
     
-    // Add event listeners
+    // Add wheel event listener
     container.addEventListener('wheel', handleWheel, { passive: false });
-    container.addEventListener('mousedown', handleMouseDown);
-    container.addEventListener('mouseup', handleMouseUp);
-    container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('mousemove', handleMouseMove);
     
     return () => {
-      // Remove all event listeners on cleanup
+      // Remove wheel event listener on cleanup
       container.removeEventListener('wheel', handleWheel);
-      container.removeEventListener('mousedown', handleMouseDown);
-      container.removeEventListener('mouseup', handleMouseUp);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('mousemove', handleMouseMove);
     };
   }, [isMobile]);
   

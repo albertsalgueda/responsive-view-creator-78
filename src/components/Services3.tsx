@@ -69,7 +69,7 @@ const Services3 = ({
                 {descriptionText}
               </p>
             </div>
-            <div className="mb-0 flex flex-col justify-end">
+            <div className="mb-0 mt-auto">
               <div className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" style={{
             color: textColor,
             transition: transition,

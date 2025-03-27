@@ -106,7 +106,7 @@ const Navigation = ({
         <div className="flex flex-col items-start pt-16 px-6">
           <DrawerClose asChild>
             <Button variant="ghost" size="icon" className="absolute right-4 top-4">
-              <X size={32} strokeWidth={8} className="text-brand-blue" />
+              <X size={32} strokeWidth={4} className="text-brand-blue" />
             </Button>
           </DrawerClose>
           <div className="flex flex-col gap-5 items-start w-full pb-[20px]">

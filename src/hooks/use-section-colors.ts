@@ -41,8 +41,6 @@ export const useSectionColors = () => {
         return '#105A43'; // Dark green when menu is light green
       case 'team':
         return '#97ECCF'; // Light Green background when menu is purple
-      case 'video':
-        return '#132ABC'; // Blue background when menu is pink
       default:
         return '#132ABC'; // Default to blue
     }

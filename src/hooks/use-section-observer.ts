@@ -29,7 +29,7 @@ export const useSectionObserver = () => {
             setCurrentSection('main3');
           } else if (id === 'services1' || id === 'services2' || id === 'services3') {
             setCurrentSection('services');
-          } else if (id === 'team') {
+          } else if (id === 'team' || id === 'team-members') {
             setCurrentSection('team');
           } else if (id === 'contact') {
             setCurrentSection('contact');
@@ -50,6 +50,7 @@ export const useSectionObserver = () => {
       document.getElementById('services2'),
       document.getElementById('services3'),
       document.getElementById('team'),
+      document.getElementById('team-members'),
       document.getElementById('contact')
     ];
 

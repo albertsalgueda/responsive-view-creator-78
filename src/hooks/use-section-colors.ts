@@ -1,10 +1,16 @@
 
 import { useView } from '@/context/ViewContext';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useEffect } from 'react';
 
 export const useSectionColors = () => {
   const { currentSection } = useView();
   const isMobile = useIsMobile();
+  
+  // Debug logging for color changes
+  useEffect(() => {
+    console.log('Color scheme updating for section:', currentSection);
+  }, [currentSection]);
   
   // Define colors based on currentSection - same logic as in Navigation
   const getNavColor = () => {

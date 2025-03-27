@@ -12,13 +12,16 @@ export const useSectionObserver = () => {
     const options = {
       root: null,
       rootMargin: isMobile ? '-10% 0px' : '0px',
-      threshold: isMobile ? 0.15 : 0.5, // Lower threshold for mobile
+      threshold: isMobile ? 0.15 : 0.3, // Lower threshold to detect sections earlier
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
+          
+          console.log(`Section "${id}" is now intersecting with ${entry.intersectionRatio.toFixed(2)} ratio`);
+          
           if (id === 'video') {
             setCurrentSection('video');
           } else if (id === 'main1') {

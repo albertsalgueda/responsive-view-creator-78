@@ -80,10 +80,7 @@ const Services1 = ({
             
             {/* Services list at the bottom */}
             <div className="grid grid-cols-12 gap-8">
-              {/* Empty space to maintain grid structure */}
-              <div className="col-span-6 col-start-1"></div>
-              
-              {/* Service items in second column */}
+              {/* Service items */}
               <div className="col-span-6 col-start-7 flex flex-col justify-end">
                 <div className="font-barlow font-medium mb-0 slide-in-right text-text-small" style={{
               color: textColor,

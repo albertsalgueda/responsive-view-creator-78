@@ -16,15 +16,20 @@ const MuteButton = ({
   const isMobile = useIsMobile();
   const { backgroundColor, transition } = useSectionColors();
   
+  console.log("MuteButton rendered with isMuted:", isMuted);
+  
   return (
     <div className="fixed bottom-0 right-0 p-2" style={{
       position: 'fixed',
       bottom: isMobile ? '20px' : '16px',
       right: '16px',
-      zIndex: 100 // Increased z-index to ensure it's always on top
+      zIndex: 9999 // Significantly increased z-index to ensure it's always on top
     }}>
       <Button 
-        onClick={onToggle} 
+        onClick={() => {
+          console.log("Mute button clicked, current state:", isMuted);
+          onToggle();
+        }} 
         className="w-[40px] h-[40px] bg-white rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
         style={{
           transition

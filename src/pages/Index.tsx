@@ -30,12 +30,23 @@ const Index = () => {
   
   const toggleMute = () => {
     console.log("Global mute toggle called, current state:", isMuted);
-    setIsMuted(prev => !prev);
+    setIsMuted(prevState => {
+      const newState = !prevState;
+      console.log("Setting new global mute state:", newState);
+      return newState;
+    });
   };
   
   useEffect(() => {
     setMounted(true);
+    // Log initial mute state
+    console.log("Index component initialized with isMuted:", isMuted);
   }, []);
+
+  // Log when mute state changes
+  useEffect(() => {
+    console.log("Index mute state changed to:", isMuted);
+  }, [isMuted]);
 
   if (!mounted) return null;
 
@@ -43,18 +54,29 @@ const Index = () => {
     <ViewProvider>
       <Navigation />
       <ParallaxOverlay />
-      <SectionObserverWithBackground isMuted={isMuted} />
+      <SectionObserverWithBackground isMuted={isMuted} toggleMute={toggleMute} />
       {/* MuteButton at the root level */}
       <MuteButton isMuted={isMuted} onToggle={toggleMute} />
     </ViewProvider>
   );
 };
 
-const SectionObserverWithBackground = ({ isMuted }: { isMuted: boolean }) => {
+const SectionObserverWithBackground = ({ 
+  isMuted, 
+  toggleMute 
+}: { 
+  isMuted: boolean; 
+  toggleMute: () => void;
+}) => {
   const { currentSection } = useSectionObserver();
   const isMobile = useIsMobile();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { backgroundColor, transition } = useSectionColors();
+  
+  // Log the muted state for debugging
+  useEffect(() => {
+    console.log("SectionObserverWithBackground received isMuted:", isMuted);
+  }, [isMuted]);
   
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
@@ -94,7 +116,7 @@ const SectionObserverWithBackground = ({ isMuted }: { isMuted: boolean }) => {
   if (isMobile) {
     return (
       <main className="min-h-screen will-change-auto" style={bgStyle}>
-        <div id="video"><VideoSection /></div>
+        <div id="video"><VideoSection isMuted={isMuted} /></div>
         <div id="main1"><Main1 /></div>
         <Image1 />
         <div id="main2">
@@ -127,7 +149,7 @@ const SectionObserverWithBackground = ({ isMuted }: { isMuted: boolean }) => {
     >
       <div className="flex h-screen">
         <div id="video" className="h-screen w-screen flex-shrink-0">
-          <VideoSection />
+          <VideoSection isMuted={isMuted} />
         </div>
         <div id="main1" className="h-screen w-screen flex-shrink-0">
           <Main1 />

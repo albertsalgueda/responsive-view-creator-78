@@ -41,7 +41,13 @@ const VideoMaskGrid = ({
   // Log mute state changes for debugging
   useEffect(() => {
     console.log("VideoMaskGrid received isMuted:", isMuted);
-  }, [isMuted]);
+    
+    // Force update the video muted state if we have the ref
+    if (mainVideoRef.current) {
+      mainVideoRef.current.muted = isMuted;
+      console.log("VideoMaskGrid directly setting video.muted =", isMuted);
+    }
+  }, [isMuted, mainVideoRef]);
 
   const maskCount = isMobilePortrait ? 4 : 1;
   const gapSize = 4; // 4px gap between masks

@@ -4,7 +4,11 @@ import { useVideoControl } from "@/hooks/useVideoControl";
 import VideoMaskGrid from "./VideoMaskGrid";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const VideoSection = () => {
+interface VideoSectionProps {
+  isMuted: boolean;
+}
+
+const VideoSection = ({ isMuted }: VideoSectionProps) => {
   const isMobile = useIsMobile();
   const videos = [
     "https://res.cloudinary.com/dxqekn6h5/video/upload/f_auto,q_auto/v1737427234/1_Perfume_bgcjis.mp4",
@@ -19,13 +23,23 @@ const VideoSection = () => {
   ];
 
   const mainVideoRef = useRef<HTMLVideoElement>(null);
+  
+  // Log the isMuted prop for debugging
+  console.log("VideoSection received isMuted:", isMuted);
+  
   const {
     currentVideoUrl,
-    isMuted,
+    isMuted: videoIsMuted,
     handleVideoClick,
-    handleVideoEnded,
-    toggleMute
-  } = useVideoControl(videos);
+    handleVideoEnded
+  } = useVideoControl(videos, isMuted);
+  
+  // Update muted state in video element directly through the ref
+  // This ensures the muted attribute is properly set on the HTML video element
+  if (mainVideoRef.current) {
+    mainVideoRef.current.muted = isMuted;
+    console.log("Setting video.muted =", isMuted, "on the HTML video element");
+  }
   
   return (
     <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
@@ -36,7 +50,6 @@ const VideoSection = () => {
         onVideoEnded={handleVideoEnded}
         mainVideoRef={mainVideoRef}
       />
-      {/* MuteButton is now in the Index component to ensure it persists across all sections */}
     </div>
   );
 };

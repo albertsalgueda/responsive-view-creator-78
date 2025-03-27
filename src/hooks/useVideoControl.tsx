@@ -1,11 +1,13 @@
 
 import { useState, useRef, useCallback, useEffect } from "react";
 
-export const useVideoControl = (initialVideos: string[]) => {
+export const useVideoControl = (initialVideos: string[], externalIsMuted: boolean) => {
   const initialVideoIndex = useRef(Math.floor(Math.random() * initialVideos.length));
   const [currentVideoIndex, setCurrentVideoIndex] = useState(initialVideoIndex.current);
-  const [isMuted, setIsMuted] = useState(true);
   const isTransitioning = useRef(false);
+
+  // Use the external mute state directly
+  const isMuted = externalIsMuted;
 
   const currentVideoUrl = initialVideos[currentVideoIndex];
 
@@ -37,16 +39,15 @@ export const useVideoControl = (initialVideos: string[]) => {
     }, 100);
   }, [currentVideoIndex, initialVideos.length]);
 
-  const toggleMute = useCallback(() => {
-    console.log('Toggling mute state, current:', isMuted);
-    setIsMuted(prev => !prev);
+  // Log the muted state for debugging
+  useEffect(() => {
+    console.log("useVideoControl - isMuted state:", isMuted);
   }, [isMuted]);
 
   return {
     currentVideoUrl,
     isMuted,
     handleVideoClick,
-    handleVideoEnded,
-    toggleMute
+    handleVideoEnded
   };
 };

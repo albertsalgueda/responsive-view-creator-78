@@ -2,9 +2,11 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main3Props {
   subtitle?: string;
 }
+
 const Main3 = ({
   subtitle = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
 }: Main3Props) => {
@@ -13,6 +15,7 @@ const Main3 = ({
     textColor,
     transition
   } = useSectionColors();
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
@@ -36,7 +39,7 @@ const Main3 = ({
               lineHeight: 1.2,
               color: textColor,
               transition: transition
-            }} className="slide-in-left w-full font-barlow font-medium text-[4vh]">
+            }} className="slide-in-left w-[60vw] font-barlow font-medium text-[4vh]">
                   {subtitle}
                 </p>
               </div>
@@ -45,4 +48,5 @@ const Main3 = ({
       </div>
     </section>;
 };
+
 export default Main3;

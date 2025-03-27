@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Services2Props {
   titleText?: string;
   text?: string;
   columns?: string;
 }
+
 const Services2 = ({
   titleText = "Product",
   text = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
@@ -17,6 +19,9 @@ const Services2 = ({
     textColor,
     transition
   } = useSectionColors();
+
+  // Split columns text into array items
+  const columnItems = columns.split('<p>');
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
@@ -41,13 +46,12 @@ const Services2 = ({
               </p>
             </div>
             <div className="col-start-2 col-span-2 mb-6 mt-auto">
-              <div className="fade-in-delay-1 font-barlow font-medium text-text-small" style={{
+              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse" style={{
             color: textColor,
             transition: transition,
-            columnCount: 1,
             lineHeight: 1.1
           }}>
-                {columns.split('<p>').map((item, index) => <p key={index} className="mb-2">{item}</p>)}
+                {columnItems.map((item, index) => <p key={index} className="mb-2">{item}</p>)}
               </div>
             </div>
           </div> : <div className="flex flex-col h-full px-6 pr-[25%] pt-[25vh] pb-[40px] justify-between">
@@ -76,13 +80,17 @@ const Services2 = ({
             transition: transition,
             columnCount: 2,
             columnGap: '2rem',
-            lineHeight: 1.1
+            lineHeight: 1.1,
+            columnFill: 'auto',
+            display: 'flex',
+            flexDirection: 'column-reverse'
           }}>
-                {columns.split('<p>').map((item, index) => <p key={index} className="mb-3">{item}</p>)}
+                {columnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
               </div>
             </div>
           </div>}
       </div>
     </section>;
 };
+
 export default Services2;

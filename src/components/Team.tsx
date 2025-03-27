@@ -11,8 +11,8 @@ interface TeamProps {
 
 const Team = ({
   title = "Taste & talent.",
-  text1 = "We're a group of designers, developers, and thinkers passionate about the intersection of AI and human creativity.",
-  text2 = "Our diverse backgrounds and expertise allow us to approach problems from multiple angles, creating solutions that are both innovative and practical.",
+  text1 = "We're an (intentionally) small team of award-winning designers, storytellers & technologists.",
+  text2 = "While machines analyze data, our unique perspectives, lived experiences and creativity shape art and innovation.",
 }: TeamProps) => {
   const isMobile = useIsMobile();
   const {
@@ -60,22 +60,18 @@ const Team = ({
           }} className="font-extrabold slide-in-left font-barlow text-h1-desktop">
                 {title}
               </h1>
+              <p style={{
+            lineHeight: 1.1,
+            color: textColor,
+            transition: transition
+          }} className="mt-6 text-text-medium slide-in-left font-barlow font-medium">
+                {text1}
+              </p>
             </div>
             
-            {/* Text sections at the bottom */}
+            {/* Text section at the bottom */}
             <div className="grid grid-cols-12 gap-8">
-              {/* Text column 1 */}
-              <div className="col-span-4 col-start-5 flex flex-col justify-end">
-                <p style={{
-              lineHeight: 1.1,
-              color: textColor,
-              transition: transition
-            }} className="text-text-medium slide-in-right font-barlow font-medium mb-0">
-                  {text1}
-                </p>
-              </div>
-              
-              {/* Text column 2 */}
+              {/* Text-2 */}
               <div className="col-span-4 col-start-9 flex flex-col justify-end">
                 <p style={{
               lineHeight: 1.1,

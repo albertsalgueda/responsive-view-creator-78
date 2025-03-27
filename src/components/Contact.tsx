@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -43,6 +44,7 @@ const Contact = ({
                 {title}
               </h2>
               
+              {/* Description is now wrapped in a div that explicitly spans columns 2-3 */}
               <div className="col-start-2 col-span-2 mt-8">
                 <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
                   color: textColor,

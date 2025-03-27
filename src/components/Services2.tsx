@@ -12,13 +12,23 @@ interface Services2Props {
 const Services2 = ({
   titleText = "Product",
   descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
-  columnsText = "Product Strategy & Management<br>User Research & Testing<br>Website Design & Development<br>Mobile App Design & Development<br>Motion & Interaction Design<br>Design Systems<br>Concept Proofing & Prototyping"
+  columnsText = "Product Strategy & Management<p>User Research & Testing<p>Website Design & Development<p>Mobile App Design & Development<p>Motion & Interaction Design<br>Design Systems<p>Concept Proofing & Prototyping"
 }: Services2Props) => {
   const isMobile = useIsMobile();
   const {
     textColor,
     transition
   } = useSectionColors();
+
+  // Process mixed <p> and <br> tags
+  const processColumnsText = (text: string) => {
+    // First replace <br> with <p> for consistency
+    const normalizedText = text.replace(/<br>/g, '<p>');
+    // Split by <p> and render as paragraphs
+    return normalizedText.split('<p>').map((item, index) => (
+      <p key={index} className={isMobile ? "mb-2" : "mb-3"}>{item}</p>
+    ));
+  };
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
@@ -52,8 +62,8 @@ const Services2 = ({
                   columnCount: 1,
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ __html: columnsText }}
               >
+                {processColumnsText(columnsText)}
               </div>
             </div>
           </div> : 
@@ -87,10 +97,8 @@ const Services2 = ({
                   columnGap: '2rem',
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ 
-                  __html: columnsText.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
-                }}
               >
+                {processColumnsText(columnsText)}
               </div>
             </div>
           </div>

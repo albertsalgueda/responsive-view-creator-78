@@ -12,7 +12,7 @@ interface Services3Props {
 const Services3 = ({
   titleText = "Content",
   descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
-  columnsText = "Content Strategy<br>Branded Content<br>Creative Production (Film, 3D, Photography, Animation)<br>Social Media Content Creation<br>Generative AI & Virtual Production"
+  columnsText = "Content Strategy<p>Branded Content<p>Creative Production (Film, 3D, Photography, Animation)<p>Social Media Content Creation<p>Generative AI & Virtual Production"
 }: Services3Props) => {
   const isMobile = useIsMobile();
   const {
@@ -52,8 +52,10 @@ const Services3 = ({
                   columnCount: 1,
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ __html: columnsText }}
               >
+                {columnsText.split('<p>').map((item, index) => (
+                  <p key={index} className="mb-2">{item}</p>
+                ))}
               </div>
             </div>
           </div> : 
@@ -87,10 +89,10 @@ const Services3 = ({
                   columnGap: '2rem',
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ 
-                  __html: columnsText.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
-                }}
               >
+                {columnsText.split('<p>').map((item, index) => (
+                  <p key={index} className="mb-3">{item}</p>
+                ))}
               </div>
             </div>
           </div>

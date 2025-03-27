@@ -12,7 +12,7 @@ interface Services1Props {
 const Services1 = ({
   titleText = "Brand",
   descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
-  columnsText = "Brand Creation & Refreshes<br>Brand Narrative & Naming<br>Visual Identity<br>Brand Strategy<br>Brand Voice & Tone<br>Category Creation & Positioning"
+  columnsText = "Brand Creation & Refreshes<p>Brand Narrative & Naming<p>Visual Identity<p>Brand Strategy<p>Brand Voice & Tone<p>Category Creation & Positioning"
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const {
@@ -52,8 +52,10 @@ const Services1 = ({
                   columnCount: 1,
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ __html: columnsText }}
               >
+                {columnsText.split('<p>').map((item, index) => (
+                  <p key={index} className="mb-2">{item}</p>
+                ))}
               </div>
             </div>
           </div> : 
@@ -87,10 +89,10 @@ const Services1 = ({
                   columnGap: '2rem',
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ 
-                  __html: columnsText.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
-                }}
               >
+                {columnsText.split('<p>').map((item, index) => (
+                  <p key={index} className="mb-3">{item}</p>
+                ))}
               </div>
             </div>
           </div>

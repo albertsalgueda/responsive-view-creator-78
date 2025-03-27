@@ -1,4 +1,3 @@
-
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -67,7 +66,7 @@ const Team = ({
     }
   }, [displayMembers]);
 
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section className={`w-full relative px-0 py-0 overflow-visible font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-1 gap-4 min-h-screen py-12 px-6">            
             <div className="grid grid-cols-1 gap-6 mt-24">
@@ -109,8 +108,8 @@ const Team = ({
                   </div>
                 </div>)}
             </div>
-          </div> : <div className="relative h-full px-10 pt-[25vh] ">            
-            <div className="absolute left-10 bottom-[40px] flex items-start gap-5 fade-in-delay-1">
+          </div> : <div className="relative h-full px-10 pt-[25vh] w-fit">            
+            <div className="absolute left-10 bottom-[40px] flex items-start gap-5 fade-in-delay-1 w-fit">
               <div className="h-full w-fit inline-flex mr-5">
                 <ProfileStephanie 
                   name={displayMembers[2].name} 

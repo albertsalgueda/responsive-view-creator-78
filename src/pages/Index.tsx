@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -173,7 +174,7 @@ const SectionObserverWithBackground = ({
         <div id="team" className="h-screen w-2/3 flex-shrink-0">
           <Main4 />
         </div>
-        <div id="team-members" className="h-screen w-[120vw] flex-shrink-0">
+        <div id="team-members" className="h-screen w-fit flex-shrink-0 overflow-visible">
           <Team />
         </div>
         <Image4 />

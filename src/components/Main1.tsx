@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -65,7 +66,7 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-24 my-0">
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[18px] my-0">
                 {text}
               </p>
             </div>

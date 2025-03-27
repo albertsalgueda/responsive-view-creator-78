@@ -18,6 +18,8 @@ export const useSectionColors = () => {
       case 'main3':
       case 'services':
         return '#97ECCF'; // Green Light
+      case 'team':
+        return '#2A0831'; // Purple for team section
       case 'contact':
         return '#FDB0C2'; // Pink
       default:
@@ -37,6 +39,8 @@ export const useSectionColors = () => {
       case 'main3':
       case 'services':
         return '#105A43'; // Dark green when menu is light green
+      case 'team':
+        return '#97ECCF'; // Light Green background when menu is purple
       case 'video':
         return '#132ABC'; // Blue background when menu is pink
       default:

@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Section = 'video' | 'main1' | 'main2' | 'main3' | 'services' | 'contact';
+type Section = 'video' | 'main1' | 'main2' | 'main3' | 'services' | 'team' | 'contact';
 
 interface ViewContextType {
   currentSection: Section;

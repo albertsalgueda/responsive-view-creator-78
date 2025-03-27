@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -65,13 +66,20 @@ const SectionObserverWithBackground = () => {
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
     
-    // Simple wheel event handler for horizontal scrolling
+    // Improved wheel event handler for horizontal scrolling
     const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         e.preventDefault();
         
-        // Apply the deltaY to the horizontal scroll
-        scrollContainerRef.current.scrollLeft += e.deltaY;
+        // Determine scroll direction and amount
+        // Use deltaY for vertical wheels and deltaX for horizontal wheels
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        
+        // Apply scroll with a multiplier for better response
+        scrollContainerRef.current.scrollLeft += delta;
+        
+        // Console log for debugging
+        console.log("Scrolling horizontally:", delta);
       }
     };
     

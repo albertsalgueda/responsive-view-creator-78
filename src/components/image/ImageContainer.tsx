@@ -20,7 +20,6 @@ const ImageContainer: React.FC<ImageContainerProps> = ({
         <ParallaxImageMask 
           imageSrc={imageSrc} 
           altText={altText}
-          maskWidth={isMobile ? undefined : 350}
         />
       </div>
     </div>

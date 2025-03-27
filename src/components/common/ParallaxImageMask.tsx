@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 
 interface ParallaxImageMaskProps {
@@ -15,11 +14,13 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState(0);
   const [lastScroll, setLastScroll] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
+      setViewportHeight(window.innerHeight);
     };
     
     checkMobile();
@@ -127,12 +128,14 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
     };
   }, [isMobile, lastScroll]);
 
+  const calculatedWidth = isMobile ? '100vw' : `${viewportHeight * 0.33}px`;
+
   return (
     <div 
       ref={containerRef}
       className="relative overflow-hidden"
       style={{ 
-        width: isMobile ? '100vw' : `${maskWidth}px`, 
+        width: calculatedWidth, 
         height: "100vh" 
       }}
     >

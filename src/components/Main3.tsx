@@ -30,13 +30,13 @@ const Main3 = ({
           </div> :
       // Desktop layout - full screen with no scrolling
       <div className="flex flex-col h-full justify-between pr-[25%] w-full pt-[25vh] px-[40px]">
-            <div className="">
+            <div className="mt-auto mb-0">
               <div className="w-full">
                 <p style={{
               lineHeight: 1.2,
               color: textColor,
               transition: transition
-            }} className="slide-in-left w-full font-barlow font-medium text-[4vh]">
+            }} className="slide-in-left w-full font-barlow font-medium text-[4vh] w-[60vw]">
                   {subtitle}
                 </p>
               </div>

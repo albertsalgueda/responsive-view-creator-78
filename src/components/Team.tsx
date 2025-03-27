@@ -29,15 +29,16 @@ const Team = ({
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
-            transition: transition
+            transition: transition,
+            marginTop: '-2vh'
           }} className="font-extrabold slide-in-left font-barlow text-h1-mobile">
                 {title}
               </h1>
               <p style={{
-            lineHeight: 1.1,
+            lineHeight: 1.3,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium">
+          }} className="mt-3 fade-in-delay-1 font-barlow font-medium text-text-medium">
                 {text1}
               </p>
             </div>
@@ -57,15 +58,16 @@ const Team = ({
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
-              transition: transition
+              transition: transition,
+              marginTop: '-2vh'
             }} className="font-extrabold slide-in-left font-barlow text-h1-desktop mb-8">
                   {title}
                 </h1>
                 <p style={{
-              lineHeight: 1.1,
+              lineHeight: 1.3,
               color: textColor,
               transition: transition
-            }} className="text-text-medium slide-in-left font-barlow font-medium">
+            }} className="slide-in-left font-barlow font-medium text-text-medium">
                   {text1}
                 </p>
               </div>

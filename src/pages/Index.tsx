@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -66,18 +65,93 @@ const SectionObserverWithBackground = () => {
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
     
+    // Enhanced wheel event handler for smoother scrolling
     const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         e.preventDefault();
-        scrollContainerRef.current.scrollLeft += e.deltaY;
+        
+        // Make horizontal scrolling more responsive by adjusting the multiplier
+        const scrollAmount = e.deltaY * 1.5;
+        scrollContainerRef.current.scrollLeft += scrollAmount;
       }
     };
     
+    // Add keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!scrollContainerRef.current) return;
+      
+      const scrollDistance = window.innerWidth * 0.5; // Scroll by half the viewport width
+      
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        scrollContainerRef.current.scrollBy({
+          left: scrollDistance,
+          behavior: 'smooth'
+        });
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        scrollContainerRef.current.scrollBy({
+          left: -scrollDistance,
+          behavior: 'smooth'
+        });
+      }
+    };
+    
+    // Add drag-to-scroll functionality
+    let isDown = false;
+    let startX: number;
+    let scrollLeft: number;
+    
+    const handleMouseDown = (e: MouseEvent) => {
+      if (!scrollContainerRef.current) return;
+      
+      isDown = true;
+      scrollContainerRef.current.style.cursor = 'grabbing';
+      startX = e.pageX - scrollContainerRef.current.offsetLeft;
+      scrollLeft = scrollContainerRef.current.scrollLeft;
+    };
+    
+    const handleMouseUp = () => {
+      if (!scrollContainerRef.current) return;
+      
+      isDown = false;
+      scrollContainerRef.current.style.cursor = 'auto';
+    };
+    
+    const handleMouseLeave = () => {
+      if (!scrollContainerRef.current) return;
+      
+      isDown = false;
+      scrollContainerRef.current.style.cursor = 'auto';
+    };
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDown || !scrollContainerRef.current) return;
+      
+      e.preventDefault();
+      const x = e.pageX - scrollContainerRef.current.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust the multiplier for sensitivity
+      scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+    };
+    
     const container = scrollContainerRef.current;
+    
+    // Add all event listeners
     container.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeyDown);
+    container.addEventListener('mousedown', handleMouseDown);
+    container.addEventListener('mouseup', handleMouseUp);
+    container.addEventListener('mouseleave', handleMouseLeave);
+    container.addEventListener('mousemove', handleMouseMove);
     
     return () => {
+      // Remove all event listeners on cleanup
       container.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
+      container.removeEventListener('mousedown', handleMouseDown);
+      container.removeEventListener('mouseup', handleMouseUp);
+      container.removeEventListener('mouseleave', handleMouseLeave);
+      container.removeEventListener('mousemove', handleMouseMove);
     };
   }, [isMobile]);
   
@@ -116,18 +190,22 @@ const SectionObserverWithBackground = () => {
   return (
     <div 
       ref={scrollContainerRef}
-      className="h-screen w-screen overflow-x-auto scrollbar-hide will-change-auto" 
-      style={bgStyle}
+      className="h-screen w-screen overflow-x-auto scrollbar-hide will-change-auto"
+      style={{ 
+        ...bgStyle,
+        cursor: 'auto',
+        scrollSnapType: 'x mandatory'
+      }}
     >
       <div className="flex h-screen">
-        <div id="video" className="h-screen w-screen flex-shrink-0">
+        <div id="video" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
           <VideoSection />
         </div>
-        <div id="main1" className="h-screen w-screen flex-shrink-0">
+        <div id="main1" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
           <Main1 />
         </div>
         <Image1 />
-        <div id="main2" className="h-screen w-screen flex-shrink-0">
+        <div id="main2" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
@@ -136,20 +214,20 @@ const SectionObserverWithBackground = () => {
           />
         </div>
         <Image2 />
-        <div id="main3" className="h-screen w-2/3 flex-shrink-0">
+        <div id="main3" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
           <Main3 />
         </div>
-        <div id="services1" className="h-screen w-2/3 flex-shrink-0">
+        <div id="services1" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
           <Services1 />
         </div>
-        <div id="services2" className="h-screen w-2/3 flex-shrink-0">
+        <div id="services2" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
           <Services2 />
         </div>
-        <div id="services3" className="h-screen w-2/3 flex-shrink-0">
+        <div id="services3" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
           <Services3 />
         </div>
         <Image3 />
-        <div id="contact" className="h-screen w-screen flex-shrink-0">
+        <div id="contact" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
           <Contact />
         </div>
       </div>

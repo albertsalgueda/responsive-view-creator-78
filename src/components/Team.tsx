@@ -56,8 +56,8 @@ const defaultMembers: TeamMember[] = [
   }
 ];
 
-// Add the missing TeamMemberCard component
-const TeamMemberCard = ({ 
+// TeamMemberCard component definition
+function TeamMemberCard({ 
   member, 
   textColor, 
   transition 
@@ -65,7 +65,7 @@ const TeamMemberCard = ({
   member: TeamMember, 
   textColor: string, 
   transition: string 
-}) => {
+}) {
   const [imgSrc, setImgSrc] = useState(member.image);
   const [error, setError] = useState(false);
   
@@ -121,7 +121,75 @@ const TeamMemberCard = ({
       </div>
     </div>
   );
-};
+}
+
+// TeamMemberMobile component definition
+function TeamMemberMobile({ 
+  member, 
+  textColor, 
+  transition,
+  imageLoaded
+}: { 
+  member: TeamMember, 
+  textColor: string, 
+  transition: string,
+  imageLoaded?: boolean
+}) {
+  const [imgSrc, setImgSrc] = useState(member.image);
+  const [error, setError] = useState(false);
+  
+  return (
+    <div className="fade-in-delay-2 flex items-center space-x-4">
+      <div 
+        className="rounded-lg overflow-hidden relative"
+        style={{ background: member.background }}
+      >
+        {!error ? (
+          <img 
+            src={imgSrc}
+            alt={member.name}
+            className="w-20 h-20 object-cover rounded-lg"
+            onLoad={() => console.log("Team member image loaded:", imgSrc)}
+            onError={(e) => {
+              console.error("Error loading team member image:", imgSrc);
+              setError(true);
+              setImgSrc("/placeholder.svg");
+            }}
+          />
+        ) : (
+          <div className="w-20 h-20 flex items-center justify-center text-xl font-bold bg-gray-200 rounded-lg">
+            {member.name.charAt(0)}
+          </div>
+        )}
+        
+        {process.env.NODE_ENV !== 'production' && (
+          <div className="absolute top-0 right-0 bg-black bg-opacity-70 text-white p-1 text-xs rounded-br">
+            {imageLoaded ? "✅" : "❌"}
+          </div>
+        )}
+      </div>
+      <div>
+        <h3 
+          style={{ color: textColor, transition }}
+          className="font-bold text-lg"
+        >
+          {member.name}
+        </h3>
+        <p 
+          style={{ color: textColor, transition }}
+          className="text-sm"
+        >
+          {member.title}
+        </p>
+        {member.linkedin && (
+          <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+            <Linkedin className="w-4 h-4 mt-1 rounded-sm" style={{ color: textColor, transition }} />
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
 
 const Team = ({
   members = defaultMembers,
@@ -176,7 +244,7 @@ const Team = ({
               />
             </div>
             
-            <div className="absolute w-full h-full" style={{ display: 'none' }}>
+            <div className="absolute w-full h-full">
               <div className="absolute top-[20%] left-[35%] fade-in-delay-1">
                 <TeamMemberCard member={members[0]} textColor={textColor} transition={transition} />
               </div>
@@ -201,73 +269,6 @@ const Team = ({
         )}
       </div>
     </section>
-  );
-};
-
-const TeamMemberMobile = ({ 
-  member, 
-  textColor, 
-  transition,
-  imageLoaded
-}: { 
-  member: TeamMember, 
-  textColor: string, 
-  transition: string,
-  imageLoaded?: boolean
-}) => {
-  const [imgSrc, setImgSrc] = useState(member.image);
-  const [error, setError] = useState(false);
-  
-  return (
-    <div className="fade-in-delay-2 flex items-center space-x-4">
-      <div 
-        className="rounded-lg overflow-hidden relative"
-        style={{ background: member.background }}
-      >
-        {!error ? (
-          <img 
-            src={imgSrc}
-            alt={member.name}
-            className="w-20 h-20 object-cover rounded-lg"
-            onLoad={() => console.log("Team member image loaded:", imgSrc)}
-            onError={(e) => {
-              console.error("Error loading team member image:", imgSrc);
-              setError(true);
-              setImgSrc("/placeholder.svg");
-            }}
-          />
-        ) : (
-          <div className="w-20 h-20 flex items-center justify-center text-xl font-bold bg-gray-200 rounded-lg">
-            {member.name.charAt(0)}
-          </div>
-        )}
-        
-        {process.env.NODE_ENV !== 'production' && (
-          <div className="absolute top-0 right-0 bg-black bg-opacity-70 text-white p-1 text-xs rounded-br">
-            {imageLoaded ? "✅" : "❌"}
-          </div>
-        )}
-      </div>
-      <div>
-        <h3 
-          style={{ color: textColor, transition }}
-          className="font-bold text-lg"
-        >
-          {member.name}
-        </h3>
-        <p 
-          style={{ color: textColor, transition }}
-          className="text-sm"
-        >
-          {member.title}
-        </p>
-        {member.linkedin && (
-          <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-            <Linkedin className="w-4 h-4 mt-1 rounded-sm" style={{ color: textColor, transition }} />
-          </a>
-        )}
-      </div>
-    </div>
   );
 };
 

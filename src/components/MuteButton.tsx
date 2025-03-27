@@ -38,8 +38,8 @@ const MuteButton = ({
         size="icon"
       >
         {isMuted ? 
-          <VolumeX size={24} strokeWidth={4} style={{ color: backgroundColor }} /> : 
-          <Volume size={24} strokeWidth={4} style={{ color: backgroundColor }} />
+          <VolumeX size={24} strokeWidth={3} style={{ color: backgroundColor }} /> : 
+          <Volume size={24} strokeWidth={3} style={{ color: backgroundColor }} />
         }
       </Button>
     </div>

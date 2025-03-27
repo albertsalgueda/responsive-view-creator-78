@@ -34,11 +34,25 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
   ({ name, role, image, background = "#FDB0C2", linkedin, className }, ref) => {
     const { textColor, transition } = useSectionColors();
     
-    // If there's no image provided, use a default placeholder
-    const imageUrl = image || "/placeholder.svg";
+    // Use a placeholder image if none provided
+    const defaultPlaceholder = "https://via.placeholder.com/500x500";
     
-    // Log when the component renders with more details
-    console.log("Profile component rendering with image:", imageUrl);
+    // Add proper handling for image paths
+    let imageUrl = image || defaultPlaceholder;
+    
+    // Ensure paths to lovable-uploads include a full URL
+    if (imageUrl.includes('lovable-uploads') && !imageUrl.startsWith('http')) {
+      // If it's a relative path starting with /, use it as is
+      if (imageUrl.startsWith('/')) {
+        console.log("Using relative image path:", imageUrl);
+      } else {
+        // Otherwise prepend a slash if needed
+        imageUrl = `/${imageUrl}`;
+        console.log("Corrected image path:", imageUrl);
+      }
+    }
+    
+    console.log("Profile component rendering with final image URL:", imageUrl);
     
     return (
       <div 
@@ -55,7 +69,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
             className="w-full h-full object-cover absolute inset-0"
             onError={(e) => {
               console.error("Error loading direct image:", imageUrl);
-              e.currentTarget.src = "/placeholder.svg";
+              e.currentTarget.src = defaultPlaceholder;
             }}
           />
           
@@ -67,7 +81,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
               className="object-cover w-full h-full"
               onError={(e) => {
                 console.error("Error loading avatar image:", imageUrl);
-                e.currentTarget.src = "/placeholder.svg";
+                e.currentTarget.src = defaultPlaceholder;
               }}
             />
             <AvatarFallback className="text-7xl opacity-100">{name.charAt(0)}</AvatarFallback>

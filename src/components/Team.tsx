@@ -10,7 +10,7 @@ interface TeamProps {
 }
 
 const Team = ({
-  title = "Meet our team.",
+  title = "Taste & talent.",
   text1 = "We're a group of designers, developers, and thinkers passionate about the intersection of AI and human creativity.",
   text2 = "Our diverse backgrounds and expertise allow us to approach problems from multiple angles, creating solutions that are both innovative and practical.",
 }: TeamProps) => {

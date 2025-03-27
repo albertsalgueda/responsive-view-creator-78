@@ -107,7 +107,7 @@ const Team = ({
           </div>
         ) : (
           <div className="relative h-full">            
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 fade-in-delay-1">
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 fade-in-delay-1">
               <Profile 
                 name={displayMembers[0].name}
                 role={displayMembers[0].title}

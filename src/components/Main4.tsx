@@ -3,17 +3,17 @@ import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 
-interface TeamProps {
+interface Main4Props {
   title?: string;
   text1?: string;
   text2?: string;
 }
 
-const Team = ({
+const Main4 = ({
   title = "Taste & talent.",
   text1 = "We're an (intentionally) small team of award-winning designers, storytellers & technologists.",
   text2 = "While machines analyze data, our unique perspectives, lived experiences and creativity shape art and innovation.",
-}: TeamProps) => {
+}: Main4Props) => {
   const isMobile = useIsMobile();
   const {
     textColor,
@@ -84,7 +84,7 @@ const Team = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="text-text-medium slide-in-right font-barlow font-medium mb-0">
+            }} className="text-text-small slide-in-right font-barlow font-medium mb-0">
                   {text2}
                 </p>
               </div>
@@ -94,4 +94,4 @@ const Team = ({
     </section>;
 };
 
-export default Team;
+export default Main4;

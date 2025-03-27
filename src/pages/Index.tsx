@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
 import Main3 from "@/components/Main3";
+import Main4 from "@/components/Team";
 import Services1 from "@/components/Services1";
 import Services2 from "@/components/Services2";
 import Services3 from "@/components/Services3";
@@ -11,7 +12,6 @@ import Image1 from "@/components/Image1";
 import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
 import Image4 from "@/components/Image4";
-import Team from "@/components/Team";
 import VideoSection from "@/components/VideoSection";
 import ParallaxOverlay from "@/components/ParallaxOverlay";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -123,7 +123,7 @@ const SectionObserverWithBackground = ({
         <div id="services2"><Services2 /></div>
         <div id="services3"><Services3 /></div>
         <Image3 />
-        <div id="team"><Team /></div>
+        <div id="team"><Main4 /></div>
         <Image4 />
         <div id="contact"><Contact /></div>
       </main>
@@ -170,7 +170,7 @@ const SectionObserverWithBackground = ({
         </div>
         <Image3 />
         <div id="team" className="h-screen w-2/3 flex-shrink-0">
-          <Team />
+          <Main4 />
         </div>
         <Image4 />
         <div id="contact" className="h-screen w-screen flex-shrink-0">

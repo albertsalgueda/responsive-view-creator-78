@@ -44,12 +44,14 @@ const Contact = ({
                 {title}
               </h2>
               
-              <p className="mt-8 fade-in-delay-1 font-barlow font-medium text-base" style={{
-            color: textColor,
-            transition: transition
-          }}>
-                {description}
-              </p>
+              <div className="col-start-2 col-span-2 mt-8">
+                <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
+                  color: textColor,
+                  transition: transition
+                }}>
+                  {description}
+                </p>
+              </div>
               
               <div className="mt-6 fade-in-delay-2">
                 <a href={callToAction}>

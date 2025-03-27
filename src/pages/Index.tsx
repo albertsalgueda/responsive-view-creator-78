@@ -10,6 +10,7 @@ import Contact from "@/components/Contact";
 import Image1 from "@/components/Image1";
 import Image2 from "@/components/Image2";
 import Image3 from "@/components/Image3";
+import Team from "@/components/Team";
 import VideoSection from "@/components/VideoSection";
 import ParallaxOverlay from "@/components/ParallaxOverlay";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -121,6 +122,7 @@ const SectionObserverWithBackground = ({
         <div id="services2"><Services2 /></div>
         <div id="services3"><Services3 /></div>
         <Image3 />
+        <div id="team"><Team /></div>
         <div id="contact"><Contact /></div>
       </main>
     );
@@ -165,6 +167,9 @@ const SectionObserverWithBackground = ({
           <Services3 />
         </div>
         <Image3 />
+        <div id="team" className="h-screen w-screen flex-shrink-0">
+          <Team />
+        </div>
         <div id="contact" className="h-screen w-screen flex-shrink-0">
           <Contact />
         </div>

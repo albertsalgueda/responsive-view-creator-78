@@ -4,26 +4,21 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Services1Props {
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  titleText?: string;
   descriptionText?: string;
+  columnsText?: string;
 }
 
 const Services1 = ({
-  title = "Brand",
-  subtitle = "Brand Creation & Refreshes<br>Brand Narrative & Naming<br>Visual Identity",
-  description = "Brand Strategy<br>Brand Voice & Tone<br>Category Creation & Positioning",
-  descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof"
+  titleText = "Brand",
+  descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
+  columnsText = "Brand Creation & Refreshes<br>Brand Narrative & Naming<br>Visual Identity<br>Brand Strategy<br>Brand Voice & Tone<br>Category Creation & Positioning"
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const {
     textColor,
     transition
   } = useSectionColors();
-
-  // Combine subtitle and description for the multi-column layout
-  const combinedServices = subtitle + '<br><br>' + description;
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
@@ -38,7 +33,7 @@ const Services1 = ({
                 transition: transition,
                 marginTop: '-2vh'
               }} className="font-extrabold slide-in-left font-barlow text-7xl">
-                {title}
+                {titleText}
               </h1>
               <p style={{
                 lineHeight: 1.3,
@@ -58,7 +53,7 @@ const Services1 = ({
                   columnGap: '12px',
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ __html: combinedServices }}
+                dangerouslySetInnerHTML={{ __html: columnsText }}
               >
               </div>
             </div>
@@ -73,7 +68,7 @@ const Services1 = ({
                 transition: transition,
                 marginTop: '-2vh'
               }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
-                {title}
+                {titleText}
               </h1>
               <p style={{
                 lineHeight: 1.3,
@@ -94,7 +89,7 @@ const Services1 = ({
                   lineHeight: 1.1
                 }}
                 dangerouslySetInnerHTML={{ 
-                  __html: combinedServices.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
+                  __html: columnsText.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
                 }}
               >
               </div>

@@ -4,26 +4,21 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Services2Props {
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  titleText?: string;
   descriptionText?: string;
+  columnsText?: string;
 }
 
 const Services2 = ({
-  title = "Product",
-  subtitle = "Product Strategy & Management<br>User Research & Testing<br>Website Design & Development<br>Mobile App Design & Development",
-  description = "Motion & Interaction Design<br>Design Systems<br>Concept Proofing & Prototyping",
-  descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof"
+  titleText = "Product",
+  descriptionText = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
+  columnsText = "Product Strategy & Management<br>User Research & Testing<br>Website Design & Development<br>Mobile App Design & Development<br>Motion & Interaction Design<br>Design Systems<br>Concept Proofing & Prototyping"
 }: Services2Props) => {
   const isMobile = useIsMobile();
   const {
     textColor,
     transition
   } = useSectionColors();
-
-  // Combine subtitle and description for the multi-column layout
-  const combinedServices = subtitle + '<br><br>' + description;
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
@@ -38,7 +33,7 @@ const Services2 = ({
                 transition: transition,
                 marginTop: '-2vh'
               }} className="font-extrabold slide-in-left font-barlow text-7xl">
-                {title}
+                {titleText}
               </h1>
               <p style={{
                 lineHeight: 1.3,
@@ -50,7 +45,7 @@ const Services2 = ({
             </div>
             <div className="mb-6 flex flex-col justify-end">
               <div 
-                className="mt-6 fade-in-delay-1 font-barlow font-medium text-sm" 
+                className="fade-in-delay-1 font-barlow font-medium text-sm" 
                 style={{
                   color: textColor,
                   transition: transition,
@@ -58,7 +53,7 @@ const Services2 = ({
                   columnGap: '12px',
                   lineHeight: 1.1
                 }}
-                dangerouslySetInnerHTML={{ __html: combinedServices }}
+                dangerouslySetInnerHTML={{ __html: columnsText }}
               >
               </div>
             </div>
@@ -73,7 +68,7 @@ const Services2 = ({
                 transition: transition,
                 marginTop: '-2vh'
               }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
-                {title}
+                {titleText}
               </h1>
               <p style={{
                 lineHeight: 1.3,
@@ -83,7 +78,7 @@ const Services2 = ({
                 {descriptionText}
               </p>
             </div>
-            <div className="mb-0 flex flex-col justify-end">
+            <div className="mb-0 flex flex-col justify-end mt-auto">
               <div 
                 className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" 
                 style={{
@@ -94,7 +89,7 @@ const Services2 = ({
                   lineHeight: 1.1
                 }}
                 dangerouslySetInnerHTML={{ 
-                  __html: combinedServices.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
+                  __html: columnsText.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
                 }}
               >
               </div>

@@ -1,3 +1,4 @@
+
 import { TeamMember } from './TeamMemberInterface';
 import ProfileNeil from '../Profile-Neil';
 import ProfileStephen from '../Profile-Stephen';
@@ -13,7 +14,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
   return (
     <div className="relative h-full px-10 pt-[25vh]" style={{ width: 'fit-content' }}>
       <div className="flex items-end gap-5 fade-in-delay-1" style={{ position: 'relative', bottom: '40px', left: '10px', width: 'fit-content' }}>
-        <div className="h-full inline-flex self-start mr-5">
+        <div className="h-full inline-flex self-end">
           <ProfileStephanie 
             name={displayMembers[2].name} 
             role={displayMembers[2].title} 
@@ -22,7 +23,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             linkedin={displayMembers[2].linkedin} 
           />
         </div>
-        <div className="h-full inline-flex">
+        <div className="h-full inline-flex self-start">
           <ProfileNeil 
             name={displayMembers[0].name} 
             role={displayMembers[0].title} 
@@ -31,7 +32,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             linkedin={displayMembers[0].linkedin} 
           />
         </div>
-        <div className="h-full inline-flex align-top" style={{ marginTop: '25vh' }}>
+        <div className="h-full inline-flex self-start" style={{ marginTop: '25vh' }}>
           <ProfileStephen 
             name={displayMembers[1].name} 
             role={displayMembers[1].title} 
@@ -40,7 +41,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             linkedin={displayMembers[1].linkedin} 
           />
         </div>
-        <div className="h-full inline-flex">
+        <div className="h-full inline-flex self-end">
           <ProfileCraig 
             name={displayMembers[3].name} 
             role={displayMembers[3].title} 

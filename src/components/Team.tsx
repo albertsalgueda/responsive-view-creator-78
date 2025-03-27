@@ -60,13 +60,7 @@ const Team = ({
           }} className="font-extrabold slide-in-left font-barlow text-h1-desktop">
                 {title}
               </h1>
-              <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="mt-6 text-text-medium slide-in-left font-barlow font-medium">
-                {text1}
-              </p>
+              {/* Removed the duplicated text1 from here */}
             </div>
             
             {/* Text section at the bottom */}

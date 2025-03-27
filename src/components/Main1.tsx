@@ -8,7 +8,7 @@ interface Main1Props {
   text?: string;
   ctaText?: string;
   ctaAction?: () => void;
-  footnote?: string;
+  footnote?: React.ReactNode;
 }
 
 const Main1 = ({
@@ -16,7 +16,18 @@ const Main1 = ({
   text = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked"),
-  footnote = "This website was made with Ai (robots) and refined by humans (us). See How."
+  footnote = (
+    <>
+      This website was made with Ai (robots) and refined by humans (us). <a 
+        href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="underline hover:opacity-80 transition-opacity"
+      >
+        See How.
+      </a>
+    </>
+  )
 }: Main1Props) => {
   const isMobile = useIsMobile();
   const {

@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -25,7 +24,6 @@ const Index = () => {
   const isMobile = useIsMobile();
   const scrollProgress = useBackgroundTransition();
   
-  // State for muting/unmuting videos
   const [isMuted, setIsMuted] = useState(true);
   
   const toggleMute = () => {
@@ -39,11 +37,9 @@ const Index = () => {
   
   useEffect(() => {
     setMounted(true);
-    // Log initial mute state
     console.log("Index component initialized with isMuted:", isMuted);
   }, []);
 
-  // Log when mute state changes
   useEffect(() => {
     console.log("Index mute state changed to:", isMuted);
   }, [isMuted]);
@@ -55,7 +51,6 @@ const Index = () => {
       <Navigation />
       <ParallaxOverlay />
       <SectionObserverWithBackground isMuted={isMuted} toggleMute={toggleMute} />
-      {/* MuteButton at the root level */}
       <MuteButton isMuted={isMuted} onToggle={toggleMute} />
     </ViewProvider>
   );
@@ -73,7 +68,6 @@ const SectionObserverWithBackground = ({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { backgroundColor, transition } = useSectionColors();
   
-  // Log the muted state for debugging
   useEffect(() => {
     console.log("SectionObserverWithBackground received isMuted:", isMuted);
   }, [isMuted]);
@@ -81,27 +75,20 @@ const SectionObserverWithBackground = ({
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
     
-    // Improved wheel event handler for horizontal scrolling
     const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         e.preventDefault();
         
-        // Determine scroll direction and amount
-        // Use deltaY for vertical wheels and deltaX for horizontal wheels
         const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-        
-        // Apply scroll with a multiplier for better response
         scrollContainerRef.current.scrollLeft += delta;
       }
     };
     
     const container = scrollContainerRef.current;
     
-    // Add wheel event listener
     container.addEventListener('wheel', handleWheel, { passive: false });
     
     return () => {
-      // Remove wheel event listener on cleanup
       container.removeEventListener('wheel', handleWheel);
     };
   }, [isMobile]);
@@ -122,8 +109,8 @@ const SectionObserverWithBackground = ({
         <div id="main2">
           <Main2 
             title="Prompting human potential." 
-            subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-            description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+            text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
             ctaText=""
           />
         </div>
@@ -158,8 +145,8 @@ const SectionObserverWithBackground = ({
         <div id="main2" className="h-screen w-screen flex-shrink-0">
           <Main2 
             title="Prompting human potential." 
-            subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-            description="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+            text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
             ctaText=""
           />
         </div>

@@ -78,7 +78,7 @@ export default {
 				'h1-mobile': '8.5vh',
 				'text-large-desktop': '4.5vh',
 				'text-large-mobile': '5vh',
-				'text-medium': '2.5vh',
+				'text-medium': '3vh',
 				'text-small': '2vh',
 			},
 			borderRadius: {

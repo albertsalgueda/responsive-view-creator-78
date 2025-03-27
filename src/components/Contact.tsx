@@ -34,8 +34,8 @@ const Contact = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
-      <div className="flex flex-col min-h-screen justify-between p-6">
-            <div className="mt-16">
+      <div className="grid grid-cols-3 gap-4 min-h-screen p-6">
+            <div className="col-span-3 mt-16">
               <h2 className="text-xl font-medium slide-in-left font-barlow" style={{
             lineHeight: 1.1,
             color: textColor,
@@ -64,7 +64,7 @@ const Contact = ({
               </div>
             </div>
             
-            <div className="">
+            <div className="col-span-3">
               <div className="my-8 border-t opacity-30" style={{
             borderColor: textColor,
             transition: transition
@@ -75,7 +75,7 @@ const Contact = ({
               color: textColor,
               transition: transition
             }}>10kR ©2025</p>
-                <div className="flex flex-col items-end gap-2">
+                <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
                   <a href="https://linkedin.com" className="font-barlow text-sm hover:underline font-medium" style={{
                 color: textColor,
                 transition: transition

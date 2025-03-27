@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -22,8 +23,8 @@ const Main2 = ({
   } = useSectionColors();
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? <div className="flex flex-col min-h-screen py-12 px-6">
-            <div className="mt-16">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
+            <div className="col-span-3 mt-16">
               <h1 style={{
             lineHeight: 1.1,
             fontWeight: 800,
@@ -37,18 +38,18 @@ const Main2 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl">
+          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-2xl">
                 {subtitle}
               </p>
-              <p className="mt-8 fade-in-delay-2 max-w-[66%] font-barlow font-medium ml-auto text-left text-base" style={{
+            </div>
+            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-base" style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
           }}>
-                {description}
-              </p>
+              <p>{description}</p>
             </div>
-            {ctaText && <div className="mt-auto mb-16 fade-in-delay-2 flex justify-end">
+            {ctaText && <div className="col-span-3 mt-auto mb-16 fade-in-delay-2 flex justify-end">
                 <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
             backgroundColor: textColor,
             transition: transition

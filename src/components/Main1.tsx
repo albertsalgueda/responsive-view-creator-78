@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -44,15 +45,15 @@ const Main1 = ({
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
-        {isMobile ? <div className="flex flex-col justify-between h-full py-12 px-6">
-            <div className="mt-16">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
+            <div className="col-span-3 mt-16">
               <h1 style={{
             lineHeight: 1.1,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-6xl col-span-6">
+          }} className="font-extrabold slide-in-left font-barlow text-6xl">
                 {title}
               </h1>
               <p style={{
@@ -63,21 +64,24 @@ const Main1 = ({
                 {subtitle}
               </p>
             </div>
-            <div className="mb-16 fade-in-delay-2">
-              <div className="flex justify-end mb-6">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
+            
+            <div className="col-span-3 flex justify-end mb-6 fade-in-delay-2">
+              <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
               backgroundColor: textColor,
               color: backgroundColor,
               transition: transition
             }}>
-                  {ctaText}
-                </button>
-              </div>
+                {ctaText}
+              </button>
+            </div>
+            
+            <div className="col-start-2 col-span-2 mb-16">
               <p style={{
             lineHeight: 1.1,
             color: textColor,
-            transition: transition
-          }} className="fade-in-delay-1 max-w-[85%] font-barlow font-medium text-sm pt-6">
+            transition: transition,
+            paddingTop: '24px'
+          }} className="fade-in-delay-1 font-barlow font-medium text-sm">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>

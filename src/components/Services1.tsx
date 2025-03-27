@@ -23,8 +23,8 @@ const Services1 = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
         {isMobile ? 
-          <div className="flex flex-col justify-between py-12 px-6 h-full">
-            <div className="mt-16">
+          <div className="grid grid-cols-3 gap-4 py-12 px-6 h-full">
+            <div className="col-span-3 mt-16">
               <h1 style={{
                 lineHeight: 1.1,
                 fontWeight: 800,
@@ -39,11 +39,11 @@ const Services1 = ({
                 lineHeight: 1.3,
                 color: textColor,
                 transition: transition
-              }} className="mt-3 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-base">
+              }} className="mt-3 fade-in-delay-1 font-barlow font-medium text-base">
                 {descriptionText}
               </p>
             </div>
-            <div className="mb-6 flex flex-col justify-end"> 
+            <div className="col-start-2 col-span-2 mb-6"> 
               <div 
                 className="fade-in-delay-1 font-barlow font-medium text-sm" 
                 style={{

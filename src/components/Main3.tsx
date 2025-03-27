@@ -20,16 +20,16 @@ const Main3 = ({
     <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
-          // Mobile layout - anchored to top
-          <div className="flex flex-col h-fit py-12 px-6 w-full items-start">
-            <div className="w-full pt-6">
+          // Mobile layout - anchored to top with 3-column grid
+          <div className="grid grid-cols-3 gap-4 h-fit py-12 px-6">
+            <div className="col-span-3 pt-6">
               <p 
                 style={{
                   lineHeight: 1.2,
                   color: textColor,
                   transition: transition
                 }} 
-                className="fade-in-delay-1 w-full font-barlow font-medium text-2xl"
+                className="fade-in-delay-1 font-barlow font-medium text-2xl"
               >
                 {subtitle}
               </p>

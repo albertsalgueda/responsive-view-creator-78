@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -21,6 +22,9 @@ const Services2 = ({
     transition
   } = useSectionColors();
 
+  // Combine subtitle and description for the multi-column layout
+  const combinedServices = subtitle + '<br><br>' + description;
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="flex flex-col justify-between py-12 px-6">
@@ -42,20 +46,17 @@ const Services2 = ({
               }} className="mt-3 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-base">
                 {descriptionText}
               </p>
-              <div className="mt-6 fade-in-delay-1 font-barlow font-medium text-xl" style={{
-            color: textColor,
-            transition: transition
-          }}>
-                <p dangerouslySetInnerHTML={{
-              __html: subtitle
-            }} className="mb-4 text-sm" style={{
-              lineHeight: 1.1
-            }}></p>
-                <p dangerouslySetInnerHTML={{
-              __html: description
-            }} className="text-sm" style={{
-              lineHeight: 1.1
-            }}></p>
+              <div 
+                className="mt-6 fade-in-delay-1 font-barlow font-medium text-sm" 
+                style={{
+                  color: textColor,
+                  transition: transition,
+                  columnCount: 2,
+                  columnGap: '12px',
+                  lineHeight: 1.1
+                }}
+                dangerouslySetInnerHTML={{ __html: combinedServices }}
+              >
               </div>
             </div>
           </div> : <div className="flex flex-col h-full px-6 pr-[25%] pt-[25vh] pb-[40px]">
@@ -79,27 +80,19 @@ const Services2 = ({
               </p>
             </div>
             <div className="mt-auto">
-              <div className="grid grid-cols-2 gap-8 text-xl font-barlow font-medium mb-0">
-                <div className="flex flex-col justify-end slide-in-right" style={{
-              color: textColor,
-              transition: transition
-            }}>
-                  <p dangerouslySetInnerHTML={{
-                __html: subtitle.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>')
-              }} className="mb-0 text-[2.25vh]" style={{
-                lineHeight: 1.1
-              }}></p>
-                </div>
-                <div className="flex flex-col justify-end slide-in-right" style={{
-              color: textColor,
-              transition: transition
-            }}>
-                  <p dangerouslySetInnerHTML={{
-                __html: description.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>')
-              }} className="mb-0 text-[2.25vh]" style={{
-                lineHeight: 1.1
-              }}></p>
-                </div>
+              <div 
+                className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" 
+                style={{
+                  color: textColor,
+                  transition: transition,
+                  columnCount: 2,
+                  columnGap: '2rem',
+                  lineHeight: 1.1
+                }}
+                dangerouslySetInnerHTML={{ 
+                  __html: combinedServices.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 
+                }}
+              >
               </div>
             </div>
           </div>}

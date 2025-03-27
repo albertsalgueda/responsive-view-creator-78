@@ -19,7 +19,7 @@ export const useSectionColors = () => {
       case 'services':
         return '#97ECCF'; // Green Light
       case 'team':
-        return '#2A0831'; // Purple for team section
+        return '#2A0831'; // Dark Purple for team section
       case 'contact':
         return '#FDB0C2'; // Pink
       default:

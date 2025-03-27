@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -51,7 +50,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("flex items-start gap-6", className)}
+        className={cn("flex flex-col items-start", className)}
       >
         <div 
           className="w-[40vh] h-[40vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
@@ -82,7 +81,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(
           </Avatar>
         </div>
         
-        <div className="flex flex-col justify-end h-[40vh]">
+        <div className="mt-4">
           <h3 
             className="text-text-large-desktop font-barlow font-black italic"
             style={{ color: textColor, transition }}

@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -95,7 +96,9 @@ const Team = ({
           </div> : <div className="relative h-full px-10 pt-[25vh] ">            
             <div className="absolute left-10 bottom-[40px] flex items-start gap-5 fade-in-delay-1">
               <ProfileNeil name={displayMembers[0].name} role={displayMembers[0].title} image={displayMembers[0].image} background={displayMembers[0].background} linkedin={displayMembers[0].linkedin} />
-              <ProfileStephen name={displayMembers[1].name} role={displayMembers[1].title} image={displayMembers[1].image} background={displayMembers[1].background} linkedin={displayMembers[1].linkedin} />
+              <div className="absolute left-[45vh] top-0">
+                <ProfileStephen name={displayMembers[1].name} role={displayMembers[1].title} image={displayMembers[1].image} background={displayMembers[1].background} linkedin={displayMembers[1].linkedin} />
+              </div>
             </div>
             
             <div className="absolute w-full h-full" style={{

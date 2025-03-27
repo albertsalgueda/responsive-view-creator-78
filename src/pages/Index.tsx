@@ -65,35 +65,13 @@ const SectionObserverWithBackground = () => {
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
     
-    // Enhanced wheel event handler for smoother scrolling
+    // Simple wheel event handler for horizontal scrolling
     const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         e.preventDefault();
         
-        // Make horizontal scrolling more responsive by adjusting the multiplier
-        const scrollAmount = e.deltaY * 1.5;
-        scrollContainerRef.current.scrollLeft += scrollAmount;
-      }
-    };
-    
-    // Add keyboard navigation
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!scrollContainerRef.current) return;
-      
-      const scrollDistance = window.innerWidth * 0.5; // Scroll by half the viewport width
-      
-      if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        scrollContainerRef.current.scrollBy({
-          left: scrollDistance,
-          behavior: 'smooth'
-        });
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        scrollContainerRef.current.scrollBy({
-          left: -scrollDistance,
-          behavior: 'smooth'
-        });
+        // Apply the deltaY to the horizontal scroll
+        scrollContainerRef.current.scrollLeft += e.deltaY;
       }
     };
     
@@ -136,9 +114,8 @@ const SectionObserverWithBackground = () => {
     
     const container = scrollContainerRef.current;
     
-    // Add all event listeners
+    // Add event listeners
     container.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('keydown', handleKeyDown);
     container.addEventListener('mousedown', handleMouseDown);
     container.addEventListener('mouseup', handleMouseUp);
     container.addEventListener('mouseleave', handleMouseLeave);
@@ -147,7 +124,6 @@ const SectionObserverWithBackground = () => {
     return () => {
       // Remove all event listeners on cleanup
       container.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('keydown', handleKeyDown);
       container.removeEventListener('mousedown', handleMouseDown);
       container.removeEventListener('mouseup', handleMouseUp);
       container.removeEventListener('mouseleave', handleMouseLeave);
@@ -194,18 +170,17 @@ const SectionObserverWithBackground = () => {
       style={{ 
         ...bgStyle,
         cursor: 'auto',
-        scrollSnapType: 'x mandatory'
       }}
     >
       <div className="flex h-screen">
-        <div id="video" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
+        <div id="video" className="h-screen w-screen flex-shrink-0">
           <VideoSection />
         </div>
-        <div id="main1" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
+        <div id="main1" className="h-screen w-screen flex-shrink-0">
           <Main1 />
         </div>
         <Image1 />
-        <div id="main2" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
+        <div id="main2" className="h-screen w-screen flex-shrink-0">
           <Main2 
             title="Prompting human potential." 
             subtitle="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
@@ -214,20 +189,20 @@ const SectionObserverWithBackground = () => {
           />
         </div>
         <Image2 />
-        <div id="main3" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
+        <div id="main3" className="h-screen w-2/3 flex-shrink-0">
           <Main3 />
         </div>
-        <div id="services1" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
+        <div id="services1" className="h-screen w-2/3 flex-shrink-0">
           <Services1 />
         </div>
-        <div id="services2" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
+        <div id="services2" className="h-screen w-2/3 flex-shrink-0">
           <Services2 />
         </div>
-        <div id="services3" className="h-screen w-2/3 flex-shrink-0 scroll-snap-align-start">
+        <div id="services3" className="h-screen w-2/3 flex-shrink-0">
           <Services3 />
         </div>
         <Image3 />
-        <div id="contact" className="h-screen w-screen flex-shrink-0 scroll-snap-align-start">
+        <div id="contact" className="h-screen w-screen flex-shrink-0">
           <Contact />
         </div>
       </div>

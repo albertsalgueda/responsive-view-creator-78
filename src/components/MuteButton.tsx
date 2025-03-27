@@ -23,7 +23,7 @@ const MuteButton = ({
       position: 'fixed',
       bottom: isMobile ? '20px' : '16px',
       right: '16px',
-      zIndex: 9999 // Significantly increased z-index to ensure it's always on top
+      zIndex: isMobile ? 40 : 9999 // Lower z-index on mobile, higher on desktop
     }}>
       <Button 
         onClick={() => {

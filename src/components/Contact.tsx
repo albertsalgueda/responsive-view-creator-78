@@ -53,7 +53,7 @@ const Contact = ({
               
               <div className="mt-6 fade-in-delay-2">
                 <a href={callToAction}>
-                  <Button className="hover:bg-opacity-80 transition-all font-barlow px-6 py-3 rounded-sm font-medium text-base" style={{
+                  <Button className="hover:opacity-80 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base" style={{
                 backgroundColor: textColor,
                 color: backgroundColor,
                 transition: transition
@@ -120,7 +120,7 @@ const Contact = ({
                   
                   <div className="fade-in-delay-1">
                     <a href={callToAction}>
-                      <Button className="hover:bg-opacity-80 transition-all font-barlow px-6 py-3 rounded-sm font-medium text-base" style={{
+                      <Button className="hover:opacity-80 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base" style={{
                     backgroundColor: textColor,
                     color: backgroundColor,
                     transition: transition

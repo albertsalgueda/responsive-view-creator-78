@@ -74,7 +74,7 @@ const Main1 = ({
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
               <div className="flex justify-end">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
+                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-80 transition-all duration-500 font-barlow" style={{
                   backgroundColor: textColor,
                   color: backgroundColor,
                   transition: transition
@@ -103,7 +103,7 @@ const Main1 = ({
             {/* Title and button in columns 1-6, title anchored to bottom */}
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6 fade-in">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
+                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-80 transition-all duration-500 font-barlow" style={{
                   backgroundColor: textColor,
                   color: backgroundColor,
                   transition: transition

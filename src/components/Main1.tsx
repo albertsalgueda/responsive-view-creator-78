@@ -65,14 +65,7 @@ const Main1 = ({
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2">
-              <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="fade-in-delay-1 max-w-[85%] font-barlow mb-6 text-sm">
-                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
-              </p>
-              <div className="flex justify-end">
+              <div className="flex justify-end mb-6">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
               backgroundColor: textColor,
               color: backgroundColor,
@@ -81,6 +74,13 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
+              <p style={{
+            lineHeight: 1.1,
+            color: textColor,
+            transition: transition
+          }} className="fade-in-delay-1 max-w-[85%] font-barlow text-sm">
+                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+              </p>
             </div>
           </div> : <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
             {/* Empty columns 1-6 for top part */}

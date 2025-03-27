@@ -42,7 +42,7 @@ const Services2 = ({
                 color: textColor,
                 transition: transition,
                 marginTop: '-2vh'
-              }} className="font-extrabold slide-in-left font-barlow text-[10vh]">
+              }} className="font-extrabold slide-in-left font-barlow text-[11vh]">
                 {titleText}
               </h1>
               <p style={{

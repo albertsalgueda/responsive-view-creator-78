@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -88,7 +89,7 @@ const Main1 = ({
             </div>
           </div> : <div className="grid grid-cols-12 h-full pt-0 pt-[25vh] pb-[40px] px-[40px]">
             {/* Empty columns 1-6 for top part */}
-            <div className="col-span-6"></div>
+            <div className="col-span-6 self-start"></div>
             
             {/* Right side content in columns 7-12 */}
             <div className="col-span-6">

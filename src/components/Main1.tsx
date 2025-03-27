@@ -22,7 +22,7 @@ const Main1 = ({
         href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="underline hover:opacity-80 transition-opacity"
+        className="font-barlow font-bold hover:opacity-80 transition-opacity"
       >
         See How.
       </a>

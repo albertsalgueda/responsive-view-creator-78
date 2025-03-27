@@ -1,3 +1,4 @@
+
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -50,9 +51,9 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("h-full inline-flex", className)}
+        className={cn("h-full inline-flex flex-col justify-end", className)}
       >
-        <div className="flex items-start gap-6 h-full">
+        <div className="flex items-start gap-6">
           <div 
             className="w-[30vh] h-[30vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
           >

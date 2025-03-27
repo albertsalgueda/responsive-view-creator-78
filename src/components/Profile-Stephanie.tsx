@@ -51,7 +51,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("h-full flex items-end", className)}
+        className={cn("h-full flex items-start", className)}
       >
         <div className="h-fit w-fit inline-flex">
           <div className="flex items-start gap-6 h-fit">
@@ -84,7 +84,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(
               </Avatar>
             </div>
             
-            <div className="flex flex-col justify-end h-[40vh]">
+            <div className="flex flex-col justify-start h-[40vh]">
               <h3 
                 className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap"
                 style={{ color: textColor, transition }}

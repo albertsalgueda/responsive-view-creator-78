@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -5,6 +6,7 @@ import { Linkedin } from 'lucide-react';
 import ProfileNeil from './Profile-Neil';
 import ProfileStephen from './Profile-Stephen';
 import ProfileStephanie from './Profile-Stephanie';
+import ProfileCraig from './Profile-Craig';
 import { useEffect } from 'react';
 
 interface TeamMember {
@@ -50,6 +52,13 @@ const Team = ({
     image: "/lovable-uploads/8c33a416-6372-49ce-822a-c56bbb42a47c.png",
     background: "#FFBD89",
     // coral
+    linkedin: "https://linkedin.com"
+  }, {
+    name: "Craig Johnson",
+    title: "Design Guru",
+    image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.png",
+    background: "#4EACF2",
+    // blue
     linkedin: "https://linkedin.com"
   }];
 
@@ -138,12 +147,12 @@ const Team = ({
                 />
               </div>
               <div className="h-full inline-flex">
-                <ProfileNeil 
-                  name={displayMembers[0].name} 
-                  role={displayMembers[0].title} 
-                  image={displayMembers[0].image} 
-                  background={displayMembers[0].background} 
-                  linkedin={displayMembers[0].linkedin} 
+                <ProfileCraig 
+                  name={displayMembers[3].name} 
+                  role={displayMembers[3].title} 
+                  image={displayMembers[3].image} 
+                  background={displayMembers[3].background} 
+                  linkedin={displayMembers[3].linkedin} 
                 />
               </div>
             </div>

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 import { X, Instagram, Linkedin } from 'lucide-react';
@@ -30,9 +31,9 @@ const Navigation = ({
   const isMobile = useIsMobile();
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
-  const {
-    currentSection
-  } = useView();
+  const { currentSection } = useView();
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   const getNavColor = () => {
     switch (currentSection) {
@@ -51,10 +52,45 @@ const Navigation = ({
         return '#132ABC';
     }
   };
+  
   const navColor = getNavColor();
+  
   useEffect(() => {
     setMounted(true);
   }, [isMobile]);
+  
+  useEffect(() => {
+    if (!isMobile) {
+      setIsVisible(true);
+      return;
+    }
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > 100) {
+        // Scrolling down
+        if (currentScrollY > lastScrollY.current && isVisible) {
+          setIsVisible(false);
+        }
+        // Scrolling up
+        if (currentScrollY < lastScrollY.current && !isVisible) {
+          setIsVisible(true);
+        }
+      } else {
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isVisible, isMobile]);
+  
   if (!mounted) return null;
 
   const letsTalkLink = links.find(link => link.text === "let's talk");
@@ -163,7 +199,7 @@ const Navigation = ({
           <span className="sr-only">Toggle menu</span>
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="h-[100vh] bg-brand-pink border-none py-8 flex flex-col justify-between">
+      <DrawerContent className="h-[100vh] bg-brand-pink backdrop-blur-md bg-opacity-90 border-none py-8 flex flex-col justify-between">
         <div className="flex flex-col items-start pt-16 px-6">
           <DrawerClose asChild>
             <Button variant="ghost" size="icon" className="absolute right-6 top-6 p-2">
@@ -205,7 +241,15 @@ const Navigation = ({
       </DrawerContent>
     </Drawer>;
 
-  return <nav className="fixed top-0 left-0 w-full h-[80px] bg-transparent z-50 flex items-center justify-between px-6 transition-colors duration-1200">
+  return (
+    <nav 
+      className={`fixed top-0 left-0 w-full h-[80px] bg-transparent z-50 flex items-center justify-between px-6 transition-all duration-300 ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
+      style={{
+        backdropFilter: isMobile && isVisible ? 'blur(8px)' : 'none',
+        backgroundColor: isMobile && isVisible ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+        transition: 'transform 0.3s ease, background-color 0.5s ease, backdrop-filter 0.5s ease'
+      }}
+    >
       <a href="/" onClick={scrollToBeginning} className="h-full flex items-center">
         <div className="h-[40px] w-[90px]">
           <SmallLogo />
@@ -228,7 +272,8 @@ const Navigation = ({
           )}
         </div>
       }
-    </nav>;
+    </nav>
+  );
 };
 
 export default Navigation;

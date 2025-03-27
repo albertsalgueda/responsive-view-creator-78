@@ -30,11 +30,11 @@ const Contact = ({
       <div className="w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen p-6 py-[48px]">
             <div className="col-span-3 mb-8">
-              <h2 className="text-[4vh] font-medium slide-in-left font-barlow" style={{
+              <h2 style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }}>
+          }} className="text-[4vh] font-medium slide-in-left font-barlow mt-12">
                 {title}
               </h2>
             </div>

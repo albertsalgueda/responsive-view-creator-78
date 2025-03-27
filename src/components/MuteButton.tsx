@@ -30,7 +30,7 @@ const MuteButton = ({
           console.log("Mute button clicked, current state:", isMuted);
           onToggle();
         }} 
-        className="w-[56px] h-[56px] bg-white rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
+        className="w-[40px] h-[40px] bg-white rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
         style={{
           transition
         }}
@@ -38,8 +38,8 @@ const MuteButton = ({
         size="icon"
       >
         {isMuted ? 
-          <VolumeX size={48} strokeWidth={4} style={{ color: backgroundColor }} /> : 
-          <Volume size={48} strokeWidth={4} style={{ color: backgroundColor }} />
+          <VolumeX size={24} strokeWidth={2} style={{ color: backgroundColor }} /> : 
+          <Volume size={24} strokeWidth={2} style={{ color: backgroundColor }} />
         }
       </Button>
     </div>

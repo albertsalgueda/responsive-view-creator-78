@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -34,33 +33,32 @@ const Contact = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
-      <div className="grid grid-cols-3 gap-4 min-h-screen p-6">
-            <div className="col-span-3 mt-16">
+        <div className="grid grid-cols-3 gap-4 min-h-screen p-6">
+            <div className="col-span-1 mt-16">
               <h2 className="text-xl font-medium slide-in-left font-barlow" style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }}>
+                lineHeight: 1.1,
+                color: textColor,
+                transition: transition
+              }}>
                 {title}
               </h2>
-              
-              {/* Description is now wrapped in a div that explicitly spans columns 2-3 */}
-              <div className="col-start-2 col-span-2 mt-8">
-                <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
-                  color: textColor,
-                  transition: transition
-                }}>
-                  {description}
-                </p>
-              </div>
+            </div>
+            
+            <div className="col-span-2 col-start-2 mt-16">
+              <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
+                color: textColor,
+                transition: transition
+              }}>
+                {description}
+              </p>
               
               <div className="mt-6 fade-in-delay-2">
                 <a href={callToAction}>
                   <Button className="hover:opacity-80 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base" style={{
-                backgroundColor: textColor,
-                color: backgroundColor,
-                transition: transition
-              }}>
+                    backgroundColor: textColor,
+                    color: backgroundColor,
+                    transition: transition
+                  }}>
                     {callToActionText}
                   </Button>
                 </a>
@@ -69,65 +67,65 @@ const Contact = ({
             
             <div className="col-span-3">
               <div className="my-8 border-t opacity-30" style={{
-            borderColor: textColor,
-            transition: transition
-          }}></div>
+                borderColor: textColor,
+                transition: transition
+              }}></div>
               
               <div className="flex justify-between items-center">
                 <p className="text-sm font-barlow font-medium" style={{
-              color: textColor,
-              transition: transition
-            }}>10kR ©2025</p>
+                  color: textColor,
+                  transition: transition
+                }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
                   <a href="https://linkedin.com" className="font-barlow text-sm hover:underline font-medium" style={{
-                color: textColor,
-                transition: transition
-              }}>LINKEDIN</a>
+                    color: textColor,
+                    transition: transition
+                  }}>LINKEDIN</a>
                   <a href="https://instagram.com" className="font-barlow text-sm hover:underline font-medium" style={{
-                color: textColor,
-                transition: transition
-              }}>INSTAGRAM</a>
+                    color: textColor,
+                    transition: transition
+                  }}>INSTAGRAM</a>
                 </div>
               </div>
               
               <div className="mt-6 w-full" style={{
-            maxWidth: "200px",
-            height: "auto",
-            color: textColor,
-            transition: transition
-          }}>
+                maxWidth: "200px",
+                height: "auto",
+                color: textColor,
+                transition: transition
+              }}>
                 <Logo />
               </div>
             </div>
           </div> :
-      <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
+        <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
             <div className="flex items-start flex-1 w-full py-0">
               <div className="w-full grid grid-cols-2 gap-12">
                 <div className="col-span-1">
                   <h2 style={{
-                lineHeight: 1.1,
-                color: textColor,
-                transition: transition
-              }} className="font-medium slide-in-left font-barlow text-[4vh]">
+                    lineHeight: 1.1,
+                    color: textColor,
+                    transition: transition
+                  }} className="font-medium slide-in-left font-barlow text-[4vh]">
                     {title}
                   </h2>
                 </div>
                 
                 <div className="col-span-1 flex flex-col">
                   <p style={{
-                color: textColor,
-                transition: transition
-              }} className="slide-in-right font-barlow font-medium mb-8 text-[3vh]">
+                    color: textColor,
+                    transition: transition
+                  }} className="slide-in-right font-barlow font-medium mb-8 text-[3vh]">
                     {description}
                   </p>
                   
                   <div className="fade-in-delay-1">
                     <a href={callToAction}>
                       <Button className="hover:opacity-80 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base" style={{
-                    backgroundColor: textColor,
-                    color: backgroundColor,
-                    transition: transition
-                  }}>
+                        backgroundColor: textColor,
+                        color: backgroundColor,
+                        transition: transition
+                      }}>
                         {callToActionText}
                       </Button>
                     </a>
@@ -138,29 +136,29 @@ const Contact = ({
             
             <div className="flex justify-between items-end">
               <div style={{
-            color: textColor,
-            transition: transition
-          }} className="text-[2.25vh] font-barlow font-medium">
+                color: textColor,
+                transition: transition
+              }} className="text-[2.25vh] font-barlow font-medium">
                 10kR ©2025
               </div>
               
               <div className="flex flex-col items-start gap-2">
                 <a href="https://linkedin.com" style={{
-              color: textColor,
-              transition: transition
-            }} className="font-barlow text-[2.25vh] hover:underline font-medium">LINKEDIN</a>
+                  color: textColor,
+                  transition: transition
+                }} className="font-barlow text-[2.25vh] hover:underline font-medium">LINKEDIN</a>
                 <a href="https://instagram.com" style={{
-              color: textColor,
-              transition: transition
-            }} className="font-barlow hover:underline text-[2.25vh] font-medium">INSTAGRAM</a>
+                  color: textColor,
+                  transition: transition
+                }} className="font-barlow hover:underline text-[2.25vh] font-medium">INSTAGRAM</a>
               </div>
               
               <div style={{
-            width: "280px",
-            height: "auto",
-            color: textColor,
-            transition: transition
-          }}>
+                width: "280px",
+                height: "auto",
+                color: textColor,
+                transition: transition
+              }}>
                 <Logo />
               </div>
             </div>

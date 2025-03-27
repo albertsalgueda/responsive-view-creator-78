@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -14,7 +15,7 @@ const Contact = ({
   title = "Our dream clients aren't brands— they're people. Bold, brave, curious and forever obsessed with building meaningful experiences.",
   description = "If that sounds like you, we would love to work together.",
   callToAction = "#contact",
-  callToActionText = "LET'S TALK"
+  callToActionText = "HELLO@10KR.CO"
 }: ContactProps) => {
   const isMobile = useIsMobile();
   const {

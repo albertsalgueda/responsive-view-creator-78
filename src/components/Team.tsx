@@ -1,9 +1,11 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Linkedin } from 'lucide-react';
 import ProfileNeil from './Profile-Neil';
 import ProfileStephen from './Profile-Stephen';
+import ProfileStephanie from './Profile-Stephanie';
 import { useEffect } from 'react';
 
 interface TeamMember {
@@ -42,6 +44,13 @@ const Team = ({
     image: "/lovable-uploads/35e452fd-ea52-4223-948d-79dd2bd00b0a.png",
     background: "#97ECCF",
     // green
+    linkedin: "https://linkedin.com"
+  }, {
+    name: "Stephanie Johnson",
+    title: "Creative Director",
+    image: "/lovable-uploads/6d24aae1-b216-4cae-ae17-df0a95666fb2.png",
+    background: "#FFBD89",
+    // coral
     linkedin: "https://linkedin.com"
   }];
 
@@ -102,11 +111,32 @@ const Team = ({
             </div>
           </div> : <div className="relative h-full px-10 pt-[25vh] ">            
             <div className="absolute left-10 bottom-[40px] flex items-start gap-5 fade-in-delay-1">
+              <div className="h-full w-fit inline-flex mr-5">
+                <ProfileStephanie 
+                  name={displayMembers[2].name} 
+                  role={displayMembers[2].title} 
+                  image={displayMembers[2].image} 
+                  background={displayMembers[2].background} 
+                  linkedin={displayMembers[2].linkedin} 
+                />
+              </div>
               <div className="h-full w-fit inline-flex">
-                <ProfileNeil name={displayMembers[0].name} role={displayMembers[0].title} image={displayMembers[0].image} background={displayMembers[0].background} linkedin={displayMembers[0].linkedin} />
+                <ProfileNeil 
+                  name={displayMembers[0].name} 
+                  role={displayMembers[0].title} 
+                  image={displayMembers[0].image} 
+                  background={displayMembers[0].background} 
+                  linkedin={displayMembers[0].linkedin} 
+                />
               </div>
               <div className="h-full w-fit inline-flex align-top" style={{ marginTop: '25vh' }}>
-                <ProfileStephen name={displayMembers[1].name} role={displayMembers[1].title} image={displayMembers[1].image} background={displayMembers[1].background} linkedin={displayMembers[1].linkedin} />
+                <ProfileStephen 
+                  name={displayMembers[1].name} 
+                  role={displayMembers[1].title} 
+                  image={displayMembers[1].image} 
+                  background={displayMembers[1].background} 
+                  linkedin={displayMembers[1].linkedin} 
+                />
               </div>
             </div>
             

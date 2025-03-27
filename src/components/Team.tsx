@@ -62,9 +62,9 @@ const Team = ({
     // blue
     linkedin: "https://linkedin.com"
   }, {
-    name: "Ashish Kumar",
-    title: "Tech Wizard",
-    image: "https://via.placeholder.com/500x500",
+    name: "Ashish Toshniwal",
+    title: "Badical Radboy",
+    image: "/lovable-uploads/151462d5-20f1-493c-b299-e7c36d8c2faa.png",
     background: "#B39DDB",
     // purple
     linkedin: "https://linkedin.com"

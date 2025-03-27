@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -37,7 +36,7 @@ const Main3 = ({
               color: textColor,
               transition: transition,
               width: '60vw'
-            }} className="slide-in-left w-full font-barlow font-medium text-[4.5vh]">
+            }} className="slide-in-left w-66% font-barlow font-medium text-[4.5vh]">
                   {subtitle}
                 </p>
               </div>

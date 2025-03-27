@@ -44,6 +44,12 @@ export const useSectionColors = () => {
     }
   };
 
+  // Get drag bar color - it should match the text color with 40% opacity
+  const getDragBarColor = () => {
+    // Return the same color as text, opacity will be applied where used
+    return getNavColor();
+  };
+
   // Use uniform transition speed that works well on both mobile and desktop
   const getTransitionSpeed = () => {
     return isMobile 
@@ -54,6 +60,7 @@ export const useSectionColors = () => {
   return {
     textColor: getNavColor(),
     backgroundColor: getBackgroundColor(),
+    dragBarColor: getDragBarColor(),
     transition: getTransitionSpeed()
   };
 };

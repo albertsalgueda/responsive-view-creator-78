@@ -171,13 +171,12 @@ const Navigation = ({
         <DrawerTitle className="sr-only">Navigation Menu</DrawerTitle>
         
         <div className="flex flex-col h-full justify-between px-6 pb-4">
-          {/* Drawer header with handle and close button aligned horizontally */}
           <div className="flex items-center justify-between py-4 relative">
             <div 
               className="absolute left-1/2 -translate-x-1/2 h-1.5 w-[60px] rounded-full" 
               style={{ backgroundColor: `${textColor}40`, transition: transition }}
             />
-            <div className="flex-1"></div> {/* Spacer */}
+            <div className="flex-1"></div>
             <DrawerClose asChild>
               <Button variant="ghost" size="icon" className="relative z-10">
                 <X size={32} strokeWidth={4} style={{ color: textColor }} />

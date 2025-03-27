@@ -124,7 +124,7 @@ const SectionObserverWithBackground = ({
         <div id="services3"><Services3 /></div>
         <Image3 />
         <div id="team"><Main4 /></div>
-        <div id="team-members"><Team /></div>
+        <div id="team-members" className="w-auto"><Team /></div>
         <Image4 />
         <div id="contact"><Contact /></div>
       </main>
@@ -173,7 +173,7 @@ const SectionObserverWithBackground = ({
         <div id="team" className="h-screen w-2/3 flex-shrink-0">
           <Main4 />
         </div>
-        <div id="team-members" className="h-screen w-[120vw] flex-shrink-0">
+        <div id="team-members" className="h-screen w-auto flex-shrink-0 overflow-visible">
           <Team />
         </div>
         <Image4 />

@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -164,6 +165,8 @@ const Team = ({
 
   useEffect(() => {
     members.forEach(member => {
+      if (!member) return;
+      
       const img = new Image();
       img.onload = () => {
         console.log(`Successfully preloaded image for ${member.name}:`, member.image);
@@ -178,6 +181,32 @@ const Team = ({
       console.log(`Complete URL for ${member.name}:`, new URL(member.image, window.location.href).href);
     });
   }, [members]);
+
+  // Create a placeholder member if none are provided
+  const placeholderMember: TeamMember = {
+    name: "Team Member",
+    title: "Position",
+    image: "/placeholder.svg",
+    background: "#FDB0C2"
+  };
+
+  // If no members are provided, show a placeholder or message
+  if (members.length === 0) {
+    return (
+      <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+        <div className="max-w-7xl w-full mx-auto h-full p-0 flex items-center justify-center">
+          <div className="text-center p-6">
+            <h2 className="text-2xl font-bold mb-4" style={{ color: textColor, transition }}>
+              Team Members
+            </h2>
+            <p style={{ color: textColor, transition }}>
+              No team members have been added yet.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
@@ -197,37 +226,49 @@ const Team = ({
             </div>
           </div>
         ) : (
-          <div className="relative h-full">            
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 fade-in-delay-1">
-              <Profile 
-                name={members[0].name}
-                role={members[0].title}
-                image={members[0].image}
-                background={members[0].background}
-                linkedin={members[0].linkedin}
-              />
-            </div>
+          <div className="relative h-full">
+            {members.length > 0 && (
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 fade-in-delay-1">
+                <Profile 
+                  name={members[0].name}
+                  role={members[0].title}
+                  image={members[0].image}
+                  background={members[0].background}
+                  linkedin={members[0].linkedin}
+                />
+              </div>
+            )}
             
             <div className="absolute w-full h-full">
-              <div className="absolute top-[20%] left-[35%] fade-in-delay-1">
-                <TeamMemberCard member={members[0]} textColor={textColor} transition={transition} />
-              </div>
+              {members.length > 0 && (
+                <div className="absolute top-[20%] left-[35%] fade-in-delay-1">
+                  <TeamMemberCard member={members[0]} textColor={textColor} transition={transition} />
+                </div>
+              )}
               
-              <div className="absolute top-[20%] right-[10%] fade-in-delay-1">
-                <TeamMemberCard member={members[1]} textColor={textColor} transition={transition} />
-              </div>
+              {members.length > 1 && (
+                <div className="absolute top-[20%] right-[10%] fade-in-delay-1">
+                  <TeamMemberCard member={members[1]} textColor={textColor} transition={transition} />
+                </div>
+              )}
               
-              <div className="absolute top-[50%] left-[10%] fade-in-delay-1">
-                <TeamMemberCard member={members[2]} textColor={textColor} transition={transition} />
-              </div>
+              {members.length > 2 && (
+                <div className="absolute top-[50%] left-[10%] fade-in-delay-1">
+                  <TeamMemberCard member={members[2]} textColor={textColor} transition={transition} />
+                </div>
+              )}
               
-              <div className="absolute bottom-[30%] left-[40%] fade-in-delay-2">
-                <TeamMemberCard member={members[3]} textColor={textColor} transition={transition} />
-              </div>
+              {members.length > 3 && (
+                <div className="absolute bottom-[30%] left-[40%] fade-in-delay-2">
+                  <TeamMemberCard member={members[3]} textColor={textColor} transition={transition} />
+                </div>
+              )}
               
-              <div className="absolute bottom-[25%] right-[15%] fade-in-delay-2">
-                <TeamMemberCard member={members[4]} textColor={textColor} transition={transition} />
-              </div>
+              {members.length > 4 && (
+                <div className="absolute bottom-[25%] right-[15%] fade-in-delay-2">
+                  <TeamMemberCard member={members[4]} textColor={textColor} transition={transition} />
+                </div>
+              )}
             </div>
           </div>
         )}

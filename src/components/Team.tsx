@@ -1,9 +1,9 @@
-
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Linkedin } from 'lucide-react';
 import ProfileNeil from './Profile-Neil';
+import ProfileStephen from './Profile-Stephen';
 import { useEffect } from 'react';
 
 interface TeamMember {
@@ -33,19 +33,28 @@ const Team = ({
       image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.png",
       background: "#FDB0C2", // pink
       linkedin: "https://linkedin.com"
+    },
+    {
+      name: "Stephen Smith",
+      title: "Design Lead",
+      image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.png",
+      background: "#97ECCF", // green
+      linkedin: "https://linkedin.com"
     }
   ];
 
   console.log("Team component rendering with", 
-    members.length > 0 ? "actual team members" : "placeholder member"
+    members.length > 0 ? "actual team members" : "placeholder members"
   );
 
   useEffect(() => {
     if (displayMembers.length > 0) {
-      const img = new Image();
-      img.src = displayMembers[0].image;
-      img.onload = () => console.log("Profile image preloaded successfully:", displayMembers[0].image);
-      img.onerror = (e) => console.error("Failed to preload profile image:", displayMembers[0].image, e);
+      displayMembers.forEach(member => {
+        const img = new Image();
+        img.src = member.image;
+        img.onload = () => console.log("Profile image preloaded successfully:", member.image);
+        img.onerror = (e) => console.error("Failed to preload profile image:", member.image, e);
+      });
     }
   }, [displayMembers]);
 
@@ -107,13 +116,20 @@ const Team = ({
           </div>
         ) : (
           <div className="relative h-full px-10">            
-            <div className="absolute left-10 bottom-[40px] fade-in-delay-1">
+            <div className="absolute left-10 bottom-[40px] flex items-start gap-5 fade-in-delay-1">
               <ProfileNeil 
                 name={displayMembers[0].name}
                 role={displayMembers[0].title}
                 image={displayMembers[0].image}
                 background={displayMembers[0].background}
                 linkedin={displayMembers[0].linkedin}
+              />
+              <ProfileStephen 
+                name={displayMembers[1].name}
+                role={displayMembers[1].title}
+                image={displayMembers[1].image}
+                background={displayMembers[1].background}
+                linkedin={displayMembers[1].linkedin}
               />
             </div>
             

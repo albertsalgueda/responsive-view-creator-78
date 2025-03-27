@@ -71,8 +71,19 @@ const Team = ({
             
             {/* Text section at the bottom */}
             <div className="grid grid-cols-12 gap-8">
-              {/* Text-2 */}
-              <div className="col-span-4 col-start-9 flex flex-col justify-end">
+              {/* Text-1 spanning columns 1-8 */}
+              <div className="col-span-8 col-start-1 flex flex-col justify-end">
+                <p style={{
+              lineHeight: 1.1,
+              color: textColor,
+              transition: transition
+            }} className="text-text-medium slide-in-left font-barlow font-medium mb-8">
+                  {text1}
+                </p>
+              </div>
+              
+              {/* Text-2 spanning columns 7-12 */}
+              <div className="col-span-6 col-start-7 flex flex-col justify-end">
                 <p style={{
               lineHeight: 1.1,
               color: textColor,

@@ -1,5 +1,4 @@
-
-import { forwardRef, useState, useEffect } from 'react';
+import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -34,41 +33,12 @@ const LinkedInIcon = () => (
 const Profile = forwardRef<HTMLDivElement, ProfileProps>(
   ({ name, role, image, background = "#FDB0C2", linkedin, className }, ref) => {
     const { textColor, transition } = useSectionColors();
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const [imageSrc, setImageSrc] = useState(image || "/placeholder.svg");
-    const [imageError, setImageError] = useState(false);
     
-    // Check if the image exists and preload it
-    useEffect(() => {
-      // Reset states when image prop changes
-      setImageLoaded(false);
-      setImageError(false);
-      
-      // Use the image prop directly, or fallback to placeholder
-      const imgSrc = image || "/placeholder.svg";
-      setImageSrc(imgSrc);
-      
-      console.log("Profile attempting to load image:", imgSrc);
-      
-      // Create a test image to check if the URL is valid
-      const testImg = new Image();
-      testImg.onload = () => {
-        console.log("Profile image loaded successfully:", imgSrc);
-        setImageLoaded(true);
-        setImageError(false);
-      };
-      
-      testImg.onerror = () => {
-        console.error("Profile image failed to load:", imgSrc);
-        setImageError(true);
-        setImageSrc("/placeholder.svg");
-      };
-      
-      testImg.src = imgSrc;
-      
-      // Add a log to check the complete URL in the browser
-      console.log("Complete image URL:", new URL(imgSrc, window.location.href).href);
-    }, [image]);
+    // If there's no image provided, use a default placeholder
+    const imageUrl = image || "/placeholder.svg";
+    
+    // Log when the component renders with more details
+    console.log("Profile component rendering with image:", imageUrl);
     
     return (
       <div 
@@ -79,33 +49,29 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
           className="w-[50vh] h-[50vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
           style={{ background }}
         >
-          {!imageError ? (
-            <img 
-              src={imageSrc}
+          <img 
+            src={imageUrl}
+            alt={name}
+            className="w-full h-full object-cover absolute inset-0"
+            onError={(e) => {
+              console.error("Error loading direct image:", imageUrl);
+              e.currentTarget.src = "/placeholder.svg";
+            }}
+          />
+          
+          {/* Keep Avatar as fallback */}
+          <Avatar className="w-full h-full rounded-2xl opacity-0">
+            <AvatarImage 
+              src={imageUrl} 
               alt={name}
-              className="w-full h-full object-cover absolute inset-0"
-              onLoad={() => {
-                console.log("Direct image loaded in DOM:", imageSrc);
-                setImageLoaded(true);
-              }}
+              className="object-cover w-full h-full"
               onError={(e) => {
-                console.error("Error loading direct image in DOM:", imageSrc);
-                setImageError(true);
+                console.error("Error loading avatar image:", imageUrl);
                 e.currentTarget.src = "/placeholder.svg";
               }}
             />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-7xl font-black bg-gray-200">
-              {name.charAt(0)}
-            </div>
-          )}
-          
-          {/* Debug indicator */}
-          {process.env.NODE_ENV !== 'production' && (
-            <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white p-1 text-xs rounded">
-              {imageLoaded ? "✅" : imageError ? "❌" : "⏳"}
-            </div>
-          )}
+            <AvatarFallback className="text-7xl opacity-100">{name.charAt(0)}</AvatarFallback>
+          </Avatar>
         </div>
         
         <div className="flex flex-col justify-end h-[50vh]">

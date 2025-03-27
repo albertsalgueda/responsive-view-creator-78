@@ -45,13 +45,12 @@ const Services3 = ({
             </div>
             <div className="mb-6 flex flex-col justify-end">
               <div 
-                className="fade-in-delay-1 font-barlow font-medium text-sm text-end" 
+                className="fade-in-delay-1 font-barlow font-medium text-sm" 
                 style={{
                   color: textColor,
                   transition: transition,
                   columnCount: 1,
-                  lineHeight: 1.1,
-                  textAlign: 'end'
+                  lineHeight: 1.1
                 }}
                 dangerouslySetInnerHTML={{ __html: columnsText }}
               >
@@ -80,14 +79,13 @@ const Services3 = ({
             </div>
             <div className="mb-0 flex flex-col justify-end mt-auto">
               <div 
-                className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right text-end" 
+                className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" 
                 style={{
                   color: textColor,
                   transition: transition,
                   columnCount: 2,
                   columnGap: '2rem',
-                  lineHeight: 1.1,
-                  textAlign: 'end'
+                  lineHeight: 1.1
                 }}
                 dangerouslySetInnerHTML={{ 
                   __html: columnsText.replace(/<br>/g, '<br><span style="display: block; margin-bottom: 1vh;"></span>') 

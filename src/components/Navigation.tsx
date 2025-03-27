@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -241,7 +242,7 @@ const Navigation = ({
         transition: `transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), ${transition}`
       }}
     >
-      <a href="/" onClick={scrollToBeginning} className="h-full flex items-center">
+      <a href="/" onClick={scrollToBeginning} className="h-full flex items-center hover:opacity-90 transition-all duration-500">
         <div className="h-[40px] w-[90px]">
           <SmallLogo />
         </div>

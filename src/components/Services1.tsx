@@ -39,7 +39,7 @@ const Services1 = ({
                 lineHeight: 1.3,
                 color: textColor,
                 transition: transition
-              }} className="mt-3 fade-in-delay-1 font-barlow font-medium text-base">
+              }} className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-base">
                 {descriptionText}
               </p>
             </div>
@@ -75,7 +75,7 @@ const Services1 = ({
                 lineHeight: 1.3,
                 color: textColor,
                 transition: transition
-              }} className="mt-2 slide-in-left max-w-full font-barlow font-medium text-[3vh]">
+              }} className="mt-2 pb-[24px] slide-in-left max-w-full font-barlow font-medium text-[3vh]">
                 {descriptionText}
               </p>
             </div>

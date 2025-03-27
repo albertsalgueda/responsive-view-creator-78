@@ -15,7 +15,7 @@ interface ProfileProps {
 const LinkedInIcon = () => (
   <svg 
     viewBox="0 0 455 455" 
-    className="w-5 h-5"
+    className="w-6 h-6"
     fill="currentColor"
   >
     <g>
@@ -63,7 +63,9 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
               className="mt-3 inline-block hover:opacity-80 transition-opacity"
               aria-label={`${name}'s LinkedIn profile`}
             >
-              <LinkedInIcon />
+              <div className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px]">
+                <LinkedInIcon />
+              </div>
             </a>
           )}
         </div>

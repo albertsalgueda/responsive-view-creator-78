@@ -19,9 +19,9 @@ const Main3 = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
-          // Mobile layout - anchored to top with 3-column grid
+          // Mobile layout - anchored to top with full-width text
           <div className="grid grid-cols-3 gap-4 h-fit py-16 px-6">
-            <div className="col-span-2 pt-6 py-0">
+            <div className="col-span-3 pt-6 py-0">
               <p style={{
                 lineHeight: 1.2,
                 color: textColor,

@@ -174,7 +174,7 @@ const Navigation = ({
           <div className="flex items-center justify-between py-4 relative">
             <div 
               className="absolute left-1/2 -translate-x-1/2 h-1.5 w-[60px] rounded-full" 
-              style={{ backgroundColor: `${textColor}40`, transition: transition }}
+              style={{ backgroundColor: textColor, transition: transition }}
             />
             <div className="flex-1"></div>
             <DrawerClose asChild>

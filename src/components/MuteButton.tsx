@@ -23,16 +23,14 @@ const MuteButton = ({
   }}>
       <button 
         onClick={onToggle} 
-        className="w-[40px] h-[40px] rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
+        className="w-[40px] h-[40px] bg-white rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
         style={{
-          backgroundColor,
-          transition,
-          color: 'white'
+          transition
         }}
       >
         {isMuted ? 
-          <VolumeX size={24} strokeWidth={2} /> : 
-          <Volume size={24} strokeWidth={2} />
+          <VolumeX size={24} strokeWidth={2} style={{ color: backgroundColor }} /> : 
+          <Volume size={24} strokeWidth={2} style={{ color: backgroundColor }} />
         }
       </button>
     </div>;

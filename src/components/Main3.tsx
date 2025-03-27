@@ -4,11 +4,11 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Main3Props {
-  subtitle?: string;
+  text?: string;
 }
 
 const Main3 = ({
-  subtitle = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
+  text = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
 }: Main3Props) => {
   const isMobile = useIsMobile();
   const {
@@ -26,8 +26,8 @@ const Main3 = ({
                 lineHeight: 1.2,
                 color: textColor,
                 transition: transition
-              }} className="fade-in-delay-1 font-barlow font-medium text-[4.5vh]">
-                {subtitle}
+              }} className="fade-in-delay-1 font-barlow font-medium text-text-large-mobile">
+                {text}
               </p>
             </div>
           </div> :
@@ -40,8 +40,8 @@ const Main3 = ({
                   color: textColor,
                   transition: transition,
                   width: '100%'
-                }} className="slide-in-left font-barlow font-medium text-[4.5vh]">
-                  {subtitle}
+                }} className="slide-in-left font-barlow font-medium text-text-large-desktop">
+                  {text}
                 </p>
               </div>
             </div>

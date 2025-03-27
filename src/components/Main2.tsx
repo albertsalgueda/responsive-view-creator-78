@@ -4,15 +4,15 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 interface Main2Props {
   title?: string;
-  subtitle?: string;
-  description?: string;
+  text1?: string;
+  text2?: string;
   ctaText?: string;
   ctaAction?: () => void;
 }
 const Main2 = ({
   title = "Prompting human potential.",
-  subtitle = "What if AI wasn't designed to be prompted? What if it was designed to prompt us?",
-  description = "Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential.",
+  text1 = "What if AI wasn't designed to be prompted? What if it was designed to prompt us?",
+  text2 = "Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential.",
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked")
 }: Main2Props) => {
@@ -31,23 +31,23 @@ const Main2 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-[11vh]">
+          }} className="font-extrabold slide-in-left font-barlow text-h1-mobile">
                 {title}
               </h1>
               <p style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-[4.5vh]">
-                {subtitle}
+          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium">
+                {text1}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-[2.5vh]" style={{
+            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-text-small" style={{
           lineHeight: 1.1,
           color: textColor,
           transition: transition
         }}>
-              <p className="mb-16">{description}</p>
+              <p className="mb-16">{text2}</p>
             </div>
             {ctaText && <div className="col-span-3 mt-auto mb-16 fade-in-delay-2 flex justify-end">
                 <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{
@@ -66,7 +66,7 @@ const Main2 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-[10vh]">
+          }} className="font-extrabold slide-in-left font-barlow text-h1-desktop">
                 {title}
               </h1>
             </div>
@@ -79,8 +79,8 @@ const Main2 = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="text-[2.5vh] slide-in-right font-barlow font-medium mb-0">
-                  {subtitle}
+            }} className="text-text-medium slide-in-right font-barlow font-medium mb-0">
+                  {text1}
                 </p>
               </div>
               
@@ -90,8 +90,8 @@ const Main2 = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="text-[2.5vh] slide-in-right font-barlow font-medium mb-0">
-                  {description}
+            }} className="text-text-medium slide-in-right font-barlow font-medium mb-0">
+                  {text2}
                 </p>
               </div>
             </div>

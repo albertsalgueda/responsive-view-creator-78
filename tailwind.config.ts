@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,6 +72,14 @@ export default {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
 				barlow: ['Barlow', 'sans-serif'],
+			},
+			fontSize: {
+				'h1-desktop': '10vh',
+				'h1-mobile': '8.5vh',
+				'text-large-desktop': '4.5vh',
+				'text-large-mobile': '5vh',
+				'text-medium': '2.5vh',
+				'text-small': '2vh',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

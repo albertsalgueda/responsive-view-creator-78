@@ -5,16 +5,18 @@ import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Main1Props {
   title?: string;
-  subtitle?: string;
+  text?: string;
   ctaText?: string;
   ctaAction?: () => void;
+  footnote?: string;
 }
 
 const Main1 = ({
   title = "We are 10kR.",
-  subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
+  text = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
   ctaText = "SEE WHAT WE DO",
-  ctaAction = () => console.log("CTA clicked")
+  ctaAction = () => console.log("CTA clicked"),
+  footnote = "This website was made with Ai (robots) and refined by humans (us). See How."
 }: Main1Props) => {
   const isMobile = useIsMobile();
   const {
@@ -53,15 +55,15 @@ const Main1 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-[10vh]">
+          }} className="font-extrabold slide-in-left font-barlow text-h1-mobile">
                 {title}
               </h1>
               <p style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-[4.5vh] pt-[0px] pb-[12px] my-0">
-                {subtitle}
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0">
+                {text}
               </p>
             </div>
             
@@ -81,8 +83,8 @@ const Main1 = ({
             color: textColor,
             transition: transition,
             paddingTop: '24px'
-          }} className="fade-in-delay-1 font-barlow font-medium text-[2vh]">
-                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+          }} className="fade-in-delay-1 font-barlow font-medium text-text-small">
+                {footnote}
               </p>
             </div>
           </div> : <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
@@ -95,8 +97,8 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="slide-in-left font-barlow font-medium text-[4.5vh] mt-[25vh]">
-                {subtitle}
+          }} className="slide-in-left font-barlow font-medium text-text-large-desktop mt-[25vh]">
+                {text}
               </p>
             </div>
             
@@ -117,7 +119,7 @@ const Main1 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-[10vh]">
+          }} className="font-extrabold slide-in-left font-barlow text-h1-desktop">
                 {title}
               </h1>
             </div>
@@ -128,8 +130,8 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="slide-in-left font-barlow font-medium text-[2vh] pb-[5px]">
-                This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
+          }} className="slide-in-left font-barlow font-medium text-text-small pb-[5px]">
+                {footnote}
               </p>
             </div>
           </div>}

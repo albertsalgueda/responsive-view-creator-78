@@ -4,14 +4,14 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
 import { useSectionColors } from '@/hooks/use-section-colors';
 interface ContactProps {
-  title?: string;
-  description?: string;
+  text1?: string;
+  text2?: string;
   callToAction?: string;
   callToActionText?: string;
 }
 const Contact = ({
-  title = "Our dream clients aren't brands— they're people. Bold, brave, curious and forever obsessed with building meaningful experiences.",
-  description = "If that sounds like you, we would love to work together.",
+  text1 = "Our dream clients aren't brands— they're people. Bold, brave, curious and forever obsessed with building meaningful experiences.",
+  text2 = "If that sounds like you, we would love to work together.",
   callToAction = "mailto:HELLO@10KR.CO?subject=Hello,%20humans...",
   callToActionText = "HELLO@10KR.CO"
 }: ContactProps) => {
@@ -35,18 +35,18 @@ const Contact = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="text-[4.5vh] font-medium slide-in-left font-barlow mt-12">
-                {title}
+          }} className="text-text-large-mobile font-medium slide-in-left font-barlow mt-12">
+                {text1}
               </h2>
             </div>
             
             <div className="col-span-2 col-start-2">
-              <p className="fade-in-delay-1 font-barlow font-medium text-[2.5vh]" style={{
+              <p className="fade-in-delay-1 font-barlow font-medium text-text-medium" style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
           }}>
-                {description}
+                {text2}
               </p>
               
               <div className="mt-6 fade-in-delay-2">
@@ -69,18 +69,18 @@ const Contact = ({
           }}></div>
               
               <div className="flex justify-between items-center">
-                <p className="text-[2vh] font-barlow font-medium" style={{
+                <p className="text-text-small font-barlow font-medium" style={{
               lineHeight: 1.1,
               color: textColor,
               transition: transition
             }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
-                  <a href="https://linkedin.com" className="font-barlow text-[2vh] hover:underline font-medium" style={{
+                  <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium" style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
               }}>LINKEDIN</a>
-                  <a href="https://instagram.com" className="font-barlow text-[2vh] hover:underline font-medium" style={{
+                  <a href="https://instagram.com" className="font-barlow text-text-small hover:underline font-medium" style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
@@ -105,8 +105,8 @@ const Contact = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="font-medium slide-in-left font-barlow text-[4.5vh]">
-                    {title}
+              }} className="font-medium slide-in-left font-barlow text-text-large-desktop">
+                    {text1}
                   </h2>
                 </div>
                 
@@ -115,8 +115,8 @@ const Contact = ({
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
-              }} className="slide-in-right font-barlow font-medium mb-8 text-[2.5vh]">
-                    {description}
+              }} className="slide-in-right font-barlow font-medium mb-8 text-text-medium">
+                    {text2}
                   </p>
                   
                   <div className="fade-in-delay-1">
@@ -139,7 +139,7 @@ const Contact = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="text-[2vh] font-barlow font-medium">
+          }} className="text-text-small font-barlow font-medium">
                 10kR ©2025
               </div>
               
@@ -148,12 +148,12 @@ const Contact = ({
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="font-barlow text-[2vh] hover:underline font-medium">LINKEDIN</a>
+            }} className="font-barlow text-text-small hover:underline font-medium">LINKEDIN</a>
                 <a href="https://instagram.com" style={{
               lineHeight: 1.1,
               color: textColor,
               transition: transition
-            }} className="font-barlow hover:underline text-[2vh] font-medium">INSTAGRAM</a>
+            }} className="font-barlow hover:underline text-text-small font-medium">INSTAGRAM</a>
               </div>
               
               <div style={{

@@ -20,7 +20,6 @@ import { useBackgroundTransition } from "@/hooks/use-background-transition";
 import { useSectionColors } from "@/hooks/use-section-colors";
 import MuteButton from "@/components/MuteButton";
 import { useVideoControl } from "@/hooks/useVideoControl";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -63,14 +62,10 @@ const SectionObserverWithBackground = () => {
   const isMobile = useIsMobile();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { backgroundColor, transition } = useSectionColors();
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   
   useEffect(() => {
     if (isMobile || !scrollContainerRef.current) return;
     
-    // Handle wheel events for vertical to horizontal scrolling
     const handleWheel = (e: WheelEvent) => {
       if (scrollContainerRef.current) {
         e.preventDefault();
@@ -78,68 +73,13 @@ const SectionObserverWithBackground = () => {
       }
     };
     
-    // Handle keyboard events (arrow keys)
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!scrollContainerRef.current) return;
-      
-      const scrollAmount = 300; // Adjust this value to control scroll distance
-      
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        scrollContainerRef.current.scrollLeft += scrollAmount;
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        scrollContainerRef.current.scrollLeft -= scrollAmount;
-      }
-    };
-    
     const container = scrollContainerRef.current;
     container.addEventListener('wheel', handleWheel, { passive: false });
-    document.addEventListener('keydown', handleKeyDown);
     
     return () => {
       container.removeEventListener('wheel', handleWheel);
-      document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMobile]);
-  
-  // Mouse/touch drag handlers
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (isMobile || !scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-  };
-  
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!scrollContainerRef.current) return;
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollContainerRef.current.offsetLeft);
-    setScrollLeft(scrollContainerRef.current.scrollLeft);
-  };
-  
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll multiplier
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-  
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging || !scrollContainerRef.current) return;
-    const x = e.touches[0].pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll multiplier
-    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
-  };
-  
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-  
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
   
   const bgStyle = {
     background: backgroundColor,
@@ -176,15 +116,8 @@ const SectionObserverWithBackground = () => {
   return (
     <div 
       ref={scrollContainerRef}
-      className="h-screen w-screen overflow-x-auto scrollbar-hide will-change-auto cursor-grab active:cursor-grabbing" 
+      className="h-screen w-screen overflow-x-auto scrollbar-hide will-change-auto" 
       style={bgStyle}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleMouseUp}
     >
       <div className="flex h-screen">
         <div id="video" className="h-screen w-screen flex-shrink-0">

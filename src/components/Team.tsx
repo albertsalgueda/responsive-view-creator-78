@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Linkedin } from 'lucide-react';
+import Profile from './Profile';
 
 interface TeamMember {
   name: string;
@@ -103,8 +103,19 @@ const Team = ({
           </div>
         ) : (
           <div className="relative h-full">            
-            {/* Layout for team members in a scattered pattern */}
-            <div className="absolute w-full h-full">
+            {/* Featured profile */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 fade-in-delay-1">
+              <Profile 
+                name={members[0].name}
+                role={members[0].title}
+                image={members[0].image}
+                background={members[0].background}
+                linkedin={members[0].linkedin}
+              />
+            </div>
+            
+            {/* Other team members in a scattered pattern - keeping this for reference */}
+            <div className="absolute w-full h-full" style={{ display: 'none' }}>
               {/* Neil */}
               <div className="absolute top-[20%] left-[35%] fade-in-delay-1">
                 <TeamMemberCard member={members[0]} textColor={textColor} transition={transition} />

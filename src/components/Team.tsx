@@ -66,8 +66,8 @@ const Team = ({
     }
   }, [displayMembers]);
 
-  return <section className={`w-full relative px-0 py-0 font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
-      <div className="max-w-7xl w-full mx-auto h-full p-0">
+  return <section className={`w-fit relative px-0 py-0 font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`} style={{ width: 'fit-content' }}>
+      <div className="w-fit mx-auto h-full p-0" style={{ width: 'fit-content' }}>
         {isMobile ? <div className="grid grid-cols-1 gap-4 min-h-screen py-12 px-6">            
             <div className="grid grid-cols-1 gap-6 mt-24">
               {displayMembers.map((member, index) => <div key={index} className="fade-in-delay-2 flex items-center space-x-4">
@@ -108,8 +108,8 @@ const Team = ({
                   </div>
                 </div>)}
             </div>
-          </div> : <div className="relative h-full px-10 pt-[25vh]">            
-            <div className="absolute left-10 bottom-[40px] flex items-start gap-5 fade-in-delay-1">
+          </div> : <div className="relative h-full px-10 pt-[25vh]" style={{ width: 'fit-content' }}>            
+            <div className="flex items-start gap-5 fade-in-delay-1" style={{ position: 'relative', bottom: '40px', left: '10px', width: 'fit-content' }}>
               <div className="h-full inline-flex mr-5">
                 <ProfileStephanie 
                   name={displayMembers[2].name} 

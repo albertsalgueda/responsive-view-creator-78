@@ -174,7 +174,7 @@ const SectionObserverWithBackground = ({
         <div id="team" className="h-screen w-2/3 flex-shrink-0">
           <Main4 />
         </div>
-        <div id="team-members" className="h-screen w-[180vh] flex-shrink-0">
+        <div id="team-members" className="h-screen w-fit flex-shrink-0" style={{ width: 'fit-content' }}>
           <Team />
         </div>
         <Image4 />

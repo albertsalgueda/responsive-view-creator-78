@@ -51,7 +51,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
           </Avatar>
         </div>
         
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-end h-[50vh]">
           <h3 className="text-text-large-desktop font-bold">{name}</h3>
           <p className="text-text-medium mt-2">{role}</p>
           

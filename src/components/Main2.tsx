@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -43,11 +42,11 @@ const Main2 = ({
               </p>
             </div>
             <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-[3vh]" style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }}>
-              <p>{description}</p>
+          lineHeight: 1.1,
+          color: textColor,
+          transition: transition
+        }}>
+              <p className="mb-16">{description}</p>
             </div>
             {ctaText && <div className="col-span-3 mt-auto mb-16 fade-in-delay-2 flex justify-end">
                 <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow" style={{

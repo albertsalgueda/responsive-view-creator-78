@@ -127,7 +127,7 @@ const Team = ({
             </div>
           </div> : <div className="relative h-full px-10 pt-[25vh]" style={{ width: 'fit-content' }}>            
             <div className="flex items-end gap-5 fade-in-delay-1" style={{ position: 'relative', bottom: '40px', left: '10px', width: 'fit-content' }}>
-              <div className="h-full inline-flex mr-5">
+              <div className="h-full inline-flex self-end mr-5">
                 <ProfileStephanie 
                   name={displayMembers[2].name} 
                   role={displayMembers[2].title} 

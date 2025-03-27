@@ -51,10 +51,10 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("h-full", className)}
+        className={cn("h-full flex items-end", className)}
       >
-        <div className="h-full w-fit inline-flex">
-          <div className="flex items-start gap-6 h-full">
+        <div className="h-fit w-fit inline-flex">
+          <div className="flex items-start gap-6 h-fit">
             <div 
               className="w-[40vh] h-[40vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
               style={{ background }}

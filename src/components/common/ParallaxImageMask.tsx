@@ -128,7 +128,7 @@ const ParallaxImageMask: React.FC<ParallaxImageMaskProps> = ({
     };
   }, [isMobile, lastScroll]);
 
-  const calculatedWidth = isMobile ? '100vw' : `${viewportHeight * 0.33}px`;
+  const calculatedWidth = isMobile ? '100vw' : `${viewportHeight * 0.5}px`;
 
   return (
     <div 

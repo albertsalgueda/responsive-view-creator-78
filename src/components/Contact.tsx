@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -46,6 +47,7 @@ const Contact = ({
             
             <div className="col-span-2 col-start-2">
               <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
+                lineHeight: 1.1,
                 color: textColor,
                 transition: transition
               }}>
@@ -73,15 +75,18 @@ const Contact = ({
               
               <div className="flex justify-between items-center">
                 <p className="text-sm font-barlow font-medium" style={{
+                  lineHeight: 1.1,
                   color: textColor,
                   transition: transition
                 }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
                   <a href="https://linkedin.com" className="font-barlow text-sm hover:underline font-medium" style={{
+                    lineHeight: 1.1,
                     color: textColor,
                     transition: transition
                   }}>LINKEDIN</a>
                   <a href="https://instagram.com" className="font-barlow text-sm hover:underline font-medium" style={{
+                    lineHeight: 1.1,
                     color: textColor,
                     transition: transition
                   }}>INSTAGRAM</a>
@@ -113,6 +118,7 @@ const Contact = ({
                 
                 <div className="col-span-1 flex flex-col">
                   <p style={{
+                    lineHeight: 1.1,
                     color: textColor,
                     transition: transition
                   }} className="slide-in-right font-barlow font-medium mb-8 text-[3vh]">
@@ -136,6 +142,7 @@ const Contact = ({
             
             <div className="flex justify-between items-end">
               <div style={{
+                lineHeight: 1.1,
                 color: textColor,
                 transition: transition
               }} className="text-[2.25vh] font-barlow font-medium">
@@ -144,10 +151,12 @@ const Contact = ({
               
               <div className="flex flex-col items-start gap-2">
                 <a href="https://linkedin.com" style={{
+                  lineHeight: 1.1,
                   color: textColor,
                   transition: transition
                 }} className="font-barlow text-[2.25vh] hover:underline font-medium">LINKEDIN</a>
                 <a href="https://instagram.com" style={{
+                  lineHeight: 1.1,
                   color: textColor,
                   transition: transition
                 }} className="font-barlow hover:underline text-[2.25vh] font-medium">INSTAGRAM</a>

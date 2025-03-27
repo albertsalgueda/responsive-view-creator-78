@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -38,7 +37,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
     // If there's no image provided, use a default placeholder
     const imageUrl = image || "/placeholder.svg";
     
-    // Log when the component renders
+    // Log when the component renders with more details
     console.log("Profile component rendering with image:", imageUrl);
     
     return (
@@ -47,20 +46,31 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
         className={cn("flex items-start gap-6", className)}
       >
         <div 
-          className="w-[50vh] h-[50vh] rounded-2xl overflow-hidden flex-shrink-0"
+          className="w-[50vh] h-[50vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
           style={{ background }}
         >
-          <Avatar className="w-full h-full rounded-2xl">
+          <img 
+            src={imageUrl}
+            alt={name}
+            className="w-full h-full object-cover absolute inset-0"
+            onError={(e) => {
+              console.error("Error loading direct image:", imageUrl);
+              e.currentTarget.src = "/placeholder.svg";
+            }}
+          />
+          
+          {/* Keep Avatar as fallback */}
+          <Avatar className="w-full h-full rounded-2xl opacity-0">
             <AvatarImage 
               src={imageUrl} 
               alt={name}
               className="object-cover w-full h-full"
               onError={(e) => {
-                console.error("Error loading image:", imageUrl);
+                console.error("Error loading avatar image:", imageUrl);
                 e.currentTarget.src = "/placeholder.svg";
               }}
             />
-            <AvatarFallback className="text-7xl">{name.charAt(0)}</AvatarFallback>
+            <AvatarFallback className="text-7xl opacity-100">{name.charAt(0)}</AvatarFallback>
           </Avatar>
         </div>
         

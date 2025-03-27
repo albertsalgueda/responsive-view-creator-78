@@ -1,9 +1,9 @@
-
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Linkedin } from 'lucide-react';
 import Profile from './Profile';
+import { useEffect } from 'react';
 
 interface TeamMember {
   name: string;
@@ -64,6 +64,14 @@ const Team = ({
   // Log the first team member's image when the component renders
   console.log("Team component rendering with first member image:", members[0].image);
 
+  // Try to preload the image
+  useEffect(() => {
+    const img = new Image();
+    img.src = members[0].image;
+    img.onload = () => console.log("Profile image preloaded successfully:", members[0].image);
+    img.onerror = (e) => console.error("Failed to preload profile image:", members[0].image, e);
+  }, [members]);
+
   return (
     <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
@@ -73,10 +81,19 @@ const Team = ({
               {members.map((member, index) => (
                 <div key={index} className="fade-in-delay-2 flex items-center space-x-4">
                   <div 
-                    className="rounded-lg overflow-hidden"
+                    className="rounded-lg overflow-hidden relative"
                     style={{ background: member.background }}
                   >
-                    <Avatar className="w-20 h-20 rounded-lg">
+                    <img 
+                      src={member.image}
+                      alt={member.name}
+                      className="w-20 h-20 object-cover absolute inset-0 rounded-lg"
+                      onError={(e) => {
+                        console.error("Error loading direct team member image:", member.image);
+                        e.currentTarget.src = "/placeholder.svg";
+                      }}
+                    />
+                    <Avatar className="w-20 h-20 rounded-lg opacity-0">
                       <AvatarImage 
                         src={member.image} 
                         alt={member.name}
@@ -85,7 +102,7 @@ const Team = ({
                           e.currentTarget.src = "/placeholder.svg";
                         }} 
                       />
-                      <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                      <AvatarFallback className="opacity-100">{member.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                   </div>
                   <div>

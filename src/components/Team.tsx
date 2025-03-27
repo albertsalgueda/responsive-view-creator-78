@@ -54,9 +54,9 @@ const Team = ({
     // coral
     linkedin: "https://linkedin.com"
   }, {
-    name: "Craig Johnson",
-    title: "Design Guru",
-    image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.png",
+    name: "Craig Kind",
+    title: "Muh Fuh Word Genius",
+    image: "/lovable-uploads/40349571-793d-487f-8d19-1a987f373b43.png",
     background: "#4EACF2",
     // blue
     linkedin: "https://linkedin.com"

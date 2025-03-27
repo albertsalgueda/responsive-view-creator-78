@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -31,7 +30,8 @@ const Services1 = ({
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
-            transition: transition
+            transition: transition,
+            marginTop: '-1vh'
           }} className="font-extrabold slide-in-left font-barlow text-7xl">
                 {title}
               </h1>
@@ -65,7 +65,8 @@ const Services1 = ({
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
-            transition: transition
+            transition: transition,
+            marginTop: '-1vh'
           }} className="font-extrabold slide-in-left font-barlow mt-0 text-[13vh]">
                 {title}
               </h1>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -78,7 +77,7 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="fade-in-delay-1 max-w-[85%] font-barlow text-sm pt-6">
+          }} className="fade-in-delay-1 max-w-[85%] font-barlow font-medium text-sm pt-6">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>
@@ -125,7 +124,7 @@ const Main1 = ({
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="slide-in-left font-barlow text-[2.25vh] pb-[5px]">
+          }} className="slide-in-left font-barlow font-medium text-[2.25vh] pb-[5px]">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>

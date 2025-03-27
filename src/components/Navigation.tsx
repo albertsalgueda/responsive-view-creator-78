@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -58,6 +59,34 @@ const Navigation = ({
   if (!mounted) return null;
 
   const letsTalkLink = links.find(link => link.text === "let's talk");
+
+  // Function to scroll to the beginning
+  const scrollToBeginning = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isMobile) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // For horizontal scroll on desktop
+      const container = document.querySelector('.h-screen.w-screen.overflow-x-auto.scrollbar-hide');
+      if (container) {
+        container.scrollLeft = 0;
+      }
+    }
+  };
+
+  // Function to scroll to the end
+  const scrollToEnd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isMobile) {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    } else {
+      // For horizontal scroll on desktop
+      const container = document.querySelector('.h-screen.w-screen.overflow-x-auto.scrollbar-hide');
+      if (container) {
+        container.scrollLeft = container.scrollWidth;
+      }
+    }
+  };
 
   const TwoBarMenuIcon = () => (
     <svg width="72" height="72" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +174,7 @@ const Navigation = ({
     </Drawer>;
 
   return <nav className="fixed top-0 left-0 w-full h-[80px] bg-transparent z-50 flex items-center justify-between px-6 transition-colors duration-1200">
-      <a href="/" className="h-full flex items-center">
+      <a href="/" onClick={scrollToBeginning} className="h-full flex items-center">
         <div className="h-[40px] w-[90px]">
           <SmallLogo />
         </div>
@@ -155,6 +184,7 @@ const Navigation = ({
         <div className="flex items-center gap-8">
           {letsTalkLink && (
             <a href={letsTalkLink.href} 
+               onClick={scrollToEnd}
                className="font-barlow font-extrabold italic font-weight-800 hover:opacity-80 transition-all" 
                style={{
                  color: navColor,

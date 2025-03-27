@@ -17,7 +17,7 @@ const Main3 = ({
         {isMobile ?
       // Mobile layout - anchored to top with 3-column grid
       <div className="grid grid-cols-3 gap-4 h-fit py-16 px-6">
-            <div className="col-span-3 pt-6">
+            <div className="col-span-3 pt-6 py-0">
               <p style={{
             lineHeight: 1.2,
             color: textColor,

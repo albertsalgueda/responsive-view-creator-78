@@ -7,6 +7,7 @@ import ProfileNeil from './Profile-Neil';
 import ProfileStephen from './Profile-Stephen';
 import ProfileStephanie from './Profile-Stephanie';
 import ProfileCraig from './Profile-Craig';
+import ProfileAshish from './Profile-Ashish';
 import { useEffect } from 'react';
 
 interface TeamMember {
@@ -59,6 +60,13 @@ const Team = ({
     image: "/lovable-uploads/40349571-793d-487f-8d19-1a987f373b43.png",
     background: "#4EACF2",
     // blue
+    linkedin: "https://linkedin.com"
+  }, {
+    name: "Ashish Kumar",
+    title: "Tech Wizard",
+    image: "https://via.placeholder.com/500x500",
+    background: "#B39DDB",
+    // purple
     linkedin: "https://linkedin.com"
   }];
 
@@ -153,6 +161,15 @@ const Team = ({
                   image={displayMembers[3].image} 
                   background={displayMembers[3].background} 
                   linkedin={displayMembers[3].linkedin} 
+                />
+              </div>
+              <div className="h-full inline-flex">
+                <ProfileAshish 
+                  name={displayMembers[4].name} 
+                  role={displayMembers[4].title} 
+                  image={displayMembers[4].image} 
+                  background={displayMembers[4].background} 
+                  linkedin={displayMembers[4].linkedin} 
                 />
               </div>
             </div>

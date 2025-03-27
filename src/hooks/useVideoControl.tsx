@@ -1,5 +1,5 @@
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 
 export const useVideoControl = (initialVideos: string[]) => {
   const initialVideoIndex = useRef(Math.floor(Math.random() * initialVideos.length));
@@ -38,8 +38,9 @@ export const useVideoControl = (initialVideos: string[]) => {
   }, [currentVideoIndex, initialVideos.length]);
 
   const toggleMute = useCallback(() => {
+    console.log('Toggling mute state, current:', isMuted);
     setIsMuted(prev => !prev);
-  }, []);
+  }, [isMuted]);
 
   return {
     currentVideoUrl,

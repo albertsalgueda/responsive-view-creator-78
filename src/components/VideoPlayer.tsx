@@ -13,6 +13,14 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
   ({ videoUrl, onEnded, isMuted, className = "", style = {} }, ref) => {
     const localRef = useRef<HTMLVideoElement>(null);
     
+    // Update muted state when isMuted prop changes
+    useEffect(() => {
+      if (localRef.current) {
+        localRef.current.muted = isMuted;
+        console.log('Video muted state updated:', isMuted);
+      }
+    }, [isMuted]);
+    
     useEffect(() => {
       console.log('Video URL changed to:', videoUrl);
       
@@ -22,6 +30,9 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
         video.pause();
         video.currentTime = 0;
         video.src = videoUrl;
+        
+        // Ensure muted state is applied
+        video.muted = isMuted;
         
         // Only preload metadata initially to reduce memory usage
         video.preload = "metadata";
@@ -78,7 +89,7 @@ const VideoPlayer = forwardRef<HTMLVideoElement, VideoPlayerProps>(
           }
         };
       }
-    }, [videoUrl, onEnded]);
+    }, [videoUrl, onEnded, isMuted]);
 
     return (
       <video

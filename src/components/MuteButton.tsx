@@ -2,6 +2,7 @@
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Volume, VolumeX } from "lucide-react";
 import { useSectionColors } from '@/hooks/use-section-colors';
+import { Button } from "@/components/ui/button";
 
 interface MuteButtonProps {
   isMuted: boolean;
@@ -15,25 +16,29 @@ const MuteButton = ({
   const isMobile = useIsMobile();
   const { backgroundColor, transition } = useSectionColors();
   
-  return <div className="fixed bottom-0 right-0 p-2" style={{
-    position: 'fixed',
-    bottom: isMobile ? '20px' : '16px',
-    right: '16px',
-    zIndex: 50 // Lower z-index value so it appears behind the drawer
-  }}>
-      <button 
+  return (
+    <div className="fixed bottom-0 right-0 p-2" style={{
+      position: 'fixed',
+      bottom: isMobile ? '20px' : '16px',
+      right: '16px',
+      zIndex: 100 // Increased z-index to ensure it's always on top
+    }}>
+      <Button 
         onClick={onToggle} 
         className="w-[40px] h-[40px] bg-white rounded-md hover:opacity-80 transition-all duration-500 flex items-center justify-center"
         style={{
           transition
         }}
+        variant="outline"
+        size="icon"
       >
         {isMuted ? 
           <VolumeX size={24} strokeWidth={2} style={{ color: backgroundColor }} /> : 
           <Volume size={24} strokeWidth={2} style={{ color: backgroundColor }} />
         }
-      </button>
-    </div>;
+      </Button>
+    </div>
+  );
 };
 
 export default MuteButton;

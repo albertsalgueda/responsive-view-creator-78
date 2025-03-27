@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import { useVideoControl } from "@/hooks/useVideoControl";
 import VideoMaskGrid from "./VideoMaskGrid";
-import MuteButton from "./MuteButton";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const VideoSection = () => {
@@ -27,7 +26,7 @@ const VideoSection = () => {
     handleVideoEnded,
     toggleMute
   } = useVideoControl(videos);
-
+  
   return (
     <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
       <VideoMaskGrid
@@ -37,7 +36,7 @@ const VideoSection = () => {
         onVideoEnded={handleVideoEnded}
         mainVideoRef={mainVideoRef}
       />
-      {/* Mute button is now moved to the Index component to ensure it's at the root level */}
+      {/* MuteButton is now in the Index component to ensure it persists across all sections */}
     </div>
   );
 };

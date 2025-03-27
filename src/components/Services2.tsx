@@ -57,7 +57,7 @@ const Services2 = ({
                 {processColumnsText(columnsText)}
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full px-6 pt-[25vh] pb-[40px]">
+          </div> : <div className="flex flex-col h-full px-6 pr-[25%] pt-[25vh] pb-[40px] justify-between">
             <div>
               <h1 style={{
             lineHeight: 1.1,
@@ -77,7 +77,7 @@ const Services2 = ({
                 {descriptionText}
               </p>
             </div>
-            <div className="mt-8 mb-0 flex flex-col">
+            <div className="mb-0 flex flex-col justify-end">
               <div className="text-[2.25vh] font-barlow font-medium mb-0 slide-in-right" style={{
             color: textColor,
             transition: transition,

@@ -30,7 +30,7 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const Profile = forwardRef<HTMLDivElement, ProfileProps>(
+const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
   ({ name, role, image, background = "#FDB0C2", linkedin, className }, ref) => {
     const { textColor, transition } = useSectionColors();
     
@@ -45,7 +45,7 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
       imageUrl = imageUrl.replace('.jpg', '.png');
     }
     
-    console.log("Profile component rendering with image URL:", imageUrl);
+    console.log("Profile-Neil component rendering with image URL:", imageUrl);
     
     return (
       <div 
@@ -113,6 +113,6 @@ const Profile = forwardRef<HTMLDivElement, ProfileProps>(
   }
 );
 
-Profile.displayName = "Profile";
+ProfileNeil.displayName = "ProfileNeil";
 
-export default Profile;
+export default ProfileNeil;

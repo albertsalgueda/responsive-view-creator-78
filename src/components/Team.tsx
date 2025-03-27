@@ -3,7 +3,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Linkedin } from 'lucide-react';
-import Profile from './Profile';
+import ProfileNeil from './Profile-Neil';
 import { useEffect } from 'react';
 
 interface TeamMember {
@@ -28,8 +28,8 @@ const Team = ({
 
   const displayMembers = members.length > 0 ? members : [
     {
-      name: "Team Member",
-      title: "Position",
+      name: "Neil Stoekle",
+      title: "Groovemeister",
       image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.png",
       background: "#FDB0C2", // pink
       linkedin: "https://linkedin.com"
@@ -108,7 +108,7 @@ const Team = ({
         ) : (
           <div className="relative h-full px-10">            
             <div className="absolute left-10 bottom-[40px] fade-in-delay-1">
-              <Profile 
+              <ProfileNeil 
                 name={displayMembers[0].name}
                 role={displayMembers[0].title}
                 image={displayMembers[0].image}

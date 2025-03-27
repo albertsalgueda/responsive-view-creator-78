@@ -1,4 +1,3 @@
-
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -46,9 +45,9 @@ const Team = ({
     // green
     linkedin: "https://linkedin.com"
   }, {
-    name: "Stephanie Johnson",
-    title: "Creative Director",
-    image: "/lovable-uploads/6d24aae1-b216-4cae-ae17-df0a95666fb2.png",
+    name: "Stephanie Wiseman",
+    title: "CEOmg",
+    image: "/lovable-uploads/8c33a416-6372-49ce-822a-c56bbb42a47c.png",
     background: "#FFBD89",
     // coral
     linkedin: "https://linkedin.com"

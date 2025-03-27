@@ -50,7 +50,7 @@ const Team = ({
             </div>
           </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px] px-[40px]">
             {/* Title at the top */}
-            <div className="w-1/2 mb-auto">
+            <div className="col-span-8 col-start-1 w-2/3 mb-auto">
               <h1 style={{
             lineHeight: 1.1,
             fontWeight: 800,

@@ -50,8 +50,8 @@ const Navigation = ({
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Only trigger hiding navigation after scrolling down at least 24px
-      if (currentScrollY > 24) {
+      // Only trigger hiding navigation after scrolling down at least 60px
+      if (currentScrollY > 60) {
         // Scrolling down
         if (currentScrollY > lastScrollY.current && isVisible) {
           setIsVisible(false);
@@ -236,10 +236,10 @@ const Navigation = ({
 
   return (
     <nav 
-      className={`fixed top-0 left-0 w-full h-[80px] z-50 flex items-center justify-between px-6 transition-all duration-500 ease-in-out ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`fixed top-0 left-0 w-full h-[80px] z-50 flex items-center justify-between px-6 transition-transform duration-700 ease-in-out ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
       style={{
         backgroundColor: isMobile && isVisible ? backgroundColor : 'transparent',
-        transition: transition
+        transition: `transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), ${transition}`
       }}
     >
       <a href="/" onClick={scrollToBeginning} className="h-full flex items-center">

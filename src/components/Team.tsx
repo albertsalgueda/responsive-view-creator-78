@@ -14,9 +14,6 @@ interface TeamMember {
 }
 
 interface TeamProps {
-  title?: string;
-  text1?: string;
-  text2?: string;
   members?: TeamMember[];
 }
 
@@ -59,9 +56,6 @@ const defaultMembers: TeamMember[] = [
 ];
 
 const Team = ({
-  title = "Meet the team.",
-  text1 = "The creative minds behind our innovative products.",
-  text2 = "Our team brings diverse perspectives and expertise to create extraordinary experiences.",
   members = defaultMembers,
 }: TeamProps) => {
   const isMobile = useIsMobile();
@@ -71,44 +65,8 @@ const Team = ({
     <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? (
-          <div className="grid grid-cols-1 gap-4 min-h-screen py-12 px-6">
-            <div className="mt-16">
-              <h1 
-                style={{
-                  lineHeight: 1.1,
-                  fontWeight: 800,
-                  fontStyle: 'italic',
-                  color: textColor,
-                  transition: transition,
-                  marginTop: '-2vh'
-                }} 
-                className="font-extrabold slide-in-left font-barlow text-h1-mobile"
-              >
-                {title}
-              </h1>
-              <p 
-                style={{
-                  lineHeight: 1.3,
-                  color: textColor,
-                  transition: transition
-                }} 
-                className="mt-3 fade-in-delay-1 font-barlow font-medium text-text-medium"
-              >
-                {text1}
-              </p>
-              <p 
-                style={{
-                  lineHeight: 1.1,
-                  color: textColor,
-                  transition: transition
-                }} 
-                className="mt-3 fade-in-delay-2 font-barlow font-medium text-text-small"
-              >
-                {text2}
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 gap-6 mt-6">
+          <div className="grid grid-cols-1 gap-4 min-h-screen py-12 px-6">            
+            <div className="grid grid-cols-1 gap-6 mt-24">
               {members.map((member, index) => (
                 <div key={index} className="fade-in-delay-2 flex items-center space-x-4">
                   <div 
@@ -144,43 +102,7 @@ const Team = ({
             </div>
           </div>
         ) : (
-          <div className="relative h-full">
-            <div className="absolute top-[20vh] left-[40px] w-full">
-              <h1 
-                style={{
-                  lineHeight: 1.1,
-                  fontWeight: 800,
-                  fontStyle: 'italic',
-                  color: textColor,
-                  transition: transition,
-                  marginTop: '-2vh'
-                }} 
-                className="font-extrabold slide-in-left font-barlow text-h1-desktop"
-              >
-                {title}
-              </h1>
-              <p 
-                style={{
-                  lineHeight: 1.3,
-                  color: textColor,
-                  transition: transition
-                }} 
-                className="mt-6 slide-in-left font-barlow font-medium text-text-medium w-1/2"
-              >
-                {text1}
-              </p>
-              <p 
-                style={{
-                  lineHeight: 1.1,
-                  color: textColor,
-                  transition: transition
-                }} 
-                className="mt-3 slide-in-left font-barlow font-medium text-text-small w-1/3"
-              >
-                {text2}
-              </p>
-            </div>
-            
+          <div className="relative h-full">            
             {/* Layout for team members in a scattered pattern */}
             <div className="absolute w-full h-full">
               {/* Neil */}

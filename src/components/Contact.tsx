@@ -36,7 +36,7 @@ const Contact = ({
         {isMobile ?
         <div className="grid grid-cols-3 gap-4 min-h-screen p-6">
             <div className="col-span-3 mb-8">
-              <h2 className="text-xl font-medium slide-in-left font-barlow" style={{
+              <h2 className="text-[4vh] font-medium slide-in-left font-barlow" style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
@@ -46,7 +46,7 @@ const Contact = ({
             </div>
             
             <div className="col-span-2 col-start-2">
-              <p className="fade-in-delay-1 font-barlow font-medium text-base" style={{
+              <p className="fade-in-delay-1 font-barlow font-medium text-[3vh]" style={{
                 lineHeight: 1.1,
                 color: textColor,
                 transition: transition
@@ -74,18 +74,18 @@ const Contact = ({
               }}></div>
               
               <div className="flex justify-between items-center">
-                <p className="text-sm font-barlow font-medium" style={{
+                <p className="text-[2.25vh] font-barlow font-medium" style={{
                   lineHeight: 1.1,
                   color: textColor,
                   transition: transition
                 }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
-                  <a href="https://linkedin.com" className="font-barlow text-sm hover:underline font-medium" style={{
+                  <a href="https://linkedin.com" className="font-barlow text-[2.25vh] hover:underline font-medium" style={{
                     lineHeight: 1.1,
                     color: textColor,
                     transition: transition
                   }}>LINKEDIN</a>
-                  <a href="https://instagram.com" className="font-barlow text-sm hover:underline font-medium" style={{
+                  <a href="https://instagram.com" className="font-barlow text-[2.25vh] hover:underline font-medium" style={{
                     lineHeight: 1.1,
                     color: textColor,
                     transition: transition

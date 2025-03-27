@@ -31,18 +31,18 @@ const Main2 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-6xl">
+          }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
                 {title}
               </h1>
               <p style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-2xl">
+          }} className="mt-6 fade-in-delay-1 font-barlow font-medium text-[3vh]">
                 {subtitle}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-base" style={{
+            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-[3vh]" style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition

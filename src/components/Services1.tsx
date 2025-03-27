@@ -32,20 +32,20 @@ const Services1 = ({
                 color: textColor,
                 transition: transition,
                 marginTop: '-2vh'
-              }} className="font-extrabold slide-in-left font-barlow text-7xl">
+              }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
                 {titleText}
               </h1>
               <p style={{
                 lineHeight: 1.3,
                 color: textColor,
                 transition: transition
-              }} className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-base">
+              }} className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-[3vh]">
                 {descriptionText}
               </p>
             </div>
             <div className="col-start-2 col-span-2 mb-6"> 
               <div 
-                className="fade-in-delay-1 font-barlow font-medium text-sm" 
+                className="fade-in-delay-1 font-barlow font-medium text-[2.25vh]" 
                 style={{
                   color: textColor,
                   transition: transition,

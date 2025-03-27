@@ -29,7 +29,7 @@ const Main3 = ({
                   color: textColor,
                   transition: transition
                 }} 
-                className="fade-in-delay-1 font-barlow font-medium text-2xl"
+                className="fade-in-delay-1 font-barlow font-medium text-[4vh]"
               >
                 {subtitle}
               </p>

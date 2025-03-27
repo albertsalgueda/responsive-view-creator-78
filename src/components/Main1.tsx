@@ -53,14 +53,14 @@ const Main1 = ({
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-6xl">
+          }} className="font-extrabold slide-in-left font-barlow text-[13vh]">
                 {title}
               </h1>
               <p style={{
             lineHeight: 1.1,
             color: textColor,
             transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-2xl pt-[0px] pb-[12px] my-0">
+          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-[4vh] pt-[0px] pb-[12px] my-0">
                 {subtitle}
               </p>
             </div>
@@ -81,7 +81,7 @@ const Main1 = ({
             color: textColor,
             transition: transition,
             paddingTop: '24px'
-          }} className="fade-in-delay-1 font-barlow font-medium text-sm">
+          }} className="fade-in-delay-1 font-barlow font-medium text-[2.25vh]">
                 This website was made with Ai (robots) and refined by humans (us). <span className="font-bold cursor-pointer hover:underline">See How.</span>
               </p>
             </div>

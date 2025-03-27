@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -51,66 +50,64 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("h-full", className)}
+        className={cn("h-full inline-flex", className)}
       >
-        <div className="h-full w-fit inline-flex">
-          <div className="flex items-start gap-6 h-full">
-            <div 
-              className="w-[40vh] h-[40vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
-              style={{ background }}
-            >
-              <img 
-                src={imageUrl}
+        <div className="flex items-start gap-6 h-full">
+          <div 
+            className="w-[40vh] h-[40vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
+            style={{ background }}
+          >
+            <img 
+              src={imageUrl}
+              alt={name}
+              className="w-full h-full object-cover absolute inset-0"
+              onError={(e) => {
+                console.error("Error loading direct image:", imageUrl);
+                e.currentTarget.src = defaultPlaceholder;
+              }}
+            />
+            
+            {/* Keep Avatar as fallback */}
+            <Avatar className="w-full h-full rounded-2xl opacity-0">
+              <AvatarImage 
+                src={imageUrl} 
                 alt={name}
-                className="w-full h-full object-cover absolute inset-0"
+                className="object-cover w-full h-full"
                 onError={(e) => {
-                  console.error("Error loading direct image:", imageUrl);
+                  console.error("Error loading avatar image:", imageUrl);
                   e.currentTarget.src = defaultPlaceholder;
                 }}
               />
-              
-              {/* Keep Avatar as fallback */}
-              <Avatar className="w-full h-full rounded-2xl opacity-0">
-                <AvatarImage 
-                  src={imageUrl} 
-                  alt={name}
-                  className="object-cover w-full h-full"
-                  onError={(e) => {
-                    console.error("Error loading avatar image:", imageUrl);
-                    e.currentTarget.src = defaultPlaceholder;
-                  }}
-                />
-                <AvatarFallback className="text-7xl opacity-100">{name.charAt(0)}</AvatarFallback>
-              </Avatar>
-            </div>
+              <AvatarFallback className="text-7xl opacity-100">{name.charAt(0)}</AvatarFallback>
+            </Avatar>
+          </div>
+          
+          <div className="flex flex-col justify-start h-[40vh]">
+            <h3 
+              className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap"
+              style={{ color: textColor, transition }}
+            >{name}</h3>
+            <p 
+              className="text-text-medium mt-2 whitespace-nowrap"
+              style={{ color: textColor, transition }}
+            >{role}</p>
             
-            <div className="flex flex-col justify-end h-[40vh]">
-              <h3 
-                className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap"
-                style={{ color: textColor, transition }}
-              >{name}</h3>
-              <p 
-                className="text-text-medium mt-2 whitespace-nowrap"
-                style={{ color: textColor, transition }}
-              >{role}</p>
-              
-              {linkedin && (
-                <a 
-                  href={linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-block hover:opacity-80 transition-opacity"
-                  aria-label={`${name}'s LinkedIn profile`}
+            {linkedin && (
+              <a 
+                href={linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-3 inline-block hover:opacity-80 transition-opacity"
+                aria-label={`${name}'s LinkedIn profile`}
+              >
+                <div 
+                  className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px] overflow-hidden"
+                  style={{ color: textColor, transition }}
                 >
-                  <div 
-                    className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px] overflow-hidden"
-                    style={{ color: textColor, transition }}
-                  >
-                    <LinkedInIcon />
-                  </div>
-                </a>
-              )}
-            </div>
+                  <LinkedInIcon />
+                </div>
+              </a>
+            )}
           </div>
         </div>
       </div>

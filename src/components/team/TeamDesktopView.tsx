@@ -32,7 +32,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             linkedin={displayMembers[0].linkedin} 
           />
         </div>
-        <div className="h-full inline-flex self-start" style={{ marginTop: '25vh' }}>
+        <div className="h-full inline-flex self-start" style={{ marginTop: '0' }}>
           <ProfileStephen 
             name={displayMembers[1].name} 
             role={displayMembers[1].title} 

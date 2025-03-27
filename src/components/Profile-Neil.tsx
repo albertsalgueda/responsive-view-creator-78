@@ -51,7 +51,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("flex flex-col items-start", className)}
+        className={cn("flex items-start gap-6", className)}
       >
         <div 
           className="w-[30vh] h-[30vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
@@ -82,7 +82,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
           </Avatar>
         </div>
         
-        <div className="mt-6">
+        <div className="flex flex-col justify-end h-[30vh]">
           <h3 
             className="text-text-large-desktop font-barlow font-black italic"
             style={{ color: textColor, transition }}

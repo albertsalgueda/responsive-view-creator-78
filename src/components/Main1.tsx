@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main1Props {
   title?: string;
   text?: string;
@@ -10,24 +8,16 @@ interface Main1Props {
   ctaAction?: () => void;
   footnote?: React.ReactNode;
 }
-
 const Main1 = ({
   title = "We are 10kR.",
   text = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked"),
-  footnote = (
-    <>
-      This website was made with Ai (robots) and refined by humans (us). <a 
-        href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="font-barlow font-bold hover:opacity-80 transition-opacity"
-      >
+  footnote = <>
+      This website was made with Ai (robots) and refined by humans (us). <a href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" target="_blank" rel="noopener noreferrer" className="font-barlow font-bold hover:opacity-80 transition-opacity">
         See How.
       </a>
     </>
-  )
 }: Main1Props) => {
   const isMobile = useIsMobile();
   const {
@@ -35,7 +25,6 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
-
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -55,7 +44,6 @@ const Main1 = ({
       }
     }
   };
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
@@ -80,10 +68,10 @@ const Main1 = ({
             
             <div className="col-span-3 flex justify-end mb-6 fade-in-delay-2">
               <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow" style={{
-              backgroundColor: textColor,
-              color: backgroundColor,
-              transition: transition
-            }}>
+            backgroundColor: textColor,
+            color: backgroundColor,
+            transition: transition
+          }}>
                 {ctaText}
               </button>
             </div>
@@ -98,7 +86,7 @@ const Main1 = ({
                 {footnote}
               </p>
             </div>
-          </div> : <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
+          </div> : <div className="grid grid-cols-12 h-full pt-0 pt-[25vh] pb-[40px] px-[40px]">
             {/* Empty columns 1-6 for top part */}
             <div className="col-span-6"></div>
             
@@ -149,5 +137,4 @@ const Main1 = ({
       </div>
     </section>;
 };
-
 export default Main1;

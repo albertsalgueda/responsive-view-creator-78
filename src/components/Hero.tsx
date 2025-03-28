@@ -11,7 +11,7 @@ interface HeroProps {
 
 const Hero = ({
   title = "We are 10kR.",
-  subtitle = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
+  subtitle = "We are an AI-forward design studio—where people and robots collaborate together to build intelligent experiences that benefit us all.",
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked")
 }: HeroProps) => {

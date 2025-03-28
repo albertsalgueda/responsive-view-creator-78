@@ -20,7 +20,8 @@ const Ticker = ({ text }: TickerProps) => {
       if (tickerElement.scrollLeft >= tickerElement.scrollWidth / 2) {
         tickerElement.scrollLeft = 0;
       } else {
-        tickerElement.scrollLeft += 1;
+        // Reduced scroll increment from 1 to 0.5 for slower movement
+        tickerElement.scrollLeft += 0.5;
       }
       
       requestAnimationFrame(animateTicker);

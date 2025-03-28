@@ -1,3 +1,4 @@
+
 import { TeamMember } from './TeamMemberInterface';
 import ProfileNeil from '../Profile-Neil';
 import ProfileStephen from '../Profile-Stephen';
@@ -18,7 +19,7 @@ const TeamMobileView = ({
       <div className="col-span-6 grid grid-cols-6 gap-8 px-6 my-0 pb-[48px]">
         {/* Stephanie - spans all 6 columns */}
         <div className="col-span-6">
-          <ProfileStephanie name={displayMembers[2].name} role={displayMembers[2].title} image={displayMembers[2].image} linkedin={displayMembers[2].linkedin} isMobile={true} className="w-full pb-24" />
+          <ProfileStephanie name={displayMembers[2].name} role={displayMembers[2].title} image={displayMembers[2].image} linkedin={displayMembers[2].linkedin} isMobile={true} className="w-full" />
         </div>
         
         {/* Neil - spans columns 1-4 */}

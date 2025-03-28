@@ -42,18 +42,17 @@ const Ticker = ({ text }: TickerProps) => {
     >
       <div 
         ref={tickerRef}
-        className="whitespace-nowrap overflow-hidden pt-1"
+        className="whitespace-nowrap overflow-hidden"
         style={{
           color: textColor,
           transition
         }}
       >
-        <span className="text-text-small font-barlow inline-block pr-8">{text}</span>
-        <span className="text-text-small font-barlow inline-block pr-8">{text}</span>
+        <span className="text-text-small font-barlow inline-block pt-0">{text}</span>
+        <span className="text-text-small font-barlow inline-block pt-0">{text}</span>
       </div>
     </div>
   );
 };
 
 export default Ticker;
-

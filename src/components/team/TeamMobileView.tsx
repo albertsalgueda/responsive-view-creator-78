@@ -14,51 +14,65 @@ interface TeamMobileViewProps {
 
 const TeamMobileView = ({ displayMembers, textColor, transition }: TeamMobileViewProps) => {
   return (
-    <div className="grid grid-cols-1 gap-8 min-h-screen py-12 px-6">
-      <div className="flex flex-col items-start gap-10 mt-24">
-        <div className="w-full">
+    <div className="grid grid-cols-6 gap-8 min-h-screen py-12 px-6">
+      <div className="flex flex-col items-start gap-10 mt-24 col-span-6">
+        {/* Stephanie - spans all 6 columns */}
+        <div className="col-span-6 w-full">
           <ProfileStephanie 
             name={displayMembers[2].name} 
             role={displayMembers[2].title} 
             image={displayMembers[2].image}
             linkedin={displayMembers[2].linkedin}
             isMobile={true}
+            className="col-span-6"
           />
         </div>
-        <div className="w-full">
+        
+        {/* Neil - spans columns 1-4 */}
+        <div className="col-span-4 w-full">
           <ProfileNeil 
             name={displayMembers[0].name} 
             role={displayMembers[0].title} 
             image={displayMembers[0].image}
             linkedin={displayMembers[0].linkedin}
             isMobile={true}
+            className="col-span-4"
           />
         </div>
-        <div className="w-full">
+        
+        {/* Craig - spans columns 3-6 (needs special handling) */}
+        <div className="col-start-3 col-span-4 w-full justify-self-end">
           <ProfileCraig 
             name={displayMembers[3].name} 
             role={displayMembers[3].title} 
             image={displayMembers[3].image}
             linkedin={displayMembers[3].linkedin}
             isMobile={true}
+            className="col-span-4"
           />
         </div>
-        <div className="w-full">
+        
+        {/* Stephen - spans all 6 columns */}
+        <div className="col-span-6 w-full">
           <ProfileStephen 
             name={displayMembers[1].name} 
             role={displayMembers[1].title} 
             image={displayMembers[1].image}
             linkedin={displayMembers[1].linkedin}
             isMobile={true}
+            className="col-span-6"
           />
         </div>
-        <div className="w-full">
+        
+        {/* Ashish - spans columns 1-4 */}
+        <div className="col-span-4 w-full">
           <ProfileAshish 
             name={displayMembers[4].name} 
             role={displayMembers[4].title} 
             image={displayMembers[4].image}
             linkedin={displayMembers[4].linkedin}
             isMobile={true}
+            className="col-span-4"
           />
         </div>
       </div>

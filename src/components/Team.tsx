@@ -33,7 +33,7 @@ const Team = ({
     {
       name: "Stephanie Wiseman",
       title: "CEOmg",
-      image: "/lovable-uploads/d7e9959b-d13d-44e9-a03b-33ad6b66704a.png",
+      image: "/lovable-uploads/defd301a-11c7-4cab-9978-b3ebb7b67329.png",
       linkedin: "https://linkedin.com"
     },
     {

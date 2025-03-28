@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useVideoControl } from "@/hooks/useVideoControl";
 import VideoMaskGrid from "./VideoMaskGrid";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Ticker from "./Ticker";
 
 interface VideoSectionProps {
   isMuted: boolean;
@@ -43,13 +44,16 @@ const VideoSection = ({ isMuted }: VideoSectionProps) => {
   
   return (
     <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
-      <VideoMaskGrid
-        videoUrl={currentVideoUrl}
-        isMuted={isMuted}
-        onVideoClick={handleVideoClick}
-        onVideoEnded={handleVideoEnded}
-        mainVideoRef={mainVideoRef}
-      />
+      <div className="w-full h-full pb-[32px]">
+        <VideoMaskGrid
+          videoUrl={currentVideoUrl}
+          isMuted={isMuted}
+          onVideoClick={handleVideoClick}
+          onVideoEnded={handleVideoEnded}
+          mainVideoRef={mainVideoRef}
+        />
+      </div>
+      <Ticker />
     </div>
   );
 };

@@ -16,8 +16,8 @@ const TeamMemberCard = ({
 }: TeamMemberCardProps) => {
   return (
     <div className="flex flex-col">
-      <div className="rounded-lg overflow-hidden mb-2">
-        <Avatar className="w-32 h-32 rounded-lg">
+      <div className="rounded-sm overflow-hidden mb-2">
+        <Avatar className="w-32 h-32 rounded-sm">
           <AvatarImage 
             src={member.image} 
             alt={member.name} 

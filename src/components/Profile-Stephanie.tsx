@@ -53,7 +53,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
     return (
       <div ref={ref} className={cn("flex flex-col w-full items-start justify-start", className)}>
         <div className="flex flex-col items-start w-full pt-0 mt-0">
-          <div className="w-full aspect-square rounded-lg overflow-hidden flex-shrink-0 relative mb-4">
+          <div className="w-full aspect-square rounded-sm overflow-hidden flex-shrink-0 relative mb-4">
             <img 
               src={imageUrl} 
               alt={name} 
@@ -65,7 +65,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
             />
             
             {/* Keep Avatar as fallback */}
-            <Avatar className="w-full h-full rounded-lg opacity-0">
+            <Avatar className="w-full h-full rounded-sm opacity-0">
               <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
                 console.error("Error loading avatar image:", imageUrl);
                 e.currentTarget.src = defaultPlaceholder;
@@ -85,7 +85,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
             }}>{role}</p>
             
             {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
-                <div className="w-10 h-10 flex items-center justify-center border border-current rounded-lg overflow-hidden" style={{
+                <div className="w-10 h-10 flex items-center justify-center border border-current rounded-sm overflow-hidden" style={{
                   color: textColor,
                   transition
                 }}>
@@ -101,14 +101,14 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
   return <div ref={ref} className={cn("h-full flex items-end", className)}>
         <div className="h-fit w-fit inline-flex">
           <div className="flex items-start gap-6 h-fit">
-            <div className="w-[40vh] h-[40vh] rounded-lg overflow-hidden flex-shrink-0 relative">
+            <div className="w-[40vh] h-[40vh] rounded-sm overflow-hidden flex-shrink-0 relative">
               <img src={imageUrl} alt={name} className="w-full h-full object-cover absolute inset-0" onError={e => {
             console.error("Error loading direct image:", imageUrl);
             e.currentTarget.src = defaultPlaceholder;
           }} />
               
               {/* Keep Avatar as fallback */}
-              <Avatar className="w-full h-full rounded-lg opacity-0">
+              <Avatar className="w-full h-full rounded-sm opacity-0">
                 <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
               console.error("Error loading avatar image:", imageUrl);
               e.currentTarget.src = defaultPlaceholder;
@@ -128,7 +128,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
           }}>{role}</p>
               
               {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
-                  <div className="w-10 h-10 flex items-center justify-center border border-current rounded-lg overflow-hidden" style={{
+                  <div className="w-10 h-10 flex items-center justify-center border border-current rounded-sm overflow-hidden" style={{
               color: textColor,
               transition
             }}>

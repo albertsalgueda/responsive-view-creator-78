@@ -1,4 +1,3 @@
-
 import { TeamMember } from './TeamMemberInterface';
 import ProfileNeil from '../Profile-Neil';
 import ProfileStephen from '../Profile-Stephen';
@@ -15,7 +14,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
     <div className="relative h-full px-10 pt-[25vh]" style={{ width: 'fit-content' }}>
       <div 
         className="flex items-end gap-5 fade-in-delay-1 h-full" 
-        style={{ position: 'relative', bottom: '40px', left: '10px', width: 'fit-content' }}
+        style={{ position: 'relative', width: 'fit-content' }}
       >
         <div className="h-full inline-flex self-end">
           <ProfileStephanie 

@@ -8,9 +8,8 @@ const Ticker = () => {
   // Create a single text content to repeat
   const tickerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   
-  // Use 20 repetitions - should be more than enough to create a seamless appearance
-  // 1000 might be too many and affect performance
-  const repetitions = 20;
+  // Increase repetitions even more to ensure no visible end
+  const repetitions = 40;
   
   return (
     <div 
@@ -20,13 +19,20 @@ const Ticker = () => {
         overflowY: 'hidden'
       }}
     >
-      {/* Create a wrapper that allows seamless loop */}
-      <div className="ticker-track whitespace-nowrap overflow-y-hidden">
-        {/* Use a reasonable number of repetitions to ensure no visible end */}
+      {/* Create a wrapper that allows seamless loop - make sure it's not constrained */}
+      <div 
+        className="ticker-track whitespace-nowrap overflow-y-hidden"
+        style={{ 
+          width: 'fit-content', 
+          minWidth: '200%', // Ensure it's wider than viewport
+          display: 'flex' 
+        }}
+      >
+        {/* Use even more repetitions and make sure they're inline without gaps */}
         {Array(repetitions).fill(0).map((_, index) => (
           <span 
             key={index}
-            className="inline-block text-small"
+            className="inline-block text-small whitespace-nowrap"
             style={{ 
               color: textColor,
               transition

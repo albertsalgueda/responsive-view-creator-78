@@ -37,7 +37,7 @@ const MuteButton = ({
         }}
       >
         {isMuted ? (
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="40" height="40" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_1790_3476)">
               <path d="M16.2105 5V26H14L4.76061 19.0012H1V12H4.76025L14 5H16.2105Z" fill="currentColor"/>
               <path d="M20.5 12L28.5 20M28.5 12L20.5 20" stroke="currentColor" strokeWidth="2"/>
@@ -49,7 +49,7 @@ const MuteButton = ({
             </defs>
           </svg>
         ) : (
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="40" height="40" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_1790_3469)">
               <path d="M16.2105 5V26H14L4.76061 19.0012H1V12H4.76025L14 5H16.2105Z" fill="currentColor"/>
               <path d="M20 14L20 18" stroke="currentColor" strokeWidth="2"/>

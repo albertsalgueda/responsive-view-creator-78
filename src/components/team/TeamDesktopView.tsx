@@ -17,7 +17,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
         className="flex items-start gap-5 fade-in-delay-1 h-full" 
         style={{ width: 'fit-content' }}
       >
-        <div className="h-full inline-flex self-end pb-[40px]">
+        <div className="h-full inline-flex self-end">
           <ProfileStephanie 
             name={displayMembers[2].name} 
             role={displayMembers[2].title} 
@@ -33,7 +33,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             linkedin={displayMembers[0].linkedin} 
           />
         </div>
-        <div className="h-full inline-flex self-end pb-[40px]">
+        <div className="h-full inline-flex self-end">
           <ProfileCraig 
             name={displayMembers[3].name} 
             role={displayMembers[3].title} 
@@ -49,7 +49,7 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             linkedin={displayMembers[1].linkedin} 
           />
         </div>
-        <div className="h-full inline-flex self-end pb-[40px]">
+        <div className="h-full inline-flex self-end">
           <ProfileAshish 
             name={displayMembers[4].name} 
             role={displayMembers[4].title} 

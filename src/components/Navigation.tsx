@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -250,6 +249,22 @@ const Navigation = ({
       
       {isMobile ? <MobileMenu /> : 
         <div className="flex items-center gap-8">
+          <div className="flex items-center gap-10">
+            {links.filter(link => link.text !== "let's talk").map((link, index) => (
+              <a 
+                key={index} 
+                href={link.href} 
+                className="text-base font-medium font-barlow hover:opacity-80 transition-all uppercase"
+                style={{
+                  color: textColor,
+                  transition: transition
+                }}
+              >
+                {link.text}
+              </a>
+            ))}
+          </div>
+          
           {letsTalkLink && (
             <a href={letsTalkLink.href} 
                onClick={scrollToEnd}>

@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -58,7 +57,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
             <img 
               src={imageUrl} 
               alt={name} 
-              className="w-full h-full object-cover absolute inset-0" 
+              className="w-[105%] h-[105%] object-cover absolute inset-0 -translate-x-1 -translate-y-1" 
               onError={e => {
                 console.error("Error loading direct image:", imageUrl);
                 e.currentTarget.src = defaultPlaceholder;
@@ -67,7 +66,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
             
             {/* Keep Avatar as fallback */}
             <Avatar className="w-full h-full rounded-lg opacity-0">
-              <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
+              <AvatarImage src={imageUrl} alt={name} className="scale-110 object-cover w-full h-full" onError={e => {
                 console.error("Error loading avatar image:", imageUrl);
                 e.currentTarget.src = defaultPlaceholder;
               }} />
@@ -102,14 +101,14 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
   return <div ref={ref} className={cn("h-full inline-flex", className)}>
         <div className="flex items-start gap-6 h-full">
           <div className="w-[40vh] h-[40vh] rounded-lg overflow-hidden flex-shrink-0 relative">
-            <img src={imageUrl} alt={name} className="w-full h-full object-cover absolute inset-0" onError={e => {
+            <img src={imageUrl} alt={name} className="w-[105%] h-[105%] object-cover absolute inset-0 -translate-x-1 -translate-y-1" onError={e => {
           console.error("Error loading direct image:", imageUrl);
           e.currentTarget.src = defaultPlaceholder;
         }} />
             
             {/* Keep Avatar as fallback */}
             <Avatar className="w-full h-full rounded-lg opacity-0">
-              <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
+              <AvatarImage src={imageUrl} alt={name} className="scale-110 object-cover w-full h-full" onError={e => {
             console.error("Error loading avatar image:", imageUrl);
             e.currentTarget.src = defaultPlaceholder;
           }} />

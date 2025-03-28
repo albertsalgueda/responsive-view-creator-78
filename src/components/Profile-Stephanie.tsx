@@ -97,7 +97,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
     );
   }
   
-  return <div ref={ref} className={cn("h-full flex items-end min-w-[580px]", className)}>
+  return <div ref={ref} className={cn("h-full flex items-end min-w-[480px]", className)}>
         <div className="h-fit w-fit inline-flex">
           <div className="flex items-start gap-6 h-fit">
             <div className="w-[40vh] h-[40vh] rounded-sm overflow-hidden flex-shrink-0 relative">

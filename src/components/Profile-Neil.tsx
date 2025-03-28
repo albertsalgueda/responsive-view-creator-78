@@ -1,3 +1,4 @@
+
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -99,7 +100,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("h-full inline-flex min-w-[580px]", className)}
+        className={cn("h-full inline-flex min-w-[480px]", className)}
       >
         <div className="flex items-start gap-6 h-full">
           <div 

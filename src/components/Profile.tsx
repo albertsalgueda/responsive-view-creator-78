@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ProfileProps {
   name: string;
@@ -30,9 +31,10 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
+const Profile = forwardRef<HTMLDivElement, ProfileProps>(
   ({ name, role, image, background, linkedin, className }, ref) => {
     const { textColor, transition } = useSectionColors();
+    const isMobile = useIsMobile();
     
     // Use a placeholder image if none provided
     const defaultPlaceholder = "https://via.placeholder.com/500x500";
@@ -45,16 +47,19 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
       imageUrl = imageUrl.replace('.jpg', '.png');
     }
     
-    console.log("Profile-Craig component rendering with image URL:", imageUrl);
+    console.log("Profile component rendering with image URL:", imageUrl);
+    
+    // Determine image size based on viewport
+    const imageSize = isMobile ? "w-20 h-20" : "w-[35vh] h-[35vh]";
     
     return (
       <div 
         ref={ref}
-        className={cn("h-full inline-flex flex-col justify-end", className)}
+        className={cn("h-full flex", className)}
       >
-        <div className="flex items-start gap-6">
+        <div className="flex items-start gap-6 h-fit">
           <div 
-            className="w-[30vh] h-[30vh] rounded-lg overflow-hidden flex-shrink-0 relative"
+            className={`${imageSize} rounded-lg overflow-hidden flex-shrink-0 relative`}
           >
             <img 
               src={imageUrl}
@@ -81,13 +86,13 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
             </Avatar>
           </div>
           
-          <div className="flex flex-col justify-end h-[30vh]">
+          <div className="flex flex-col justify-end h-full">
             <h3 
-              className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap"
+              className={`${isMobile ? 'text-lg' : 'text-text-large-desktop'} font-barlow font-black italic whitespace-nowrap`}
               style={{ color: textColor, transition }}
             >{name}</h3>
             <p 
-              className="text-text-medium mt-2 whitespace-nowrap"
+              className={`${isMobile ? 'text-sm' : 'text-text-medium'} mt-2 whitespace-nowrap`}
               style={{ color: textColor, transition }}
             >{role}</p>
             
@@ -114,6 +119,6 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
   }
 );
 
-ProfileCraig.displayName = "ProfileCraig";
+Profile.displayName = "Profile";
 
-export default ProfileCraig;
+export default Profile;

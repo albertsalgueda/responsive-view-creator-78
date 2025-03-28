@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -14,6 +15,7 @@ import Image3 from "@/components/Image3";
 import Image4 from "@/components/Image4";
 import VideoSection from "@/components/VideoSection";
 import ParallaxOverlay from "@/components/ParallaxOverlay";
+import Ticker from "@/components/Ticker";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect, useRef } from "react";
 import { ViewProvider } from "@/context/ViewContext";
@@ -53,8 +55,11 @@ const Index = () => {
     <ViewProvider>
       <Navigation />
       <ParallaxOverlay />
-      <SectionObserverWithBackground isMuted={isMuted} toggleMute={toggleMute} />
+      <div className="pb-8"> {/* Add padding to account for the ticker */}
+        <SectionObserverWithBackground isMuted={isMuted} toggleMute={toggleMute} />
+      </div>
       <MuteButton isMuted={isMuted} onToggle={toggleMute} />
+      <Ticker />
     </ViewProvider>
   );
 };

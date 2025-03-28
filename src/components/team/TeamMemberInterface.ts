@@ -10,3 +10,11 @@ export interface TeamMember {
 export interface TeamProps {
   members?: TeamMember[];
 }
+
+export interface ProfileProps {
+  name: string;
+  role: string;
+  image: string;
+  linkedin?: string;
+  isMobile?: boolean;
+}

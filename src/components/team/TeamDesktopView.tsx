@@ -22,7 +22,8 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             name={displayMembers[2].name} 
             role={displayMembers[2].title} 
             image={displayMembers[2].image}
-            linkedin={displayMembers[2].linkedin} 
+            linkedin={displayMembers[2].linkedin}
+            isMobile={false}
           />
         </div>
         <div className="h-full inline-flex self-start">
@@ -30,7 +31,8 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             name={displayMembers[0].name} 
             role={displayMembers[0].title} 
             image={displayMembers[0].image}
-            linkedin={displayMembers[0].linkedin} 
+            linkedin={displayMembers[0].linkedin}
+            isMobile={false}
           />
         </div>
         <div className="h-full inline-flex self-end">
@@ -38,7 +40,8 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             name={displayMembers[3].name} 
             role={displayMembers[3].title} 
             image={displayMembers[3].image}
-            linkedin={displayMembers[3].linkedin} 
+            linkedin={displayMembers[3].linkedin}
+            isMobile={false}
           />
         </div>
         <div className="h-full inline-flex self-start">
@@ -46,7 +49,8 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             name={displayMembers[1].name} 
             role={displayMembers[1].title} 
             image={displayMembers[1].image}
-            linkedin={displayMembers[1].linkedin} 
+            linkedin={displayMembers[1].linkedin}
+            isMobile={false}
           />
         </div>
         <div className="h-full inline-flex self-end">
@@ -54,7 +58,8 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
             name={displayMembers[4].name} 
             role={displayMembers[4].title} 
             image={displayMembers[4].image}
-            linkedin={displayMembers[4].linkedin} 
+            linkedin={displayMembers[4].linkedin}
+            isMobile={false}
           />
         </div>
       </div>

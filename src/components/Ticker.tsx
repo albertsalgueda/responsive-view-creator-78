@@ -35,19 +35,20 @@ const Ticker = () => {
   return (
     <div 
       ref={tickerRef}
-      className="fixed bottom-0 left-0 w-full h-8 overflow-hidden z-50 flex items-center"
+      className="fixed bottom-0 left-0 w-full h-8 flex items-center z-50"
       style={{ 
         transition,
-        overflowY: 'hidden'
+        overflow: 'visible' // Changed from overflow-hidden to visible
       }}
     >
       {/* Create a wrapper that allows seamless loop - make sure it's not constrained */}
       <div 
-        className="ticker-track whitespace-nowrap overflow-y-hidden"
+        className="ticker-track whitespace-nowrap"
         style={{ 
           width: 'fit-content', 
           minWidth: '200%', // Ensure it's wider than viewport
-          display: 'flex' 
+          display: 'flex',
+          overflow: 'visible' // Added overflow visible here too
         }}
       >
         {/* Use even more repetitions and make sure they're inline without gaps */}
@@ -57,7 +58,8 @@ const Ticker = () => {
             className="inline-block text-small whitespace-nowrap"
             style={{ 
               color: textColor,
-              transition
+              transition,
+              overflow: 'visible' // Added overflow visible to span
             }}
           >
             {tickerText}&nbsp;&nbsp;&nbsp;

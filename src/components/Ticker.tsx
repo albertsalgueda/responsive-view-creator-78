@@ -34,9 +34,8 @@ const Ticker = ({ text }: TickerProps) => {
   }, []);
   
   return (
-    <div className="w-full h-[32px] overflow-hidden flex items-center border-t" 
+    <div className="w-full h-[32px] overflow-hidden flex items-center" 
       style={{ 
-        borderColor: `${textColor}20`,
         transition
       }}
     >

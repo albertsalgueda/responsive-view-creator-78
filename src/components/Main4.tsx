@@ -10,9 +10,9 @@ interface Main4Props {
 }
 
 const Main4 = ({
-  title = "Machines follow patterns, humans create exceptions.",
+  title = "Taste & talent.",
   text1 = "We're an (intentionally) small team of award-winning designers, storytellers & technologists.",
-  text2 = "It's our people's unique perspectives, lived experiences and creativity that shape our work and give it its soul.",
+  text2 = "Machines follow patterns, humans create exceptions. It's our people's unique perspectives, lived experiences and creativity that shape our work and give it soul.",
 }: Main4Props) => {
   const isMobile = useIsMobile();
   const {

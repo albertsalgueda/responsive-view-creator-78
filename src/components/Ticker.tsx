@@ -7,7 +7,7 @@ const Ticker = () => {
   
   return (
     <div 
-      className="fixed bottom-0 left-0 w-full h-8 overflow-hidden z-50"
+      className="fixed bottom-0 left-0 w-full h-8 overflow-hidden z-50 flex items-center"
       style={{ 
         transition
       }}

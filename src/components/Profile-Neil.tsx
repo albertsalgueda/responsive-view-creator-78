@@ -48,7 +48,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
               <img 
                 src={imageUrl} 
                 alt={name} 
-                className="w-[105%] h-[105%] object-cover absolute inset-0 -translate-x-1 -translate-y-1" 
+                className="w-full h-full object-cover absolute inset-0" 
                 onError={e => {
                   console.error("Error loading direct image:", imageUrl);
                   e.currentTarget.src = defaultPlaceholder;
@@ -57,7 +57,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
               
               {/* Keep Avatar as fallback */}
               <Avatar className="w-full h-full rounded-lg opacity-0">
-                <AvatarImage src={imageUrl} alt={name} className="scale-110 object-cover w-full h-full" onError={e => {
+                <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
                   console.error("Error loading avatar image:", imageUrl);
                   e.currentTarget.src = defaultPlaceholder;
                 }} />
@@ -101,7 +101,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
             <img 
               src={imageUrl}
               alt={name}
-              className="w-[105%] h-[105%] object-cover absolute inset-0 -translate-x-1 -translate-y-1"
+              className="w-full h-full object-cover absolute inset-0"
               onError={(e) => {
                 console.error("Error loading direct image:", imageUrl);
                 e.currentTarget.src = defaultPlaceholder;
@@ -113,7 +113,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
               <AvatarImage 
                 src={imageUrl} 
                 alt={name}
-                className="scale-110 object-cover w-full h-full"
+                className="object-cover w-full h-full"
                 onError={(e) => {
                   console.error("Error loading avatar image:", imageUrl);
                   e.currentTarget.src = defaultPlaceholder;

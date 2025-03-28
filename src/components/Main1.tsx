@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -49,10 +48,10 @@ const Main1 = ({
     }
   };
 
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
+  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-auto' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
-            <div className="col-span-3 mt-16">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-16 px-6">
+            <div className="col-span-3 mt-8">
               <h1 style={{
             lineHeight: 1.1,
             fontWeight: 800,
@@ -81,7 +80,7 @@ const Main1 = ({
               </button>
             </div>
             
-            <div className="col-start-2 col-span-2 mb-16">
+            <div className="col-start-2 col-span-2 mb-8">
               <p style={{
             lineHeight: 1.1,
             color: textColor,
@@ -92,10 +91,8 @@ const Main1 = ({
               </p>
             </div>
           </div> : <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
-            {/* Empty columns 1-6 for top part */}
             <div className="col-span-6 self-start"></div>
             
-            {/* Right side content in columns 7-12 */}
             <div className="col-span-6 self-start pt-[25vh]">
               <p style={{
             lineHeight: 1.1,
@@ -106,7 +103,6 @@ const Main1 = ({
               </p>
             </div>
             
-            {/* Title and button in columns 1-6, title anchored to bottom */}
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6 fade-in">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow" style={{
@@ -128,7 +124,6 @@ const Main1 = ({
               </h1>
             </div>
             
-            {/* Footnote in columns 10-12, anchored to bottom */}
             <div className="col-span-3 col-start-10 self-end">
               <p style={{
             lineHeight: 1.1,

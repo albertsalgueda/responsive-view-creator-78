@@ -47,7 +47,7 @@ const Main1 = ({
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 px-6">
-            <div className="col-span-3 mt-16">
+            <div className="col-span-3 mt-16 my-0">
               <h1 style={{
             lineHeight: 1.1,
             fontWeight: 800,

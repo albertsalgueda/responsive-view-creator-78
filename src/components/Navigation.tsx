@@ -211,7 +211,7 @@ const Navigation = ({
           
           <div className="flex flex-col items-start">
             <div className="flex flex-col gap-5 items-start w-full pb-8">
-              {links.map((link, index) => (
+              {links.filter(link => link.text !== "let's talk").map((link, index) => (
                 <a 
                   key={index} 
                   href={link.href} 
@@ -221,11 +221,30 @@ const Navigation = ({
                     transition: transition
                   }} 
                   onClick={(e) => handleNavLinkClick(e, link.href)} 
-                  className="text-3xl font-extrabold font-barlow italic font-weight-800 hover:opacity-80 transition-all"
+                  className="text-3xl font-extrabold font-barlow uppercase hover:opacity-80 transition-all"
                 >
                   {link.text}
                 </a>
               ))}
+              
+              {links.find(link => link.text === "let's talk") && (
+                <a 
+                  href="#contact" 
+                  onClick={(e) => handleNavLinkClick(e, "#contact")} 
+                  className="mt-4"
+                >
+                  <Button 
+                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-xl uppercase"
+                    style={{
+                      backgroundColor: textColor,
+                      color: backgroundColor,
+                      transition: transition
+                    }}
+                  >
+                    LET'S TALK
+                  </Button>
+                </a>
+              )}
             </div>
           </div>
           

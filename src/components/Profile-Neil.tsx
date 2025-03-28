@@ -2,15 +2,7 @@ import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
-interface ProfileProps {
-  name: string;
-  role: string;
-  image: string;
-  background?: string;
-  linkedin?: string;
-  className?: string;
-}
+import { ProfileProps } from './team/TeamMemberInterface';
 
 const LinkedInIcon = () => (
   <svg 
@@ -31,7 +23,7 @@ const LinkedInIcon = () => (
 );
 
 const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
-  ({ name, role, image, background, linkedin, className }, ref) => {
+  ({ name, role, image, background, linkedin, isMobile, className }, ref) => {
     const { textColor, transition } = useSectionColors();
     
     // Use a placeholder image if none provided
@@ -46,6 +38,55 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
     }
     
     console.log("Profile-Neil component rendering with image URL:", imageUrl);
+    
+    if (isMobile) {
+      return (
+        <div ref={ref} className={cn("flex flex-col", className)}>
+          <div className="flex flex-col items-center">
+            <div className="w-[30vh] h-[30vh] rounded-lg overflow-hidden flex-shrink-0 relative mb-4">
+              <img 
+                src={imageUrl} 
+                alt={name} 
+                className="w-full h-full object-cover absolute inset-0" 
+                onError={e => {
+                  console.error("Error loading direct image:", imageUrl);
+                  e.currentTarget.src = defaultPlaceholder;
+                }} 
+              />
+              
+              {/* Keep Avatar as fallback */}
+              <Avatar className="w-full h-full rounded-lg opacity-0">
+                <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
+                  console.error("Error loading avatar image:", imageUrl);
+                  e.currentTarget.src = defaultPlaceholder;
+                }} />
+                <AvatarFallback className="text-7xl opacity-100">{name.charAt(0)}</AvatarFallback>
+              </Avatar>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <h3 className="text-2xl font-barlow font-black italic text-center" style={{
+                color: textColor,
+                transition
+              }}>{name}</h3>
+              <p className="text-lg mt-2 text-center" style={{
+                color: textColor,
+                transition
+              }}>{role}</p>
+              
+              {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
+                  <div className="w-10 h-10 flex items-center justify-center border border-current rounded-lg overflow-hidden" style={{
+                    color: textColor,
+                    transition
+                  }}>
+                    <LinkedInIcon />
+                  </div>
+                </a>}
+            </div>
+          </div>
+        </div>
+      );
+    }
     
     return (
       <div 

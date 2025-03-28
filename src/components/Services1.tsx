@@ -92,7 +92,10 @@ const Services1 = ({
               display: 'block',
               width: '100%'
             }}>
-                  <div className="flex flex-col" style={{ justifyContent: 'flex-end' }}>
+                  <div className="flex flex-col" style={{ 
+                    justifyContent: 'flex-end',
+                    height: '100%'  // Added height to ensure flex-end works properly
+                  }}>
                     {columnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
                   </div>
                 </div>

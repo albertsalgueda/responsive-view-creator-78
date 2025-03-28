@@ -14,8 +14,8 @@ const TeamDesktopView = ({ displayMembers }: TeamDesktopViewProps) => {
   return (
     <div className="relative h-full px-10 pt-[25vh]" style={{ width: 'fit-content' }}>
       <div 
-        className="flex items-end gap-5 fade-in-delay-1 h-full" 
-        style={{ position: 'relative', bottom: '40px', left: '10px', width: 'fit-content' }}
+        className="flex items-start gap-5 fade-in-delay-1 h-full" 
+        style={{ width: 'fit-content' }}
       >
         <div className="h-full inline-flex self-end">
           <ProfileStephanie 

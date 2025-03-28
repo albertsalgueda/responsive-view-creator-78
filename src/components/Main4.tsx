@@ -10,7 +10,7 @@ interface Main4Props {
 }
 
 const Main4 = ({
-  title = "Taste & talent.",
+  title = "Machines follow patterns, humans create exceptions.",
   text1 = "We're an (intentionally) small team of award-winning designers, storytellers & technologists.",
   text2 = "It's our people's unique perspectives, lived experiences and creativity that shape our work and give it its soul.",
 }: Main4Props) => {

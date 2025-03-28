@@ -22,31 +22,31 @@ const Team = ({
       name: "Neil Stoeckle",
       title: "Groovemeister",
       image: "/lovable-uploads/a35418fd-974d-4e03-9587-ec7ae9dbd183.png",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/neilstoeckle/"
     },
     {
       name: "Stephen Clements",
       title: "Me ol' China",
       image: "/lovable-uploads/aca8975f-d718-455e-8a6f-48190ef3c177.png",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/clementss/"
     },
     {
       name: "Stephanie Wiseman",
       title: "CEOmg",
       image: "/lovable-uploads/defd301a-11c7-4cab-9978-b3ebb7b67329.png",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/stephaniewiseman/"
     },
     {
       name: "Craig Kind",
       title: "Muh Fuh Word Genius",
       image: "/lovable-uploads/7bbf359f-8d38-472a-8de6-ece06dbdff9c.png",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/craigkind/"
     },
     {
       name: "Ashish Toshniwal",
       title: "Badical Radboy",
       image: "/lovable-uploads/3e5668e1-a8d0-450f-9b2a-0e28a8dfbbc9.png",
-      linkedin: "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/ashishtoshniwal/"
     }
   ];
 

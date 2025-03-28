@@ -53,7 +53,7 @@ const VideoMaskGrid = ({
   const gapSize = 4; // 4px gap between masks
 
   return (
-    <div className="h-full w-full" style={{ maxHeight: 'calc(100vh - 112px)' }}>
+    <div className="h-full w-full">
       {Array.from({ length: maskCount }).map((_, index) => (
         <VideoMask
           key={index}

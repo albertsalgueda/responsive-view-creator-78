@@ -55,7 +55,7 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
         <div className="h-fit w-fit inline-flex">
           <div className="flex items-start gap-6 h-fit">
             <div 
-              className="w-[40vh] h-[40vh] rounded-2xl overflow-hidden flex-shrink-0 relative"
+              className="w-[40vh] h-[40vh] rounded-lg overflow-hidden flex-shrink-0 relative"
             >
               <img 
                 src={imageUrl}
@@ -68,7 +68,7 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
               />
               
               {/* Keep Avatar as fallback */}
-              <Avatar className="w-full h-full rounded-2xl opacity-0">
+              <Avatar className="w-full h-full rounded-lg opacity-0">
                 <AvatarImage 
                   src={imageUrl} 
                   alt={name}
@@ -101,7 +101,7 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
                   aria-label={`${name}'s LinkedIn profile`}
                 >
                   <div 
-                    className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px] overflow-hidden"
+                    className="w-10 h-10 flex items-center justify-center border border-current rounded-lg overflow-hidden"
                     style={{ color: textColor, transition }}
                   >
                     <LinkedInIcon />

@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface ProfileProps {
   name: string;
   role: string;
@@ -10,6 +11,7 @@ interface ProfileProps {
   linkedin?: string;
   className?: string;
 }
+
 const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6 rounded-sm" fill="currentColor">
     <g>
       <path style={{
@@ -27,6 +29,7 @@ const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6 rounded
         z" />
     </g>
   </svg>;
+
 const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
   name,
   role,
@@ -53,14 +56,14 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
   console.log("Profile-Stephen component rendering with image URL:", imageUrl);
   return <div ref={ref} className={cn("h-full inline-flex", className)}>
         <div className="flex items-start gap-6 h-full">
-          <div className="w-[40vh] h-[40vh] rounded-2xl overflow-hidden flex-shrink-0 relative">
+          <div className="w-[40vh] h-[40vh] rounded-lg overflow-hidden flex-shrink-0 relative">
             <img src={imageUrl} alt={name} className="w-full h-full object-cover absolute inset-0" onError={e => {
           console.error("Error loading direct image:", imageUrl);
           e.currentTarget.src = defaultPlaceholder;
         }} />
             
             {/* Keep Avatar as fallback */}
-            <Avatar className="w-full h-full rounded-2xl opacity-0">
+            <Avatar className="w-full h-full rounded-lg opacity-0">
               <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
             console.error("Error loading avatar image:", imageUrl);
             e.currentTarget.src = defaultPlaceholder;
@@ -80,7 +83,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
         }}>{role}</p>
             
             {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
-                <div className="w-10 h-10 flex items-center justify-center border border-current rounded-[11px] overflow-hidden" style={{
+                <div className="w-10 h-10 flex items-center justify-center border border-current rounded-lg overflow-hidden" style={{
             color: textColor,
             transition
           }}>
@@ -91,5 +94,6 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
         </div>
       </div>;
 });
+
 ProfileStephen.displayName = "ProfileStephen";
 export default ProfileStephen;

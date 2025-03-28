@@ -42,7 +42,7 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
     if (isMobile) {
       return (
         <div ref={ref} className={cn("flex flex-col", className)}>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-start">
             <div className="w-[30vh] h-[30vh] rounded-lg overflow-hidden flex-shrink-0 relative mb-4">
               <img 
                 src={imageUrl} 
@@ -64,12 +64,12 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
               </Avatar>
             </div>
             
-            <div className="flex flex-col items-center">
-              <h3 className="text-2xl font-barlow font-black italic text-center" style={{
+            <div className="flex flex-col items-start">
+              <h3 className="text-2xl font-barlow font-black italic text-left" style={{
                 color: textColor,
                 transition
               }}>{name}</h3>
-              <p className="text-lg mt-2 text-center" style={{
+              <p className="text-lg mt-2 text-left" style={{
                 color: textColor,
                 transition
               }}>{role}</p>

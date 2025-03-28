@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -221,7 +222,7 @@ const Navigation = ({
                     transition: transition
                   }} 
                   onClick={(e) => handleNavLinkClick(e, link.href)} 
-                  className="text-3xl font-extrabold font-barlow uppercase hover:opacity-80 transition-all"
+                  className="text-base font-medium font-barlow uppercase hover:opacity-80 transition-all"
                 >
                   {link.text}
                 </a>
@@ -234,7 +235,7 @@ const Navigation = ({
                   className="mt-4"
                 >
                   <Button 
-                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-xl uppercase"
+                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base uppercase"
                     style={{
                       backgroundColor: textColor,
                       color: backgroundColor,

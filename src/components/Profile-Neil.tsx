@@ -80,11 +80,11 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
                 color: textColor,
                 transition
               }}>{name}</h3>
-              <p className="text-text-medium font-barlow mt-2 text-left" style={{
+              <p className="text-text-medium font-barlow font-medium mt-2 text-left" style={{
                 color: textColor,
                 transition
               }}>{role}</p>
-              <p className="text-text-small font-barlow mt-2 text-left max-w-[90%]" style={{
+              <p className="text-text-small font-barlow font-medium mt-2 text-left max-w-[90%]" style={{
                 color: textColor,
                 transition
               }}>{bio}</p>
@@ -143,11 +143,11 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
               style={{ color: textColor, transition }}
             >{name}</h3>
             <p 
-              className="text-text-medium font-barlow mt-2 whitespace-nowrap"
+              className="text-text-medium font-barlow font-medium mt-2 whitespace-nowrap"
               style={{ color: textColor, transition }}
             >{role}</p>
             <p 
-              className="text-text-small font-barlow mt-2 max-w-[35vh]"
+              className="text-text-small font-barlow font-medium mt-2 max-w-[35vh]"
               style={{ color: textColor, transition }}
             >{bio}</p>
             

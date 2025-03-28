@@ -44,7 +44,7 @@ const TeamMemberCard = ({
             color: textColor,
             transition
           }} 
-          className="text-sm whitespace-nowrap"
+          className="text-sm font-barlow font-medium whitespace-nowrap"
         >
           {member.title}
         </p>

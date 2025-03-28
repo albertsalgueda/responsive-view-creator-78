@@ -15,7 +15,7 @@ interface TeamMobileViewProps {
 const TeamMobileView = ({ displayMembers, textColor, transition }: TeamMobileViewProps) => {
   return (
     <div className="grid grid-cols-6 gap-8 min-h-screen py-12 px-0 w-full">
-      <div className="flex flex-col items-start gap-10 mt-24 col-span-6 px-6">
+      <div className="flex flex-col items-start gap-10 mt-24 col-span-6 w-full px-0">
         {/* Stephanie - spans all 6 columns */}
         <div className="col-span-6 w-full">
           <ProfileStephanie 

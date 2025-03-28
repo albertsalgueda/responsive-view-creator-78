@@ -11,6 +11,11 @@ const Ticker = () => {
   // Increase repetitions even more to ensure no visible end
   const repetitions = 40;
   
+  // Prevent wheel scroll when hovering over ticker
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+  };
+  
   return (
     <div 
       className="fixed bottom-0 left-0 w-full h-8 overflow-hidden z-50 flex items-center"
@@ -18,6 +23,7 @@ const Ticker = () => {
         transition,
         overflowY: 'hidden'
       }}
+      onWheel={handleWheel}
     >
       {/* Create a wrapper that allows seamless loop - make sure it's not constrained */}
       <div 

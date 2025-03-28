@@ -35,14 +35,14 @@ const Ticker = ({ text }: TickerProps) => {
   }, []);
   
   return (
-    <div className="w-full h-[32px] overflow-hidden flex items-center" 
+    <div className="w-full h-[32px] overflow-hidden flex items-start" 
       style={{ 
         transition
       }}
     >
       <div 
         ref={tickerRef}
-        className="whitespace-nowrap overflow-hidden"
+        className="whitespace-nowrap overflow-hidden pt-1"
         style={{
           color: textColor,
           transition
@@ -56,3 +56,4 @@ const Ticker = ({ text }: TickerProps) => {
 };
 
 export default Ticker;
+

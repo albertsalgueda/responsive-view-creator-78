@@ -16,11 +16,12 @@ const TeamMemberCard = ({
 }: TeamMemberCardProps) => {
   return (
     <div className="flex flex-col">
-      <div className="rounded-lg overflow-hidden mb-2">
+      <div className="rounded-lg overflow-hidden mb-2 relative">
         <Avatar className="w-32 h-32 rounded-lg">
           <AvatarImage 
             src={member.image} 
             alt={member.name} 
+            className="scale-110 object-cover"
             onError={(e) => {
               console.error("Error loading team member card image:", member.image);
               e.currentTarget.src = "https://via.placeholder.com/500x500";

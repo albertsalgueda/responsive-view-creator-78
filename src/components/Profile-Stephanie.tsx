@@ -1,10 +1,11 @@
+
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { ProfileProps } from './team/TeamMemberInterface';
 
-const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6 rounded-sm" fill="currentColor">
+const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6" style={{ borderRadius: '2px' }} fill="currentColor">
     <g>
       <path style={{
       fillRule: "evenodd",

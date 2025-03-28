@@ -8,7 +8,8 @@ import { ProfileProps } from './team/TeamMemberInterface';
 const LinkedInIcon = () => (
   <svg 
     viewBox="0 0 455 455" 
-    className="w-6 h-6 rounded-sm"
+    className="w-6 h-6"
+    style={{ borderRadius: '2px' }}
     fill="currentColor"
   >
     <g>

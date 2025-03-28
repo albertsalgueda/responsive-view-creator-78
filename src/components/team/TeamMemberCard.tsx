@@ -55,10 +55,11 @@ const TeamMemberCard = ({
             rel="noopener noreferrer"
           >
             <Linkedin 
-              className="w-4 h-4 mt-1 rounded-sm" 
+              className="w-4 h-4 mt-1" 
               style={{
                 color: textColor,
-                transition
+                transition,
+                borderRadius: '2px'
               }} 
             />
           </a>

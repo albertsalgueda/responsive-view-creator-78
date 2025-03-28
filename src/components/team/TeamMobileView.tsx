@@ -13,7 +13,10 @@ const TeamMobileView = ({ displayMembers, textColor, transition }: TeamMobileVie
     <div className="grid grid-cols-1 gap-4 min-h-screen py-12 px-6">
       <div className="grid grid-cols-1 gap-6 mt-24">
         {displayMembers.map((member, index) => (
-          <div key={index} className="fade-in-delay-2 flex items-center">
+          <div 
+            key={index} 
+            className="fade-in-delay-2 flex items-center"
+          >
             <Profile 
               name={member.name} 
               role={member.title} 

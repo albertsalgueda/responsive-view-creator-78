@@ -9,10 +9,11 @@ const Ticker = () => {
     <div 
       className="fixed bottom-0 left-0 w-full h-8 overflow-hidden z-50 flex items-center"
       style={{ 
-        transition
+        transition,
+        overflowY: 'hidden'  // Explicitly disable vertical scrolling
       }}
     >
-      <div className="ticker-track whitespace-nowrap">
+      <div className="ticker-track whitespace-nowrap overflow-y-hidden">
         <span 
           className="inline-block text-small"
           style={{ 

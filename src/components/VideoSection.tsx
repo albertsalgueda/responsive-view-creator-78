@@ -44,13 +44,16 @@ const VideoSection = ({ isMuted }: VideoSectionProps) => {
   
   return (
     <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
-      <VideoMaskGrid
-        videoUrl={currentVideoUrl}
-        isMuted={isMuted}
-        onVideoClick={handleVideoClick}
-        onVideoEnded={handleVideoEnded}
-        mainVideoRef={mainVideoRef}
-      />
+      {/* Container to hold the VideoMaskGrid and ensure proper spacing above ticker */}
+      <div className="h-[calc(100%-32px)] w-full">
+        <VideoMaskGrid
+          videoUrl={currentVideoUrl}
+          isMuted={isMuted}
+          onVideoClick={handleVideoClick}
+          onVideoEnded={handleVideoEnded}
+          mainVideoRef={mainVideoRef}
+        />
+      </div>
       <Ticker />
     </div>
   );

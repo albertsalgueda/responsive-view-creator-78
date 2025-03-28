@@ -15,7 +15,7 @@ const TeamMobileView = ({
   transition
 }: TeamMobileViewProps) => {
   return <div className="grid grid-cols-6 gap-8 px-0 w-full py-0">
-      <div className="col-span-6 grid grid-cols-6 gap-8 mt-24 px-6 pb-[24] my-0">
+      <div className="col-span-6 grid grid-cols-6 gap-8 mt-24 px-6 pb-[48px] my-0">
         {/* Stephanie - spans all 6 columns */}
         <div className="col-span-6">
           <ProfileStephanie name={displayMembers[2].name} role={displayMembers[2].title} image={displayMembers[2].image} linkedin={displayMembers[2].linkedin} isMobile={true} className="w-full" />

@@ -112,7 +112,7 @@ const SectionObserverWithBackground = ({
         <Image1 />
         <div id="main2" className="h-auto">
           <Main2 
-            title="Prompting human potential." 
+            title="Prompting humous potential." 
             text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
             text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
             ctaText=""
@@ -151,7 +151,7 @@ const SectionObserverWithBackground = ({
         <Image1 />
         <div id="main2" className="h-screen w-screen flex-shrink-0">
           <Main2 
-            title="Prompting human potential." 
+            title="Prompting humous potential." 
             text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
             text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
             ctaText=""

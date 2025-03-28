@@ -17,7 +17,7 @@ const Main1 = ({
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked"),
   footnote = <>
-      This website was made with Ai (robots) and refined by humans (us). <a href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" target="_blank" rel="noopener noreferrer" className="font-barlow font-bold hover:opacity-80 transition-opacity">
+      This website was made by Ai (robots) and refined by humans (us). <a href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" target="_blank" rel="noopener noreferrer" className="font-barlow font-bold hover:opacity-80 transition-opacity">
         See How.
       </a>
     </>

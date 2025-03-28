@@ -12,7 +12,7 @@ interface ContactProps {
 }
 
 const Contact = ({
-  text1 = "Our dream clients aren't brands— they're people. Bold, brave, curious and forever obsessed with building meaningful experiences.",
+  text1 = "Our dream clients aren't brands—they're people. Bold, brave, curious and forever obsessed with building meaningful experiences.",
   text2 = "If that sounds like you, we would love to work together.",
   callToAction = "mailto:HELLO@10KR.CO?subject=Hello,%20humans...",
   callToActionText = "HELLO@10KR.CO"

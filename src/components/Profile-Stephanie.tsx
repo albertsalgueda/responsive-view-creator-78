@@ -26,7 +26,7 @@ const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6" style=
 const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
   name,
   role,
-  bio = "As CEO, Stephanie leads with vision and purpose, driving innovation across all aspects of the business. Her leadership combines strategic insight with a hands-on approach, ensuring exceptional results for clients while fostering a culture of creativity and excellence.",
+  bio = "As CEO, Stephanie leads with vision and purpose, driving innovation across all aspects of the business.",
   image,
   background,
   linkedin,

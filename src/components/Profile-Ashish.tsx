@@ -28,7 +28,7 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
   ({ 
     name, 
     role, 
-    bio = "Ashish drives innovation through his entrepreneurial mindset and technical prowess. With a background in both technology and business strategy, he expertly navigates complex challenges to deliver solutions that are both cutting-edge and commercially viable.",
+    bio = "Expertly navigates complex challenges to deliver solutions that are both cutting-edge and commercially viable.",
     image, 
     background, 
     linkedin, 

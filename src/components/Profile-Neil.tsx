@@ -28,7 +28,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
   ({ 
     name, 
     role, 
-    bio = "Neil masterfully blends creativity with technical expertise to craft unique digital experiences. His passion for innovation and meticulous attention to detail ensure every project exceeds expectations while maintaining the highest standards of quality and performance.", 
+    bio = "Masterfully blends creativity with technical expertise to craft unique digital experiences.", 
     image, 
     background, 
     linkedin, 

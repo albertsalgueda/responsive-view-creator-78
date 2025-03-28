@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -109,7 +110,14 @@ const SectionObserverWithBackground = ({
         <div id="video" className="min-h-screen"><VideoSection isMuted={isMuted} /></div>
         <div id="main1" className="h-auto"><Main1 /></div>
         <Image1 />
-        <div id="main2" className="h-auto"><Main2 /></div>
+        <div id="main2" className="h-auto">
+          <Main2 
+            title="Prompting human potential." 
+            text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+            text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            ctaText=""
+          />
+        </div>
         <Image2 />
         <div id="main3" className="h-auto"><Main3 /></div>
         <div id="services1" className="h-auto"><Services1 /></div>
@@ -142,7 +150,12 @@ const SectionObserverWithBackground = ({
         </div>
         <Image1 />
         <div id="main2" className="h-screen w-screen flex-shrink-0">
-          <Main2 />
+          <Main2 
+            title="Prompting human potential." 
+            text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
+            text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            ctaText=""
+          />
         </div>
         <Image2 />
         <div id="main3" className="h-screen w-2/3 flex-shrink-0">

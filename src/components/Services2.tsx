@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -27,17 +28,17 @@ const Services2 = ({
   const firstColumnItems = columnItems.slice(0, halfwayIndex);
   const secondColumnItems = columnItems.slice(halfwayIndex);
 
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-auto' : 'h-screen'}`}>
+  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-16">
-            <div className="col-span-3 mt-8">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-0">
+            <div className="col-span-3 mt-16">
               <h1 style={{
             lineHeight: 1.1,
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
             transition: transition,
-            marginTop: '0'
+            marginTop: '-2vh'
           }} className="font-extrabold slide-in-left font-barlow text-h1-mobile">
                 {titleText}
               </h1>
@@ -49,7 +50,7 @@ const Services2 = ({
                 {text}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mb-8">
+            <div className="col-start-2 col-span-2 mb-6 mt-auto">
               <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse" style={{
             color: textColor,
             transition: transition,

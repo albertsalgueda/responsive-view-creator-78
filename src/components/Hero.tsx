@@ -43,18 +43,17 @@ const Hero = ({
           // Mobile layout
           <div className="flex flex-col min-h-screen justify-between py-12">
             <div className="mt-16">
-              <h1 className="text-[13vh] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1.2, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 className="text-[13vh] font-extrabold text-brand-blue slide-in-left font-barlow leading-standard" style={{ fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
-              <p className="text-brand-blue mt-6 text-[4vh] fade-in-delay-1 max-w-[90%] font-barlow font-medium" style={{ lineHeight: 1.2 }}>
+              <p className="text-brand-blue mt-6 text-[4vh] fade-in-delay-1 max-w-[90%] font-barlow font-medium leading-standard">
                 {subtitle}
               </p>
             </div>
             <div className="mb-16 fade-in-delay-2 flex justify-end">
               <button
                 onClick={ctaAction}
-                className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
-                style={{ lineHeight: 1.2 }}
+                className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard"
               >
                 {ctaText}
               </button>
@@ -70,7 +69,7 @@ const Hero = ({
                 </div>
                 <div className="col-span-1">
                   {/* Right side content */}
-                  <p className="text-brand-blue text-[4vh] slide-in-right max-w-xl font-barlow font-medium" style={{ lineHeight: 1.2 }}>
+                  <p className="text-brand-blue text-[4vh] slide-in-right max-w-xl font-barlow font-medium leading-standard">
                     {subtitle}
                   </p>
                 </div>
@@ -80,13 +79,12 @@ const Hero = ({
               <div className="fade-in mb-4">
                 <button
                   onClick={ctaAction}
-                  className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow"
-                  style={{ lineHeight: 1.2 }}
+                  className="bg-brand-blue text-white px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard"
                 >
                   {ctaText}
                 </button>
               </div>
-              <h1 className="text-[13vh] font-extrabold text-brand-blue slide-in-left font-barlow" style={{ lineHeight: 1.2, fontWeight: 800, fontStyle: 'italic' }}>
+              <h1 className="text-[13vh] font-extrabold text-brand-blue slide-in-left font-barlow leading-standard" style={{ fontWeight: 800, fontStyle: 'italic' }}>
                 {title}
               </h1>
             </div>

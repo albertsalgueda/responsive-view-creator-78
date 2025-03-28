@@ -84,6 +84,9 @@ export default {
 				'text-medium': '3.5vh',
 				'text-small': '2.5vh',
 			},
+			lineHeight: {
+				standard: '1.2', // Adding our global line height
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

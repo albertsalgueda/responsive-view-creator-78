@@ -53,41 +53,38 @@ const Main1 = ({
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-h1-mobile">
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={{
+              fontWeight: 800,
+              fontStyle: 'italic',
+              color: textColor,
+              transition: transition
+            }}>
                 {title}
               </h1>
-              <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0">
+              <p className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0 leading-standard" style={{
+              color: textColor,
+              transition: transition
+            }}>
                 {text}
               </p>
             </div>
             
             <div className="col-span-3 flex justify-end mb-6 fade-in-delay-2">
-              <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow" style={{
-            backgroundColor: textColor,
-            color: backgroundColor,
-            transition: transition
-          }}>
+              <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow leading-standard" style={{
+              backgroundColor: textColor,
+              color: backgroundColor,
+              transition: transition
+            }}>
                 {ctaText}
               </button>
             </div>
             
             <div className="col-start-2 col-span-2 mb-16">
-              <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition,
-            paddingTop: '24px'
-          }} className="fade-in-delay-1 font-barlow font-medium text-text-small">
+              <p className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
+              color: textColor,
+              transition: transition,
+              paddingTop: '24px'
+            }}>
                 {footnote}
               </p>
             </div>
@@ -97,11 +94,10 @@ const Main1 = ({
             
             {/* Right side content in columns 7-12 */}
             <div className="col-span-6 self-start pt-[25vh]">
-              <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="slide-in-left font-barlow font-medium text-text-large-desktop">
+              <p className="slide-in-left font-barlow font-medium text-text-large-desktop leading-standard" style={{
+              color: textColor,
+              transition: transition
+            }}>
                 {text}
               </p>
             </div>
@@ -109,32 +105,30 @@ const Main1 = ({
             {/* Title and button in columns 1-6, title anchored to bottom */}
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6 fade-in">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow" style={{
-              backgroundColor: textColor,
-              color: backgroundColor,
-              transition: transition
-            }}>
+                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow leading-standard" style={{
+                backgroundColor: textColor,
+                color: backgroundColor,
+                transition: transition
+              }}>
                   {ctaText}
                 </button>
               </div>
-              <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }} className="font-extrabold slide-in-left font-barlow text-h1-desktop">
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
+              fontWeight: 800,
+              fontStyle: 'italic',
+              color: textColor,
+              transition: transition
+            }}>
                 {title}
               </h1>
             </div>
             
             {/* Footnote in columns 10-12, anchored to bottom */}
             <div className="col-span-3 col-start-10 self-end">
-              <p style={{
-            lineHeight: 1.1,
-            color: textColor,
-            transition: transition
-          }} className="slide-in-left font-barlow font-medium text-text-small pb-[5px]">
+              <p className="slide-in-left font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
+              color: textColor,
+              transition: transition
+            }}>
                 {footnote}
               </p>
             </div>

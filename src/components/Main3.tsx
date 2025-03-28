@@ -22,11 +22,10 @@ const Main3 = ({
           // Mobile layout - content-based height with padding
           <div className="grid grid-cols-3 gap-4 h-auto py-16 px-6">
             <div className="col-span-3 pt-6 py-0">
-              <p style={{
-                lineHeight: 1.2,
+              <p className="fade-in-delay-1 font-barlow font-medium text-text-large-mobile leading-standard" style={{
                 color: textColor,
                 transition: transition
-              }} className="fade-in-delay-1 font-barlow font-medium text-text-large-mobile">
+              }}>
                 {text}
               </p>
             </div>
@@ -35,12 +34,11 @@ const Main3 = ({
           <div className="flex flex-col h-full justify-between pr-[25%] w-full pt-[25vh] px-[40px]">
             <div className="">
               <div className="w-full">
-                <p style={{
-                  lineHeight: 1.2,
+                <p className="slide-in-left font-barlow font-medium text-text-large-desktop leading-standard" style={{
                   color: textColor,
                   transition: transition,
                   width: '100%'
-                }} className="slide-in-left font-barlow font-medium text-text-large-desktop">
+                }}>
                   {text}
                 </p>
               </div>

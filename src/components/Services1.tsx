@@ -27,30 +27,27 @@ const Services1 = ({
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
         {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-0">
             <div className="col-span-3 mt-16">
-              <h1 style={{
-            lineHeight: 1.1,
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition,
-            marginTop: '-2vh'
-          }} className="font-extrabold slide-in-left font-barlow text-h1-mobile">
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={{
+              fontWeight: 800,
+              fontStyle: 'italic',
+              color: textColor,
+              transition: transition,
+              marginTop: '-2vh'
+            }}>
                 {titleText}
               </h1>
-              <p style={{
-            lineHeight: 1.3,
-            color: textColor,
-            transition: transition
-          }} className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-text-medium">
+              <p className="mt-3 pb-[24px] fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
+              color: textColor,
+              transition: transition
+            }}>
                 {text}
               </p>
             </div>
             <div className="col-start-2 col-span-2 mb-6 mt-auto"> 
-              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse" style={{
-            color: textColor,
-            transition: transition,
-            lineHeight: 1.1
-          }}>
+              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse leading-standard" style={{
+              color: textColor,
+              transition: transition
+            }}>
                 {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
               </div>
             </div>
@@ -58,21 +55,19 @@ const Services1 = ({
             {/* Title and Text in top section */}
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
-                <h1 style={{
-              lineHeight: 1.1,
-              fontWeight: 800,
-              fontStyle: 'italic',
-              color: textColor,
-              transition: transition,
-              marginTop: '-2vh'
-            }} className="font-extrabold slide-in-left font-barlow text-h1-desktop mb-8">
+                <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard mb-8" style={{
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition,
+                marginTop: '-2vh'
+              }}>
                   {titleText}
                 </h1>
-                <p style={{
-              lineHeight: 1.3,
-              color: textColor,
-              transition: transition
-            }} className="slide-in-left font-barlow font-medium text-text-medium">
+                <p className="slide-in-left font-barlow font-medium text-text-medium leading-standard" style={{
+                color: textColor,
+                transition: transition
+              }}>
                   {text}
                 </p>
               </div>
@@ -82,15 +77,14 @@ const Services1 = ({
             <div className="grid grid-cols-12 gap-8">
               {/* Service items */}
               <div className="col-span-12 col-start-1 flex flex-col justify-end">
-                <div className="font-barlow font-medium mb-0 slide-in-right text-text-small" style={{
-              color: textColor,
-              transition: transition,
-              columnCount: 2,
-              columnGap: '2rem',
-              lineHeight: 1.1,
-              display: 'block',
-              width: '100%'
-            }}>
+                <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
+                color: textColor,
+                transition: transition,
+                columnCount: 2,
+                columnGap: '2rem',
+                display: 'block',
+                width: '100%'
+              }}>
                   <div className="flex flex-col-reverse">
                     {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
                   </div>

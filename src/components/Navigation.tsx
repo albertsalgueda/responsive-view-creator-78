@@ -16,13 +16,13 @@ interface NavigationProps {
 const Navigation = ({
   links = [{
     text: "why we're here",
-    href: "#video"
-  }, {
-    text: "what we do",
     href: "#main2"
   }, {
-    text: "who we are",
+    text: "what we do",
     href: "#main3"
+  }, {
+    text: "who we are",
+    href: "#main4"
   }, {
     text: "let's talk",
     href: "#contact"
@@ -49,13 +49,10 @@ const Navigation = ({
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Only trigger hiding navigation after scrolling down at least 60px
       if (currentScrollY > 60) {
-        // Scrolling down
         if (currentScrollY > lastScrollY.current && isVisible) {
           setIsVisible(false);
         }
-        // Scrolling up
         if (currentScrollY < lastScrollY.current && !isVisible) {
           setIsVisible(true);
         }

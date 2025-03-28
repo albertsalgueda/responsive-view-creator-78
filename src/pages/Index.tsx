@@ -106,11 +106,11 @@ const SectionObserverWithBackground = ({
 
   if (isMobile) {
     return (
-      <main className="min-h-screen will-change-auto" style={bgStyle}>
-        <div id="video"><VideoSection isMuted={isMuted} /></div>
-        <div id="main1"><Main1 /></div>
+      <main className="will-change-auto" style={bgStyle}>
+        <div id="video" className="min-h-screen"><VideoSection isMuted={isMuted} /></div>
+        <div id="main1" className="h-auto"><Main1 /></div>
         <Image1 />
-        <div id="main2">
+        <div id="main2" className="h-auto">
           <Main2 
             title="Prompting human potential." 
             text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
@@ -119,15 +119,15 @@ const SectionObserverWithBackground = ({
           />
         </div>
         <Image2 />
-        <div id="main3"><Main3 /></div>
-        <div id="services1"><Services1 /></div>
-        <div id="services2"><Services2 /></div>
-        <div id="services3"><Services3 /></div>
+        <div id="main3" className="h-auto"><Main3 /></div>
+        <div id="services1" className="h-auto"><Services1 /></div>
+        <div id="services2" className="h-auto"><Services2 /></div>
+        <div id="services3" className="h-auto"><Services3 /></div>
         <Image3 />
-        <div id="team"><Main4 /></div>
-        <div id="team-members"><Team /></div>
+        <div id="team" className="h-auto"><Main4 /></div>
+        <div id="team-members" className="h-auto"><Team /></div>
         <Image4 />
-        <div id="contact"><Contact /></div>
+        <div id="contact" className="h-auto"><Contact /></div>
       </main>
     );
   }

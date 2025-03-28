@@ -20,9 +20,9 @@ const Main4 = ({
     transition
   } = useSectionColors();
 
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-fit h-auto' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 h-auto py-12 px-6">
             <div className="col-span-3 mt-16">
               <h1 style={{
             lineHeight: 1.1,

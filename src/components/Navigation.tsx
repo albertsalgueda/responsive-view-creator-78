@@ -6,6 +6,7 @@ import { X } from 'lucide-react';
 import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerTitle } from "@/components/ui/drawer";
 import { useView } from '@/context/ViewContext';
 import { useSectionColors } from '@/hooks/use-section-colors';
+import Ticker from './Ticker';
 
 interface NavigationProps {
   links?: Array<{
@@ -277,55 +278,64 @@ const Navigation = ({
     </Drawer>
   );
 
+  const tickerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
   return (
     <nav 
-      className={`fixed top-0 left-0 w-full h-[80px] z-50 flex items-center justify-between px-6 transition-transform duration-700 ease-in-out ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`fixed top-0 left-0 w-full z-50 flex flex-col transition-transform duration-700 ease-in-out ${!isVisible ? '-translate-y-full' : 'translate-y-0'}`}
       style={{
         backgroundColor: isMobile && isVisible ? backgroundColor : 'transparent',
         transition: `transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), ${transition}`
       }}
     >
-      <a href="/" onClick={scrollToBeginning} className="h-full flex items-center hover:opacity-90 transition-all duration-500">
-        <div className="h-[40px] w-[90px]">
-          <SmallLogo />
-        </div>
-      </a>
-      
-      {isMobile ? <MobileMenu /> : 
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-10">
-            {links.filter(link => link.text !== "let's talk").map((link, index) => (
-              <a 
-                key={index} 
-                href={link.href} 
-                onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="text-base font-medium font-barlow hover:opacity-80 transition-all uppercase"
-                style={{
-                  color: textColor,
-                  transition: transition
-                }}
-              >
-                {link.text}
-              </a>
-            ))}
+      <div className="h-[80px] flex items-center justify-between px-6">
+        <a href="/" onClick={scrollToBeginning} className="h-full flex items-center hover:opacity-90 transition-all duration-500">
+          <div className="h-[40px] w-[90px]">
+            <SmallLogo />
           </div>
-          
-          {links.find(link => link.text === "let's talk") && (
-            <a href="#contact" onClick={scrollToEnd}>
-              <Button 
-                className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base"
-                style={{
-                  backgroundColor: textColor,
-                  color: backgroundColor,
-                  transition: transition
-                }}
-              >
-                LET'S TALK
-              </Button>
-            </a>
-          )}
-        </div>
-      }
+        </a>
+        
+        {isMobile ? <MobileMenu /> : 
+          <div className="flex items-center gap-8">
+            <div className="flex items-center gap-10">
+              {links.filter(link => link.text !== "let's talk").map((link, index) => (
+                <a 
+                  key={index} 
+                  href={link.href} 
+                  onClick={(e) => handleNavLinkClick(e, link.href)}
+                  className="text-base font-medium font-barlow hover:opacity-80 transition-all uppercase"
+                  style={{
+                    color: textColor,
+                    transition: transition
+                  }}
+                >
+                  {link.text}
+                </a>
+              ))}
+            </div>
+            
+            {links.find(link => link.text === "let's talk") && (
+              <a href="#contact" onClick={scrollToEnd}>
+                <Button 
+                  className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base"
+                  style={{
+                    backgroundColor: textColor,
+                    color: backgroundColor,
+                    transition: transition
+                  }}
+                >
+                  LET'S TALK
+                </Button>
+              </a>
+            )}
+          </div>
+        }
+      </div>
+      
+      {/* Ticker component */}
+      <div className="w-full">
+        <Ticker text={tickerText} />
+      </div>
     </nav>
   );
 };

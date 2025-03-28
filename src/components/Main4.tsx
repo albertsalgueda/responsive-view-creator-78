@@ -12,7 +12,7 @@ interface Main4Props {
 const Main4 = ({
   title = "Taste & talent.",
   text1 = "We're an (intentionally) small team of award-winning designers, storytellers & technologists.",
-  text2 = "While machines analyze data, our unique perspectives, lived experiences and creativity shape art and innovation.",
+  text2 = "While the machines analyze data and follow patterns, our people's unique perspectives, lived experiences and creativity shape the art and innovation, giving our work its soul.",
 }: Main4Props) => {
   const isMobile = useIsMobile();
   const {

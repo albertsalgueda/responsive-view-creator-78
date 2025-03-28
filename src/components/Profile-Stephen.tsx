@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -104,7 +103,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
     );
   }
 
-  return <div ref={ref} className={cn("h-full inline-flex", className)}>
+  return <div ref={ref} className={cn("h-full inline-flex min-w-[580px]", className)}>
         <div className="flex items-start gap-6 h-full">
           <div className="w-[40vh] h-[40vh] rounded-sm overflow-hidden flex-shrink-0 relative">
             <img src={imageUrl} alt={name} className="w-full h-full object-cover absolute inset-0" onError={e => {

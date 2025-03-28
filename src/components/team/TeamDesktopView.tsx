@@ -1,4 +1,3 @@
-
 import { TeamMember } from './TeamMemberInterface';
 import ProfileNeil from '../Profile-Neil';
 import ProfileStephen from '../Profile-Stephen';

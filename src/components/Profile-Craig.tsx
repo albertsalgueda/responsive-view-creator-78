@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -37,13 +36,8 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
   }, ref) => {
     const { textColor, transition } = useSectionColors();
     
-    // Use a placeholder image if none provided
     const defaultPlaceholder = "https://via.placeholder.com/500x500";
-    
-    // Add proper handling for image paths
     let imageUrl = image || defaultPlaceholder;
-    
-    // Make sure file extension is correct for specific known files
     if (imageUrl.includes('f34e0bc8-b159-4351-8da9-0d3aa6828578')) {
       imageUrl = imageUrl.replace('.jpg', '.png');
     }
@@ -65,7 +59,6 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
                 }} 
               />
               
-              {/* Keep Avatar as fallback */}
               <Avatar className="w-full h-full rounded-sm opacity-0">
                 <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
                   console.error("Error loading avatar image:", imageUrl);
@@ -106,7 +99,7 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
     return (
       <div 
         ref={ref}
-        className={cn("h-full inline-flex flex-col justify-end", className)}
+        className={cn("h-full inline-flex flex-col justify-end min-w-[580px]", className)}
       >
         <div className="flex items-start gap-6">
           <div 
@@ -122,7 +115,6 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
               }}
             />
             
-            {/* Keep Avatar as fallback */}
             <Avatar className="w-full h-full rounded-sm opacity-0">
               <AvatarImage 
                 src={imageUrl} 

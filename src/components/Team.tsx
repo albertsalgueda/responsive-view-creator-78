@@ -27,7 +27,7 @@ const Team = ({
     {
       name: "Stephen Clements",
       title: "Me ol' China",
-      image: "/lovable-uploads/6b9f2b8b-ad60-4ba8-b540-59cabd9559b2.png",
+      image: "/lovable-uploads/aca8975f-d718-455e-8a6f-48190ef3c177.png",
       linkedin: "https://linkedin.com"
     },
     {

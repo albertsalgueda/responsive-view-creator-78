@@ -1,28 +1,24 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main4Props {
   title?: string;
   text1?: string;
   text2?: string;
 }
-
 const Main4 = ({
   title = "Taste & talent.",
   text1 = "We're an (intentionally) small team of award-winning designers, storytellers & technologists.",
-  text2 = "While machines analyze data, our unique perspectives, lived experiences and creativity shape art and innovation.",
+  text2 = "While machines analyze data, our unique perspectives, lived experiences and creativity shape art and innovation."
 }: Main4Props) => {
   const isMobile = useIsMobile();
   const {
     textColor,
     transition
   } = useSectionColors();
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-fit h-auto' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 h-auto py-12 px-6">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 h-auto px-6 py-[24px]">
             <div className="col-span-3 mt-16">
               <h1 style={{
             lineHeight: 1.1,
@@ -93,5 +89,4 @@ const Main4 = ({
       </div>
     </section>;
 };
-
 export default Main4;

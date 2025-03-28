@@ -25,19 +25,10 @@ const Ticker = () => {
         }}
       >
         <span className="mr-8 inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          From the folks who… Built a $100M ARR Design & Innovation Agency • Launched the 51st App in the App Store • Designed Xbox's First Interface • Launched 2 x Unicorn IPOs • Created the World's First AI Creative Director • Reimagined Audi's Automotive Digital Evosystem • Built The AI Platform That Supercharges Entrepreneurs • Produced the Viral Steph Curry Anthem • Launched Nike's Acclaimed Run London Campaign • Created The World's Coolest Basketball Court
         </span>
         <span className="mr-8 inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </span>
-        <span className="mr-8 inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </span>
-        <span className="mr-8 inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </span>
-        <span className="mr-8 inline-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          From the folks who… Built a $100M ARR Design & Innovation Agency • Launched the 51st App in the App Store • Designed Xbox's First Interface • Launched 2 x Unicorn IPOs • Created the World's First AI Creative Director • Reimagined Audi's Automotive Digital Evosystem • Built The AI Platform That Supercharges Entrepreneurs • Produced the Viral Steph Curry Anthem • Launched Nike's Acclaimed Run London Campaign • Created The World's Coolest Basketball Court
         </span>
       </div>
     </div>

@@ -1,5 +1,6 @@
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface VideoMaskProps {
   index: number;
@@ -10,26 +11,47 @@ interface VideoMaskProps {
 }
 
 const VideoMask = ({ index, maskCount, gapSize, children, onClick }: VideoMaskProps) => {
+  const isMobile = useIsMobile();
+  
   // Convert gapSize from pixels to vh units for consistent calculations
   const gapSizeVh = (gapSize / window.innerHeight) * 100;
   const totalGapHeight = (maskCount - 1) * gapSizeVh;
   
-  // Calculate max height as vh-100 minus 112px (converted to vh)
-  const maxHeightPx = window.innerHeight - 112;
-  const maxHeightVh = (maxHeightPx / window.innerHeight) * 100;
+  // Apply max height calculation only for desktop
+  let styleObj: React.CSSProperties = {};
   
-  // Adjust mask height based on maxHeightVh and maintain proportional distribution
-  const availableHeight = Math.min(100, maxHeightVh);
-  const adjustedMaskHeight = (availableHeight - totalGapHeight) / maskCount;
+  if (isMobile) {
+    // Mobile styling - no max height constraints
+    const availableHeight = 100;
+    const adjustedMaskHeight = (availableHeight - totalGapHeight) / maskCount;
+    
+    styleObj = {
+      height: `${adjustedMaskHeight}vh`,
+      bottom: `${index * (adjustedMaskHeight + gapSizeVh)}vh`,
+    };
+  } else {
+    // Desktop styling - with max height constraints
+    // Calculate max height as vh-100 minus 112px (converted to vh)
+    const maxHeightPx = window.innerHeight - 112;
+    const maxHeightVh = (maxHeightPx / window.innerHeight) * 100;
+    
+    // Adjust mask height based on maxHeightVh and maintain proportional distribution
+    const availableHeight = Math.min(100, maxHeightVh);
+    const adjustedMaskHeight = (availableHeight - totalGapHeight) / maskCount;
+    
+    styleObj = {
+      height: `${adjustedMaskHeight}vh`,
+      bottom: `${index * (adjustedMaskHeight + gapSizeVh)}vh`,
+      maxHeight: 'calc(100vh - 112px)',
+    };
+  }
   
   return (
     <div 
       className="absolute w-full overflow-hidden"
       style={{
-        height: `${adjustedMaskHeight}vh`,
-        bottom: `${index * (adjustedMaskHeight + gapSizeVh)}vh`,
+        ...styleObj,
         backgroundColor: '#FDB0C2',
-        maxHeight: 'calc(100vh - 112px)',
         WebkitMaskImage: `url("data:image/svg+xml,%3Csvg width='79' height='35' viewBox='0 0 79 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60.7529 34.8353V0H68.3669C70.1585 0 71.8007 0.447882 73.2936 1.34365C74.7866 2.20624 75.9643 3.384 76.8269 4.87694C77.7227 6.33671 78.1706 7.97894 78.1706 9.80365V15.6261C78.1706 16.4887 77.9549 17.6167 77.5236 19.0101C77.0923 20.3704 76.2795 21.5979 75.0852 22.6927V23.4392L78.1706 34.8353H70.7059L68.6158 25.2307H68.1679V34.8353H60.7529ZM68.1679 18.8111H68.566C69.1632 18.8111 69.6608 18.6452 70.0589 18.3134C70.4902 17.9485 70.7059 17.0527 70.7059 15.6261V9.65435C70.7059 8.26094 70.4902 7.38177 70.0589 7.01682C69.6608 6.65188 69.1632 6.46941 68.566 6.46941H68.1679V18.8111Z' fill='black'/%3E%3Cpath d='M40.3329 34.8353V0H47.7478V9.95294H48.2455L50.2858 0H57.7505V0.995296L52.7741 15.1285V15.8749L57.7505 33.84V34.8353H50.2858L48.2455 24.0861H47.7478V34.8353H40.3329Z' fill='black'/%3E%3Cpath d='M37.8306 8.70883C37.8306 10.3013 37.4491 11.7611 36.686 13.0881C35.8898 14.4152 34.8447 15.4768 33.5508 16.2731C32.2238 17.0361 30.7474 17.4177 29.1218 17.4177H8.70882C7.08318 17.4177 5.62341 17.0361 4.32953 16.2731C3.00247 15.4768 1.95741 14.4152 1.19435 13.0881C0.398116 11.7611 6.96091e-08 10.3013 0 8.70883C-6.96091e-08 7.11636 0.398116 5.65659 1.19435 4.32953C1.95741 3.00247 3.00247 1.95741 4.32953 1.19436C5.62341 0.39812 7.08318 8.75915e-07 8.70882 8.04855e-07L29.1218 0C30.7474 -7.10593e-08 32.2238 0.398119 33.5508 1.19435C34.8447 1.95741 35.8898 3.00247 36.686 4.32953C37.4491 5.65659 37.8306 7.11635 37.8306 8.70883ZM31.2617 8.70883C31.2617 8.34389 31.1455 8.0453 30.9133 7.81306C30.6479 7.58083 30.3493 7.46471 30.0175 7.46471L7.76329 7.46471C7.39835 7.46471 7.09977 7.58083 6.86753 7.81306C6.60212 8.0453 6.46941 8.34389 6.46941 8.70883C6.46941 9.07377 6.60212 9.38894 6.86753 9.65436C7.09977 9.88659 7.39835 10.0027 7.76329 10.0027L30.0175 10.0027C30.3493 10.0027 30.6479 9.88659 30.9133 9.65436C31.1455 9.38894 31.2617 9.07377 31.2617 8.70883Z' fill='black'/%3E%3Cpath d='M30.9132 34.8145H37.3329V20.42H0.497559V28.3995L7.06179 34.8145H14.5312V32.8286L9.86544 27.8145H30.9132V34.8145Z' fill='black'/%3E%3C/svg%3E")`,
         maskImage: `url("data:image/svg+xml,%3Csvg width='79' height='35' viewBox='0 0 79 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60.7529 34.8353V0H68.3669C70.1585 0 71.8007 0.447882 73.2936 1.34365C74.7866 2.20624 75.9643 3.384 76.8269 4.87694C77.7227 6.33671 78.1706 7.97894 78.1706 9.80365V15.6261C78.1706 16.4887 77.9549 17.6167 77.5236 19.0101C77.0923 20.3704 76.2795 21.5979 75.0852 22.6927V23.4392L78.1706 34.8353H70.7059L68.6158 25.2307H68.1679V34.8353H60.7529ZM68.1679 18.8111H68.566C69.1632 18.8111 69.6608 18.6452 70.0589 18.3134C70.4902 17.9485 70.7059 17.0527 70.7059 15.6261V9.65435C70.7059 8.26094 70.4902 7.38177 70.0589 7.01682C69.6608 6.65188 69.1632 6.46941 68.566 6.46941H68.1679V18.8111Z' fill='black'/%3E%3Cpath d='M40.3329 34.8353V0H47.7478V9.95294H48.2455L50.2858 0H57.7505V0.995296L52.7741 15.1285V15.8749L57.7505 33.84V34.8353H50.2858L48.2455 24.0861H47.7478V34.8353H40.3329Z' fill='black'/%3E%3Cpath d='M37.8306 8.70883C37.8306 10.3013 37.4491 11.7611 36.686 13.0881C35.8898 14.4152 34.8447 15.4768 33.5508 16.2731C32.2238 17.0361 30.7474 17.4177 29.1218 17.4177H8.70882C7.08318 17.4177 5.62341 17.0361 4.32953 16.2731C3.00247 15.4768 1.95741 14.4152 1.19435 13.0881C0.398116 11.7611 6.96091e-08 10.3013 0 8.70883C-6.96091e-08 7.11636 0.398116 5.65659 1.19435 4.32953C1.95741 3.00247 3.00247 1.95741 4.32953 1.19436C5.62341 0.39812 7.08318 8.75915e-07 8.70882 8.04855e-07L29.1218 0C30.7474 -7.10593e-08 32.2238 0.398119 33.5508 1.19435C34.8447 1.95741 35.8898 3.00247 36.686 4.32953C37.4491 5.65659 37.8306 7.11635 37.8306 8.70883ZM31.2617 8.70883C31.2617 8.34389 31.1455 8.0453 30.9133 7.81306C30.6479 7.58083 30.3493 7.46471 30.0175 7.46471L7.76329 7.46471C7.39835 7.46471 7.09977 7.58083 6.86753 7.81306C6.60212 8.0453 6.46941 8.34389 6.46941 8.70883C6.46941 9.07377 6.60212 9.38894 6.86753 9.65436C7.09977 9.88659 7.39835 10.0027 7.76329 10.0027L30.0175 10.0027C30.3493 10.0027 30.6479 9.88659 30.9133 9.65436C31.1455 9.38894 31.2617 9.07377 31.2617 8.70883Z' fill='black'/%3E%3Cpath d='M30.9132 34.8145H37.3329V20.42H0.497559V28.3995L7.06179 34.8145H14.5312V32.8286L9.86544 27.8145H30.9132V34.8145Z' fill='black'/%3E%3C/svg%3E")`,
         WebkitMaskSize: 'contain',

@@ -135,6 +135,7 @@
 .ticker-track {
   display: inline-block;
   animation: ticker 40s linear infinite;
+  overflow-y: hidden;
 }
 
 @keyframes ticker {
@@ -142,7 +143,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 

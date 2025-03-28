@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main1Props {
   title?: string;
   text?: string;
@@ -10,7 +8,6 @@ interface Main1Props {
   ctaAction?: () => void;
   footnote?: React.ReactNode;
 }
-
 const Main1 = ({
   title = "We are 10kR.",
   text = "The design studio of the future— where people and robots collaborate together to build intelligent experiences that benefit us all.",
@@ -28,7 +25,6 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
-
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -48,10 +44,9 @@ const Main1 = ({
       }
     }
   };
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
+        {isMobile ? <div className="grid grid-cols-3 gap-4">
             <div className="col-span-3 mt-16">
               <h1 style={{
             lineHeight: 1.1,
@@ -142,5 +137,4 @@ const Main1 = ({
       </div>
     </section>;
 };
-
 export default Main1;

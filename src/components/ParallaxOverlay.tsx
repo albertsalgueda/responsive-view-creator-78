@@ -62,84 +62,84 @@ const ParallaxOverlay: React.FC = () => {
       <div className="relative w-full h-full">
         <div 
           style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[15%] left-[130%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[15%] left-[130%]"
         >
           TEN
         </div>
         
         <div 
           style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[130%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[45%] left-[130%]"
         >
           THOUSAND
         </div>
         
         <div 
           style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[75%] left-[130%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[75%] left-[130%]"
         >
           ROBOTS
         </div>
 
         <div 
           style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[calc(25%-60px)] left-[280%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[calc(25%-60px)] left-[280%]"
         >
           WE
         </div>
         
         <div 
           style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[50%] left-[310%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[50%] left-[310%]"
         >
           BELIEVE
         </div>
         
         <div 
           style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[330%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[60%] left-[330%]"
         >
           IN
         </div>
         
         <div 
           style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[15%] left-[470%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[15%] left-[470%]"
         >
           PROBLEMS
         </div>
         
         <div 
           style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[45%] left-[430%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[45%] left-[430%]"
         >
           WE
         </div>
         
         <div 
           style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[65%] left-[380%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[65%] left-[380%]"
         >
           SOLVE
         </div>
 
         <div 
           style={getParallaxStyle(1.2)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[18%] left-[820%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[18%] left-[820%]"
         >
           MEET
         </div>
         
         <div 
           style={getParallaxStyle(1.3)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[40%] left-[900%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[40%] left-[900%]"
         >
           THE
         </div>
         
         <div 
           style={getParallaxStyle(1.1)}
-          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[760%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[60%] left-[760%]"
         >
           HUMANS
         </div>

@@ -103,7 +103,7 @@ const Ticker = () => {
     >
       <div 
         ref={tickerRef}
-        className="whitespace-nowrap text-small flex items-center h-full w-max"
+        className="whitespace-nowrap text-text-small flex items-center h-full w-max"
         style={{ 
           color: textColor,
           transition: transition

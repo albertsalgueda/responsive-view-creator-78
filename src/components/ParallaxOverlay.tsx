@@ -122,6 +122,28 @@ const ParallaxOverlay: React.FC = () => {
         >
           ARE
         </div>
+
+        {/* Fourth Group - New parallax text elements */}
+        <div 
+          style={getParallaxStyle(1.2)}
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[18%] left-[800%]"
+        >
+          MEET
+        </div>
+        
+        <div 
+          style={getParallaxStyle(1.3)}
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[40%] left-[800%]"
+        >
+          THE
+        </div>
+        
+        <div 
+          style={getParallaxStyle(1.1)}
+          className="absolute font-barlow font-bold tracking-tighter text-[18px] top-[60%] left-[800%]"
+        >
+          HUMANS
+        </div>
       </div>
     </div>
   );

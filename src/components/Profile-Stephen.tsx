@@ -54,7 +54,7 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
     return (
       <div ref={ref} className={cn("flex flex-col w-full", className)}>
         <div className="flex flex-col items-start w-full">
-          <div className="w-full h-[30vh] rounded-lg overflow-hidden flex-shrink-0 relative mb-4">
+          <div className="w-full aspect-square rounded-lg overflow-hidden flex-shrink-0 relative mb-4">
             <img 
               src={imageUrl} 
               alt={name} 

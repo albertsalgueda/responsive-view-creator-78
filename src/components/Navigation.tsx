@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -72,7 +73,41 @@ const Navigation = ({
   
   if (!mounted) return null;
 
-  const letsTalkLink = links.find(link => link.text === "let's talk");
+  const handleNavLinkClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    
+    // Extract the target ID from the href (removing the # character)
+    const targetId = href.substring(1);
+    
+    if (isMobile) {
+      // For mobile: scroll vertically to the target element
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        window.scrollTo({ 
+          top: targetElement.offsetTop, 
+          behavior: 'smooth' 
+        });
+        // Close the mobile menu if it's open
+        setOpen(false);
+      }
+    } else {
+      // For desktop: scroll horizontally to the target element
+      const container = document.querySelector('.h-screen.w-screen.overflow-x-auto.scrollbar-hide');
+      const targetElement = document.getElementById(targetId);
+      
+      if (container && targetElement) {
+        // Calculate the target element's position relative to the container
+        const containerRect = container.getBoundingClientRect();
+        const targetRect = targetElement.getBoundingClientRect();
+        
+        // Get the scroll position needed to center the target element
+        const scrollLeft = targetElement.offsetLeft;
+        
+        // Use the smooth scroll function for horizontal scrolling
+        smoothHorizontalScroll(container as HTMLElement, container.scrollLeft, scrollLeft, 800);
+      }
+    }
+  };
 
   const scrollToBeginning = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -193,7 +228,7 @@ const Navigation = ({
                     color: textColor,
                     transition: transition
                   }} 
-                  onClick={() => setOpen(false)} 
+                  onClick={(e) => handleNavLinkClick(e, link.href)} 
                   className="text-3xl font-extrabold font-barlow italic font-weight-800 hover:opacity-80 transition-all"
                 >
                   {link.text}
@@ -251,6 +286,7 @@ const Navigation = ({
               <a 
                 key={index} 
                 href={link.href} 
+                onClick={(e) => handleNavLinkClick(e, link.href)}
                 className="text-base font-medium font-barlow hover:opacity-80 transition-all uppercase"
                 style={{
                   color: textColor,
@@ -262,9 +298,8 @@ const Navigation = ({
             ))}
           </div>
           
-          {letsTalkLink && (
-            <a href={letsTalkLink.href} 
-               onClick={scrollToEnd}>
+          {links.find(link => link.text === "let's talk") && (
+            <a href="#contact" onClick={scrollToEnd}>
               <Button 
                 className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base"
                 style={{

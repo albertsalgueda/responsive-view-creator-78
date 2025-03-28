@@ -15,6 +15,7 @@ export interface ProfileProps {
   name: string;
   role: string;
   image: string;
+  background?: string;
   linkedin?: string;
   isMobile?: boolean;
   className?: string;

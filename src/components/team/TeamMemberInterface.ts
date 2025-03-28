@@ -17,4 +17,5 @@ export interface ProfileProps {
   image: string;
   linkedin?: string;
   isMobile?: boolean;
+  className?: string;
 }

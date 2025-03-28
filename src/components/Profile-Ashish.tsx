@@ -70,15 +70,15 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
             </div>
             
             <div className="flex flex-col items-start">
-              <h3 className="text-text-large-mobile font-barlow font-black italic text-left" style={{
+              <h3 className="text-text-large-mobile font-barlow font-black italic text-left leading-heading" style={{
                 color: textColor,
                 transition
               }}>{name}</h3>
-              <p className="text-text-medium font-barlow font-medium mt-2 text-left" style={{
+              <p className="text-text-medium font-barlow font-medium mt-2 text-left leading-standard" style={{
                 color: textColor,
                 transition
               }}>{role}</p>
-              <p className="text-text-small font-barlow font-medium mt-2 text-left max-w-[90%]" style={{
+              <p className="text-text-small font-barlow font-medium mt-2 text-left max-w-[90%] leading-standard" style={{
                 color: textColor,
                 transition
               }}>{bio}</p>
@@ -133,15 +133,15 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
             
             <div className="flex flex-col justify-end h-[40vh]">
               <h3 
-                className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap"
+                className="text-text-large-desktop font-barlow font-black italic whitespace-nowrap leading-heading"
                 style={{ color: textColor, transition }}
               >{name}</h3>
               <p 
-                className="text-text-medium font-barlow font-medium mt-2 whitespace-nowrap"
+                className="text-text-medium font-barlow font-medium mt-2 whitespace-nowrap leading-standard"
                 style={{ color: textColor, transition }}
               >{role}</p>
               <p 
-                className="text-text-small font-barlow font-medium mt-2 max-w-[40vh]"
+                className="text-text-small font-barlow font-medium mt-2 max-w-[40vh] leading-standard"
                 style={{ color: textColor, transition }}
               >{bio}</p>
               

@@ -53,7 +53,7 @@ const VideoMaskGrid = ({
   const gapSize = 4; // 4px gap between masks
 
   return (
-    <>
+    <div className="h-full pb-[32px]"> {/* Added pb-[32px] to create space for the ticker */}
       {Array.from({ length: maskCount }).map((_, index) => (
         <VideoMask
           key={index}
@@ -84,7 +84,7 @@ const VideoMaskGrid = ({
           </div>
         </VideoMask>
       ))}
-    </>
+    </div>
   );
 };
 

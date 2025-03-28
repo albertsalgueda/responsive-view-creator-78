@@ -44,15 +44,13 @@ const VideoSection = ({ isMuted }: VideoSectionProps) => {
   
   return (
     <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
-      <div className="w-full h-full pb-[32px]">
-        <VideoMaskGrid
-          videoUrl={currentVideoUrl}
-          isMuted={isMuted}
-          onVideoClick={handleVideoClick}
-          onVideoEnded={handleVideoEnded}
-          mainVideoRef={mainVideoRef}
-        />
-      </div>
+      <VideoMaskGrid
+        videoUrl={currentVideoUrl}
+        isMuted={isMuted}
+        onVideoClick={handleVideoClick}
+        onVideoEnded={handleVideoEnded}
+        mainVideoRef={mainVideoRef}
+      />
       <Ticker />
     </div>
   );

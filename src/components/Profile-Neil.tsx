@@ -4,7 +4,6 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { ProfileProps } from './team/TeamMemberInterface';
-import { useProfileParallax } from '@/hooks/use-profile-parallax';
 
 const LinkedInIcon = () => (
   <svg 
@@ -28,7 +27,6 @@ const LinkedInIcon = () => (
 const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
   ({ name, role, image, background, linkedin, isMobile, className }, ref) => {
     const { textColor, transition } = useSectionColors();
-    const parallax = useProfileParallax({ speed: 1.1 });
     
     // Use a placeholder image if none provided
     const defaultPlaceholder = "https://via.placeholder.com/500x500";
@@ -45,19 +43,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
     
     if (isMobile) {
       return (
-        <div 
-          ref={(el) => {
-            // Handle both refs
-            if (typeof ref === 'function') {
-              ref(el);
-            } else if (ref) {
-              ref.current = el;
-            }
-            parallax.ref.current = el;
-          }}
-          className={cn("flex flex-col w-full", className)}
-          style={parallax.style}
-        >
+        <div ref={ref} className={cn("flex flex-col w-full", className)}>
           <div className="flex flex-col items-start w-full">
             <div className="w-full aspect-square rounded-sm overflow-hidden flex-shrink-0 relative mb-4">
               <img 
@@ -106,17 +92,8 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
     
     return (
       <div 
-        ref={(el) => {
-          // Handle both refs
-          if (typeof ref === 'function') {
-            ref(el);
-          } else if (ref) {
-            ref.current = el;
-          }
-          parallax.ref.current = el;
-        }}
+        ref={ref}
         className={cn("h-full inline-flex", className)}
-        style={parallax.style}
       >
         <div className="flex items-start gap-6 h-full">
           <div 

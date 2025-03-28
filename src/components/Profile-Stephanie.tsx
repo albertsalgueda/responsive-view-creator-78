@@ -4,7 +4,6 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { ProfileProps } from './team/TeamMemberInterface';
-import { useProfileParallax } from '@/hooks/use-profile-parallax';
 
 const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6" style={{ borderRadius: '2px' }} fill="currentColor">
     <g>
@@ -37,7 +36,6 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
     textColor,
     transition
   } = useSectionColors();
-  const parallax = useProfileParallax({ speed: 1.0 });
 
   // Use a placeholder image if none provided
   const defaultPlaceholder = "https://via.placeholder.com/500x500";
@@ -54,17 +52,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
   
   if (isMobile) {
     return (
-      <div ref={(el) => {
-        // Handle both refs
-        if (typeof ref === 'function') {
-          ref(el);
-        } else if (ref) {
-          ref.current = el;
-        }
-        parallax.ref.current = el;
-      }} 
-      className={cn("flex flex-col w-full items-start justify-start", className)}
-      style={parallax.style}>
+      <div ref={ref} className={cn("flex flex-col w-full items-start justify-start", className)}>
         <div className="flex flex-col items-start w-full pt-0 mt-0">
           <div className="w-full aspect-square rounded-sm overflow-hidden flex-shrink-0 relative mb-4">
             <img 
@@ -111,19 +99,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
     );
   }
   
-  return <div 
-      ref={(el) => {
-        // Handle both refs
-        if (typeof ref === 'function') {
-          ref(el);
-        } else if (ref) {
-          ref.current = el;
-        }
-        parallax.ref.current = el;
-      }}
-      className={cn("h-full flex items-end", className)}
-      style={parallax.style}
-    >
+  return <div ref={ref} className={cn("h-full flex items-end", className)}>
         <div className="h-fit w-fit inline-flex">
           <div className="flex items-start gap-6 h-fit">
             <div className="w-[40vh] h-[40vh] rounded-sm overflow-hidden flex-shrink-0 relative">

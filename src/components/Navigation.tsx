@@ -15,13 +15,13 @@ interface NavigationProps {
 
 const Navigation = ({
   links = [{
-    text: "why we're here",
+    text: "why",
     href: "#main2"
   }, {
-    text: "what we do",
+    text: "what",
     href: "#main3"
   }, {
-    text: "who we are",
+    text: "who",
     href: "#team"
   }, {
     text: "let's talk",

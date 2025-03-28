@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import VideoMask from "./VideoMask";
 import VideoPlayer from "./VideoPlayer";
 import CanvasVideo from "./CanvasVideo";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface VideoMaskGridProps {
   videoUrl: string;
@@ -19,6 +20,7 @@ const VideoMaskGrid = ({
   onVideoEnded,
   mainVideoRef 
 }: VideoMaskGridProps) => {
+  const isMobile = useIsMobile();
   const [isMobilePortrait, setIsMobilePortrait] = useState(false);
 
   useEffect(() => {
@@ -53,7 +55,7 @@ const VideoMaskGrid = ({
   const gapSize = 4; // 4px gap between masks
 
   return (
-    <div className="h-full w-full">
+    <div className={`h-full w-full ${!isMobile ? "flex items-center justify-center" : ""}`}>
       {Array.from({ length: maskCount }).map((_, index) => (
         <VideoMask
           key={index}

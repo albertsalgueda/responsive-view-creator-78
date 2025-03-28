@@ -1,3 +1,4 @@
+
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -74,6 +75,10 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
                 color: textColor,
                 transition
               }}>{role}</p>
+              <p className="text-text-small font-barlow mt-2 text-left max-w-[90%]" style={{
+                color: textColor,
+                transition
+              }}>Craig crafts compelling narratives that resonate with audiences across all platforms. His expertise in content strategy and copywriting transforms complex ideas into clear, engaging messages that build strong connections between brands and their customers.</p>
               
               {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
                   <div className="w-10 h-10 flex items-center justify-center border border-current rounded-sm overflow-hidden" style={{
@@ -132,6 +137,10 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
               className="text-text-medium font-barlow mt-2 whitespace-nowrap"
               style={{ color: textColor, transition }}
             >{role}</p>
+            <p 
+              className="text-text-small font-barlow mt-2 max-w-[35vh]"
+              style={{ color: textColor, transition }}
+            >Craig crafts compelling narratives that resonate with audiences across all platforms. His expertise in content strategy and copywriting transforms complex ideas into clear, engaging messages that build strong connections between brands and their customers.</p>
             
             {linkedin && (
               <a 

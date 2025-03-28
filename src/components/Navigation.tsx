@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { X } from 'lucide-react';
 import { Drawer, DrawerContent, DrawerTrigger, DrawerClose, DrawerTitle } from "@/components/ui/drawer";
 import { useView } from '@/context/ViewContext';
 import { useSectionColors } from '@/hooks/use-section-colors';
+import Ticker from '@/components/Ticker';
 
 interface NavigationProps {
   links?: Array<{
@@ -326,6 +326,8 @@ const Navigation = ({
           )}
         </div>
       }
+      
+      <Ticker text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
     </nav>
   );
 };

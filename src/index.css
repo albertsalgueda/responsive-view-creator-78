@@ -135,7 +135,7 @@
 /* Ticker animation */
 .ticker-track {
   display: inline-block;
-  animation: ticker 100s linear infinite;
+  animation: ticker 50s linear infinite;
   overflow: visible !important; /* Added !important to ensure it overrides other styles */
 }
 

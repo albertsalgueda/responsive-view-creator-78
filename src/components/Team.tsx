@@ -21,7 +21,7 @@ const Team = ({
     {
       name: "Neil Stoeckle",
       title: "Groovemeister",
-      image: "/lovable-uploads/3e7f3551-e681-4595-ae96-350188c45274.png",
+      image: "/lovable-uploads/a35418fd-974d-4e03-9587-ec7ae9dbd183.png",
       linkedin: "https://linkedin.com"
     },
     {

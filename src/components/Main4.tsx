@@ -24,7 +24,7 @@ const Main4 = ({
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-auto py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={{
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-heading" style={{
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
@@ -50,7 +50,7 @@ const Main4 = ({
             {/* Title and Text-1 in top section */}
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
-                <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard mb-8" style={{
+                <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-heading mb-8" style={{
                 fontWeight: 800,
                 fontStyle: 'italic',
                 color: textColor,

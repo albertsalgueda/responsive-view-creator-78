@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -85,7 +84,8 @@ export default {
 				'text-small': '2.5vh',
 			},
 			lineHeight: {
-				standard: '1.2', // Adding our global line height
+				standard: '1.2', // Keeping global line height
+				heading: '1', // Adding new line height for headings
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

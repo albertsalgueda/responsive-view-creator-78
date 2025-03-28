@@ -26,6 +26,7 @@ const LinkedInIcon = () => <svg viewBox="0 0 455 455" className="w-6 h-6" style=
 const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
   name,
   role,
+  bio = "As CEO, Stephanie leads with vision and purpose, driving innovation across all aspects of the business. Her leadership combines strategic insight with a hands-on approach, ensuring exceptional results for clients while fostering a culture of creativity and excellence.",
   image,
   background,
   linkedin,
@@ -87,7 +88,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
             <p className="text-text-small font-barlow mt-2 text-left max-w-[90%]" style={{
               color: textColor,
               transition
-            }}>As CEO, Stephanie leads with vision and purpose, driving innovation across all aspects of the business. Her leadership combines strategic insight with a hands-on approach, ensuring exceptional results for clients while fostering a culture of creativity and excellence.</p>
+            }}>{bio}</p>
             
             {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
                 <div className="w-10 h-10 flex items-center justify-center border border-current rounded-sm overflow-hidden" style={{
@@ -134,7 +135,7 @@ const ProfileStephanie = forwardRef<HTMLDivElement, ProfileProps>(({
               <p className="text-text-small font-barlow mt-2 max-w-[40vh]" style={{
             color: textColor,
             transition
-          }}>As CEO, Stephanie leads with vision and purpose, driving innovation across all aspects of the business. Her leadership combines strategic insight with a hands-on approach, ensuring exceptional results for clients while fostering a culture of creativity and excellence.</p>
+          }}>{bio}</p>
               
               {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
                   <div className="w-10 h-10 flex items-center justify-center border border-current rounded-sm overflow-hidden" style={{

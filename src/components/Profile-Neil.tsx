@@ -25,7 +25,16 @@ const LinkedInIcon = () => (
 );
 
 const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
-  ({ name, role, image, background, linkedin, isMobile, className }, ref) => {
+  ({ 
+    name, 
+    role, 
+    bio = "Neil masterfully blends creativity with technical expertise to craft unique digital experiences. His passion for innovation and meticulous attention to detail ensure every project exceeds expectations while maintaining the highest standards of quality and performance.", 
+    image, 
+    background, 
+    linkedin, 
+    isMobile, 
+    className 
+  }, ref) => {
     const { textColor, transition } = useSectionColors();
     
     // Use a placeholder image if none provided
@@ -78,7 +87,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
               <p className="text-text-small font-barlow mt-2 text-left max-w-[90%]" style={{
                 color: textColor,
                 transition
-              }}>Neil masterfully blends creativity with technical expertise to craft unique digital experiences. His passion for innovation and meticulous attention to detail ensure every project exceeds expectations while maintaining the highest standards of quality and performance.</p>
+              }}>{bio}</p>
               
               {linkedin && <a href={linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block hover:opacity-80 transition-opacity" aria-label={`${name}'s LinkedIn profile`}>
                   <div className="w-10 h-10 flex items-center justify-center border border-current rounded-sm overflow-hidden" style={{
@@ -140,7 +149,7 @@ const ProfileNeil = forwardRef<HTMLDivElement, ProfileProps>(
             <p 
               className="text-text-small font-barlow mt-2 max-w-[35vh]"
               style={{ color: textColor, transition }}
-            >Neil masterfully blends creativity with technical expertise to craft unique digital experiences. His passion for innovation and meticulous attention to detail ensure every project exceeds expectations while maintaining the highest standards of quality and performance.</p>
+            >{bio}</p>
             
             {linkedin && (
               <a 

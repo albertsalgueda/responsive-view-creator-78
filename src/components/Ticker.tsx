@@ -48,8 +48,8 @@ const Ticker = ({ text }: TickerProps) => {
           transition
         }}
       >
-        <span className="text-text-small font-barlow inline-block pt-0">{text}</span>
-        <span className="text-text-small font-barlow inline-block pt-0">{text}</span>
+        <span className="text-text-small font-barlow inline-block" style={{ lineHeight: 1 }}>{text}</span>
+        <span className="text-text-small font-barlow inline-block" style={{ lineHeight: 1 }}>{text}</span>
       </div>
     </div>
   );

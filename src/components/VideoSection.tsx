@@ -44,8 +44,8 @@ const VideoSection = ({ isMuted }: VideoSectionProps) => {
   
   return (
     <div id="video" className={isMobile ? "w-full min-h-screen relative" : "w-screen h-screen shrink-0 relative"}>
-      {/* Position the VideoMaskGrid to leave space for ticker */}
-      <div className="absolute top-0 left-0 right-0 bottom-[32px]">
+      {/* Position the VideoMaskGrid to leave space for ticker with appropriate height */}
+      <div className="absolute top-0 left-0 right-0 bottom-[32px]" style={{ maxHeight: 'calc(100vh - 32px)' }}>
         <VideoMaskGrid
           videoUrl={currentVideoUrl}
           isMuted={isMuted}

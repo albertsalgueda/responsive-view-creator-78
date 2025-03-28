@@ -51,11 +51,10 @@ const Services3 = ({
               </p>
             </div>
             <div className="col-start-2 col-span-2 mb-6 mt-auto">
-              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col h-full" style={{
+              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse" style={{
             color: textColor,
             transition: transition,
-            lineHeight: 1.1,
-            justifyContent: 'flex-end'
+            lineHeight: 1.1
           }}>
                 {columnItems.map((item, index) => <p key={index} className="mb-2">{item}</p>)}
               </div>
@@ -93,10 +92,10 @@ const Services3 = ({
               transition: transition,
               lineHeight: 1.1
             }}>
-                  <div className="flex flex-col h-full" style={{ justifyContent: 'flex-end' }}>
+                  <div className="flex flex-col-reverse">
                     {firstColumnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
                   </div>
-                  <div className="flex flex-col h-full" style={{ justifyContent: 'flex-end' }}>
+                  <div className="flex flex-col-reverse">
                     {secondColumnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
                   </div>
                 </div>

@@ -45,12 +45,11 @@ const Services1 = ({
                 {text}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mb-6 mt-auto">
-              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col h-full" style={{
+            <div className="col-start-2 col-span-2 mb-6 mt-auto"> 
+              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse" style={{
             color: textColor,
             transition: transition,
-            lineHeight: 1.1,
-            justifyContent: 'flex-end'
+            lineHeight: 1.1
           }}>
                 {columnItems.map((item, index) => <p key={index} className="mb-2">{item}</p>)}
               </div>
@@ -90,10 +89,9 @@ const Services1 = ({
               columnGap: '2rem',
               lineHeight: 1.1,
               display: 'block',
-              width: '100%',
-              height: '100%'
+              width: '100%'
             }}>
-                  <div className="flex flex-col h-full" style={{ justifyContent: 'flex-end' }}>
+                  <div className="flex flex-col-reverse">
                     {columnItems.map((item, index) => <p key={index} className="mb-3">{item}</p>)}
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { useEffect } from 'react';
@@ -20,31 +21,31 @@ const Team = ({
     {
       name: "Neil Stoeckle",
       title: "Groovemeister",
-      image: "/lovable-uploads/f34e0bc8-b159-4351-8da9-0d3aa6828578.png",
+      image: "/lovable-uploads/3e7f3551-e681-4595-ae96-350188c45274.png",
       linkedin: "https://linkedin.com"
     },
     {
       name: "Stephen Clements",
       title: "Me ol' China",
-      image: "/lovable-uploads/35e452fd-ea52-4223-948d-79dd2bd00b0a.png",
+      image: "/lovable-uploads/6b9f2b8b-ad60-4ba8-b540-59cabd9559b2.png",
       linkedin: "https://linkedin.com"
     },
     {
       name: "Stephanie Wiseman",
       title: "CEOmg",
-      image: "/lovable-uploads/8c33a416-6372-49ce-822a-c56bbb42a47c.png",
+      image: "/lovable-uploads/d7e9959b-d13d-44e9-a03b-33ad6b66704a.png",
       linkedin: "https://linkedin.com"
     },
     {
       name: "Craig Kind",
       title: "Muh Fuh Word Genius",
-      image: "/lovable-uploads/40349571-793d-487f-8d19-1a987f373b43.png",
+      image: "/lovable-uploads/7bbf359f-8d38-472a-8de6-ece06dbdff9c.png",
       linkedin: "https://linkedin.com"
     },
     {
       name: "Ashish Toshniwal",
       title: "Badical Radboy",
-      image: "/lovable-uploads/151462d5-20f1-493c-b299-e7c36d8c2faa.png",
+      image: "/lovable-uploads/3e5668e1-a8d0-450f-9b2a-0e28a8dfbbc9.png",
       linkedin: "https://linkedin.com"
     }
   ];

@@ -51,7 +51,7 @@ const Services1 = ({
             transition: transition,
             lineHeight: 1.1
           }}>
-                {columnItems.map((item, index) => <p key={index}>{item}</p>)}
+                {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
               </div>
             </div>
           </div> : <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
@@ -92,7 +92,7 @@ const Services1 = ({
               width: '100%'
             }}>
                   <div className="flex flex-col-reverse">
-                    {columnItems.map((item, index) => <p key={index}>{item}</p>)}
+                    {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
                   </div>
                 </div>
               </div>

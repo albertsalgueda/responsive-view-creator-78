@@ -81,11 +81,11 @@ export default {
 				'text-large-desktop': '4.5vh',
 				'text-large-mobile': '4.5vh',
 				'text-medium': '3.5vh',
-				'text-small': '2.5vh',
+				'text-small': '2.25vh',
 			},
 			lineHeight: {
-				standard: '1.2', // Keeping global line height
-				heading: '1', // Adding new line height for headings
+				standard: '1.2',
+				heading: '1',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

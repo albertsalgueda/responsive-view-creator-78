@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -8,7 +7,7 @@ interface Main3Props {
 }
 
 const Main3 = ({
-  text = "We provide comprehensive digital services, including brand, product, marketing and content creation, that helps brands evolve."
+  text = "Most teams don't need another service list. They need real solutions to real problems."
 }: Main3Props) => {
   const isMobile = useIsMobile();
   const {

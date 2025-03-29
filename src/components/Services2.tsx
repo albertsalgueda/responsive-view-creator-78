@@ -22,11 +22,6 @@ const Services2 = ({
 
   // Split columns text into array items
   const columnItems = columns.split('<p>');
-  
-  // Split items for two columns on desktop
-  const halfwayIndex = Math.ceil(columnItems.length / 2);
-  const firstColumnItems = columnItems.slice(0, halfwayIndex);
-  const secondColumnItems = columnItems.slice(halfwayIndex);
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
@@ -89,16 +84,15 @@ const Services2 = ({
                   }}>
                     Problems we've solved
                   </h3>
-                  <div className="grid grid-cols-2 gap-8 font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
+                  <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
                   color: textColor,
-                  transition: transition
+                  transition: transition,
+                  columnCount: 1,
+                  columnGap: '2rem',
+                  display: 'block',
+                  width: '100%'
                   }}>
-                    <div>
-                      {firstColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
-                    </div>
-                    <div>
-                      {secondColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
-                    </div>
+                    {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
                   </div>
                 </div>
               </div>

@@ -44,6 +44,12 @@ const Services1 = ({
               </p>
             </div>
             <div className="col-start-2 col-span-2 mb-6 mt-auto"> 
+              <h3 className="mb-4 fade-in-delay-1 font-barlow font-bold text-text-small leading-standard" style={{
+              color: textColor,
+              transition: transition
+            }}>
+                Problems we've solved
+              </h3>
               <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse leading-standard" style={{
               color: textColor,
               transition: transition
@@ -77,6 +83,12 @@ const Services1 = ({
             <div className="grid grid-cols-12 gap-8">
               {/* Service items */}
               <div className="col-span-12 col-start-1 flex flex-col justify-end">
+                <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
+                color: textColor,
+                transition: transition
+              }}>
+                  Problems we've solved
+                </h3>
                 <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
                 color: textColor,
                 transition: transition,

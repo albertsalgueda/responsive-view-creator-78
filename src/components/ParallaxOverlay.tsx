@@ -118,7 +118,7 @@ const ParallaxOverlay: React.FC = () => {
         
         <div 
           style={getParallaxStyle(0.9)}
-          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[65%] left-[380%]"
+          className="absolute font-barlow font-bold tracking-tighter text-text-small top-[65%] left-[360%]"
         >
           SOLVE
         </div>

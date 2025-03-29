@@ -111,9 +111,9 @@ const SectionObserverWithBackground = ({
         <Image1 />
         <div id="main2" className="h-auto">
           <Main2 
-            title="Prompting human potential." 
-            text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-            text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            title="Unlocking the creative potential of AI" 
+            text1="For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance."
+            text2="Now reunited at the forefront of AI, we're building a new kind of agency—one designed to help the world's most ambitious brands reach their highest potential."
             ctaText=""
           />
         </div>
@@ -150,9 +150,9 @@ const SectionObserverWithBackground = ({
         <Image1 />
         <div id="main2" className="h-screen w-screen flex-shrink-0">
           <Main2 
-            title="Prompting human potential." 
-            text1="What if AI wasn't designed to be prompted? What if it was designed to prompt us?"
-            text2="Rather than building AI that offers answers and outputs, we aspire to build AI-powered tools and technologies that prompt human potential."
+            title="Unlocking the creative potential of AI" 
+            text1="For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance."
+            text2="Now reunited at the forefront of AI, we're building a new kind of agency—one designed to help the world's most ambitious brands reach their highest potential."
             ctaText=""
           />
         </div>

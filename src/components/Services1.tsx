@@ -87,7 +87,7 @@ const Services1 = ({
                   <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
                   color: textColor,
                   transition: transition,
-                  columnCount: 2,
+                  columnCount: 1,
                   columnGap: '2rem',
                   display: 'block',
                   width: '100%'

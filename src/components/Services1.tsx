@@ -11,8 +11,8 @@ interface Services1Props {
 
 const Services1 = ({
   titleText = "Brand",
-  text = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
-  columns = "Brand Creation & Refreshes<p>Brand Narrative & Naming<p>Visual Identity<p>Brand Strategy<p>Brand Voice & Tone<p>Category Creation & Positioning"
+  text = "We build brand identities that fuse strategic clarity with creative firepower—brands that are timeless, digital-native, and future-ready.",
+  columns = "We have a fantastic product but no brand story<p>We want to create a new category<p>We need to standout in a crowded marketplace<p>We need to look and feel unique<p>We need more brand consistency<p>We need to look like a billion dollar company<p>We need a brand built for digital"
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const {
@@ -42,7 +42,7 @@ const Services1 = ({
             }}>
                 {text}
               </p>
-              <div className="mt-8">
+              <div className="mt-4">
                 <h3 className="mb-4 fade-in-delay-1 font-barlow font-bold text-text-small leading-standard" style={{
                 color: textColor,
                 transition: transition
@@ -77,7 +77,7 @@ const Services1 = ({
                   {text}
                 </p>
                 
-                <div className="mt-16">
+                <div className="mt-8">
                   <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
                   color: textColor,
                   transition: transition

@@ -11,8 +11,8 @@ interface Services2Props {
 
 const Services2 = ({
   titleText = "Product",
-  text = "We craft AI-enhanced brand identities that merge strategic insight with cutting-edge creativity, building brands that are both timeless and future-proof.",
-  columns = "Product Strategy & Management<p>User Research & Testing<p>Website Design & Development<p>Mobile App Design & Development<p>Motion & Interaction Design<p>Design Systems<p>Concept Proofing & Prototyping"
+  text = "We design intelligent products that blend usability, beauty, and performance—powered by AI and built so people love them.",
+  columns = "We need to increase conversion<p>We want a better NPS<p>We need a slick mobile app<p>How do we increase engagement?<p>We need a more omnichannel shopping experience<p>We need to improve our customers' self-service options<p>We need a scalable design system<p>We need to launch an MVP, fast<p>We need a more seamless user experience"
 }: Services2Props) => {
   const isMobile = useIsMobile();
   const {
@@ -47,7 +47,7 @@ const Services2 = ({
           }}>
                 {text}
               </p>
-              <div className="mt-8">
+              <div className="mt-4">
                 <h3 className="mb-4 fade-in-delay-1 font-barlow font-bold text-text-small leading-standard" style={{
                 color: textColor,
                 transition: transition
@@ -82,7 +82,7 @@ const Services2 = ({
                   {text}
                 </p>
                 
-                <div className="mt-16">
+                <div className="mt-8">
                   <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
                   color: textColor,
                   transition: transition

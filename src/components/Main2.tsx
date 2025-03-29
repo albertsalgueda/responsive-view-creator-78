@@ -36,7 +36,7 @@ const Main2 = ({
             }}>
                 {title}
               </h1>
-              <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
+              <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
               color: textColor,
               transition: transition
             }}>
@@ -74,7 +74,7 @@ const Main2 = ({
             <div className="grid grid-cols-12 gap-8">
               {/* Text column 1 */}
               <div className="col-span-4 col-start-5 flex flex-col justify-end">
-                <p className="text-text-medium slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
+                <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>
@@ -84,7 +84,7 @@ const Main2 = ({
               
               {/* Text column 2 */}
               <div className="col-span-4 col-start-9 flex flex-col justify-end">
-                <p className="text-text-medium slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
+                <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>

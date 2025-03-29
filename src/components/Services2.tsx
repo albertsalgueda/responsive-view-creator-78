@@ -47,19 +47,19 @@ const Services2 = ({
           }}>
                 {text}
               </p>
-            </div>
-            <div className="col-start-2 col-span-2 mb-6 mt-auto">
-              <h3 className="mb-4 fade-in-delay-1 font-barlow font-bold text-text-small leading-standard" style={{
-              color: textColor,
-              transition: transition
-            }}>
-                Problems we've solved
-              </h3>
-              <div className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
-            color: textColor,
-            transition: transition
-          }}>
-                {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
+              <div className="mt-8">
+                <h3 className="mb-4 fade-in-delay-1 font-barlow font-bold text-text-small leading-standard" style={{
+                color: textColor,
+                transition: transition
+                }}>
+                  Problems we've solved
+                </h3>
+                <div className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
+                color: textColor,
+                transition: transition
+                }}>
+                  {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
+                </div>
               </div>
             </div>
           </div> : <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
@@ -81,28 +81,24 @@ const Services2 = ({
             }}>
                   {text}
                 </p>
-              </div>
-            </div>
-            
-            {/* Services list at the bottom */}
-            <div className="grid grid-cols-12 gap-8">
-              {/* Service items */}
-              <div className="col-span-12 col-start-1 flex flex-col justify-end">
-                <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
-                color: textColor,
-                transition: transition
-              }}>
-                  Problems we've solved
-                </h3>
-                <div className="grid grid-cols-2 gap-8 font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
-              color: textColor,
-              transition: transition
-            }}>
-                  <div>
-                    {firstColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
-                  </div>
-                  <div>
-                    {secondColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
+                
+                <div className="mt-16">
+                  <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
+                  color: textColor,
+                  transition: transition
+                  }}>
+                    Problems we've solved
+                  </h3>
+                  <div className="grid grid-cols-2 gap-8 font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
+                  color: textColor,
+                  transition: transition
+                  }}>
+                    <div>
+                      {firstColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
+                    </div>
+                    <div>
+                      {secondColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
+                    </div>
                   </div>
                 </div>
               </div>

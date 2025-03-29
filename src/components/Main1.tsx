@@ -13,7 +13,7 @@ interface Main1Props {
 
 const Main1 = ({
   title = "We are 10kR.",
-  text = "We are an AI-forward design consultancy—where people and robots collaborate together to build intelligent experiences that benefit us all.",
+  text = "An AI-forward design agency—where humans and machines build intelligent experiences together.",
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked"),
   footnote = <>

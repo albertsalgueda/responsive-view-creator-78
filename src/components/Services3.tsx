@@ -55,7 +55,7 @@ const Services3 = ({
             }}>
                 Problems we've solved
               </h3>
-              <div className="fade-in-delay-1 font-barlow font-medium text-text-small flex flex-col-reverse leading-standard" style={{
+              <div className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -98,10 +98,10 @@ const Services3 = ({
               color: textColor,
               transition: transition
             }}>
-                  <div className="flex flex-col-reverse">
+                  <div>
                     {firstColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
                   </div>
-                  <div className="flex flex-col-reverse">
+                  <div>
                     {secondColumnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
                   </div>
                 </div>

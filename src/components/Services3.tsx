@@ -12,7 +12,7 @@ interface Services3Props {
 const Services3 = ({
   titleText = "Content",
   text = "We create content that moves at the speed of culture—built for the moment, driven by insight, and scaled with AI.",
-  columns = "We need to create a new content library<p>We need to refresh our site<p>We have a new product to promote<p>We need campaign assets, fast<p>We need content that moves the needle<p>We've been recycling the same assets for too long"
+  columns = "Our website feels stale<p>We have a new product to promote<p>We need campaign assets, fast<p>We need content that moves the needle<p>We've been recycling the same assets for too long"
 }: Services3Props) => {
   const isMobile = useIsMobile();
   const {

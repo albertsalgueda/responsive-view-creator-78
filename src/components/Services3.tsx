@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -12,7 +11,7 @@ interface Services3Props {
 const Services3 = ({
   titleText = "Content",
   text = "We create content that moves at the speed of culture—built for the moment, driven by insight, and scaled with AI.",
-  columns = "&ldquo;Our website feels stale&rdquo;<p>&ldquo;We have a new product to promote&rdquo;<p>&ldquo;We need campaign assets, fast&rdquo;<p>&ldquo;We need content that moves the needle&rdquo;<p>&ldquo;We've been recycling the same assets for too long&rdquo;"
+  columns = ""Our website feels stale"<p>"We have a new product to promote"<p>"We need campaign assets, fast"<p>"We need content that moves the needle"<p>"We've been recycling the same assets for too long""
 }: Services3Props) => {
   const isMobile = useIsMobile();
   const {

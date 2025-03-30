@@ -12,7 +12,7 @@ interface Services1Props {
 const Services1 = ({
   titleText = "Brand",
   text = "We build brand identities that fuse strategic clarity with creative firepower—brands that are timeless, digital-native, and future-ready.",
-  columns = "We have a fantastic product but no brand story<p>We want to create a new category<p>We need to standout in a crowded marketplace<p>We need to look and feel unique<p>We need to look like a billion dollar company"
+  columns = "&ldquo;We have a fantastic product but no brand story&rdquo;<p>&ldquo;We want to create a new category&rdquo;<p>&ldquo;We need to standout in a crowded marketplace&rdquo;<p>&ldquo;We need to look and feel unique&rdquo;<p>&ldquo;We need to look like a billion dollar company&rdquo;"
 }: Services1Props) => {
   const isMobile = useIsMobile();
   const {

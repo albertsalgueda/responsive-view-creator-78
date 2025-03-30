@@ -12,7 +12,7 @@ interface Services2Props {
 const Services2 = ({
   titleText = "Product",
   text = "We design intelligent products that blend usability, beauty, and performance—powered by AI and built so people love them.",
-  columns = "We need to increase conversion<p>We need a slick website and app<p>We want more engagement<p>We need an omnichannel patient experience<p>We want a better self-service experience<p>We need to launch an MVP, fast"
+  columns = "&ldquo;We need to increase conversion&rdquo;<p>&ldquo;We need a slick website and app&rdquo;<p>&ldquo;We want more engagement&rdquo;<p>&ldquo;We need an omnichannel patient experience&rdquo;<p>&ldquo;We want a better self-service experience&rdquo;<p>&ldquo;We need to launch an MVP, fast&rdquo;"
 }: Services2Props) => {
   const isMobile = useIsMobile();
   const {

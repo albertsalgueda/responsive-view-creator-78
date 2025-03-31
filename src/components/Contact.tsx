@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -71,7 +72,7 @@ const Contact = ({
               transition: transition
             }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
-                  <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
+                  <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard text-right" style={{
                 color: textColor,
                 transition: transition
               }}>LINKEDIN</a>
@@ -132,11 +133,11 @@ const Contact = ({
             </div>
             
             <div className="col-span-3 flex flex-col gap-2 justify-end">
-              <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
+              <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard text-right" style={{
             color: textColor,
             transition: transition
           }}>LINKEDIN</a>
-              <a href="https://instagram.com" className="font-barlow hover:underline text-text-small font-medium leading-standard" style={{
+              <a href="https://instagram.com" className="font-barlow hover:underline text-text-small font-medium leading-standard text-right" style={{
             color: textColor,
             transition: transition
           }}>INSTAGRAM</a>

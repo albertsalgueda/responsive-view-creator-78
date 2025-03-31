@@ -76,25 +76,26 @@ const Services1 = ({
               }}>
                 {text}
               </p>
+              </div>
+            </div>
                 
-                <div className="mt-8">
-                  <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
-                  color: textColor,
-                  transition: transition
-                  }}>
-                    Problems we've solved
-                  </h3>
-                  <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
-                  color: textColor,
-                  transition: transition,
-                  columnCount: 1,
-                  columnGap: '2rem',
-                  display: 'block',
-                  width: '100%'
-                  }}>
-                    {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
-                  </div>
-                </div>
+            {/* Problems we've solved section - now aligned to bottom */}
+            <div className="mt-auto mb-0">
+              <h3 className="mb-4 slide-in-right font-barlow font-bold text-text-small leading-standard" style={{
+              color: textColor,
+              transition: transition
+              }}>
+                Problems we've solved
+              </h3>
+              <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard" style={{
+              color: textColor,
+              transition: transition,
+              columnCount: 1,
+              columnGap: '2rem',
+              display: 'block',
+              width: '100%'
+              }}>
+                {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
               </div>
             </div>
           </div>}

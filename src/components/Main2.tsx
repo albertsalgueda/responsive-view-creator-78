@@ -43,7 +43,7 @@ const Main2 = ({
                 {text1}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-text-medium leading-standard" style={{
+            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-text-small leading-standard" style={{
             color: textColor,
             transition: transition
           }}>

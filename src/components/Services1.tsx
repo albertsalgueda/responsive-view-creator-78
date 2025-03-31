@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -57,7 +56,8 @@ const Services1 = ({
                 </div>
               </div>
             </div>
-          </div> : <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
+          </div> : 
+          <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
             {/* Title and Text in top section */}
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -32,7 +31,7 @@ const Main3 = ({
               }}>
                 {title}
               </h1>
-              <p className="mt-3 fade-in-delay-1 font-barlow font-medium text-text-large-mobile leading-standard" style={{
+              <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-large-mobile leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>

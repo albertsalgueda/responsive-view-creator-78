@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -58,7 +57,6 @@ const Main2 = ({
                 </button>
               </div>}
           </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px] px-[40px]">
-            {/* Title at the top */}
             <div className="w-1/2 mb-auto">
               <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
               fontWeight: 800,
@@ -69,10 +67,7 @@ const Main2 = ({
                 {title}
               </h1>
             </div>
-            
-            {/* Text sections at the bottom - removed mb-[40px] */}
             <div className="grid grid-cols-12 gap-8">
-              {/* Text column 1 */}
               <div className="col-span-4 col-start-5 flex flex-col justify-end">
                 <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
                 color: textColor,
@@ -81,8 +76,6 @@ const Main2 = ({
                   {text1}
                 </p>
               </div>
-              
-              {/* Text column 2 */}
               <div className="col-span-4 col-start-9 flex flex-col justify-end">
                 <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
                 color: textColor,
@@ -92,8 +85,6 @@ const Main2 = ({
                 </p>
               </div>
             </div>
-            
-            {/* CTA Button */}
             {ctaText && <div className="fade-in flex justify-end mb-6">
                 <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard" style={{
               backgroundColor: textColor,

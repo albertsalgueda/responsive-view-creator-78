@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -89,10 +88,8 @@ const Main1 = ({
               </p>
             </div>
           </div> : <div className="grid grid-cols-12 h-full pt-0 pb-[40px] px-[40px]">
-            {/* Empty columns 1-6 for top part */}
             <div className="col-span-6 self-start"></div>
             
-            {/* Right side content in columns 7-12 */}
             <div className="col-span-6 self-start pt-[25vh]">
               <p className="slide-in-left font-barlow font-medium text-text-large-desktop leading-standard" style={{
               color: textColor,
@@ -102,7 +99,6 @@ const Main1 = ({
               </p>
             </div>
             
-            {/* Title and button in columns 1-6, title anchored to bottom */}
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6 fade-in">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter text-base hover:opacity-90 transition-all duration-500 leading-standard" style={{
@@ -123,7 +119,6 @@ const Main1 = ({
               </h1>
             </div>
             
-            {/* Footnote in columns 10-12, anchored to bottom */}
             <div className="col-span-3 col-start-10 self-end">
               <p className="slide-in-left font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
               color: textColor,

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -33,7 +32,7 @@ const Main4 = ({
             }}>
                 {title}
               </h1>
-              <p className="mt-3 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
+              <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
               color: textColor,
               transition: transition
             }}>
@@ -47,7 +46,6 @@ const Main4 = ({
               <p className="mb-16">{text2}</p>
             </div>
           </div> : <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
-            {/* Title and Text-1 in top section */}
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
                 <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-heading mb-8" style={{
@@ -63,25 +61,19 @@ const Main4 = ({
                 color: textColor,
                 transition: transition
               }}>
-                  {text1}
-                </p>
+                {text1}
+              </p>
               </div>
             </div>
-            
-            {/* Text-2 at the bottom */}
             <div className="grid grid-cols-12 gap-8">
-              {/* Empty space to maintain grid structure */}
               <div className="col-span-6 col-start-1"></div>
-              
-              {/* Text-2 spanning columns 7-12 */}
               <div className="col-span-6 col-start-7 flex flex-col justify-end">
                 <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>
-                  {text2}
-                </p>
-              </div>
+                {text2}
+              </p>
             </div>
           </div>}
       </div>

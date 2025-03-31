@@ -9,7 +9,7 @@ interface Main3Props {
 }
 
 const Main3 = ({
-  title = "Solutions, not services.",
+  title = "Our services.",
   text = "Most teams don't need another service list. They need real solutions to real problems."
 }: Main3Props) => {
   const isMobile = useIsMobile();

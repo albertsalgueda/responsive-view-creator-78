@@ -35,7 +35,7 @@ const Contact = ({
       <div className="w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen p-6 py-[48px]">
             <div className="col-span-3 mb-8">
-              <h2 className="text-text-large-mobile font-medium slide-in-left font-barlow mt-12 leading-standard" style={{
+              <h2 className="text-text-large-mobile font-bold tracking-tighter slide-in-left font-barlow mt-12 leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -44,7 +44,7 @@ const Contact = ({
             </div>
             
             <div className="col-span-2 col-start-2">
-              <p className="fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
+              <p className="fade-in-delay-1 font-barlow font-bold tracking-tighter text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -53,7 +53,7 @@ const Contact = ({
               
               <div className="mt-6 fade-in-delay-2">
                 <a href={callToAction}>
-                  <Button className="hover:opacity-90 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base leading-standard" style={{
+                  <Button className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase" style={{
                 backgroundColor: textColor,
                 color: backgroundColor,
                 transition: transition
@@ -71,16 +71,16 @@ const Contact = ({
           }}></div>
               
               <div className="flex justify-between items-center">
-                <p className="text-text-small font-barlow font-medium leading-standard" style={{
+                <p className="text-text-small font-barlow font-bold tracking-tighter leading-standard" style={{
               color: textColor,
               transition: transition
             }}>10kR ©2025</p>
                 <div className="col-start-2 col-span-2 flex flex-col items-end gap-2">
-                  <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard text-right" style={{
+                  <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-bold tracking-tighter leading-standard text-right" style={{
                 color: textColor,
                 transition: transition
               }}>LINKEDIN</a>
-                  <a href="https://instagram.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
+                  <a href="https://instagram.com" className="font-barlow text-text-small hover:underline font-bold tracking-tighter leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>INSTAGRAM</a>
@@ -98,7 +98,7 @@ const Contact = ({
             </div>
           </div> : <div className="grid grid-cols-12 gap-8 h-full px-[40px] py-[40px] pt-[25vh]">
             <div className="col-span-6">
-              <h2 className="font-medium slide-in-left font-barlow text-text-large-desktop leading-standard" style={{
+              <h2 className="font-bold tracking-tighter slide-in-left font-barlow text-text-large-desktop leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -107,7 +107,7 @@ const Contact = ({
             </div>
             
             <div className="col-span-6">
-              <p className="slide-in-right font-barlow font-medium mb-8 text-text-medium leading-standard" style={{
+              <p className="slide-in-right font-barlow font-bold tracking-tighter mb-8 text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -116,7 +116,7 @@ const Contact = ({
               
               <div className="fade-in-delay-1">
                 <a href={callToAction}>
-                  <Button className="hover:opacity-90 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base leading-standard" style={{
+                  <Button className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase" style={{
                 backgroundColor: textColor,
                 color: backgroundColor,
                 transition: transition
@@ -128,7 +128,7 @@ const Contact = ({
             </div>
             
             <div className="col-span-3 flex flex-col gap-2 justify-end">
-              <div className="text-text-small font-barlow font-medium leading-standard" style={{
+              <div className="text-text-small font-barlow font-bold tracking-tighter leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -137,11 +137,11 @@ const Contact = ({
             </div>
             
             <div className="col-span-3 flex flex-col gap-2 justify-end">
-              <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard text-right" style={{
+              <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-bold tracking-tighter leading-standard text-right" style={{
             color: textColor,
             transition: transition
           }}>LINKEDIN</a>
-              <a href="https://instagram.com" className="font-barlow hover:underline text-text-small font-medium leading-standard text-right" style={{
+              <a href="https://instagram.com" className="font-barlow hover:underline text-text-small font-bold tracking-tighter leading-standard text-right" style={{
             color: textColor,
             transition: transition
           }}>INSTAGRAM</a>

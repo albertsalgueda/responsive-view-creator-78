@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -222,7 +221,7 @@ const Navigation = ({
                     transition: transition
                   }} 
                   onClick={(e) => handleNavLinkClick(e, link.href)} 
-                  className="text-base font-medium font-barlow uppercase hover:opacity-80 transition-all"
+                  className="text-base font-bold tracking-tighter font-barlow hover:opacity-80 transition-all uppercase"
                 >
                   {link.text}
                 </a>
@@ -235,7 +234,7 @@ const Navigation = ({
                   className="mt-4"
                 >
                   <Button 
-                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base uppercase"
+                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase"
                     style={{
                       backgroundColor: textColor,
                       color: backgroundColor,
@@ -251,14 +250,14 @@ const Navigation = ({
           
           <div className="mt-auto pt-6 flex flex-col">
             <div className="border-t w-full mb-4 pt-4 flex justify-between items-end" style={{ borderColor: `${textColor}20` }}>
-              <div style={{ color: textColor, transition: transition }} className="text-[2.25vh] font-barlow font-medium">
+              <div style={{ color: textColor, transition: transition }} className="text-[2.25vh] font-barlow font-bold tracking-tighter">
                 10kR ©2025
               </div>
               <div className="flex gap-4">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: textColor, transition: transition }} className="hover:opacity-80 transition-all uppercase text-[2.25vh] font-barlow font-medium">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: textColor, transition: transition }} className="hover:opacity-80 transition-all uppercase text-[2.25vh] font-barlow font-bold tracking-tighter">
                   LinkedIn
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: textColor, transition: transition }} className="hover:opacity-80 transition-all uppercase text-[2.25vh] font-barlow font-medium">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: textColor, transition: transition }} className="hover:opacity-80 transition-all uppercase text-[2.25vh] font-barlow font-bold tracking-tighter">
                   Instagram
                 </a>
               </div>
@@ -299,7 +298,7 @@ const Navigation = ({
                 key={index} 
                 href={link.href} 
                 onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="text-base font-medium font-barlow hover:opacity-80 transition-all uppercase"
+                className="text-base font-bold tracking-tighter font-barlow hover:opacity-80 transition-all uppercase"
                 style={{
                   color: textColor,
                   transition: transition
@@ -313,7 +312,7 @@ const Navigation = ({
           {links.find(link => link.text === "let's talk") && (
             <a href="#contact" onClick={scrollToEnd}>
               <Button 
-                className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm font-medium font-barlow text-base"
+                className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase"
                 style={{
                   backgroundColor: textColor,
                   color: backgroundColor,

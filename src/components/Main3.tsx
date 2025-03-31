@@ -1,12 +1,15 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 
 interface Main3Props {
+  title?: string;
   text?: string;
 }
 
 const Main3 = ({
+  title = "Solutions, not services.",
   text = "Most teams don't need another service list. They need real solutions to real problems."
 }: Main3Props) => {
   const isMobile = useIsMobile();
@@ -20,8 +23,16 @@ const Main3 = ({
         {isMobile ?
           // Mobile layout - content-based height with padding
           <div className="grid grid-cols-3 gap-4 h-auto py-16 px-6">
-            <div className="col-span-3 pt-6 py-0">
-              <p className="fade-in-delay-1 font-barlow font-medium text-text-large-mobile leading-standard" style={{
+            <div className="col-span-3 mt-16">
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-heading" style={{
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }}>
+                {title}
+              </h1>
+              <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-large-mobile leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>
@@ -32,6 +43,14 @@ const Main3 = ({
           // Desktop layout - full screen with no scrolling
           <div className="flex flex-col h-full justify-between pr-[25%] w-full pt-[25vh] px-[40px]">
             <div className="">
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-heading mb-8" style={{
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: textColor,
+                transition: transition
+              }}>
+                {title}
+              </h1>
               <div className="w-full">
                 <p className="slide-in-left font-barlow font-medium text-text-large-desktop leading-standard" style={{
                   color: textColor,

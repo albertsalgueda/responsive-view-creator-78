@@ -234,7 +234,7 @@ const Navigation = ({
                   className="mt-4"
                 >
                   <Button 
-                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase"
+                    className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase text-base"
                     style={{
                       backgroundColor: textColor,
                       color: backgroundColor,
@@ -312,7 +312,7 @@ const Navigation = ({
           {links.find(link => link.text === "let's talk") && (
             <a href="#contact" onClick={scrollToEnd}>
               <Button 
-                className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase"
+                className="hover:opacity-90 transition-all duration-500 px-6 py-3 rounded-sm uppercase text-base"
                 style={{
                   backgroundColor: textColor,
                   color: backgroundColor,

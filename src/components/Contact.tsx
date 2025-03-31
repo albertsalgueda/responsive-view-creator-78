@@ -35,16 +35,16 @@ const Contact = ({
       <div className="w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen p-6 py-[48px]">
             <div className="col-span-3 mb-8">
-              <h2 className="font-barlow font-bold tracking-tighter slide-in-left text-text-large-mobile leading-standard" style={{
+              <p className="font-barlow font-medium tracking-tighter slide-in-left text-text-large-mobile leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
                 {text1}
-              </h2>
+              </p>
             </div>
             
             <div className="col-span-2 col-start-2">
-              <p className="fade-in-delay-1 font-barlow font-bold tracking-tighter text-text-medium leading-standard" style={{
+              <p className="fade-in-delay-1 font-barlow font-medium tracking-tighter text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
@@ -98,16 +98,16 @@ const Contact = ({
             </div>
           </div> : <div className="grid grid-cols-12 gap-8 h-full px-[40px] py-[40px] pt-[25vh]">
             <div className="col-span-6">
-              <h2 className="font-barlow font-bold tracking-tighter slide-in-left text-text-large-desktop leading-standard" style={{
+              <p className="font-barlow font-medium tracking-tighter slide-in-left text-text-large-desktop leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
                 {text1}
-              </h2>
+              </p>
             </div>
             
             <div className="col-span-6">
-              <p className="slide-in-right font-barlow font-bold tracking-tighter mb-8 text-text-medium leading-standard" style={{
+              <p className="slide-in-right font-barlow font-medium tracking-tighter mb-8 text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition
           }}>

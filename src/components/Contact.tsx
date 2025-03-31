@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
@@ -92,8 +91,8 @@ const Contact = ({
                 <Logo />
               </div>
             </div>
-          </div> : <div className="grid grid-cols-12 gap-8 h-full px-[40px] py-[40px]">
-            <div className="col-span-6 h-fit">
+          </div> : <div className="grid grid-cols-12 gap-8 h-full px-[40px] py-[40px] pt-[25vh]">
+            <div className="col-span-6 pt-[25vh]">
               <h2 className="font-medium slide-in-left font-barlow text-text-large-desktop leading-standard" style={{
             color: textColor,
             transition: transition
@@ -102,7 +101,7 @@ const Contact = ({
               </h2>
             </div>
             
-            <div className="col-span-6 h-fit">
+            <div className="col-span-6 pt-[25vh]">
               <p className="slide-in-right font-barlow font-medium mb-8 text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition

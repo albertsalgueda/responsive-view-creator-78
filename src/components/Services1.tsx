@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -9,7 +10,7 @@ interface Services1Props {
 }
 
 const Services1 = ({
-  titleText = "Brand",
+  titleText = "Brand.",
   text = "We build brand identities that fuse strategic clarity with creative firepower—brands that are timeless, digital-native, and future-ready.",
   columns = '"We have a fantastic product but no brand story"<p>"We want to create a new category"<p>"We need to standout in a crowded marketplace"<p>"We need to look and feel unique"<p>"We need to look like a billion dollar company"'
 }: Services1Props) => {

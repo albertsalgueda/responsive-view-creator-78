@@ -98,66 +98,62 @@ const Contact = ({
             </div>
           </div>
         ) : (
-          <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
-            <div className="flex-1 w-full">
-              <div className="grid grid-cols-12 gap-8 w-full">
-                <div className="col-span-6">
-                  <h2 className="font-medium slide-in-left font-barlow text-text-large-desktop leading-standard" style={{
-                    color: textColor,
+          <div className="grid grid-cols-12 gap-8 h-full px-[40px] py-[40px]">
+            <div className="col-span-6 pt-[25vh]">
+              <h2 className="font-medium slide-in-left font-barlow text-text-large-desktop leading-standard" style={{
+                color: textColor,
+                transition: transition
+              }}>
+                {text1}
+              </h2>
+            </div>
+            
+            <div className="col-span-6 pt-[25vh]">
+              <p className="slide-in-right font-barlow font-medium mb-8 text-text-medium leading-standard" style={{
+                color: textColor,
+                transition: transition
+              }}>
+                {text2}
+              </p>
+              
+              <div className="fade-in-delay-1">
+                <a href={callToAction}>
+                  <Button className="hover:opacity-90 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base leading-standard" style={{
+                    backgroundColor: textColor,
+                    color: backgroundColor,
                     transition: transition
                   }}>
-                    {text1}
-                  </h2>
-                </div>
-                
-                <div className="col-span-6 flex flex-col">
-                  <p className="slide-in-right font-barlow font-medium mb-8 text-text-medium leading-standard" style={{
-                    color: textColor,
-                    transition: transition
-                  }}>
-                    {text2}
-                  </p>
-                  
-                  <div className="fade-in-delay-1">
-                    <a href={callToAction}>
-                      <Button className="hover:opacity-90 transition-all duration-500 font-barlow px-6 py-3 rounded-sm font-medium text-base leading-standard" style={{
-                        backgroundColor: textColor,
-                        color: backgroundColor,
-                        transition: transition
-                      }}>
-                        {callToActionText}
-                      </Button>
-                    </a>
-                  </div>
-                </div>
+                    {callToActionText}
+                  </Button>
+                </a>
               </div>
             </div>
             
-            <div className="grid grid-cols-12 gap-8 w-full">
-              <div className="col-span-3 text-text-small font-barlow font-medium leading-standard" style={{
+            <div className="col-span-3 flex flex-col gap-2 justify-end">
+              <div className="text-text-small font-barlow font-medium leading-standard" style={{
                 color: textColor,
                 transition: transition
               }}>
                 10kR ©2025
               </div>
-              
-              <div className="col-span-3 flex flex-col gap-2">
-                <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
-                  color: textColor,
-                  transition: transition
-                }}>LINKEDIN</a>
-                <a href="https://instagram.com" className="font-barlow hover:underline text-text-small font-medium leading-standard" style={{
-                  color: textColor,
-                  transition: transition
-                }}>INSTAGRAM</a>
-              </div>
-              
-              <div className="col-start-7 col-span-6" style={{
-                width: "280px",
-                height: "auto",
+            </div>
+            
+            <div className="col-span-3 flex flex-col gap-2 justify-end">
+              <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
                 color: textColor,
                 transition: transition
-              }}>
+              }}>LINKEDIN</a>
+              <a href="https://instagram.com" className="font-barlow hover:underline text-text-small font-medium leading-standard" style={{
+                color: textColor,
+                transition: transition
+              }}>INSTAGRAM</a>
+            </div>
+            
+            <div className="col-span-6 flex items-end justify-end" style={{
+              color: textColor,
+              transition: transition
+            }}>
+              <div style={{ width: "280px", height: "auto" }}>
                 <Logo />
               </div>
             </div>

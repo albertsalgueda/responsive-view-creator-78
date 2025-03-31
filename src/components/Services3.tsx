@@ -66,7 +66,7 @@ const Services3 = ({
               fontStyle: 'italic',
               color: textColor,
               transition: transition,
-              marginTop: '-2vh'
+              marginTop: '0'
             }}>
                   {titleText}
                 </h1>

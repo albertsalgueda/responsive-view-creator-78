@@ -70,7 +70,7 @@ const Main1 = ({
             </div>
             
             <div className="col-span-3 flex justify-end mb-6 fade-in-delay-2">
-              <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter hover:opacity-90 transition-all duration-500 leading-standard" style={{
+              <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow leading-standard" style={{
               backgroundColor: textColor,
               color: backgroundColor,
               transition: transition
@@ -105,7 +105,7 @@ const Main1 = ({
             {/* Title and button in columns 1-6, title anchored to bottom */}
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6 fade-in">
-                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter hover:opacity-90 transition-all duration-500 leading-standard" style={{
+                <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-medium hover:opacity-90 transition-all duration-500 font-barlow leading-standard" style={{
                 backgroundColor: textColor,
                 color: backgroundColor,
                 transition: transition

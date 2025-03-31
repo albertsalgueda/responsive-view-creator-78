@@ -139,7 +139,9 @@ const Contact = ({
                 10kR ©2025
               </div>
               
-              <div className="flex flex-col items-end gap-2 text-right">
+              <div className="flex flex-col items-end gap-2 text-right" style={{
+                marginRight: "40px"  // Align with the text column above
+              }}>
                 <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
                 color: textColor,
                 transition: transition

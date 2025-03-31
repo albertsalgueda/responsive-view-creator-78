@@ -139,7 +139,7 @@ const Contact = ({
                 10kR ©2025
               </div>
               
-              <div className="flex flex-col items-start gap-2">
+              <div className="flex flex-col items-end gap-2 text-right">
                 <a href="https://linkedin.com" className="font-barlow text-text-small hover:underline font-medium leading-standard" style={{
                 color: textColor,
                 transition: transition

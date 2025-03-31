@@ -92,7 +92,7 @@ const Contact = ({
               </div>
             </div>
           </div> : <div className="grid grid-cols-12 gap-8 h-full px-[40px] py-[40px] pt-[25vh]">
-            <div className="col-span-6 pt-[25vh]">
+            <div className="col-span-6">
               <h2 className="font-medium slide-in-left font-barlow text-text-large-desktop leading-standard" style={{
             color: textColor,
             transition: transition

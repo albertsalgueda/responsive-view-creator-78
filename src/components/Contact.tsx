@@ -101,7 +101,7 @@ const Contact = ({
               </h2>
             </div>
             
-            <div className="col-span-6 pt-[25vh]">
+            <div className="col-span-6">
               <p className="slide-in-right font-barlow font-medium mb-8 text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition

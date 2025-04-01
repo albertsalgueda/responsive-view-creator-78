@@ -21,6 +21,7 @@ import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
 import { useSectionColors } from "@/hooks/use-section-colors";
 import MuteButton from "@/components/MuteButton";
+import Ticker from "@/components/Ticker";
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -55,6 +56,7 @@ const Index = () => {
       <ParallaxOverlay />
       <SectionObserverWithBackground isMuted={isMuted} toggleMute={toggleMute} />
       <MuteButton isMuted={isMuted} onToggle={toggleMute} />
+      <Ticker />
     </ViewProvider>
   );
 };
@@ -111,7 +113,7 @@ const SectionObserverWithBackground = ({
         <Image1 />
         <div id="main2" className="h-auto">
           <Main2 
-            title="The creative potential of AI." 
+            title="Our story." 
             text1="For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance."
             text2="Now reunited at the forefront of AI, we're building a new kind of agency—one designed to help the world's most ambitious brands reach their highest potential."
             ctaText=""
@@ -150,7 +152,7 @@ const SectionObserverWithBackground = ({
         <Image1 />
         <div id="main2" className="h-screen w-screen flex-shrink-0">
           <Main2 
-            title="The creative potential of AI." 
+            title="Our story." 
             text1="For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance."
             text2="Now reunited at the forefront of AI, we're building a new kind of agency—one designed to help the world's most ambitious brands reach their highest potential."
             ctaText=""

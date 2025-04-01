@@ -1,4 +1,3 @@
-
 import { forwardRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
@@ -66,7 +65,6 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
               }} 
             />
             
-            {/* Keep Avatar as fallback */}
             <Avatar className="w-full h-full rounded-sm opacity-0">
               <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
                 console.error("Error loading avatar image:", imageUrl);
@@ -112,7 +110,6 @@ const ProfileStephen = forwardRef<HTMLDivElement, ProfileProps>(({
           e.currentTarget.src = defaultPlaceholder;
         }} />
             
-            {/* Keep Avatar as fallback */}
             <Avatar className="w-full h-full rounded-sm opacity-0">
               <AvatarImage src={imageUrl} alt={name} className="object-cover w-full h-full" onError={e => {
             console.error("Error loading avatar image:", imageUrl);

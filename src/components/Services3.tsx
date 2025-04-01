@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -46,7 +47,7 @@ const Services3 = ({
                 color: textColor,
                 transition: transition
                 }}>
-                  Problems we've solved
+                  Content problems like...
                 </h3>
                 <div className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
                 color: textColor,
@@ -85,7 +86,7 @@ const Services3 = ({
               color: textColor,
               transition: transition
               }}>
-                Problems we've solved
+                Content problems like...
               </h3>
               <div className="font-barlow font-medium mb-0 slide-in-right text-text-small leading-standard flex flex-col-reverse" style={{
               color: textColor,

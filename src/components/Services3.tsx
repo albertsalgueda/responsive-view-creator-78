@@ -1,14 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Services3Props {
   titleText?: string;
   text?: string;
   columns?: string;
 }
-
 const Services3 = ({
   titleText = "Content.",
   text = "We create content that moves at the speed of culture—built for the moment, driven by insight, and scaled with AI.",
@@ -22,10 +19,9 @@ const Services3 = ({
 
   // Split columns text into array items
   const columnItems = columns.split('<p>');
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full p-0 flex flex-col">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-0 mb-16">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-16">
             <div className="col-span-3 mt-16">
               <h1 className="font-extrabold font-barlow text-h1-mobile leading-heading" style={{
             fontWeight: 800,
@@ -44,21 +40,20 @@ const Services3 = ({
               </p>
               <div className="mt-4">
                 <h3 className="mb-4 font-barlow font-bold text-text-small leading-standard" style={{
-                color: textColor,
-                transition: transition
-                }}>
+              color: textColor,
+              transition: transition
+            }}>
                   Content problems like...
                 </h3>
                 <div className="font-barlow font-medium text-text-small leading-standard" style={{
-                color: textColor,
-                transition: transition
-                }}>
+              color: textColor,
+              transition: transition
+            }}>
                   {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
                 </div>
               </div>
             </div>
-          </div> : 
-          <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
+          </div> : <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
             {/* Title and Text in top section */}
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
@@ -83,19 +78,19 @@ const Services3 = ({
             {/* Problems we've solved section - aligned to bottom */}
             <div className="mt-auto mb-0">
               <h3 className="mb-4 font-barlow font-bold text-text-small leading-standard" style={{
-              color: textColor,
-              transition: transition
-              }}>
+            color: textColor,
+            transition: transition
+          }}>
                 Content problems like...
               </h3>
               <div className="font-barlow font-medium mb-0 text-text-small leading-standard flex flex-col-reverse" style={{
-              color: textColor,
-              transition: transition,
-              columnCount: 1,
-              columnGap: '2rem',
-              display: 'flex',
-              width: '100%'
-              }}>
+            color: textColor,
+            transition: transition,
+            columnCount: 1,
+            columnGap: '2rem',
+            display: 'flex',
+            width: '100%'
+          }}>
                 {columnItems.map((item, index) => <p key={index} className="mt-2">{item}</p>)}
               </div>
             </div>
@@ -103,5 +98,4 @@ const Services3 = ({
       </div>
     </section>;
 };
-
 export default Services3;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main2Props {
   title?: string;
   text1?: string;
@@ -8,8 +9,9 @@ interface Main2Props {
   ctaText?: string;
   ctaAction?: () => void;
 }
+
 const Main2 = ({
-  title = "Our story.",
+  title = "The creative potential of AI.",
   text1 = "For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance.",
   text2 = "Now reunited at the forefront of AI, we're building a new kind of agency—one designed to help the world's most ambitious brands reach their highest potential.",
   ctaText = "",
@@ -20,6 +22,7 @@ const Main2 = ({
     textColor,
     transition
   } = useSectionColors();
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
@@ -94,4 +97,5 @@ const Main2 = ({
       </div>
     </section>;
 };
+
 export default Main2;

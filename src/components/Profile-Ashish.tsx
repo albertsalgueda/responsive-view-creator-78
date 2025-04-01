@@ -28,7 +28,7 @@ const ProfileAshish = forwardRef<HTMLDivElement, ProfileProps>(
   ({ 
     name, 
     role, 
-    bio = "Expertly navigates complex challenges to deliver solutions that are both cutting-edge and commercially viable.",
+    bio = "Founder of YML, Silicon Valley's #1 agency, and the brain behind the platforms powering startups and Fortune 500s alike.",
     image, 
     background, 
     linkedin, 

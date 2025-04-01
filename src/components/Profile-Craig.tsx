@@ -28,7 +28,7 @@ const ProfileCraig = forwardRef<HTMLDivElement, ProfileProps>(
   ({ 
     name, 
     role, 
-    bio = "Crafts compelling narratives that resonate with audiences across all platforms.", 
+    bio = "Award-winning creative director and studio head known for building high-impact content and innovation teams—and delivering globally resonant brand stories.", 
     image, 
     background, 
     linkedin, 

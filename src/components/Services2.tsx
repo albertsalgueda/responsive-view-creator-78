@@ -27,7 +27,7 @@ const Services2 = ({
       <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
         {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-0">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold fade-in font-barlow text-h1-mobile leading-heading" style={{
+              <h1 className="font-extrabold font-barlow text-h1-mobile leading-heading" style={{
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
@@ -36,20 +36,20 @@ const Services2 = ({
           }}>
                 {titleText}
               </h1>
-              <p className="mt-6 pb-[24px] fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
+              <p className="mt-6 pb-[24px] font-barlow font-medium text-text-medium leading-standard" style={{
             color: textColor,
             transition: transition
           }}>
                 {text}
               </p>
               <div className="mt-4">
-                <h3 className="mb-4 fade-in-delay-1 font-barlow font-bold text-text-small leading-standard" style={{
+                <h3 className="mb-4 font-barlow font-bold text-text-small leading-standard" style={{
                 color: textColor,
                 transition: transition
                 }}>
                   Product problems like...
                 </h3>
-                <div className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
+                <div className="font-barlow font-medium text-text-small leading-standard" style={{
                 color: textColor,
                 transition: transition
                 }}>
@@ -62,7 +62,7 @@ const Services2 = ({
             {/* Title and Text in top section */}
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
-                <h1 className="font-extrabold fade-in font-barlow text-h1-desktop leading-heading mb-8" style={{
+                <h1 className="font-extrabold font-barlow text-h1-desktop leading-heading mb-8" style={{
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
@@ -71,7 +71,7 @@ const Services2 = ({
             }}>
                   {titleText}
                 </h1>
-                <p className="fade-in font-barlow font-medium text-text-medium leading-standard" style={{
+                <p className="font-barlow font-medium text-text-medium leading-standard" style={{
               color: textColor,
               transition: transition
             }}>
@@ -82,13 +82,13 @@ const Services2 = ({
                 
             {/* Problems we've solved section - aligned to bottom */}
             <div className="mt-auto mb-0">
-              <h3 className="mb-4 fade-in font-barlow font-bold text-text-small leading-standard" style={{
+              <h3 className="mb-4 font-barlow font-bold text-text-small leading-standard" style={{
               color: textColor,
               transition: transition
               }}>
                 Product problems like...
               </h3>
-              <div className="font-barlow font-medium mb-0 fade-in text-text-small leading-standard flex flex-col-reverse" style={{
+              <div className="font-barlow font-medium mb-0 text-text-small leading-standard flex flex-col-reverse" style={{
               color: textColor,
               transition: transition,
               columnCount: 1,

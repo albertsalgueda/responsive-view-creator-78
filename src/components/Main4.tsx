@@ -27,7 +27,7 @@ const Main4 = ({
           <div className="grid grid-cols-3 gap-4 h-auto py-12 px-6">
             <div className="col-span-3 mt-16">
               <h1 
-                className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-heading"
+                className="font-extrabold font-barlow text-h1-mobile leading-heading"
                 style={{
                   fontWeight: 800,
                   fontStyle: 'italic',
@@ -39,7 +39,7 @@ const Main4 = ({
                 {title}
               </h1>
               <p 
-                className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard"
+                className="mt-6 font-barlow font-medium text-text-medium leading-standard"
                 style={{
                   color: textColor,
                   transition: transition
@@ -49,7 +49,7 @@ const Main4 = ({
               </p>
             </div>
             <div 
-              className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-text-small leading-standard"
+              className="col-start-2 col-span-2 mt-8 font-barlow font-medium text-text-small leading-standard"
               style={{
                 color: textColor,
                 transition: transition
@@ -63,7 +63,7 @@ const Main4 = ({
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
                 <h1 
-                  className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-heading mb-8"
+                  className="font-extrabold font-barlow text-h1-desktop leading-heading mb-8"
                   style={{
                     fontWeight: 800,
                     fontStyle: 'italic',
@@ -75,7 +75,7 @@ const Main4 = ({
                   {title}
                 </h1>
                 <p 
-                  className="slide-in-left font-barlow font-medium text-text-medium leading-standard"
+                  className="font-barlow font-medium text-text-medium leading-standard"
                   style={{
                     color: textColor,
                     transition: transition
@@ -89,7 +89,7 @@ const Main4 = ({
               <div className="col-span-6 col-start-1"></div>
               <div className="col-span-6 col-start-7 flex flex-col justify-end">
                 <p 
-                  className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard"
+                  className="text-text-small font-barlow font-medium mb-0 leading-standard"
                   style={{
                     color: textColor,
                     transition: transition

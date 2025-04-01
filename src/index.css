@@ -104,34 +104,6 @@
   }
 }
 
-/* Animation classes */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-in-out forwards;
-}
-
-.fade-in-delay-1 {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-in-out 0.2s forwards;
-}
-
-.fade-in-delay-2 {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-in-out 0.4s forwards;
-}
-
-.slide-in-left {
-  transform: translateX(-20px);
-  opacity: 0;
-  animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.slide-in-right {
-  transform: translateX(20px);
-  opacity: 0;
-  animation: slideInRight 0.8s ease-out forwards;
-}
-
 /* Ticker animation */
 @keyframes ticker {
   0% {
@@ -144,37 +116,6 @@
 
 .animate-ticker {
   animation: ticker 150s linear infinite; /* Changed from 75s to 150s (doubled the duration) */
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 /* Custom utilities */

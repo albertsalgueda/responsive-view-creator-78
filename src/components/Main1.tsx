@@ -53,7 +53,7 @@ const Main1 = ({
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold fade-in font-barlow text-h1-mobile leading-standard" style={{
+              <h1 className="font-extrabold font-barlow text-h1-mobile leading-standard" style={{
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
@@ -61,7 +61,7 @@ const Main1 = ({
             }}>
                 {title}
               </h1>
-              <p className="mt-6 fade-in-delay-1 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0 leading-standard" style={{
+              <p className="mt-6 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0 leading-standard" style={{
               color: textColor,
               transition: transition
             }}>
@@ -69,7 +69,7 @@ const Main1 = ({
               </p>
             </div>
             
-            <div className="col-span-3 flex justify-end mb-6 fade-in-delay-2">
+            <div className="col-span-3 flex justify-end mb-6">
               <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter text-base hover:opacity-90 transition-all duration-500 leading-standard" style={{
               backgroundColor: textColor,
               color: backgroundColor,
@@ -80,7 +80,7 @@ const Main1 = ({
             </div>
             
             <div className="col-start-2 col-span-2 mb-16">
-              <p className="fade-in-delay-1 font-barlow font-medium text-text-small leading-standard" style={{
+              <p className="font-barlow font-medium text-text-small leading-standard" style={{
               color: textColor,
               transition: transition,
               paddingTop: '24px'
@@ -92,7 +92,7 @@ const Main1 = ({
             <div className="col-span-6 self-start"></div>
             
             <div className="col-span-6 self-start pt-[25vh]">
-              <p className="fade-in font-barlow font-medium text-text-large-desktop leading-standard" style={{
+              <p className="font-barlow font-medium text-text-large-desktop leading-standard" style={{
               color: textColor,
               transition: transition
             }}>
@@ -101,7 +101,7 @@ const Main1 = ({
             </div>
             
             <div className="col-span-6 self-end flex flex-col">
-              <div className="mb-6 fade-in">
+              <div className="mb-6">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter text-base hover:opacity-90 transition-all duration-500 leading-standard" style={{
                 backgroundColor: textColor,
                 color: backgroundColor,
@@ -110,7 +110,7 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="font-extrabold fade-in font-barlow text-h1-desktop leading-standard" style={{
+              <h1 className="font-extrabold font-barlow text-h1-desktop leading-standard" style={{
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
@@ -121,7 +121,7 @@ const Main1 = ({
             </div>
             
             <div className="col-span-3 col-start-10 self-end">
-              <p className="fade-in font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
+              <p className="font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
               color: textColor,
               transition: transition
             }}>

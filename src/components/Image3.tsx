@@ -3,8 +3,8 @@ import ImageContainer from "@/components/image/ImageContainer";
 
 const Image3 = () => {
   return <ImageContainer 
-    imageSrc="/lovable-uploads/205a2bb5-057a-47e6-b3e5-d3774dd28c15.png"
-    altText="White beach house with bicycles"
+    imageSrc="/lovable-uploads/9c7a52d5-3561-41df-bdac-261df76a5b5e.png"
+    altText="Robot with mint green helmet and bird perched on top in foggy forest"
   />;
 };
 

@@ -3,8 +3,8 @@ import ImageContainer from "@/components/image/ImageContainer";
 
 const Image3 = () => {
   return <ImageContainer 
-    imageSrc="/lovable-uploads/9c7a52d5-3561-41df-bdac-261df76a5b5e.png"
-    altText="Robot with mint green helmet and bird perched on top in foggy forest"
+    imageSrc="/lovable-uploads/f8354b5a-183e-43ab-b0b1-63ac022a791c.png"
+    altText="Person with mint green helmet wearing denim jacket with gold robot hands next to candy vending machine"
   />;
 };
 

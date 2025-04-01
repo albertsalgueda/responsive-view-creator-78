@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main2Props {
   title?: string;
   text1?: string;
@@ -8,6 +10,7 @@ interface Main2Props {
   ctaText?: string;
   ctaAction?: () => void;
 }
+
 const Main2 = ({
   title = "Our story.",
   text1 = "For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance.",
@@ -20,16 +23,17 @@ const Main2 = ({
     textColor,
     transition
   } = useSectionColors();
+
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 style={{
+              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={{
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
             transition: transition
-          }} className="flex flex-col h-full justify-between pr-[25%] w-full pt-[25vh] px-[40px]">
+          }}>
                 {title}
               </h1>
               <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
@@ -53,8 +57,8 @@ const Main2 = ({
                   {ctaText}
                 </button>
               </div>}
-          </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px] px-[40px]">
-            <div className="w-1/2 mb-auto">
+          </div> : <div className="flex flex-col h-full justify-end px-[40px] pt-[25vh] pb-[40px]">
+            <div className="mb-auto">
               <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
             fontWeight: 800,
             fontStyle: 'italic',
@@ -94,4 +98,5 @@ const Main2 = ({
       </div>
     </section>;
 };
+
 export default Main2;

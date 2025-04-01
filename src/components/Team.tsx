@@ -29,7 +29,7 @@ const Team = ({
       name: "Stephen Clements",
       title: "Chief Creative Officer",
       bio: "Design pioneer leading global creative organizations at the frontier of product and brand innovation for +20 years.",
-      image: "/lovable-uploads/aca8975f-d718-455e-8a6f-48190ef3c177.png",
+      image: "/lovable-uploads/38784ffe-26ea-4b7b-9de9-eefb29627506.png", // Updated Stephen's image with the new one
       linkedin: "https://www.linkedin.com/in/clementss/"
     },
     {

@@ -3,8 +3,8 @@ import ImageContainer from "@/components/image/ImageContainer";
 
 const Image4 = () => {
   return <ImageContainer 
-    imageSrc="/lovable-uploads/b8ecbf80-9661-4c2d-b38b-58b22fef6a2c.png"
-    altText="Person with underwater helmet camera surrounded by colorful fish and coral"
+    imageSrc="/lovable-uploads/1046040d-78e8-40f7-b4b8-5f96648afbc4.png"
+    altText="Robot with coffee cup display screen head wearing blue suit against dark blue background"
   />;
 };
 

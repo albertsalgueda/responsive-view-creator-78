@@ -20,36 +20,36 @@ const Team = ({
   const displayMembers = members.length > 0 ? members : [
     {
       name: "Neil Stoeckle",
-      title: "Groovemeister",
-      bio: "Masterfully blends creativity with technical expertise to craft unique digital experiences.",
+      title: "Head of Design",
+      bio: "Visionary design leader blending storytelling, strategy and craft to shape the future of digital experiences.",
       image: "/lovable-uploads/a35418fd-974d-4e03-9587-ec7ae9dbd183.png",
       linkedin: "https://www.linkedin.com/in/neilstoeckle/"
     },
     {
       name: "Stephen Clements",
-      title: "Me ol' China",
-      bio: "Create impactful solutions tailored to each client's unique needs.",
+      title: "Chief Creative Officer",
+      bio: "Design pioneer leading global creative organizations at the frontier of product and brand innovation for +20 years.",
       image: "/lovable-uploads/aca8975f-d718-455e-8a6f-48190ef3c177.png",
       linkedin: "https://www.linkedin.com/in/clementss/"
     },
     {
       name: "Stephanie Wiseman",
       title: "CEOmg",
-      bio: "As CEO, Stephanie leads with vision and purpose, driving innovation across all aspects of the business.",
+      bio: "Strategic leader known for scaling agencies, building world-class teams, and driving cultural impact through bold partnerships.",
       image: "/lovable-uploads/defd301a-11c7-4cab-9978-b3ebb7b67329.png",
       linkedin: "https://www.linkedin.com/in/stephaniewiseman/"
     },
     {
       name: "Craig Kind",
-      title: "Muh Fuh Word Genius",
-      bio: "Crafts compelling narratives that resonate with audiences across all platforms.",
+      title: "Head of Studio",
+      bio: "Award-winning creative director and stuid head known for building high-impact content and innovation teams—and delivering globally resonant brand stories.",
       image: "/lovable-uploads/7bbf359f-8d38-472a-8de6-ece06dbdff9c.png",
       linkedin: "https://www.linkedin.com/in/craigkind/"
     },
     {
       name: "Ashish Toshniwal",
-      title: "Badical Radboy",
-      bio: "Expertly navigates complex challenges to deliver solutions that are both cutting-edge and commercially viable.",
+      title: "Founder & President",
+      bio: "Founder of YML, Silicon Valley's #1 agency, and the brain behind the platforms powering startups and Fortune 500s alike.",
       image: "/lovable-uploads/3e5668e1-a8d0-450f-9b2a-0e28a8dfbbc9.png",
       linkedin: "https://www.linkedin.com/in/ashishtoshniwal/"
     }

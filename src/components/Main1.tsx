@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -12,11 +13,11 @@ interface Main1Props {
 
 const Main1 = ({
   title = "We are 10kR.",
-  text = "An AI-forward design agency—where humans and machines build intelligent experiences together.",
+  text = "An AI-forward design agency—where humans and machines create intelligent experiences together.",
   ctaText = "SEE WHAT WE DO",
   ctaAction = () => console.log("CTA clicked"),
   footnote = <>
-      This website was made by AI (robots) and refined by humans (us). <a href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" target="_blank" rel="noopener noreferrer" className="font-barlow font-bold hover:opacity-80 transition-opacity">
+      This website was made by AI (robots) and refined by us (humans). <a href="https://medium.com/ux-planet/ultimate-guide-to-color-in-ux-ui-design-de8eb104b5d3" target="_blank" rel="noopener noreferrer" className="font-barlow font-bold hover:opacity-80 transition-opacity">
         See How.
       </a>
     </>

@@ -1,4 +1,3 @@
-
 import { useSectionColors } from "@/hooks/use-section-colors";
 import { useEffect, useRef, useState } from "react";
 
@@ -10,7 +9,7 @@ const Ticker = () => {
   const progressRef = useRef<number>(0);
   
   // The ticker text content
-  const tickerText = "From the folks who… Built a $100M ARR Design & Innovation Agency • Launched the 51st App in the App Store • Designed Xbox's First Interface • Launched 2 x Unicorn IPOs • Created the World's First AI Creative Director • Reimagined Audi's Automotive Digital Evosystem • Built The AI Platform That Supercharges Entrepreneurs • Produced the Viral Steph Curry Anthem • Launched Nike's Acclaimed Run London Campaign • Created The World's Coolest Basketball Court";
+  const tickerText = "From the Folks That… Built a $100M ARR Design & Innovation Agency • Launched the 51st App in the App Store • Designed Xbox's First Interface • Launched 2x Unicorn IPOs • Created the World's First AI Creative Director • Reimagined Audi's Automotive Digital Ecosystem • Built the AI Platform That Supercharges Entrepreneurs • Produced the Viral Steph Curry Anthem • Launched Nike's Acclaimed Run London • Created the World's Coolest Basketball Court • Helped Drive Universal Music's Data Transformation • Won Customer Experience Agency of the Year";
 
   useEffect(() => {
     const container = containerRef.current;

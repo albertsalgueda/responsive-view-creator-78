@@ -1,9 +1,7 @@
-
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
 import { useView } from '@/context/ViewContext';
-
 interface Main2Props {
   title?: string;
   text1?: string;
@@ -11,7 +9,6 @@ interface Main2Props {
   ctaText?: string;
   ctaAction?: () => void;
 }
-
 const Main2 = ({
   title = "Our story.",
   text1 = "For 15 years, we built one of Silicon Valley's most influential digital product agencies from startup to $100M ARR. Along the way, we partnered with visionary clients—many of whom we now call friends—to create category-defining products across industries from automotive to healthcare to finance.",
@@ -20,7 +17,9 @@ const Main2 = ({
   ctaAction = () => console.log("CTA clicked")
 }: Main2Props) => {
   const isMobile = useIsMobile();
-  const { currentSection } = useView();
+  const {
+    currentSection
+  } = useView();
   const {
     textColor,
     transition
@@ -52,7 +51,6 @@ const Main2 = ({
     console.log("Main2 layout effect triggered");
     setKey(k => k + 1);
   }, [isMobile]);
-
   const titleStyle = {
     fontWeight: 800,
     fontStyle: 'italic',
@@ -67,12 +65,9 @@ const Main2 = ({
     backgroundColor: textColor,
     transition: transition
   };
-
-  return (
-    <section key={key} className={`w-full relative overflow-hidden font-barlow ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  return <section key={key} className={`w-full relative overflow-hidden font-barlow ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
       <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? (
-          <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
+        {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
             <div className="col-span-3 mt-16">
               <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={titleStyle}>
                 {title}
@@ -89,9 +84,7 @@ const Main2 = ({
                   {ctaText}
                 </button>
               </div>}
-          </div>
-        ) : (
-          <div className="grid grid-cols-12 gap-8 h-full pt-0 pb-[40px] px-[40px] pt-[25vh]">
+          </div> : <div className="grid grid-cols-12 gap-8 h-full pt-0 pb-[40px] px-[40px] pt-[25vh]">
             <div className="col-span-6 col-start-1 self-start">
               <h1 style={titleStyle} className="font-extrabold font-barlow text-h1-desktop leading-standard">
                 {title}
@@ -99,7 +92,7 @@ const Main2 = ({
             </div>
             
             <div className="col-span-4 col-start-5 self-end">
-              <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={textStyle}>
+              <p style={textStyle} className="text-text-small font-barlow font-medium mb-0 leading-standard">
                 {text1}
               </p>
             </div>
@@ -115,11 +108,8 @@ const Main2 = ({
                   {ctaText}
                 </button>
               </div>}
-          </div>
-        )}
+          </div>}
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Main2;

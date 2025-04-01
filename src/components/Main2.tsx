@@ -76,7 +76,7 @@ const Main2 = ({
               </div>}
           </div> : <div className="grid grid-cols-12 gap-8 h-full pt-0 pb-[40px] px-[40px]">
             <div className="col-span-6 col-start-1 self-start pt-[25vh]">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={titleStyle}>
+              <h1 style={titleStyle} className="font-extrabold font-barlow text-h1-desktop leading-standard">
                 {title}
               </h1>
             </div>

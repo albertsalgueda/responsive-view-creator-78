@@ -37,7 +37,7 @@ const Main3 = ({
             </div>
           </div> :
       // Desktop layout - full screen with no scrolling
-      <div className="flex flex-col h-full justify-between pr-[33%] w-full pt-[25vh] px-[40px]">
+      <div className="flex flex-col h-full justify-between pr-[30%] w-full pt-[25vh] px-[40px]">
             <div className="">
               <h1 className="font-extrabold font-barlow text-h1-desktop leading-heading mb-8" style={{
             fontWeight: 800,

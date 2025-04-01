@@ -36,6 +36,15 @@ const Main2 = ({
     return () => clearTimeout(timer);
   }, []);
   
+  // Force another re-render after layout changes (for debugging)
+  useEffect(() => {
+    console.log("Main2 rendered with layout:", isMobile ? "mobile" : "desktop");
+    const forceUpdateTimer = setTimeout(() => {
+      setKey(k => k + 1);
+    }, 500);
+    return () => clearTimeout(forceUpdateTimer);
+  }, [isMobile]);
+  
   const titleStyle = {
     fontWeight: 800,
     fontStyle: 'italic',

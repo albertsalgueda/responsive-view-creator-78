@@ -53,7 +53,7 @@ const Main1 = ({
       <div className="max-w-7xl w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={{
+              <h1 className="font-extrabold fade-in font-barlow text-h1-mobile leading-standard" style={{
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
@@ -92,7 +92,7 @@ const Main1 = ({
             <div className="col-span-6 self-start"></div>
             
             <div className="col-span-6 self-start pt-[25vh]">
-              <p className="slide-in-left font-barlow font-medium text-text-large-desktop leading-standard" style={{
+              <p className="fade-in font-barlow font-medium text-text-large-desktop leading-standard" style={{
               color: textColor,
               transition: transition
             }}>
@@ -110,7 +110,7 @@ const Main1 = ({
                   {ctaText}
                 </button>
               </div>
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
+              <h1 className="font-extrabold fade-in font-barlow text-h1-desktop leading-standard" style={{
               fontWeight: 800,
               fontStyle: 'italic',
               color: textColor,
@@ -121,7 +121,7 @@ const Main1 = ({
             </div>
             
             <div className="col-span-3 col-start-10 self-end">
-              <p className="slide-in-left font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
+              <p className="fade-in font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
               color: textColor,
               transition: transition
             }}>

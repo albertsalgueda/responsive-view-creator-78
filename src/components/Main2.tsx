@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -69,7 +70,7 @@ const Main2 = ({
       <div className="max-w-7xl w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={titleStyle}>
+              <h1 className="font-extrabold fade-in font-barlow text-h1-mobile leading-standard" style={titleStyle}>
                 {title}
               </h1>
               <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={textStyle}>
@@ -86,19 +87,19 @@ const Main2 = ({
               </div>}
           </div> : <div className="grid grid-cols-12 gap-8 h-full pt-0 pb-[40px] px-[40px] pt-[25vh]">
             <div className="col-span-6 col-start-1 self-start">
-              <h1 style={titleStyle} className="font-extrabold font-barlow text-h1-desktop leading-standard">
+              <h1 style={titleStyle} className="font-extrabold fade-in font-barlow text-h1-desktop leading-standard">
                 {title}
               </h1>
             </div>
             
             <div className="col-span-4 col-start-5 self-end">
-              <p style={textStyle} className="text-text-small font-barlow font-medium mb-0 leading-standard">
+              <p style={textStyle} className="text-text-small fade-in font-barlow font-medium mb-0 leading-standard">
                 {text1}
               </p>
             </div>
             
             <div className="col-span-4 col-start-9 self-end">
-              <p style={textStyle} className="text-text-small font-barlow font-medium mb-0 leading-standard">
+              <p style={textStyle} className="text-text-small fade-in font-barlow font-medium mb-0 leading-standard">
                 {text2}
               </p>
             </div>

@@ -24,7 +24,7 @@ const Main3 = ({
           // Mobile layout - content-based height with padding
           <div className="grid grid-cols-3 gap-4 h-auto py-16 px-6">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-heading" style={{
+              <h1 className="font-extrabold fade-in font-barlow text-h1-mobile leading-heading" style={{
                 fontWeight: 800,
                 fontStyle: 'italic',
                 color: textColor,
@@ -43,7 +43,7 @@ const Main3 = ({
           // Desktop layout - full screen with no scrolling
           <div className="flex flex-col h-full justify-between pr-[25%] w-full pt-[25vh] px-[40px]">
             <div className="">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-heading mb-8" style={{
+              <h1 className="font-extrabold fade-in font-barlow text-h1-desktop leading-heading mb-8" style={{
                 fontWeight: 800,
                 fontStyle: 'italic',
                 color: textColor,
@@ -52,7 +52,7 @@ const Main3 = ({
                 {title}
               </h1>
               <div className="w-full">
-                <p className="slide-in-left font-barlow font-medium text-text-large-desktop leading-standard" style={{
+                <p className="fade-in font-barlow font-medium text-text-large-desktop leading-standard" style={{
                   color: textColor,
                   transition: transition,
                   width: '100%'

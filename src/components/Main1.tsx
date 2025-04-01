@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
-
 interface Main1Props {
   title?: string;
   text?: string;
@@ -10,7 +8,6 @@ interface Main1Props {
   ctaAction?: () => void;
   footnote?: React.ReactNode;
 }
-
 const Main1 = ({
   title = "We are 10kR.",
   text = "An AI-forward design agency—where humans and machines create intelligent experiences together.",
@@ -28,7 +25,6 @@ const Main1 = ({
     backgroundColor,
     transition
   } = useSectionColors();
-
   const scrollToMain3 = () => {
     const main3Element = document.getElementById('main3');
     if (main3Element) {
@@ -48,43 +44,42 @@ const Main1 = ({
       }
     }
   };
-
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
             <div className="col-span-3 mt-16">
               <h1 className="font-extrabold font-barlow text-h1-mobile leading-standard" style={{
-              fontWeight: 800,
-              fontStyle: 'italic',
-              color: textColor,
-              transition: transition
-            }}>
+            fontWeight: 800,
+            fontStyle: 'italic',
+            color: textColor,
+            transition: transition
+          }}>
                 {title}
               </h1>
-              <p className="mt-6 max-w-[90%] font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0 leading-standard" style={{
-              color: textColor,
-              transition: transition
-            }}>
+              <p style={{
+            color: textColor,
+            transition: transition
+          }} className="mt-6 font-barlow font-medium text-text-large-mobile pt-[0px] pb-[12px] my-0 leading-standard">
                 {text}
               </p>
             </div>
             
             <div className="col-span-3 flex justify-end mb-6">
               <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter text-base hover:opacity-90 transition-all duration-500 leading-standard" style={{
-              backgroundColor: textColor,
-              color: backgroundColor,
-              transition: transition
-            }}>
+            backgroundColor: textColor,
+            color: backgroundColor,
+            transition: transition
+          }}>
                 {ctaText}
               </button>
             </div>
             
             <div className="col-start-2 col-span-2 mb-16">
               <p className="font-barlow font-medium text-text-small leading-standard" style={{
-              color: textColor,
-              transition: transition,
-              paddingTop: '24px'
-            }}>
+            color: textColor,
+            transition: transition,
+            paddingTop: '24px'
+          }}>
                 {footnote}
               </p>
             </div>
@@ -93,9 +88,9 @@ const Main1 = ({
             
             <div className="col-span-6 self-start pt-[25vh]">
               <p className="font-barlow font-medium text-text-large-desktop leading-standard" style={{
-              color: textColor,
-              transition: transition
-            }}>
+            color: textColor,
+            transition: transition
+          }}>
                 {text}
               </p>
             </div>
@@ -103,28 +98,28 @@ const Main1 = ({
             <div className="col-span-6 self-end flex flex-col">
               <div className="mb-6">
                 <button onClick={scrollToMain3} className="px-6 py-3 rounded-sm font-barlow font-bold tracking-tighter text-base hover:opacity-90 transition-all duration-500 leading-standard" style={{
-                backgroundColor: textColor,
-                color: backgroundColor,
-                transition: transition
-              }}>
+              backgroundColor: textColor,
+              color: backgroundColor,
+              transition: transition
+            }}>
                   {ctaText}
                 </button>
               </div>
               <h1 className="font-extrabold font-barlow text-h1-desktop leading-standard" style={{
-              fontWeight: 800,
-              fontStyle: 'italic',
-              color: textColor,
-              transition: transition
-            }}>
+            fontWeight: 800,
+            fontStyle: 'italic',
+            color: textColor,
+            transition: transition
+          }}>
                 {title}
               </h1>
             </div>
             
             <div className="col-span-3 col-start-10 self-end">
               <p className="font-barlow font-medium text-text-small leading-standard pb-[5px]" style={{
-              color: textColor,
-              transition: transition
-            }}>
+            color: textColor,
+            transition: transition
+          }}>
                 {footnote}
               </p>
             </div>
@@ -132,5 +127,4 @@ const Main1 = ({
       </div>
     </section>;
 };
-
 export default Main1;

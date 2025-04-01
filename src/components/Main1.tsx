@@ -50,7 +50,7 @@ const Main1 = ({
   };
 
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
-      <div className="max-w-7xl w-full mx-auto h-full">
+      <div className="w-full mx-auto h-full">
         {isMobile ? <div className="grid grid-cols-3 gap-4 h-full py-12 px-6">
             <div className="col-span-3 mt-16">
               <h1 className="font-extrabold font-barlow text-h1-mobile leading-standard" style={{

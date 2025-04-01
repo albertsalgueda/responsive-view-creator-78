@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
@@ -20,7 +21,7 @@ const Services2 = ({
   // Split columns text into array items
   const columnItems = columns.split('<p>');
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'h-fit' : 'h-screen'}`}>
-      <div className="max-w-7xl w-full mx-auto h-full p-0 flex flex-col">
+      <div className="w-full mx-auto h-full p-0 flex flex-col">
         {isMobile ? <div className="grid grid-cols-3 gap-4 px-6 h-full py-0 pb-16">
             <div className="col-span-3 mt-16">
               <h1 className="font-extrabold font-barlow text-h1-mobile leading-heading" style={{

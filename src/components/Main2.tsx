@@ -58,7 +58,7 @@ const Main2 = ({
                 </button>
               </div>}
           </div> : <div className="flex flex-col h-full justify-end px-[40px] pt-[25vh] pb-[40px]">
-            <div className="w-full mb-auto">
+            <div className="mb-auto">
               <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
             fontWeight: 800,
             fontStyle: 'italic',

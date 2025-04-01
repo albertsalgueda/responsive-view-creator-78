@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Main1 from "@/components/Main1";
 import Main2 from "@/components/Main2";
@@ -21,7 +22,6 @@ import { useSectionObserver } from "@/hooks/use-section-observer";
 import { useBackgroundTransition } from "@/hooks/use-background-transition";
 import { useSectionColors } from "@/hooks/use-section-colors";
 import MuteButton from "@/components/MuteButton";
-import Ticker from "@/components/Ticker";
 
 const Index = () => {
   const [mounted, setMounted] = useState(false);
@@ -56,7 +56,6 @@ const Index = () => {
       <ParallaxOverlay />
       <SectionObserverWithBackground isMuted={isMuted} toggleMute={toggleMute} />
       <MuteButton isMuted={isMuted} onToggle={toggleMute} />
-      <Ticker />
     </ViewProvider>
   );
 };

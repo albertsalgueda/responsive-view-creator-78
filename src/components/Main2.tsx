@@ -53,7 +53,7 @@ const Main2 = ({
                   {ctaText}
                 </button>
               </div>}
-          </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px]">
+          </div> : <div className="flex flex-col h-full justify-end pt-[25vh] pb-[40px] px-[40px]">
             <div className="w-1/2 mb-auto">
               <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
             fontWeight: 800,

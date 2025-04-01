@@ -98,7 +98,7 @@ const Main2 = ({
             </div>
             
             <div className="col-span-4 col-start-9 self-end">
-              <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={textStyle}>
+              <p style={textStyle} className="text-text-small font-barlow font-medium mb-0 leading-standard">
                 {text2}
               </p>
             </div>

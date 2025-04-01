@@ -42,7 +42,7 @@ const Team = ({
     {
       name: "Craig Kind",
       title: "Head of Studio",
-      bio: "Award-winning creative director and stuid head known for building high-impact content and innovation teams—and delivering globally resonant brand stories.",
+      bio: "Award-winning creative director and studio head known for building high-impact content and innovation teams—and delivering globally resonant brand stories.",
       image: "/lovable-uploads/7bbf359f-8d38-472a-8de6-ece06dbdff9c.png",
       linkedin: "https://www.linkedin.com/in/craigkind/"
     },

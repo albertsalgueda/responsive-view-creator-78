@@ -50,7 +50,7 @@ const Team = ({
       name: "Ashish Toshniwal",
       title: "Founder & President",
       bio: "Founder of YML, Silicon Valley's #1 agency, and the brain behind the platforms powering startups and Fortune 500s alike.",
-      image: "/lovable-uploads/3e5668e1-a8d0-450f-9b2a-0e28a8dfbbc9.png",
+      image: "/lovable-uploads/f5ac4fb7-799b-4bc0-a166-ed4c6df53a8d.png", // Updated Ashish's image with the new one
       linkedin: "https://www.linkedin.com/in/ashishtoshniwal/"
     }
   ];

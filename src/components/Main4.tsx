@@ -22,7 +22,7 @@ const Main4 = ({
 
   return (
     <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-fit h-auto' : 'h-screen'}`}>
-      <div className="max-w-7xl w-full mx-auto h-full p-0">
+      <div className="w-full mx-auto h-full p-0">
         {isMobile ? (
           <div className="grid grid-cols-3 gap-4 h-auto py-12 px-6">
             <div className="col-span-3 mt-16">
@@ -59,7 +59,7 @@ const Main4 = ({
             </div>
           </div>
         ) : (
-          <div className="flex flex-col h-full justify-between pt-[25vh] pb-[40px] px-[40px]">
+          <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
             <div className="w-full">
               <div className="col-span-8 col-start-1 w-2/3">
                 <h1 
@@ -69,7 +69,7 @@ const Main4 = ({
                     fontStyle: 'italic',
                     color: textColor,
                     transition: transition,
-                    marginTop: '-2vh'
+                    marginTop: '0'
                   }}
                 >
                   {title}

@@ -1,10 +1,13 @@
+
 import { useState, useEffect } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSectionColors } from '@/hooks/use-section-colors';
+
 interface Main3Props {
   title?: string;
   text?: string;
 }
+
 const Main3 = ({
   title = "Our services.",
   text = "Most teams don't need another list of services. They need real solutions to actual problems."
@@ -14,6 +17,7 @@ const Main3 = ({
     textColor,
     transition
   } = useSectionColors();
+  
   return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-fit h-auto' : 'h-screen'}`}>
       <div className="w-full mx-auto h-full">
         {isMobile ?
@@ -37,21 +41,21 @@ const Main3 = ({
             </div>
           </div> :
       // Desktop layout - full screen with no scrolling
-      <div className="flex flex-col h-full justify-between pr-[33%] w-full pt-[25vh] px-[40px]">
-            <div className="">
-              <h1 className="font-extrabold font-barlow text-h1-desktop leading-heading mb-8" style={{
+      <div className="flex flex-col h-full justify-between px-[40px] pt-[25vh] pb-[40px]">
+            <div className="w-full">
+              <div className="col-span-8 col-start-1 w-2/3">
+                <h1 className="font-extrabold font-barlow text-h1-desktop leading-heading mb-8" style={{
             fontWeight: 800,
             fontStyle: 'italic',
             color: textColor,
-            transition: transition
+            transition: transition,
+            marginTop: '0'
           }}>
                 {title}
               </h1>
-              <div className="w-full">
-                <p className="font-barlow font-medium text-text-large-desktop leading-standard" style={{
+                <p className="font-barlow font-medium text-text-medium leading-standard" style={{
               color: textColor,
-              transition: transition,
-              width: '100%'
+              transition: transition
             }}>
                   {text}
                 </p>
@@ -61,4 +65,5 @@ const Main3 = ({
       </div>
     </section>;
 };
+
 export default Main3;

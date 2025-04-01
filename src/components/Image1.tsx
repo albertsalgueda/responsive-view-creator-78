@@ -3,8 +3,8 @@ import ImageContainer from "@/components/image/ImageContainer";
 
 const Image1 = () => {
   return <ImageContainer 
-    imageSrc="/lovable-uploads/6d24aae1-b216-4cae-ae17-df0a95666fb2.png"
-    altText="White bell tower with palm tree"
+    imageSrc="/lovable-uploads/798027e1-f0d6-4501-890e-2bd96a04c482.png"
+    altText="Robot with pink helmet blowing bubbles against pink background"
   />;
 };
 

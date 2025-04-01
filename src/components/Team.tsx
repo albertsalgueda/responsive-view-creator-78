@@ -36,7 +36,7 @@ const Team = ({
       name: "Stephanie Wiseman",
       title: "CEOmg",
       bio: "Strategic leader known for scaling agencies, building world-class teams, and driving cultural impact through bold partnerships.",
-      image: "/lovable-uploads/e1f502c4-f649-4cf0-b049-d36a7442ecf5.png", // Updated Stephanie's image
+      image: "/lovable-uploads/4b2f96d3-ed2e-49f8-86d9-79dc8e0d5f57.png", // Updated Stephanie's image with the new one
       linkedin: "https://www.linkedin.com/in/stephaniewiseman/"
     },
     {

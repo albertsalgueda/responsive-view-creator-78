@@ -3,8 +3,8 @@ import ImageContainer from "@/components/image/ImageContainer";
 
 const Image2 = () => {
   return <ImageContainer 
-    imageSrc="/lovable-uploads/46720888-5b34-435c-a4bc-604dc993df6c.png"
-    altText="Person wearing green helmet surrounded by tropical plants"
+    imageSrc="/lovable-uploads/b1272570-6439-47fc-ba1e-2340e9409d76.png"
+    altText="Robot with mint green helmet wearing pink suit with plant next to green background"
   />;
 };
 

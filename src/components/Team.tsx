@@ -22,7 +22,7 @@ const Team = ({
       name: "Neil Stoeckle",
       title: "Head of Design",
       bio: "Visionary design leader blending storytelling, strategy and craft to shape the future of digital experiences.",
-      image: "/lovable-uploads/a35418fd-974d-4e03-9587-ec7ae9dbd183.png",
+      image: "/lovable-uploads/22e2d6d3-0a4d-48d7-b306-80792636e616.png", // Updated Neil's image
       linkedin: "https://www.linkedin.com/in/neilstoeckle/"
     },
     {

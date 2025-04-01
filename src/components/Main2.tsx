@@ -67,7 +67,7 @@ const Main2 = ({
     transition: transition
   };
   return <section key={key} className={`w-full relative overflow-hidden font-barlow ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
-      <div className="max-w-7xl w-full mx-auto h-full p-0">
+      <div className="w-full mx-auto h-full p-0">
         {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
             <div className="col-span-3 mt-16">
               <h1 className="font-extrabold font-barlow text-h1-mobile leading-standard" style={titleStyle}>

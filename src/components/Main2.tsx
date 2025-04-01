@@ -24,79 +24,120 @@ const Main2 = ({
     transition
   } = useSectionColors();
 
-  return <section className={`w-full relative px-0 py-0 overflow-hidden font-barlow mb-0 ${isMobile ? 'min-h-screen' : 'h-screen'}`}>
+  // Add force update mechanism to help with rendering
+  const [key, setKey] = useState(0);
+  
+  // Force re-render once on mount to help with syncing
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      setKey(prev => prev + 1);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  const titleStyle = {
+    fontWeight: 800,
+    fontStyle: 'italic',
+    color: textColor,
+    transition: transition
+  };
+
+  const textStyle = {
+    color: textColor,
+    transition: transition
+  };
+  
+  const buttonStyle = {
+    backgroundColor: textColor,
+    transition: transition
+  };
+
+  return (
+    <section 
+      key={key}
+      className={`w-full relative overflow-hidden font-barlow ${isMobile ? 'min-h-screen' : 'h-screen'}`}
+    >
       <div className="max-w-7xl w-full mx-auto h-full p-0">
-        {isMobile ? <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
+        {isMobile ? (
+          <div className="grid grid-cols-3 gap-4 min-h-screen py-12 px-6">
             <div className="col-span-3 mt-16">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" style={{
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }}>
+              <h1 
+                className="font-extrabold slide-in-left font-barlow text-h1-mobile leading-standard" 
+                style={titleStyle}
+              >
                 {title}
               </h1>
-              <p className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" style={{
-            color: textColor,
-            transition: transition
-          }}>
+              <p 
+                className="mt-6 fade-in-delay-1 font-barlow font-medium text-text-medium leading-standard" 
+                style={textStyle}
+              >
                 {text1}
               </p>
             </div>
-            <div className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-text-small leading-standard" style={{
-          color: textColor,
-          transition: transition
-        }}>
+            <div 
+              className="col-start-2 col-span-2 mt-8 fade-in-delay-2 font-barlow font-medium text-text-small leading-standard" 
+              style={textStyle}
+            >
               <p className="mb-16">{text2}</p>
             </div>
-            {ctaText && <div className="col-span-3 mt-auto mb-16 fade-in-delay-2 flex justify-end">
-                <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard" style={{
-            backgroundColor: textColor,
-            transition: transition
-          }}>
+            {ctaText && (
+              <div className="col-span-3 mt-auto mb-16 fade-in-delay-2 flex justify-end">
+                <button 
+                  onClick={ctaAction} 
+                  className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard" 
+                  style={buttonStyle}
+                >
                   {ctaText}
                 </button>
-              </div>}
-          </div> : <div className="flex flex-col h-full justify-end px-[40px] pt-[25vh] pb-[40px]">
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="flex flex-col h-full justify-end px-[40px] pt-[25vh] pb-[40px]">
             <div className="mb-auto">
-              <h1 className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" style={{
-            fontWeight: 800,
-            fontStyle: 'italic',
-            color: textColor,
-            transition: transition
-          }}>
+              <h1 
+                className="font-extrabold slide-in-left font-barlow text-h1-desktop leading-standard" 
+                style={titleStyle}
+              >
                 {title}
               </h1>
             </div>
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-4 col-start-5 flex flex-col justify-end">
-                <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
-              color: textColor,
-              transition: transition
-            }}>
+                <p 
+                  className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" 
+                  style={textStyle}
+                >
                   {text1}
                 </p>
               </div>
               <div className="col-span-4 col-start-9 flex flex-col justify-end">
-                <p className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" style={{
-              color: textColor,
-              transition: transition
-            }}>
+                <p 
+                  className="text-text-small slide-in-right font-barlow font-medium mb-0 leading-standard" 
+                  style={textStyle}
+                >
                   {text2}
                 </p>
               </div>
             </div>
-            {ctaText && <div className="fade-in flex justify-end mb-6">
-                <button onClick={ctaAction} className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard" style={{
-            backgroundColor: textColor,
-            transition: transition
-          }}>
+            {ctaText && (
+              <div className="fade-in flex justify-end mb-6">
+                <button 
+                  onClick={ctaAction} 
+                  className="text-[#2A0C41] px-6 py-3 rounded-sm font-medium hover:bg-opacity-90 transition-all font-barlow leading-standard" 
+                  style={buttonStyle}
+                >
                   {ctaText}
                 </button>
-              </div>}
-          </div>}
+              </div>
+            )}
+          </div>
+        )}
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Main2;
